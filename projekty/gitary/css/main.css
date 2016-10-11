@@ -1,0 +1,768 @@
+@charset "UTF-8";
+/* RESET */
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two&subset=latin,latin-ext);
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, strong, img, dl, dt, dd, ol, ul, li, table, tbody, tr, th, td, article, aside, footer, header, menu, nav, section { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+ul { list-style: none; }
+
+a { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+a:hover, a:active { outline: none; }
+
+table { border-spacing: 0; }
+
+th { font-weight: bold; vertical-align: bottom; }
+
+td { font-weight: normal; vertical-align: top; }
+
+table { font-size: inherit; font: 100%; }
+
+td, td img { vertical-align: top; }
+
+button, input, select, textarea { margin: 0; }
+
+button:focus { outline: none !important; }
+
+.artysta:before, .artysta:after { content: ""; display: table; }
+
+.artysta:after { clear: both; }
+
+/* ANIMACJE */
+@-webkit-keyframes bujanie { 0%, 100% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  33% { -webkit-transform: rotate(-15deg); transform: rotate(-15deg); }
+  66% { -webkit-transform: rotate(15deg); transform: rotate(15deg); } }
+@keyframes bujanie { 0%, 100% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  33% { -webkit-transform: rotate(-15deg); transform: rotate(-15deg); }
+  66% { -webkit-transform: rotate(15deg); transform: rotate(15deg); } }
+
+@-webkit-keyframes migotanie-pomoc { 0%, 100% { opacity: 0.15; }
+  50% { opacity: 1; } }
+
+@keyframes migotanie-pomoc { 0%, 100% { opacity: 0.15; }
+  50% { opacity: 1; } }
+
+@-webkit-keyframes migotanie { 0%, 100% { opacity: 0; }
+  50% { opacity: 1; } }
+
+@keyframes migotanie { 0%, 100% { opacity: 0; }
+  50% { opacity: 1; } }
+
+@-webkit-keyframes migotanie-2 { 0% { opacity: 1; }
+  100% { opacity: 0; } }
+
+@keyframes migotanie-2 { 0% { opacity: 1; }
+  100% { opacity: 0; } }
+
+@-webkit-keyframes strzalka { 0% { top: 30px; }
+  100% { top: 40px; } }
+
+@keyframes strzalka { 0% { top: 30px; }
+  100% { top: 40px; } }
+
+/* CZCIONKI */
+@font-face { font-family: "digital_dreamregular"; src: url("../fonts/digitaldream-webfont.eot"); src: url("../fonts/digitaldream-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/digitaldream-webfont.woff") format("woff"), url("../fonts/digitaldream-webfont.ttf") format("truetype"), url("../fonts/digitaldream-webfont.svg#digital_dreamregular") format("svg"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: "icomoon"; src: url("../fonts/icomoon.eot"); src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: "ikony"; src: url("../fonts/ikony.eot"); src: url("../fonts/ikony.eot?#iefix") format("embedded-opentype"), url("../fonts/ikony.woff") format("woff"), url("../fonts/ikony.ttf") format("truetype"), url("../fonts/ikony.svg#ikony") format("svg"); font-weight: normal; font-style: normal; }
+
+/* PRZEJŚCIA */
+#gitary .podpis, #gitary .podpis .kolor, #akordy .dodajAkord, #poziom-glosnosci, .galeria nav, #gryf td p, .slajd_3 .wskaznik.wsk_3 { transition: opacity 0.3s ease; }
+
+#gitary .gitara, #gitary .gitara span, #kosz, #gryf td span, .kaseta { transition: all 0.3s ease; }
+
+#gryf td, #akordy .akord { transition: background-color 0.3s ease; }
+
+#nagrania li { transition: margin 0.3s ease; }
+
+#panel-dolny button:not(.min) { transition: opacity 0.3s ease, bottom 0.3s ease; }
+
+.swiatelko { transition: opacity 0.7s ease, left 0.3s ease; }
+
+/* STYLE ZBIORCZE */
+dl, .info-gitarowe, .artysta, .artysta .gitara, #panel-nagrywania, #akordy, #nagrania, #ciemne-tlo .pomoc, #tabulatura, .galeria { background-image: url("../images/leather.jpg"); border-image-source: url("../images/stitch-border.png"); border-image-slice: 14; border-image-width: 14px; border-image-repeat: round; border-width: 14px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); }
+
+dt, dd, .title, .minimalizuj, #poziom-glosnosci, .info { background-color: #4a5257; background-image: linear-gradient(to bottom, #4a5257 0%, #2e363b 100%); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), 2px 5px 15px #000; }
+
+[disabled="disabled"] { opacity: 0.5; pointer-events: none; }
+
+.blue-icons button { font-size: 21px; line-height: 27px; position: relative; float: left; margin-right: 3px; padding: 7px; border: none; border-radius: 23px; background-color: rgba(0, 0, 0, 0.25); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 1px 3px rgba(255, 255, 255, 0.1); }
+
+.blue-icons button:after { content: ""; position: absolute; top: -2px; left: 0; width: 100%; height: 100%; border-radius: 23px; box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.3); }
+
+.blue-icons button .tlo-ikony { color: #111; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2); transition: color 0.3s ease, text-shadow 0.3s ease; display: block; position: relative; width: 32px; height: 32px; padding-top: 3px; box-sizing: border-box; border-radius: 16px; box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), 0 2px 8px rgba(0, 0, 0, 0.6); background-color: #4a5257; background-image: linear-gradient(to bottom, #4a5257 0%, #2e363b 100%); }
+
+.blue-icons button .title { top: 70px; left: 0; }
+
+.blue-icons button:hover .tlo-ikony { color: #00baff; text-shadow: 0 0 5px #00baff; }
+
+.blue-icons button:hover .title { opacity: 1; top: 50px; transition: opacity 0.5s ease 1.5s, top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.5s; }
+
+#akordy:hover .minimalizuj, #nagrania:hover .minimalizuj, #tabulatura:hover .minimalizuj { opacity: 1; }
+
+html, body { height: 100%; }
+
+body { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; cursor: default; }
+
+button, #panel-nagrywania li, #suwak { cursor: pointer; }
+
+/* STYLE GŁÓWNE */
+html { overflow: hidden; background-image: url("../images/rebel.png"); background-color: #222; }
+
+body { position: relative; margin: 0 auto; padding: 0 10px; font: 13px Helmet, Freesans, sans-serif; color: #fff; text-shadow: 1px 1px 0 #000; }
+
+body.ukryj #gitary { opacity: 0.3; }
+
+body.ukryj #gitary span { opacity: 0; }
+
+body.acoustic #gryf { background-image: url("../images/les-paul-inlay-03.png"), url("../images/les-paul-inlay-03.png"), url("../images/les-paul-inlay-05.png"), url("../images/les-paul-inlay-07.png"), url("../images/les-paul-inlay-09.png"), url("../images/les-paul-inlay-12.png"), url("../images/rosewood2.jpg"); background-position: 6.5% center, 27% center, 44.7% center, 60.3% center, 74.3% center, 92% center, left top; background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat; }
+
+body.acoustic #gryf td:hover span, body.acoustic #gryf td.hover span { background-color: #b9c5ce; color: #000; text-shadow: 1px 1px 0 gray; box-shadow: 3px 5px 5px -2px #7d94a4; opacity: 1; }
+
+body.acoustic #gryf td.active span { background-color: #f5f7f9; color: #000; text-shadow: 1px 1px 0 gray; box-shadow: 3px 5px 5px -2px #b5c4d3; opacity: 1; }
+
+body.acoustic .akord { background-color: rgba(185, 197, 206, 0.5); box-shadow: 3px 5px 5px -2px #4d606e; }
+
+body.acoustic .akord:hover { background-color: #b9c5ce; }
+
+body.acoustic .akord.active { background-color: #f5f7f9; }
+
+body.acoustic #wyswietlacz, body.acoustic .podswietlenie { background-color: #f6f8f9; background-image: linear-gradient(to bottom, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%); color: #333; }
+
+body.acoustic .min.akordy { background-position: 0 0; }
+
+body.acoustic .screenshot { background-image: url("../images/acoustic-screenshot.jpg"); }
+
+body.les-paul #gryf { background-image: url("../images/les-paul-inlay-03.png"), url("../images/les-paul-inlay-05.png"), url("../images/les-paul-inlay-07.png"), url("../images/les-paul-inlay-09.png"), url("../images/les-paul-inlay-12.png"), url("../images/rosewood.jpg"); background-position: 27% center, 44.7% center, 60.3% center, 74.3% center, 92% center, left top; background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat; }
+
+body.les-paul #gryf td:hover span, body.les-paul #gryf td.hover span { background-color: #72aa00; color: #fff; text-shadow: 1px 1px 0 gray; box-shadow: 3px 5px 5px -2px #2e4400; opacity: 1; }
+
+body.les-paul #gryf td.active span { background-color: #9ecb2d; color: #000; text-shadow: 1px 1px 0 gray; box-shadow: 3px 5px 5px -2px #5d781a; opacity: 1; }
+
+body.les-paul .akord { background-color: rgba(114, 170, 0, 0.5); box-shadow: 3px 5px 5px -2px #2e4400; }
+
+body.les-paul .akord:hover { background-color: #72aa00; }
+
+body.les-paul .akord.active { background-color: #9ecb2d; }
+
+body.les-paul #wyswietlacz, body.les-paul .podswietlenie { background-color: #bfd255; background-image: linear-gradient(to bottom, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%); }
+
+body.les-paul .min.akordy { background-position: 0 -58px; }
+
+body.les-paul .screenshot { background-image: url("../images/les-paul-screenshot.jpg"); }
+
+body.strat #gryf { background-image: url("../images/strat-inlay.png"), url("../images/strat-inlay.png"), url("../images/strat-inlay.png"), url("../images/strat-inlay.png"), url("../images/strat-inlay.png"), url("../images/strat-inlay.png"), url("../images/maple.jpg"); background-position: 28.2% center, 45.2% center, 60% center, 73.6% center, 91.2% 32px, 91.2% 192px, left top; background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat; }
+
+body.strat #gryf td:hover span, body.strat #gryf td.hover span { background-color: #a80077; color: #fff; text-shadow: 1px 1px 0 gray; box-shadow: 3px 5px 5px -2px #42002f; opacity: 1; }
+
+body.strat #gryf td.active span { background-color: #db36a4; color: #fff; text-shadow: 1px 1px 0 gray; box-shadow: 3px 5px 5px -2px #911a69; opacity: 1; }
+
+body.strat .akord { background-color: rgba(168, 0, 119, 0.5); box-shadow: 3px 5px 5px -2px #42002f; }
+
+body.strat .akord:hover { background-color: #a80077; }
+
+body.strat .akord.active { background-color: #db36a4; }
+
+body.strat #wyswietlacz, body.strat .podswietlenie { background-color: #cb60b3; background-image: linear-gradient(to bottom, #cb60b3 0%, #c146a1 50%, #a80077 51%, #db36a4 100%); }
+
+body.strat .min.akordy { background-position: 0 -116px; }
+
+body.strat .screenshot { background-image: url("../images/strat-screenshot.jpg"); }
+
+body #gryf-wrap #gryf td.klawiatura span { background-color: yellow; color: #000; text-shadow: 1px 1px 0 gray; box-shadow: 3px 5px 5px -2px #999900; opacity: 1; }
+
+body #gryf-wrap #gryf td.power-chord span { background-color: orange; color: #fff; text-shadow: 1px 1px 0 gray; box-shadow: 3px 5px 5px -2px #996300; opacity: 1; }
+
+noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460px; margin-left: -230px; font-size: 40px; text-align: center; }
+
+#ciemne-tlo { display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.75); z-index: 20; text-align: center; }
+
+#ciemne-tlo .zamkniecie { position: absolute; width: 25px; height: 25px; padding: 2px; background: #bcbcbc; border-radius: 50%; box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.5); font-size: 17px; line-height: 25px; text-align: center; text-shadow: none; text-transform: uppercase; cursor: pointer; z-index: 1000; }
+
+#ciemne-tlo .artysta { display: none; position: relative; top: 10px; text-align: left; background-image: none; background-color: rgba(100, 100, 100, 0.2); }
+
+#ciemne-tlo .artysta.active { display: inline-block; }
+
+#ciemne-tlo .artysta .zamkniecie { top: -21px; right: -21px; }
+
+#ciemne-tlo .artysta h1 { font-size: 2em; }
+
+#ciemne-tlo .artysta .gitara { float: left; display: inline-block; position: relative; margin: 5px; background: url("../images/rebel.png"); cursor: none; }
+
+#ciemne-tlo .artysta .gitara .lupa { display: none; position: absolute; top: 0; left: 0; width: 200px; height: 200px; border: 8px solid rgba(255, 255, 255, 0.25); border-radius: 50%; background-color: #fff; background-repeat: no-repeat; pointer-events: none; z-index: 1000; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7) inset, 5px 5px 10px rgba(0, 0, 0, 0.7); }
+
+#ciemne-tlo .artysta .gitara .lupa:after { content: url("../images/lupa-blysk.png"); }
+
+#ciemne-tlo .artysta .gitara:before { content: ""; position: absolute; background-image: url("../images/podpisy.png"); background-size: 419px 484px; background-repeat: no-repeat; -webkit-transform: scale(0.75); transform: scale(0.75); }
+
+#ciemne-tlo .artysta.lennon .lupa { background-image: url("../images/acoustic-big.png"); }
+
+#ciemne-tlo .artysta.lennon .gitara:before { left: -30px; bottom: -27px; width: 175px; height: 159px; background-position: -4px -2px; }
+
+#ciemne-tlo .artysta.slash .lupa { background-image: url("../images/les-paul-big.png"); }
+
+#ciemne-tlo .artysta.slash .gitara:before { left: -31px; bottom: -36px; width: 175px; height: 220px; background-position: -241px -9px; }
+
+#ciemne-tlo .artysta.hendrix .lupa { background-image: url("../images/strat-big.png"); }
+
+#ciemne-tlo .artysta.hendrix .gitara:before { left: -39px; bottom: -19px; width: 237px; height: 77px; background-position: -2px -164px; }
+
+#ciemne-tlo .artysta .info-gitarowe { float: left; width: 446px; margin: 5px; background: url("../images/rebel.png"); }
+
+#ciemne-tlo .artysta .info-gitarowe dl { float: left; margin: 0 10px 10px 0; }
+
+#ciemne-tlo .artysta .info-gitarowe dl dt { float: left; width: 100px; margin-right: 10px; padding: 5px; font-weight: bold; }
+
+#ciemne-tlo .artysta .info-gitarowe dl dd { padding: 5px 0; width: 250px; }
+
+#ciemne-tlo .artysta .info-gitarowe article { font-size: 16px; word-spacing: 5px; }
+
+#ciemne-tlo .galeria { position: relative; float: left; overflow: hidden; margin: 5px; }
+
+#ciemne-tlo .galeria:before { content: ""; position: absolute; top: 26px; width: 100%; height: 100%; background: #000; }
+
+#ciemne-tlo .galeria .okienko { margin: 0 auto; overflow: hidden; }
+
+#ciemne-tlo .galeria .pasek { overflow: hidden; transition: height 0.7s ease; }
+
+#ciemne-tlo .galeria .pasek .slajd { position: relative; float: left; height: 400px; background-position: 0 0; background-repeat: no-repeat; box-shadow: inset 0 0 15px 5px #000; }
+
+#ciemne-tlo .galeria .pasek .slajd:before { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 50px; background-image: linear-gradient(to bottom, transparent, #000); }
+
+#ciemne-tlo .galeria .pasek .slajd .opis { position: absolute; bottom: 0; margin: 10px; color: #fff; font-size: 18px; font-weight: 100; }
+
+#ciemne-tlo .galeria:hover nav { opacity: 1; }
+
+#ciemne-tlo .galeria .loading { position: absolute; top: 23px; height: 3px; width: 0; background-image: linear-gradient(to right, transparent, #00baff); }
+
+#ciemne-tlo .galeria nav { padding-bottom: 10px; text-align: center; opacity: 1; }
+
+#ciemne-tlo .galeria nav a { display: inline-block; width: 12px; height: 12px; margin-right: 5px; background: #111; border-radius: 50%; box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2); overflow: hidden; transition: background 0.3s ease, box-shadow 0.3s ease; }
+
+#ciemne-tlo .galeria nav a:hover { box-shadow: 0 0 5px #00baff; }
+
+#ciemne-tlo .galeria nav a.active { background: #00baff; box-shadow: 0 0 5px #00baff; }
+
+#ciemne-tlo .pomoc { position: relative; top: -20%; width: 800px; margin: 0 auto; text-align: left; transition: top 0.5s cubic-bezier(0.17, 0.88, 0.32, 1.27); }
+
+#ciemne-tlo .pomoc .zamkniecie { top: -23px; right: -21px; }
+
+#ciemne-tlo .pomoc .okno { overflow: hidden; }
+
+#ciemne-tlo .pomoc .okno .slajdy { position: relative; left: 0; transition: left 0.5s ease; }
+
+#ciemne-tlo .pomoc .okno .slajdy > li { position: relative; float: left; width: 810px; height: 407px; }
+
+#ciemne-tlo .pomoc .okno .instrukcje { float: right; width: 280px; font-size: 15px; }
+
+#ciemne-tlo .pomoc .okno .instrukcje > li { padding: 5px 10px 12px 0; margin-left: 18px; }
+
+#ciemne-tlo .pomoc footer { position: relative; margin: 10px auto 2px; }
+
+#ciemne-tlo .pomoc footer nav li { position: relative; float: left; top: 0; margin-right: 5px; padding: 5px; font-size: 17px; cursor: pointer; z-index: 10; transition: top 0.25s ease; }
+
+#ciemne-tlo .pomoc footer nav li:last-child { margin: 0; }
+
+#ciemne-tlo .pomoc footer nav li:hover { top: -2px; }
+
+#ciemne-tlo .pomoc footer nav .podswietlenie { width: 0; height: 0; border-radius: 5px; position: relative; transition: width 0.5s cubic-bezier(0.17, 0.88, 0.32, 1.27), left 0.5s cubic-bezier(0.17, 0.88, 0.32, 1.27); }
+
+#ciemne-tlo.wiecej .pomoc { display: none; }
+
+#ciemne-tlo.pomoc .artysta { display: none; }
+
+#ciemne-tlo.pomoc .pomoc { top: 50%; margin-top: -230px; }
+
+.lennon .slajd:nth-child(1) { background-image: url("../images/galeria/lennon_01.jpg"); }
+
+.lennon .slajd:nth-child(2) { background-image: url("../images/galeria/lennon_02.jpg"); }
+
+.lennon .slajd:nth-child(3) { background-image: url("../images/galeria/lennon_03.jpg"); }
+
+.lennon .slajd:nth-child(4) { background-image: url("../images/galeria/lennon_04.jpg"); }
+
+.lennon .slajd:nth-child(5) { background-image: url("../images/galeria/lennon_05.jpg"); }
+
+.slash .slajd:nth-child(1) { background-image: url("../images/galeria/slash_01.jpg"); }
+
+.slash .slajd:nth-child(2) { background-image: url("../images/galeria/slash_02.jpg"); }
+
+.slash .slajd:nth-child(3) { background-image: url("../images/galeria/slash_03.jpg"); }
+
+.slash .slajd:nth-child(4) { background-image: url("../images/galeria/slash_04.jpg"); }
+
+.slash .slajd:nth-child(5) { background-image: url("../images/galeria/slash_05.jpg"); }
+
+.hendrix .slajd:nth-child(1) { background-image: url("../images/galeria/hendrix_01.jpg"); }
+
+.hendrix .slajd:nth-child(2) { background-image: url("../images/galeria/hendrix_02.jpg"); }
+
+.hendrix .slajd:nth-child(3) { background-image: url("../images/galeria/hendrix_03.jpg"); }
+
+.hendrix .slajd:nth-child(4) { background-image: url("../images/galeria/hendrix_04.jpg"); }
+
+.hendrix .slajd:nth-child(5) { background-image: url("../images/galeria/hendrix_05.jpg"); }
+
+.obrazek { position: relative; float: left; width: 520px; height: 400px; overflow: hidden; border-radius: 5px; margin-bottom: 5px; background-image: url("../images/rebel.png"); box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); }
+
+.obrazek .grafika { position: relative; top: 0; left: 0; width: 1488px; height: 613px; transition: top 0.3s ease, left 0.3s ease; }
+
+.obrazek .wskaznik { position: absolute; width: 50px; height: 50px; background: rgba(255, 0, 0, 0.5); border: 2px solid red; border-radius: 15px; opacity: 0; }
+
+.obrazek .wskaznik.active { opacity: 1; -webkit-animation: migotanie 0.8s infinite; animation: migotanie 0.8s infinite; }
+
+.obrazek .screenshot { background-repeat: no-repeat; max-width: 1488px; height: 613px; }
+
+.slajd_1 .wskaznik.wsk_1 { top: 32px; left: 45px; height: 89px; }
+
+.slajd_1 .wskaznik.wsk_2 { top: 29px; left: 1372px; height: 256px; }
+
+.slajd_1 .wskaznik.wsk_3 { top: 543px; left: 73px; width: 58px; height: 58px; }
+
+.slajd_1 .wskaznik.wsk_4 { top: 543px; left: 133px; width: 58px; height: 58px; }
+
+.slajd_1 .wskaznik.wsk_5 { top: 543px; left: 192px; width: 58px; height: 58px; }
+
+.slajd_2 .wskaznik.wsk_1 { top: 457px; left: 152px; }
+
+.slajd_2 .wskaznik.wsk_2 { top: 457px; left: 201px; }
+
+.slajd_2 .wskaznik.wsk_3 { top: 457px; left: 250px; }
+
+.slajd_2 .wskaznik.wsk_4 { top: 457px; left: 299px; }
+
+.slajd_2 .wskaznik.wsk_5 { top: 457px; left: 348px; }
+
+.slajd_2 .wskaznik.wsk_6 { top: 318px; left: 744px; width: 351px; height: 210px; }
+
+.slajd_2 .wskaznik.wsk_7 { top: 542px; left: 1418px; width: 58px; height: 58px; }
+
+.slajd_3 .wskaznik.wsk_1 { top: 318px; left: 417px; width: 330px; height: 144px; }
+
+.slajd_3 .wskaznik.wsk_2 { top: 404px; left: 562px; width: 34px; height: 34px; }
+
+.slajd_3 .wskaznik.wsk_3 { top: 100px; left: 50%; width: 468px; height: 151px; background-image: url("../images/klawiatura.png"); background-repeat: no-repeat; background-color: rgba(0, 0, 0, 0.8); border: none; border-radius: 0; box-shadow: 0 0 0 600px rgba(0, 0, 0, 0.8); -webkit-animation: none; animation: none; }
+
+.slajd_3 .wskaznik.wsk_3.active { opacity: 1; }
+
+.slajd_3 .wskaznik.wsk_3.active .klawisz { -webkit-animation: migotanie 0.8s infinite; animation: migotanie 0.8s infinite; }
+
+.slajd_3 .wskaznik.wsk_3 .klawisz { position: absolute; width: 17px; height: 17px; background: rgba(255, 0, 0, 0.6); border-radius: 2px; }
+
+.slajd_3 .wskaznik.wsk_3 .klawisz:nth-child(1) { top: 61px; left: 83px; }
+
+.slajd_3 .wskaznik.wsk_3 .klawisz:nth-child(2) { top: 81px; left: 47px; }
+
+.slajd_3 .wskaznik.wsk_3 .klawisz:nth-child(3) { top: 81px; left: 88px; }
+
+.slajd_3 .wskaznik.wsk_3 .klawisz:nth-child(4) { top: 81px; left: 108px; }
+
+.slajd_3 .wskaznik.wsk_3 .klawisz:nth-child(5) { top: 81px; left: 129px; }
+
+.slajd_3 .wskaznik.wsk_3 .klawisz:nth-child(6) { top: 101px; left: 11px; width: 43px; }
+
+.slajd_3 .wskaznik.wsk_3 .klawisz:nth-child(7) { top: 102px; left: 98px; }
+
+.slajd_3 .wskaznik.wsk_3 .klawisz:nth-child(8) { top: 102px; left: 139px; }
+
+.slajd_3 .wskaznik.wsk_4 { top: 542px; left: 1418px; width: 58px; height: 58px; }
+
+.slajd_3 .wskaznik.wsk_5 { top: 310px; left: 1069px; width: 30px; height: 30px; }
+
+.slajd_4 .wskaznik.wsk_1 { top: 318px; left: 1092px; height: 147px; width: 279px; }
+
+.slajd_4 .wskaznik.wsk_2 { top: 465px; left: 1116px; height: 43px; }
+
+.slajd_4 .wskaznik.wsk_3 { top: 465px; left: 1166px; height: 43px; }
+
+.slajd_4 .wskaznik.wsk_4 { top: 465px; left: 1216px; height: 43px; }
+
+.slajd_5 .wskaznik.wsk_1 { top: 540px; left: 3px; width: 68px; height: 58px; }
+
+.slajd_5 .wskaznik.wsk_2 { top: 317px; left: 105px; height: 201px; width: 21px; }
+
+.slajd_5 .wskaznik.wsk_3 { top: 542px; left: 1298px; width: 58px; height: 58px; }
+
+.slajd_5 .wskaznik.wsk_4 { top: 542px; left: 1357px; width: 58px; height: 58px; }
+
+.slajd_5 .wskaznik.wsk_5 { top: 542px; left: 1418px; width: 58px; height: 58px; }
+
+#strzalka { width: 30px; height: 50px; position: relative; margin: 0 auto; top: 40px; background-color: #666; -webkit-animation: strzalka 0.5s alternate infinite; animation: strzalka 0.5s alternate infinite; }
+
+#strzalka:after { content: ""; width: 0; height: 0; left: -15px; bottom: 100%; position: absolute; border: 30px solid transparent; border-bottom-color: #666; }
+
+#gitary { display: none; position: relative; margin: 0 auto; width: 813px; }
+
+#gitary:hover .gitara { opacity: 0.5; }
+
+#gitary:hover .gitara span { opacity: 0; }
+
+#gitary:hover + .info { width: 322px; height: 50px; }
+
+#gitary:hover + .info p:last-child { opacity: 1; }
+
+#gitary .gitara { position: relative; float: left; height: 644.4px; background-repeat: no-repeat; background-size: contain; cursor: pointer; }
+
+#gitary .gitara span { position: absolute; top: 0; left: 0; bottom: 0; right: 0; background-repeat: no-repeat; background-size: contain; }
+
+#gitary .gitara .podpis, #gitary .gitara .podpis .kolor { background-image: url("../images/podpisy.png"); background-size: 419px 484px; background-repeat: no-repeat; opacity: 0; }
+
+#gitary .gitara .podpis { position: absolute; z-index: 10; }
+
+#gitary .gitara .podpis.lennon { bottom: 20px; right: -12px; width: 175px; height: 159px; background-position: -4px -2px; }
+
+#gitary .gitara .podpis.lennon .kolor { width: 175px; height: 159px; background-position: -4px -244px; }
+
+#gitary .gitara .podpis.slash { bottom: 19px; right: -39px; width: 175px; height: 220px; background-position: -241px -9px; }
+
+#gitary .gitara .podpis.slash .kolor { width: 175px; height: 220px; background-position: -241px -251px; }
+
+#gitary .gitara .podpis.hendrix { bottom: 39px; right: -56px; width: 237px; height: 77px; background-position: -2px -164px; }
+
+#gitary .gitara .podpis.hendrix .kolor { width: 237px; height: 77px; background-position: -2px -406px; }
+
+#gitary .gitara .podpis:hover .kolor { opacity: 1; }
+
+#gitary .gitara:hover { opacity: 1 !important; height: 716px; }
+
+#gitary .gitara:hover span { opacity: 1 !important; }
+
+#gitary .gitara:hover .podpis { opacity: 1; }
+
+#gitary + .info { display: none; position: absolute; top: 20px; right: 20px; width: 225px; height: 19px; padding: 10px; font-size: 16px; text-align: center; overflow: hidden; transition: width 0.5s ease, height 0.5s ease; }
+
+#gitary + .info p:first-child { margin-bottom: 10px; }
+
+#gitary + .info p:last-child { width: 322px; opacity: 0; transition: opacity 0.5s ease; }
+
+#acoustic { width: 275.4px; background-image: url("../images/acoustic-blur.png"); }
+
+#acoustic:hover { width: 306px; }
+
+#acoustic span { background-image: url("../images/acoustic.png"); }
+
+#les-paul { width: 245.7px; background-image: url("../images/les-paul-blur.png"); }
+
+#les-paul:hover { width: 273px; }
+
+#les-paul span { background-image: url("../images/les-paul.png"); }
+
+#strat { width: 234px; background-image: url("../images/strat-blur.png"); }
+
+#strat:hover { width: 260px; }
+
+#strat span { background-image: url("../images/strat.png"); }
+
+#gryf-wrap { display: none; overflow: hidden; height: 100%; }
+
+#gryf { margin: 10px auto; border-image-source: url("../images/amp-border.png"); border-image-slice: 31 30 33 30; border-image-width: 31px 30px 33px 30px; border-image-repeat: repeat; border-width: 31px 30px 33px 30px; }
+
+#gryf.ukryte td p { opacity: 0; }
+
+#gryf td { position: relative; height: 40px; text-transform: uppercase; cursor: pointer; }
+
+#gryf td:nth-child(1) { width: 50px; }
+
+#gryf td:nth-child(2) { width: 139px; }
+
+#gryf td:nth-child(3) { width: 137px; }
+
+#gryf td:nth-child(4) { width: 124px; }
+
+#gryf td:nth-child(5) { width: 117px; }
+
+#gryf td:nth-child(6) { width: 110px; }
+
+#gryf td:nth-child(7) { width: 104px; }
+
+#gryf td:nth-child(8) { width: 98px; }
+
+#gryf td:nth-child(9) { width: 93px; }
+
+#gryf td:nth-child(10) { width: 88px; }
+
+#gryf td:nth-child(11) { width: 83px; }
+
+#gryf td:nth-child(12) { width: 78px; }
+
+#gryf td:nth-child(13) { width: 74px; }
+
+#gryf td:hover p, #gryf td.hover p, #gryf td.active p { opacity: 1; }
+
+#gryf td.strum { width: 100px; min-width: 50px; }
+
+#gryf td span { display: block; width: 17px; height: 17px; margin: 0 auto; padding: 9px; background-image: url("../images/progi.png"); background-repeat: no-repeat; border-radius: 50%; opacity: 0; }
+
+#gryf td.blysk span { box-shadow: 0px 0 10px 5px #fff !important; opacity: 1; }
+
+#gryf td p { position: absolute; top: 28%; left: 50%; margin-left: -5px; }
+
+#gryf div { position: relative; }
+
+#gryf div p { top: -24px; }
+
+#gryf tr:nth-child(-n+3) td { /* Struny treble i środki progów */ background-image: url("../images/struna-treble.png"), url("../images/prog.png"); background-repeat: repeat-x, repeat-y; background-position: left center, left top; }
+
+#gryf tr:nth-child(-n+3) td:nth-child(1) { /* Usunięcie pierwszych dwóch progów dla strun treble */ background-image: url("../images/struna-treble.png"), url("../images/rebel.png"); background-repeat: repeat-x, repeat; background-position: left center, left 4px; }
+
+#gryf tr:nth-child(-n+3) td:nth-child(2) { /* Ustawienie progu zerowego */ background-image: url("../images/struna-treble.png"), url("../images/nut.png"); background-repeat: repeat-x, repeat-y; background-position: left center, left top; }
+
+#gryf tr:nth-child(n+4) td { /* Struny basowe i środki progów */ background-image: url("../images/struna-bass.png"), url("../images/prog.png"); background-repeat: repeat-x, repeat-y; background-position: left center, left top; }
+
+#gryf tr:nth-child(n+4) td:nth-child(1) { /* Usunięcie pierwszych dwóch progów dla strun basowych */ background-image: url("../images/struna-bass.png"), url("../images/rebel.png"); background-repeat: repeat-x, repeat; background-position: left center, left 4px; }
+
+#gryf tr:nth-child(n+4) td:nth-child(2) { /* Ustawienie progu zerowego */ background-image: url("../images/struna-bass.png"), url("../images/nut.png"); background-repeat: repeat-x, repeat-y; background-position: left center, left top; }
+
+#gryf tr:nth-child(1) td:nth-child(n+3) { /* Górne koncówki progów */ background-image: url("../images/struna-treble.png"), url("../images/prog-gora.png"), url("../images/prog.png"); background-repeat: repeat-x, no-repeat, repeat-y; background-position: left center, left top, left top; }
+
+#gryf tr:nth-child(6) td:nth-child(n+3) { /* Dolne koncówki progów */ background-image: url("../images/struna-bass.png"), url("../images/prog-dol.png"), url("../images/prog.png"); background-repeat: repeat-x, no-repeat, repeat-y; background-position: left center, left bottom, left top; }
+
+#panel-glowny { max-width: 1295px; margin: 0 auto; }
+
+#panel-glowny > .wrap { float: left; width: 273px; margin: 0 10px 10px 0; }
+
+#panel-glowny .minimalizuj { position: absolute; overflow: hidden; top: -21px; left: 100%; width: 18px; height: 18px; border: none; border-radius: 9px; text-align: center; text-shadow: none; opacity: 0; z-index: 10; transition: width 0.5s ease, opacity 0.3s ease; }
+
+#panel-glowny .minimalizuj .znak { opacity: 1; position: relative; font-size: 24px; line-height: 13px; left: -1px; transition: opacity 0.3s ease; }
+
+#panel-glowny .minimalizuj .tekst { position: absolute; left: 15px; opacity: 0; transition: left 0.5s ease, opacity 0.3s ease; }
+
+#panel-glowny .minimalizuj:hover { width: 85px; transition: width 0.5s ease 1s; }
+
+#panel-glowny .minimalizuj:hover .znak { opacity: 0; transition: opacity 0.3s ease 1s; }
+
+#panel-glowny .minimalizuj:hover .tekst { left: 9px; opacity: 1; transition: left 0.5s ease 1s, opacity 0.3s ease 1s; }
+
+#glosnosc { position: relative; float: left; width: 40px; margin-right: 5px; }
+
+#poziom-glosnosci { position: absolute; left: -18px; width: 27px; height: 19px; border-radius: 6px; font-size: 12px; line-height: 19px; text-align: center; opacity: 0; }
+
+#poziom-glosnosci.active { opacity: 1; }
+
+#suwak { width: 8px; height: 196px; margin: 0 auto; background: #000; border: none; }
+
+#suwak a { display: none; }
+
+#suwak div { border-radius: 6px; background-color: #32d8ff; background-image: linear-gradient(to bottom, #32d8ff 0%, #006cea 100%); box-shadow: 0 0 30px 1px #006cea; }
+
+#wyswietlacz { float: left; width: 252px; padding: 10px; margin-bottom: 10px; border-radius: 10px; font: 16px "digital_dreamregular", Arial, sans-serif; text-align: center; text-shadow: 2px 2px 1px #000; }
+
+#wyswietlacz .akord-info { font-size: 50px; line-height: 50px; margin: 5px 0 12px 0; }
+
+#wyswietlacz .glowne-info { height: 25px; font-size: 10px; text-shadow: 1px 1px 5px #000; }
+
+.title { font-size: 14px; position: absolute; padding: 2px 7px; border-radius: 5px; color: #fff; text-shadow: 1px 1px 0 #000; white-space: nowrap; z-index: 10; opacity: 0; pointer-events: none; transition: opacity 0.5s ease, top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+#panel-nagrywania { float: left; }
+
+#panel-nagrywania .nagrywanie.active div { color: red; text-shadow: 0 0 5px red; }
+
+#panel-nagrywania .play div { padding-top: 0; }
+
+#panel-nagrywania .play div:before { font-size: 30px; }
+
+#panel-nagrywania .play .fa-play { margin-left: 4px; }
+
+#panel-nagrywania .play.stop div { color: orange; text-shadow: 0 0 5px orange; }
+
+#panel-nagrywania .play.stop div:before { content: "#"; }
+
+#panel-nagrywania .usunOstatnie div, #panel-nagrywania .usunPamiec div { padding-top: 6px; }
+
+#panel-nagrywania .usunOstatnie div:before, #panel-nagrywania .usunPamiec div:before { font-size: 21px; }
+
+#akordy { position: relative; float: left; margin: 0 10px 10px 0; }
+
+#akordy .wrap { max-width: 310px; max-height: 168px; }
+
+#akordy .wrap.mCS_destroyed { max-width: 280px; }
+
+#akordy .akord { float: left; width: 50px; height: 40px; margin: 3px 6px 3px 0; padding-top: 10px; line-height: 16px; text-align: center; background-image: url("../images/akordy.png"); background-repeat: no-repeat; border-radius: 5px; cursor: pointer; }
+
+#akordy .akord:nth-child(5n+1) { clear: left; }
+
+#akordy .akord.klawiatura { background-color: yellow; box-shadow: 3px 5px 5px -2px #999900; }
+
+#akordy .akord.power-chord { background-color: orange; box-shadow: 3px 5px 5px -2px #996300; }
+
+#akordy .akord.ui-draggable-dragging { z-index: 9999; }
+
+#akordy .akord.migotanie { -webkit-animation: migotanie-2 0.4s linear 4 alternate; animation: migotanie-2 0.4s linear 4 alternate; }
+
+#akordy.bin .akord { cursor: url("../images/kosz-kursor.png"), auto; }
+
+#akordy .dodajAkord { width: 50px; height: 50px; color: silver; font-size: 45px; line-height: 50px; text-align: center; text-shadow: 2px 2px 3px #000; float: left; margin: 3px 0; cursor: pointer; opacity: 0.3; }
+
+#akordy .dodajAkord:hover { opacity: 1; }
+
+.ui-draggable-helper-akordy { width: 50px; height: 40px; padding-top: 10px; line-height: 16px; text-align: center; list-style: none; background-image: url("../images/akordy.png"); background-repeat: no-repeat; border-radius: 5px; cursor: pointer; }
+
+#nagrania { max-width: 230px; margin: 0 10px 10px 0; padding-right: 80px; float: left; position: relative; }
+
+#nagrania.overflow { max-width: 217px; padding-right: 35px; }
+
+#nagrania.overflow .nagranie { top: -20px; left: -30px; margin: 0 -95px -38px 0; -webkit-transform: scale(0.5); transform: scale(0.5); }
+
+#nagrania .nagranie { float: left; position: relative; margin: 0 -80px 5px 0; }
+
+#nagrania .nagranie:not([disabled="disabled"]):hover .kaseta { top: -35px; left: -35px; -webkit-transform: rotate(10deg); transform: rotate(10deg); }
+
+#nagrania .nagranie.active, #nagrania .nagranie.active:hover { z-index: 9; }
+
+#nagrania .nagranie.active .kaseta, #nagrania .nagranie.active:hover .kaseta { top: -10px; left: 0; -webkit-transform: scale(1.2); transform: scale(1.2); }
+
+#nagrania .nagranie.ui-draggable-dragging { z-index: 9999; }
+
+#nagrania .nagranie .kaseta { position: relative; top: 0; left: 0; width: 126px; height: 80px; border-radius: 4px; box-shadow: 2px 5px 15px #000; cursor: pointer; }
+
+#nagrania .nagranie .kaseta .kolor { position: relative; top: 6px; left: 7px; width: 111px; height: 52px; border-radius: 4px; }
+
+#nagrania .nagranie .kaseta .kolor:after { content: url("../images/kaseta.png"); position: absolute; top: -6px; left: -7px; }
+
+#nagrania .nagranie .kaseta .tytul { position: absolute; top: 12px; left: 13px; width: 100px; font: 10px "Shadows Into Light Two", cursive; color: #000; font-weight: bold; white-space: nowrap; text-shadow: none; overflow: hidden; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+
+#nagrania .nagranie .kaseta .tytul:before { content: ""; position: absolute; top: 0; right: 0; width: 10%; height: 100%; background-image: linear-gradient(to right, transparent, #fff); }
+
+#nagrania .nagranie[disabled="disabled"] { opacity: 1; }
+
+#nagrania .nagranie[disabled="disabled"] .kaseta:after { content: ""; position: absolute; background: rgba(0, 0, 0, 0.8); top: 0; right: 0; bottom: 0; left: 0; }
+
+#nagrania.bin .kaseta { cursor: url("../images/kosz-kursor.png"), auto; }
+
+#tabulatura { position: relative; float: left; margin: 0 10px 10px 0; padding: 5px 5px 0; }
+
+#tabulatura .aktualna-pozycja.znak { background-color: rgba(0, 0, 0, 0.1); border-radius: 5px; }
+
+#tabulatura .wskazniki { position: relative; margin-bottom: 7px; padding: 5px; background: #eee; font-size: 10px; font-family: monospace; color: #000; text-shadow: none; box-shadow: 2px 5px 15px #000; background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 0%, rgba(255, 255, 255, 0.05) 33%, rgba(0, 0, 0, 0.05) 33%, rgba(255, 255, 255, 0.05) 67%, rgba(0, 0, 0, 0.05) 67%, rgba(255, 255, 255, 0.025) 100%); transition: -webkit-transform 0.3s ease; transition: transform 0.3s ease; }
+
+#tabulatura .wskazniki.obrot { font-size: 13px; -webkit-transform: rotate(-2deg); transform: rotate(-2deg); }
+
+#tabulatura .wskazniki li { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+
+#tabulatura .wskazniki:before { content: ""; background: url("../images/pin.png") no-repeat top left; background-size: contain; width: 40px; height: 40px; position: absolute; top: -13px; left: 35%; left: calc(50% - 20px); }
+
+#panel-dolny { position: absolute; bottom: 15px; height: 50px; width: 99%; }
+
+#panel-dolny .wrapper { position: relative; margin-right: 10px; }
+
+#panel-dolny .wrapper.lewy { float: left; }
+
+#panel-dolny .wrapper.lewy .title { left: 0; }
+
+#panel-dolny .wrapper.prawy { float: right; }
+
+#panel-dolny .wrapper.prawy .title { right: 0; }
+
+#panel-dolny .wrapper:hover .title { top: -30px; opacity: 1; transition: opacity 0.5s ease 1.5s, top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.5s; }
+
+#panel-dolny button { position: relative; bottom: 0; width: 50px; height: 50px; background-color: transparent; background-image: url("../images/panel-dolny-sprite.png"); background-repeat: no-repeat; border: none; opacity: 0.15; }
+
+#panel-dolny button:hover { bottom: 4px; opacity: 1; }
+
+#panel-dolny button.active { opacity: 1; }
+
+#panel-dolny button.min { display: none; margin: 0 auto; background-image: url("../images/sprite.png"); background-repeat: no-repeat; opacity: 1; transition: bottom 0.3s ease; }
+
+#panel-dolny button.min.akordy { width: 93px; height: 57px; }
+
+#panel-dolny button.min.nagrania { background-position: 0 -174px; width: 99px; height: 58px; }
+
+#panel-dolny button.min.tabulatura { background-position: 0 -233px; width: 77px; height: 57px; }
+
+#panel-dolny .title { top: -50px; }
+
+#panel-dolny .pomoc { width: 50px; height: 50px; border-radius: 50%; background: #bcbcbc; }
+
+#panel-dolny .pomoc span { font-size: 40px; line-height: 45px; text-shadow: 2px 2px 3px #000; }
+
+#panel-dolny .pomoc.migotanie { -webkit-animation: migotanie-pomoc 1s ease 2s 7; animation: migotanie-pomoc 1s ease 2s 7; }
+
+#panel-dolny .powrot { width: 57px; background-position: 0 0; }
+
+#panel-dolny .wyczysc { background-position: -68px 0; }
+
+#panel-dolny .oznaczenia { background-position: -128px 0; }
+
+#panel-dolny .wyciszGryf { background-position: -188px 0; }
+
+#panel-dolny .usunLocal { background-position: -247px 0; }
+
+#panel-dolny .kosz { background: url("../images/kosz.png") no-repeat; background-size: contain; }
+
+#panel-dolny .kosz.active { bottom: 4px; }
+
+#panel-dolny .kosz.usuwanie { -webkit-animation: bujanie 0.7s; animation: bujanie 0.7s; }
+
+#panel-dolny .kosz.dragged { width: 100px; height: 100px; top: -50px; opacity: 1; }
+
+#panel-dolny .swiatelko { position: absolute; top: 41px; bottom: 0; width: 78px; height: 24px; background: url("../images/swiatelko.png") no-repeat center bottom; opacity: 0; }
+
+#panel-dolny .swiatelko.active { opacity: 1; }
+
+/* KOMPATYBILNOŚĆ */
+.firefox #panel-nagrywania button { margin-right: 1px; padding: 5px; }
+
+.firefox #tabulatura .panel button { padding: 5px; }
+
+.firefox #panel-glowny .minimalizuj .znak { left: 0px; }
+
+.opera #panel-glowny .minimalizuj .znak { left: -3px; }
+
+.pointerevents #ciemne-tlo .gitara:hover .lupa { display: block; }
+
+.no-pointerevents #ciemne-tlo .ekran { position: absolute; top: 0; right: 0; bottom: 0; left: 0; cursor: none; z-index: 2000; }
+
+.no-pointerevents #ciemne-tlo .ekran:hover ~ .lupa { display: block; }
+
+.no-borderimage .galeria, .no-borderimage #panel-nagrywania, .no-borderimage #akordy, .no-borderimage #nagrania, .no-borderimage #ciemne-tlo .pomoc, .no-borderimage #tabulatura, .no-borderimage .artysta dl { border: none; padding: 14px; background: url("../images/border/lewy-gora.png") top left no-repeat, url("../images/border/prawy-gora.png") top right no-repeat, url("../images/border/lewy-dol.png") bottom left no-repeat, url("../images/border/prawy-dol.png") bottom right no-repeat, url("../images/border/pionowy.png") left repeat-y, url("../images/border/pionowy.png") right repeat-y, url("../images/border/poziomy.png") top repeat-x, url("../images/border/poziomy.png") bottom repeat-x, url("../images/leather.jpg"); }
+
+.no-borderimage #gryf-wrap .border-image { display: table; margin: 10px auto; padding: 31px 32px 35px; background: url("../images/amp/lewy-gora.png") top left no-repeat, url("../images/amp/prawy-gora.png") top right no-repeat, url("../images/amp/lewy-dol.png") bottom left no-repeat, url("../images/amp/prawy-dol.png") bottom right no-repeat, url("../images/amp/lewy.png") left repeat-y, url("../images/amp/prawy.png") right repeat-y, url("../images/amp/gora.png") top repeat-x, url("../images/amp/dol.png") bottom repeat-x, url("../images/rebel.png"); }
+
+.no-borderimage #ciemne-tlo .artysta { border: none; padding: 14px; }
+
+.no-borderimage #ciemne-tlo .artysta .gitara, .no-borderimage #ciemne-tlo .artysta .info-gitarowe { border: none; padding: 14px; background: url("../images/border2/lewy-gora.png") top left no-repeat, url("../images/border2/prawy-gora.png") top right no-repeat, url("../images/border2/lewy-dol.png") bottom left no-repeat, url("../images/border2/prawy-dol.png") bottom right no-repeat, url("../images/border2/pionowy.png") left repeat-y, url("../images/border2/pionowy.png") right repeat-y, url("../images/border2/poziomy.png") top repeat-x, url("../images/border2/poziomy.png") bottom repeat-x, url("../images/rebel.png"); }
+
+.no-borderimage #ciemne-tlo .artysta .gitara:before { -webkit-transform: translate(14px, -14px) scale(0.75); transform: translate(14px, -14px) scale(0.75); }
+
+.no-borderimage #ciemne-tlo .galeria .loading { top: 37px; }
+
+.no-borderimage #ciemne-tlo .galeria:before { top: 40px; left: 14px; bottom: 14px; right: 14px; height: auto; width: auto; }
+
+.no-borderimage #gryf { border: none; margin: 0; }
+
+.no-borderimage #nagrania { padding-right: 96px; }
+
+.no-borderimage #nagrania.overflow { padding-right: 50px; }
+
+.no-borderimage #panel-nagrywania .play div { padding-top: 3px; }
+
+.no-borderimage #panel-nagrywania .nagrywanie div { padding-top: 5px; }
+
+.no-borderimage #panel-glowny .minimalizuj { top: -10px; left: 100%; margin-left: -9px; }
+
+.no-borderimage #panel-glowny .minimalizuj .znak { left: -3px; }
+
+.no-borderimage #ciemne-tlo .zamkniecie { top: -11px; right: -11px; }
+
+.no-borderimage #ciemne-tlo .pomoc .zamkniecie { top: -10px; right: -7px; }
+
+/* MEDIA QUERIES */
+@media only screen and (max-height: 800px) { #gitary { -webkit-transform: scale(0.9); transform: scale(0.9); } }
+
+@media only screen and (max-width: 1280px) { body.acoustic #gryf { background-position: 7% center, 26% center, 43% center, 58.5% center, 73% center, 91.5% center, left top; }
+  body.les-paul #gryf { background-position: 27% center, 44% center, 59% center, 73% center, 91.5% center, left top; }
+  body.strat #gryf { background-position: 27% center, 43.7% center, 58.7% center, 72.6% center, 91.2% 32px, 91.2% 192px, left top; } }
+
+@media only screen and (max-width: 1024px) { body.acoustic #gryf { background-position: 7% center, 25.7% center, 42.6% center, 58% center, 72.2% center, 91% center, left top; }
+  body.les-paul #gryf { background-position: 26% center, 42.5% center, 58% center, 72% center, 91% center, left top; }
+  body.strat #gryf { background-position: 27% center, 43% center, 58% center, 72% center, 91% 32px, 91% 192px, left top; } }
+
+@media only screen and (max-width: 950px) { #gryf td:nth-child(13), #gryf td:nth-child(12), #gryf td:nth-child(11) { display: none; }
+  body.acoustic #gryf { background-position: 9% center, 32% center, 53% center, 71.5% center, 89% center, 200% center, left top; }
+  body.les-paul #gryf { background-position: 32% center, 53% center, 71.5% center, 89% center, 200% center, left top; }
+  body.strat #gryf { background-position: 33% center, 53% center, 71% center, 88% center, 200% center, 200% center, left top; } }
+
+@media only screen and (max-width: 600px) { #gryf td:nth-child(10), #gryf td:nth-child(9), #gryf td:nth-child(8) { display: none; }
+  body.acoustic #gryf { background-position: 13% center, 43% center, 71% center, 200% center, 200% center, 200% center, left top; }
+  body.les-paul #gryf { background-position: 43% center, 71% center, 200% center, 200% center, 200% center, left top; }
+  body.strat #gryf { background-position: 44% center, 70% center, 200% center, 200% center, 200% center, 200% center, left top; } }

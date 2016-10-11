@@ -1,0 +1,429 @@
+/*-------------------- RESET --------------------*/
+html, body, div, span, h1, h2, h3, p, a, img, ul, li, form, figure, figcaption, footer, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit; }
+
+/* HTML5 display-role reset for older browsers */
+figcaption, figure, footer, header, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ul {
+  list-style: none; }
+
+.cf:before, .cf:after {
+  content: "";
+  display: table; }
+.cf:after {
+  clear: both; }
+
+/*-------------------- FONTS --------------------*/
+@font-face {
+  font-family: 'OpenSansSemibold';
+  src: url('../fonts/OpenSans-Semibold-webfont.eot');
+  src: url('../fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-Semibold-webfont.woff') format('woff'), url('../fonts/OpenSans-Semibold-webfont.ttf') format('truetype'), url('../fonts/OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'KomikaTitle-PaintRegular';
+  src: url('../fonts/KomikaTitle-Paint-webfont.eot');
+  src: url('../fonts/KomikaTitle-Paint-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/KomikaTitle-Paint-webfont.woff') format('woff'), url('../fonts/KomikaTitle-Paint-webfont.ttf') format('truetype'), url('../fonts/KomikaTitle-Paint-webfont.svg#KomikaTitle-PaintRegular') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'DigitaldreamFatRegular';
+  src: url('../fonts/DIGITALDREAMFAT-webfont.eot');
+  src: url('../fonts/DIGITALDREAMFAT-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/DIGITALDREAMFAT-webfont.woff') format('woff'), url('../fonts/DIGITALDREAMFAT-webfont.ttf') format('truetype'), url('../fonts/DIGITALDREAMFAT-webfont.svg#DigitaldreamFatRegular') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+/*----------------- MAIN STYLES -----------------*/
+body {
+  font-family: OpenSansSemibold, sans-serif;
+  font-size: 18px;
+  color: #fefefe;
+  background-color: #80c1d6; }
+
+h2 {
+  font-family: KomikaTitle-PaintRegular, sans-serif;
+  font-size: 40px;
+  text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2); }
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  clear: both; }
+
+.content {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden; }
+
+section {
+  padding: 25px 0; }
+
+.stripes {
+  position: relative;
+  margin: 0 0 25px 5px; }
+  .stripes:after {
+    content: "";
+    background: url(../images/border.png) repeat-x;
+    position: absolute;
+    height: 40px;
+    margin-left: 25px;
+    width: 100%; }
+
+#prizes .stripes:after {
+  margin-left: 34px; }
+
+#contestant .stripes:after {
+  margin-left: 36px; }
+
+#top, #obstacles, #prizes, #contestant {
+  width: 100%;
+  border: 7px solid rgba(0, 0, 0, 0.06);
+  border-left: 0;
+  border-right: 0; }
+
+#top {
+  border-top: none; }
+
+#contestant {
+  border-bottom: none; }
+
+/*--------------------- NAV ---------------------*/
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(15, 40, 48, 0.05);
+  z-index: 100; }
+  nav .content {
+    padding: 0; }
+  nav ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around; }
+  nav a {
+    padding: 0.8em 0;
+    font-size: 0.7em;
+    color: #fefefe;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block; }
+
+/*--------------------- TOP ---------------------*/
+#top {
+  background-image: url(../images/blue_texture.png), url(../images/splash_bg.png);
+  background-repeat: repeat, no-repeat;
+  background-position: top left, center -90px;
+  background-size: auto, cover;
+  text-align: center; }
+  #top h1 {
+    padding: 3px; }
+    #top h1 img {
+      width: 100%;
+      max-width: 487px; }
+  #top h2 {
+    margin-top: 17px;
+    font-size: 2.8em;
+    color: #fe6537;
+    text-shadow: 3px 3px 0 #f2f2f2; }
+  #top p {
+    margin: 15px 0 10px;
+    font-size: 1.25em; }
+
+/*------------------ OBSTACLES ------------------*/
+#obstacles {
+  background: #fe6638 url(../images/orange_texture.png) repeat; }
+  #obstacles .obstacle-list {
+    padding: 10px; }
+    #obstacles .obstacle-list figure {
+      position: relative;
+      display: block;
+      float: left;
+      box-sizing: border-box;
+      background: #80b238 url(../images/green_texture.png) repeat;
+      border-radius: 10px;
+      width: calc(50% - 10px);
+      padding: 2px;
+      margin: 5px; }
+      #obstacles .obstacle-list figure img {
+        display: block;
+        width: 100%;
+        max-width: 460px;
+        margin-bottom: 10px; }
+      #obstacles .obstacle-list figure figcaption {
+        width: 95%;
+        position: absolute;
+        bottom: 10px;
+        font-size: 0.9em;
+        font-family: KomikaTitle-PaintRegular, sans-serif;
+        text-align: center; }
+  #obstacles .obstacle-viewer {
+    width: 55%;
+    display: none;
+    float: right; }
+    #obstacles .obstacle-viewer img {
+      width: 100%;
+      margin: 20px 0 0 10px; }
+    #obstacles .obstacle-viewer p {
+      height: 136px;
+      padding-top: 70px;
+      background: url(../images/splash.png) no-repeat center;
+      font-family: KomikaTitle-PaintRegular, sans-serif;
+      font-size: 40px;
+      text-align: center;
+      text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+      -webkit-transform: rotate(-8deg);
+          -ms-transform: rotate(-8deg);
+              transform: rotate(-8deg); }
+      #obstacles .obstacle-viewer p span {
+        font-size: 21px;
+        text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2); }
+
+/*------------------- PRIZES --------------------*/
+#prizes {
+  background: url(../images/green_texture.png) repeat;
+  background-color: #80b238; }
+  #prizes .wrap {
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1; }
+  #prizes figure {
+    display: block;
+    text-align: center;
+    margin: 10px 10px 30px; }
+    #prizes figure img {
+      width: 100%; }
+      #prizes figure img[alt="Space Camp"] {
+        max-width: 354px; }
+      #prizes figure img[alt="Keyboard"] {
+        max-width: 392px; }
+      #prizes figure img[alt="Skateboard"] {
+        max-width: 394px; }
+      #prizes figure img[alt="TV-VCR"] {
+        max-width: 333px; }
+    #prizes figure figcaption {
+      margin-top: 20px;
+      padding-bottom: 10px;
+      font-family: KomikaTitle-PaintRegular, sans-serif;
+      font-size: 1.25em; }
+
+/*--------------- BE A CONTESTANT ---------------*/
+#contestant {
+  background: url(../images/blue_texture.png) repeat; }
+  #contestant form {
+    padding: 5px 5px 50px; }
+    #contestant form li {
+      position: relative;
+      margin-bottom: 15px; }
+    #contestant form input, #contestant form select, #contestant form select + span {
+      height: 50px;
+      width: calc(100% - 15px);
+      background: #fe6336 url(../images/orange_texture.png) repeat left top;
+      border: none;
+      font: 0.9em KomikaTitle-PaintRegular, sans-serif;
+      color: #fff;
+      padding-left: 15px;
+      border-radius: 5px; }
+    #contestant form input::-webkit-input-placeholder {
+      color: #fff; }
+    #contestant form input::-moz-placeholder {
+      color: #fff;
+      opacity: 1; }
+    #contestant form input:-moz-placeholder {
+      color: #fff;
+      opacity: 1; }
+    #contestant form input:-ms-input-placeholder {
+      color: #fff; }
+    #contestant form select {
+      position: relative;
+      width: 100%;
+      opacity: 0;
+      z-index: 10; }
+      #contestant form select + span {
+        position: absolute;
+        left: 0;
+        line-height: 50px;
+        background-color: #fe6336;
+        background-image: url(../images/arrow.png), url(../images/orange_texture.png);
+        background-repeat: no-repeat, repeat;
+        background-position: right center, left top;
+        z-index: 1; }
+    #contestant form .submit-button {
+      display: block;
+      width: 225px;
+      height: 155px;
+      margin: 5px auto 45px;
+      background: none; }
+
+#timer {
+  display: none;
+  float: right;
+  margin-right: 5px;
+  text-align: center; }
+  #timer #counter {
+    width: 386px;
+    height: 329px;
+    background: url(../images/counter.png) no-repeat; }
+    #timer #counter p {
+      font: 140px/329px DigitaldreamFatRegular, monospace;
+      color: #f5eb00;
+      text-shadow: 11px 11px 0 #000; }
+    #timer #counter + p {
+      margin-top: 15px;
+      font: 40px/50px KomikaTitle-PaintRegular, sans-serif;
+      font-size: 40px;
+      text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2); }
+
+/*------------------- FOOTER --------------------*/
+footer {
+  border: 7px solid rgba(0, 0, 0, 0.06);
+  border-left: 0;
+  border-right: 0;
+  clear: both;
+  text-align: center; }
+  footer img {
+    margin: -47px 0 20px; }
+  footer div {
+    margin: 0 auto; }
+  footer p {
+    font-size: 14px;
+    margin: 15px 10px;
+    line-height: 18px; }
+  footer + p {
+    margin: 25px 0;
+    font-size: 14px;
+    text-align: center; }
+  footer ~ img {
+    display: block;
+    margin: 0 auto; }
+
+/*---------------- MEDIA QUERIES ----------------*/
+@media (min-width: 640px) {
+  section {
+    padding: 30px 0 25px; }
+
+  nav a {
+    font-size: 1em;
+    padding: 0.5em 0; }
+
+  #top {
+    background-position: top left, center -150px; }
+    #top h2 {
+      margin-top: 45px;
+      font-size: 3em; }
+
+  #obstacles .obstacle-list figure {
+    width: calc(33.3% - 10px); }
+    #obstacles .obstacle-list figure figcaption {
+      font-size: 1.2em; }
+
+  #prizes .wrap {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2; }
+
+  #contestant form {
+    display: table;
+    margin: 0 auto 50px; }
+    #contestant form li:nth-child(5) {
+      overflow: auto; }
+    #contestant form input {
+      width: 380px; }
+    #contestant form select {
+      float: left; }
+      #contestant form select[name="team-color"] {
+        width: 225px;
+        margin-right: 15px; }
+        #contestant form select[name="team-color"] + span {
+          width: 210px; }
+      #contestant form select[name="gender"] {
+        width: 155px; }
+        #contestant form select[name="gender"] + span {
+          width: 140px; }
+
+  footer div {
+    width: 650px; }
+    footer div:nth-of-type(2) {
+      width: 340px; }
+  footer p {
+    float: left;
+    font-size: 14px;
+    margin: 15px 10px 35px;
+    line-height: 18px; }
+    footer p:nth-of-type(odd) {
+      text-align: right; }
+    footer p:nth-of-type(even) {
+      text-align: left; }
+  footer + p {
+    margin: 25px 0;
+    font-size: 14px;
+    text-align: center; }
+ }
+
+@media (min-width: 850px) {
+  section {
+    padding: 35px 0 25px; }
+
+  .content {
+    max-width: 1000px; }
+
+  .stripes {
+    margin-bottom: 40px; }
+
+  #top {
+    background-position: top left, center -200px; }
+
+  nav ul {
+    padding: 0 60px; }
+  nav a {
+    font-size: 1.1em;
+    padding: 0.5em 0; }
+
+  #timer {
+    display: block; }
+
+  #obstacles .obstacle-list {
+    float: left;
+    width: 45%;
+    padding: 0; }
+    #obstacles .obstacle-list figure {
+      width: calc(50% - 10px);
+      cursor: pointer; }
+      #obstacles .obstacle-list figure img {
+        margin-bottom: 15px; }
+      #obstacles .obstacle-list figure figcaption {
+        margin: 0;
+        font-family: KomikaTitle-PaintRegular, sans-serif;
+        font-size: 1em;
+        text-align: center; }
+      #obstacles .obstacle-list figure.active, #obstacles .obstacle-list figure:hover {
+        background: #eef13f url(../images/yellow_texture.png) repeat; }
+        #obstacles .obstacle-list figure.active figcaption, #obstacles .obstacle-list figure:hover figcaption {
+          color: #f46034; }
+  #obstacles .obstacle-viewer {
+    display: block; }
+
+  #prizes img {
+    width: initial; }
+
+  #contestant form {
+    float: left;
+    margin-bottom: 100px; }
+ }

@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+body {
+	background-image: url(../images/tlo.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-color: #ebe8e1;
+	font: 14px Tahoma, Geneva, sans-serif;
+}
+
+#page-wrap {
+	background-image: url(../images/tlo-ie.png);
+	background-repeat: repeat;
+}
+
+#page-wrap .IE {
+	background-image: url(../images/plama-logo.png);
+	background-repeat: no-repeat;
+}
+
+#nav ul {
+	text-indent: -9999px;
+}
+
+#nav ul li {
+	float: left;
+	margin-right: 25px;
+}
+
+#nav ul span {
+	display: none;
+}
+
+#li1 a {
+	background-position: 0 -3px;
+	width: 114px;
+}
+
+#li2 a {
+	background-position: -128px -3px;
+	width: 115px;
+}
+
+#li3 a {
+	background-position: -283px -3px;
+	width: 152px;
+}
+
+#li4 a {
+	background-position: -473px -3px;
+	width: 199px;
+}
+
+#li5 a {
+	background-position: -692px -3px;
+	width: 144px;
+}
+
+#li1 a:hover {
+	background-position: 0 -58px;
+}
+
+#li2 a:hover {
+	background-position: -128px -58px;
+}
+
+#li3 a:hover {
+	background-position: -283px -58px;
+}
+
+#li4 a:hover {
+	background-position: -473px -58px;
+}
+
+#li5 a:hover {
+	background-position: -692px -58px;
+}
+
+#li1 a.active {
+	background-position: 0 -113px;
+}
+
+#li2 a.active {
+	background-position: -128px -113px;
+}
+
+#li3 a.active {
+	background-position: -283px -113px;
+}
+
+#li4 a.active {
+	background-position: -473px -113px;
+}
+
+#li5 a.active {
+	background-position: -692px -113px;
+}
+
+#oferta .pakiety {
+	width: 440px;
+}
+
+#links .IE {
+	border-right: none;
+}

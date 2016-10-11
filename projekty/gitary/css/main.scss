@@ -1,0 +1,1280 @@
+$jimi-kolor-jasny: #db36a4;
+$jimi-kolor-ciemny: #a80077;
+$slash-kolor-jasny: #9ecb2d;
+$slash-kolor-ciemny: #72aa00;
+$lennon-kolor-jasny: #f5f7f9;
+$lennon-kolor-ciemny: darken(#d7dee3, 10);
+$gitara-pomniejszenie: 0.9;
+
+@mixin znaczniki($tekst, $kolor) {
+	background-color: $kolor;
+	color: $tekst;
+	text-shadow: 1px 1px 0 gray;
+	box-shadow: 3px 5px 5px -2px darken($kolor, 20); }
+
+/* RESET */
+
+	html, body, div, span,
+	h1, h2, h3, h4, h5, h6, p,
+	em, strong, img,
+	dl, dt, dd, ol, ul, li, table, tbody,
+	tr, th, td, article, aside,
+	footer, header, menu, nav,
+	section {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		outline: 0;
+		font-size: 100%;
+		vertical-align: baseline;
+		background: transparent; }
+
+	ul { list-style: none; }
+
+	a { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+	a:hover, a:active { outline: none; }
+
+	table { border-spacing: 0; }
+	th { font-weight: bold; vertical-align: bottom; }
+	td { font-weight: normal; vertical-align: top; }
+	table { font-size: inherit; font: 100%; }
+	td, td img { vertical-align: top; }
+
+	button, input, select, textarea { margin: 0; }
+	button:focus { outline: none !important; }
+
+	.artysta {
+		&:before, &:after {
+			content: "";
+			display: table; }
+		&:after { clear: both; } }
+
+/* ANIMACJE */
+
+	@keyframes bujanie {
+		0%, 100% { transform: rotate(0deg); }
+		33%		 { transform: rotate(-15deg); }
+		66%		 { transform: rotate(15deg); } }
+
+	@keyframes migotanie-pomoc {
+		0%, 100% { opacity: 0.15; }
+		50%		 { opacity: 1; } }
+
+	@keyframes migotanie {
+		0%, 100% { opacity: 0; }
+		50%		 { opacity: 1; } }
+
+	@keyframes migotanie-2 {
+		0%   { opacity: 1; }
+		100% { opacity: 0; } }
+
+	@keyframes strzalka {
+		0%   { top: 30px; }
+		100% { top: 40px; } }
+
+/* CZCIONKI */
+
+	@font-face {
+		font-family: "digital_dreamregular";
+		src: url("../fonts/digitaldream-webfont.eot");
+		src: url("../fonts/digitaldream-webfont.eot?#iefix") format("embedded-opentype"),
+			 url("../fonts/digitaldream-webfont.woff") format("woff"),
+			 url("../fonts/digitaldream-webfont.ttf") format("truetype"),
+			 url("../fonts/digitaldream-webfont.svg#digital_dreamregular") format("svg");
+		font-weight: normal;
+		font-style: normal; }
+
+	@font-face {
+		font-family: "icomoon";
+		src: url("../fonts/icomoon.eot");
+		src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"),
+			 url("../fonts/icomoon.woff") format("woff"),
+			 url("../fonts/icomoon.ttf") format("truetype"),
+			 url("../fonts/icomoon.svg#icomoon") format("svg");
+		font-weight: normal;
+		font-style: normal; }
+
+	@font-face {
+		font-family: "ikony";
+		src: url("../fonts/ikony.eot");
+		src: url("../fonts/ikony.eot?#iefix") format("embedded-opentype"),
+			 url("../fonts/ikony.woff") format("woff"),
+			 url("../fonts/ikony.ttf") format("truetype"),
+			 url("../fonts/ikony.svg#ikony") format("svg");
+		font-weight: normal;
+		font-style: normal; }
+
+	@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two&subset=latin,latin-ext);
+
+/* PRZEJŚCIA */
+
+	#gitary .podpis, #gitary .podpis .kolor, #akordy .dodajAkord,
+	#poziom-glosnosci, .galeria nav, #gryf td p, .slajd_3 .wskaznik.wsk_3 {
+		transition: opacity 0.3s ease; }
+
+	#gitary .gitara, #gitary .gitara span, #kosz, #gryf td span, .kaseta {
+		transition: all 0.3s ease; }
+
+	#gryf td, #akordy .akord {
+		transition: background-color 0.3s ease; }
+
+	#nagrania li {
+		transition: margin 0.3s ease; }
+
+	#panel-dolny button:not(.min) {
+		transition: opacity 0.3s ease, bottom 0.3s ease; }
+
+	.swiatelko {
+		transition: opacity 0.7s ease, left 0.3s ease; }
+
+/* STYLE ZBIORCZE */
+
+	dl, .info-gitarowe, .artysta, .artysta .gitara, #panel-nagrywania, #akordy, #nagrania, #ciemne-tlo .pomoc, #tabulatura, .galeria {
+		background-image: url("../images/leather.jpg");
+
+		border-image-source: url("../images/stitch-border.png");
+		border-image-slice: 14;
+		border-image-width: 14px;
+		border-image-repeat: round;
+
+		border-width: 14px;
+
+		border-radius: 5px;
+		box-shadow: 0 1px 3px rgba(0,0,0,.75); }
+
+	dt, dd, .title, .minimalizuj, #poziom-glosnosci, .info {
+		background-color: #4a5257;
+		background-image: linear-gradient(to bottom, #4a5257 0%, #2e363b 100%);
+		box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), 2px 5px 15px #000; }
+
+	[disabled="disabled"] {
+		opacity: 0.5;
+		pointer-events: none; }
+
+	.blue-icons {
+		button {
+			font-size: 21px;
+			line-height: 27px;
+			position: relative;
+			float: left;
+			margin-right: 3px;
+			padding: 7px;
+			border: none;
+			border-radius: 23px;
+			background-color: rgba(0, 0, 0, 0.25);
+			box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 1px 3px rgba(255, 255, 255, 0.1);
+			&:after {
+				content: "";
+				position: absolute;
+				top: -2px; left: 0;
+				width: 100%; height: 100%;
+				border-radius: 23px;
+				box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.3);	}
+			.tlo-ikony {
+				color: #111;
+				text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+				transition: color 0.3s ease, text-shadow 0.3s ease;
+				display: block;
+				position: relative;
+				width: 32px;
+				height: 32px;
+				padding-top: 3px;
+				box-sizing: border-box;
+				border-radius: 16px;
+				box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), 0 2px 8px rgba(0, 0, 0, 0.6);
+				background-color: #4a5257;
+				background-image: linear-gradient(to bottom, #4a5257 0%, #2e363b 100%); }
+			.title { top: 70px; left: 0; }
+			&:hover {
+				.tlo-ikony {
+					color: #00baff;
+					text-shadow: 0 0 5px #00baff; }
+				.title {
+					opacity: 1;
+					top: 50px;
+					transition: opacity 0.5s ease 1.5s, top 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 1.5s; } } }
+	}
+			
+	#akordy:hover, #nagrania:hover, #tabulatura:hover {
+		.minimalizuj { opacity: 1 } }
+
+	html, body { height: 100%; }
+
+	body {
+		user-select: none;
+		cursor: default;
+	}
+
+	button, #panel-nagrywania li, #suwak { cursor: pointer; }
+
+/* STYLE GŁÓWNE */
+
+	html {
+		overflow: hidden;
+		background-image: url("../images/rebel.png");
+		background-color: #222; }
+
+	body {
+		position: relative;
+		margin: 0 auto;
+		padding: 0 10px;
+		font: 13px Helmet, Freesans, sans-serif;
+		color: #fff;
+		text-shadow: 1px 1px 0 #000;
+		&.ukryj #gitary {
+			opacity: 0.3;
+			span { opacity: 0; } }
+		&.acoustic {
+			#gryf {
+				background-image: url("../images/les-paul-inlay-03.png"), url("../images/les-paul-inlay-03.png"), url("../images/les-paul-inlay-05.png"), url("../images/les-paul-inlay-07.png"), url("../images/les-paul-inlay-09.png"),	url("../images/les-paul-inlay-12.png"), url("../images/rosewood2.jpg");
+				background-position: 6.5% center, 27% center, 44.7% center, 60.3% center, 74.3% center, 92% center, left top;
+				background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+				td {
+					&:hover span, &.hover span { @include znaczniki(#000, $lennon-kolor-ciemny); opacity: 1; }
+					&.active span { @include znaczniki(#000, $lennon-kolor-jasny); opacity: 1; } } }
+			.akord {
+				background-color: rgba($lennon-kolor-ciemny, .5);
+				box-shadow: 3px 5px 5px -2px darken($lennon-kolor-ciemny, 40);
+				&:hover { background-color: $lennon-kolor-ciemny; }
+				&.active { background-color: $lennon-kolor-jasny; } }
+			#wyswietlacz, .podswietlenie {
+				background-color: #f6f8f9;
+				background-image: linear-gradient(to bottom, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+				color: #333; }
+			.min.akordy { background-position: 0 0; }
+			.screenshot { background-image: url("../images/acoustic-screenshot.jpg"); } }
+		&.les-paul {
+			#gryf {
+				background-image: url("../images/les-paul-inlay-03.png"), url("../images/les-paul-inlay-05.png"), url("../images/les-paul-inlay-07.png"), url("../images/les-paul-inlay-09.png"),	url("../images/les-paul-inlay-12.png"), url("../images/rosewood.jpg");
+				background-position: 27% center, 44.7% center, 60.3% center, 74.3% center, 92% center, left top;
+				background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+				td {
+					&:hover span, &.hover span { @include znaczniki(#fff, $slash-kolor-ciemny); opacity: 1; }
+					&.active span { @include znaczniki(#000, $slash-kolor-jasny); opacity: 1; }	} }
+			.akord {
+				background-color: rgba($slash-kolor-ciemny, .5);
+				box-shadow: 3px 5px 5px -2px darken($slash-kolor-ciemny, 20);
+				&:hover { background-color: $slash-kolor-ciemny; }
+				&.active { background-color: $slash-kolor-jasny; } }
+			#wyswietlacz, .podswietlenie {
+				background-color: #bfd255;
+				background-image: linear-gradient(to bottom, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%); }
+			.min.akordy { background-position: 0 -58px; }
+			.screenshot { background-image: url("../images/les-paul-screenshot.jpg"); } }
+		&.strat {
+			#gryf {
+				background-image: url("../images/strat-inlay.png"), url("../images/strat-inlay.png"), url("../images/strat-inlay.png"), url("../images/strat-inlay.png"), url("../images/strat-inlay.png"), url("../images/strat-inlay.png"), url("../images/maple.jpg");
+				background-position: 28.2% center, 45.2% center, 60% center, 73.6% center, 91.2% 32px, 91.2% 192px, left top;
+				background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+				td {
+					&:hover span, &.hover span { @include znaczniki(#fff, $jimi-kolor-ciemny); opacity: 1; }
+					&.active span { @include znaczniki(#fff, $jimi-kolor-jasny); opacity: 1; } } }
+			.akord {
+				background-color: rgba($jimi-kolor-ciemny, .5);
+				box-shadow: 3px 5px 5px -2px darken($jimi-kolor-ciemny, 20);
+				&:hover { background-color: $jimi-kolor-ciemny; }
+				&.active { background-color: $jimi-kolor-jasny; } }
+			#wyswietlacz, .podswietlenie {
+				background-color: #cb60b3;
+				background-image: linear-gradient(to bottom, #cb60b3 0%, #c146a1 50%, #a80077 51%, #db36a4 100%); }
+			.min.akordy { background-position: 0 -116px; }
+			.screenshot { background-image: url("../images/strat-screenshot.jpg"); } }
+		#gryf-wrap #gryf td {
+			&.klawiatura span { @include znaczniki(#000, yellow); opacity: 1; }
+			&.power-chord span { @include znaczniki(#fff, orange); opacity: 1; }
+		} }
+
+	noscript {
+		display: block;
+		position: absolute;
+		top: 30px; left: 50%;
+		width: 460px;
+		margin-left: -230px;
+		font-size: 40px;
+		text-align: center; }
+
+	#ciemne-tlo {
+		display: none;
+		position: absolute; //fixed?
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+		background-color: rgba(0, 0, 0, 0.75);
+		z-index: 20;
+		text-align: center;
+		.zamkniecie {
+			position: absolute;
+			width: 25px; height: 25px;
+			padding: 2px;
+			background: #bcbcbc;
+			border-radius: 50%;
+			box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.5);
+			font-size: 17px;
+			line-height: 25px;
+			text-align: center;
+			text-shadow: none;
+			text-transform: uppercase;
+			cursor: pointer;
+			z-index: 1000; }
+		.artysta {
+			display: none;
+			position: relative;
+			top: 10px;
+			text-align: left;
+			background-image: none;
+			background-color: rgba(100, 100, 100, 0.2);
+			&.active { display: inline-block; }
+			.zamkniecie { top: -21px; right: -21px; }
+			h1 { font-size: 2em; }
+			.gitara {
+				float: left;
+				display: inline-block;
+				position: relative;
+				margin: 5px;
+				background: url("../images/rebel.png");
+				cursor: none;
+				.lupa {
+					display: none;
+					position: absolute;
+					top: 0; left: 0;
+					width: 200px; height: 200px;
+					border: 8px solid rgba(255, 255, 255, 0.25);
+					border-radius: 50%;
+					background-color: #fff;
+					background-repeat: no-repeat;
+					pointer-events: none;
+					z-index: 1000;
+					box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7) inset,
+								5px 5px 10px rgba(0, 0, 0, 0.7);
+					&:after { content: url("../images/lupa-blysk.png"); }
+				}
+				&:before {
+					content: "";
+					position: absolute;
+					background-image: url("../images/podpisy.png");
+					background-size:  419px 484px;
+					background-repeat: no-repeat;
+					transform: scale(0.75); } }
+			&.lennon {
+				.lupa { background-image: url("../images/acoustic-big.png"); }
+				.gitara:before {
+					left: -30px; bottom: -27px;
+					width: 175px; height: 159px;
+					background-position: -4px -2px; } }
+			&.slash {
+				.lupa { background-image: url("../images/les-paul-big.png"); }
+				.gitara:before {
+					left: -31px; bottom: -36px;
+					width: 175px; height: 220px;
+					background-position: -241px -9px; } }
+			&.hendrix {
+				.lupa { background-image: url("../images/strat-big.png"); }
+				.gitara:before {
+					left: -39px; bottom: -19px;
+					width: 237px; height: 77px;
+					background-position: -2px -164px; } }
+			.info-gitarowe {
+				float: left;
+				width: 446px;
+				margin: 5px;
+				background: url("../images/rebel.png");
+				dl {
+					float: left;
+					margin: 0 10px 10px 0;
+					dt {
+						float: left; 
+						width: 100px;
+						margin-right: 10px; 
+						padding: 5px;  
+						font-weight: bold; }
+					dd {
+						padding: 5px 0;
+						width: 250px; } }
+					article {
+						font-size: 16px;
+						word-spacing: 5px; } } }
+		.galeria {
+			position: relative;
+			float: left;
+			overflow: hidden;
+			margin: 5px;
+			&:before {
+				content: "";
+				position: absolute;
+				top: 26px;
+				width: 100%; height: 100%;
+				background: #000; }
+			.okienko {
+				margin: 0 auto;
+				overflow: hidden; }
+			.pasek {
+				overflow: hidden;
+				transition: height 0.7s ease;
+				.slajd {
+					position: relative;
+					float: left;
+					height: 400px;
+					background-position: 0 0;
+					background-repeat: no-repeat;
+					box-shadow : inset 0 0 15px 5px #000;
+					&:before {
+						content: "";
+						position: absolute;
+						left: 0; bottom: 0;
+						width: 100%; height: 50px;
+						background-image: linear-gradient(to bottom, transparent, #000); }
+					.opis {
+						position: absolute;
+						bottom: 0;
+						margin: 10px;
+						color: #fff;
+						font-size: 18px;
+						font-weight: 100; } } }
+			&:hover nav { opacity: 1; }
+			.loading {
+				position: absolute;
+				top: 23px;
+				height: 3px; width: 0;
+				background-image: linear-gradient(to right, transparent, #00baff); }
+			nav {
+				padding-bottom: 10px;
+				text-align: center;
+				opacity: 1;
+				a {
+					display: inline-block;
+					width: 12px; height: 12px;
+					margin-right: 5px;
+					background: #111;
+					border-radius: 50%;
+					box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+					overflow: hidden;
+					transition: background 0.3s ease, box-shadow 0.3s ease;
+					&:hover { box-shadow: 0 0 5px #00baff; }
+					&.active {
+						background: #00baff;
+						box-shadow: 0 0 5px #00baff; } } } }
+		.pomoc {
+			position: relative;
+			top: -20%;
+			width: 800px;
+			margin: 0 auto;
+			text-align: left;
+			transition: top 0.5s cubic-bezier(0.17, 0.88, 0.32, 1.27);
+			.zamkniecie { top: -23px; right: -21px; }
+			.okno {
+				overflow: hidden;
+				.slajdy {
+					position: relative;
+					left: 0;
+					transition: left 0.5s ease;
+					> li {
+						position: relative;
+						float: left;
+						width: 810px; height: 407px; } }
+				.instrukcje {
+					float: right;
+					width: 280px;
+					font-size: 15px;
+					> li {
+						padding: 5px 10px 12px 0;
+						margin-left: 18px; } } }
+			footer {
+				position: relative;
+				margin: 10px auto 2px;
+				nav {
+					li {
+						position: relative;
+						float: left;
+						top: 0;
+						margin-right: 5px;
+						padding: 5px;
+						font-size: 17px;
+						cursor: pointer;
+						z-index: 10;
+						transition: top 0.25s ease;
+						&:last-child { margin: 0; }
+						&:hover { top: -2px; } }
+					.podswietlenie {
+						width: 0; height: 0;
+						border-radius: 5px;
+						position: relative;
+						transition: width 0.5s cubic-bezier(0.17, 0.88, 0.32, 1.27), left 0.5s cubic-bezier(0.17, 0.88, 0.32, 1.27); } } } }
+		&.wiecej {
+			.pomoc { display: none; } }
+		&.pomoc {
+			.artysta { display: none; }
+			.pomoc {
+				top: 50%;
+				margin-top: -230px; } } }
+
+	.lennon .slajd {
+		&:nth-child(1) { background-image: url("../images/galeria/lennon_01.jpg"); }
+		&:nth-child(2) { background-image: url("../images/galeria/lennon_02.jpg"); }
+		&:nth-child(3) { background-image: url("../images/galeria/lennon_03.jpg"); }
+		&:nth-child(4) { background-image: url("../images/galeria/lennon_04.jpg"); }
+		&:nth-child(5) { background-image: url("../images/galeria/lennon_05.jpg"); } }
+	.slash .slajd {
+		&:nth-child(1) { background-image: url("../images/galeria/slash_01.jpg"); }
+		&:nth-child(2) { background-image: url("../images/galeria/slash_02.jpg"); }
+		&:nth-child(3) { background-image: url("../images/galeria/slash_03.jpg"); }
+		&:nth-child(4) { background-image: url("../images/galeria/slash_04.jpg"); }
+		&:nth-child(5) { background-image: url("../images/galeria/slash_05.jpg"); } }
+	.hendrix .slajd {
+		&:nth-child(1) { background-image: url("../images/galeria/hendrix_01.jpg"); }
+		&:nth-child(2) { background-image: url("../images/galeria/hendrix_02.jpg"); }
+		&:nth-child(3) { background-image: url("../images/galeria/hendrix_03.jpg"); }
+		&:nth-child(4) { background-image: url("../images/galeria/hendrix_04.jpg"); }
+		&:nth-child(5) { background-image: url("../images/galeria/hendrix_05.jpg"); } }
+
+	.obrazek {
+		position: relative;
+		float: left;
+		width: 520px; height: 400px;
+		overflow: hidden;
+		border-radius: 5px;
+		margin-bottom: 5px;
+		background-image: url("../images/rebel.png");
+		box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+		.grafika {
+			position: relative;
+			top: 0; left: 0;
+			width: 1488px; height: 613px;
+			transition: top 0.3s ease, left 0.3s ease; }
+		.wskaznik {
+			position: absolute;
+			width: 50px; height: 50px;
+			background: rgba(255, 0, 0, 0.5);
+			border: 2px solid red;
+			border-radius: 15px;
+			opacity: 0;
+			&.active {
+				opacity: 1;
+				animation: migotanie 0.8s infinite; } }
+		.screenshot {
+			background-repeat: no-repeat;
+			max-width: 1488px; height: 613px; } }
+
+	.slajd_1 .wskaznik {
+			&.wsk_1 { top: 32px; left: 45px; height: 89px; }
+			&.wsk_2 { top: 29px; left: 1372px; height: 256px; }
+			&.wsk_3 { top: 543px; left: 73px; width: 58px; height: 58px; }
+			&.wsk_4 { top: 543px; left: 133px; width: 58px; height: 58px; }
+			&.wsk_5 { top: 543px; left: 192px; width: 58px; height: 58px; }	}
+	.slajd_2 .wskaznik {
+			&.wsk_1 { top: 457px; left: 152px; }
+			&.wsk_2 { top: 457px; left: 201px; }
+			&.wsk_3 { top: 457px; left: 250px; }
+			&.wsk_4 { top: 457px; left: 299px; }
+			&.wsk_5 { top: 457px; left: 348px; }
+			&.wsk_6 { top: 318px; left: 744px; width: 351px; height: 210px; }
+			&.wsk_7 { top: 542px; left: 1418px; width: 58px; height: 58px; } }
+	.slajd_3 .wskaznik {
+			&.wsk_1 { top: 318px; left: 417px; width: 330px; height: 144px; }
+			&.wsk_2 { top: 404px; left: 562px; width: 34px; height: 34px; }
+			&.wsk_3 {
+				top: 100px; left: 50%;
+				width: 468px; height: 151px;
+				background-image: url("../images/klawiatura.png");
+				background-repeat: no-repeat;
+				background-color: rgba(0, 0, 0, 0.8);
+				border: none;
+				border-radius: 0;
+				box-shadow: 0 0 0 600px rgba(0, 0, 0, 0.8);
+				animation: none;
+				&.active {
+					opacity: 1;
+					.klawisz { animation: migotanie 0.8s infinite;	} }
+				.klawisz {
+					position: absolute;
+					width: 17px; height: 17px;
+					background: rgba(255, 0, 0, 0.6);
+					border-radius: 2px;
+					&:nth-child(1) { top: 61px; left: 83px; }
+					&:nth-child(2) { top: 81px; left: 47px; }
+					&:nth-child(3) { top: 81px; left: 88px; }
+					&:nth-child(4) { top: 81px; left: 108px; }
+					&:nth-child(5) { top: 81px; left: 129px; }
+					&:nth-child(6) { top: 101px; left: 11px; width: 43px; }
+					&:nth-child(7) { top: 102px; left: 98px; }
+					&:nth-child(8) { top: 102px; left: 139px; }	} }
+			&.wsk_4 { top: 542px; left: 1418px; width: 58px; height: 58px; }
+			&.wsk_5 { top: 310px; left: 1069px; width: 30px; height: 30px; } }
+	.slajd_4 .wskaznik {
+			&.wsk_1 { top: 318px; left: 1092px; height: 147px; width: 279px; }
+			&.wsk_2 { top: 465px; left: 1116px; height: 43px; }
+			&.wsk_3 { top: 465px; left: 1166px; height: 43px; }
+			&.wsk_4 { top: 465px; left: 1216px; height: 43px; } }
+	.slajd_5 .wskaznik {
+			&.wsk_1 { top: 540px; left: 3px; width: 68px; height: 58px; }
+			&.wsk_2 { top: 317px; left: 105px; height: 201px; width: 21px; }
+			&.wsk_3 { top: 542px; left: 1298px; width: 58px; height: 58px; }
+			&.wsk_4 { top: 542px; left: 1357px; width: 58px; height: 58px; }
+			&.wsk_5 { top: 542px; left: 1418px; width: 58px; height: 58px; } }
+
+	#strzalka {
+		width: 30px; height: 50px;
+		position: relative;
+		margin: 0 auto;
+		top: 40px;
+		background-color: #666;
+		animation: strzalka 0.5s alternate infinite;
+		&:after {
+			content: "";
+			width: 0; height: 0;
+			left: -15px; bottom: 100%;
+			position: absolute;
+			border: 30px solid transparent;
+			border-bottom-color: #666; } }
+
+	#gitary {
+		display: none;
+		position: relative;
+		margin: 0 auto;
+		width: 813px;
+		&:hover {
+			.gitara {
+				opacity: 0.5;
+				span { opacity: 0; } }
+			+ .info {
+				width: 322px; height: 50px; 
+				p:last-child { opacity: 1; } } }
+		.gitara {
+			position: relative;
+			float: left;
+			height: 716px * $gitara-pomniejszenie;
+			background-repeat: no-repeat;
+			background-size: contain;
+			cursor: pointer;
+			span {
+				position: absolute;
+				top: 0; left: 0; bottom: 0; right: 0;
+				background-repeat: no-repeat;
+				background-size: contain; }
+			.podpis, .podpis .kolor {
+				background: {
+					image: url("../images/podpisy.png");
+					size:  419px 484px;
+					repeat: no-repeat; }
+				opacity: 0; }
+			.podpis {
+				position: absolute;
+				z-index: 10;
+				&.lennon {
+					bottom: 20px; right: -12px;
+					width: 175px; height: 159px;
+					background-position: -4px -2px;
+					.kolor {
+							width: 175px; height: 159px;
+							background-position: -4px -244px; } }
+				&.slash {
+					bottom: 19px; right: -39px;
+					width: 175px; height: 220px;
+					background-position: -241px -9px;
+					.kolor {
+							width: 175px; height: 220px;
+							background-position: -241px -251px; } }
+				&.hendrix {
+					bottom: 39px; right: -56px;
+					width: 237px; height: 77px;
+					background-position: -2px -164px;
+					.kolor {
+							width: 237px; height: 77px;
+							background-position: -2px -406px; } }
+				&:hover .kolor { opacity: 1 } }
+			&:hover {
+				opacity: 1 !important;
+				height: 716px;
+				span { opacity: 1 !important; }
+				.podpis { opacity: 1; } } }
+		+ .info {
+				display: none;
+				position: absolute;
+				top: 20px; right: 20px;
+				width: 225px; height: 19px;
+				padding: 10px;
+				font-size: 16px;
+				text-align: center;
+				overflow: hidden;
+				transition: width 0.5s ease, height 0.5s ease;
+				p:first-child { margin-bottom: 10px; }
+				p:last-child { 
+					width: 322px;
+					opacity: 0;
+					transition: opacity 0.5s ease; } } }
+
+	#acoustic {
+		width: 306px * $gitara-pomniejszenie;
+		background-image: url("../images/acoustic-blur.png");
+		&:hover { width: 306px; }
+		span { background-image: url("../images/acoustic.png"); } }
+	#les-paul {
+		width: 273px * $gitara-pomniejszenie; 
+		background-image: url("../images/les-paul-blur.png");
+		&:hover { width: 273px; }
+		span { background-image: url("../images/les-paul.png"); } }
+	#strat {
+		width: 260px * $gitara-pomniejszenie;
+		background-image: url("../images/strat-blur.png");
+		&:hover { width: 260px; }
+		span { background-image: url("../images/strat.png"); } }
+
+	#gryf-wrap {
+		display: none;
+		overflow: hidden;
+		height: 100%; }
+
+	#gryf {
+		margin: 10px auto;
+
+		border-image-source: url("../images/amp-border.png");
+		border-image-slice: 31 30 33 30;
+		border-image-width: 31px 30px 33px 30px;
+		border-image-repeat: repeat;
+		
+		border-width: 31px 30px 33px 30px;
+
+		&.ukryte td p { opacity: 0; }
+		td {
+			position: relative;
+			height: 40px;
+			text-transform: uppercase;
+			cursor: pointer;
+			&:nth-child(1) { width: 50px; }
+			&:nth-child(2) { width: 139px; }
+			&:nth-child(3) { width: 137px; }
+			&:nth-child(4) { width: 124px; }
+			&:nth-child(5) { width: 117px; }
+			&:nth-child(6) { width: 110px; }
+			&:nth-child(7) { width: 104px; }
+			&:nth-child(8) { width: 98px; }
+			&:nth-child(9) { width: 93px; }
+			&:nth-child(10) { width: 88px; }
+			&:nth-child(11) { width: 83px; }
+			&:nth-child(12) { width: 78px; }
+			&:nth-child(13) { width: 74px; }
+			&:hover p, &.hover p, &.active p { opacity: 1; }
+			&.strum {
+				width: 100px;
+				min-width: 50px; }
+			span {
+				display: block;
+				width: 17px; height: 17px;
+				margin: 0 auto;
+				padding: 9px;
+				background-image: url("../images/progi.png");
+				background-repeat: no-repeat;
+				border-radius: 50%;
+				opacity: 0; }
+			&.blysk span {
+				box-shadow: 0px 0 10px 5px #fff !important;
+				opacity: 1; }
+			p {
+				position: absolute;
+				top: 28%;
+				left: 50%;
+				margin-left: -5px; } }
+			div { position: relative;
+				p {	top: -24px;	} }
+		tr {
+			&:nth-child(-n+3) td { /* Struny treble i środki progów */
+				background-image: url("../images/struna-treble.png"), url("../images/prog.png");
+				background-repeat: repeat-x, repeat-y;
+				background-position: left center, left top;
+				&:nth-child(1) { /* Usunięcie pierwszych dwóch progów dla strun treble */
+					background-image: url("../images/struna-treble.png"), url("../images/rebel.png");
+					background-repeat: repeat-x, repeat;
+					background-position: left center, left 4px; }
+				&:nth-child(2) { /* Ustawienie progu zerowego */
+					background-image: url("../images/struna-treble.png"), url("../images/nut.png");
+					background-repeat: repeat-x, repeat-y;
+					background-position: left center, left top; } }
+			&:nth-child(n+4) td { /* Struny basowe i środki progów */
+				background-image: url("../images/struna-bass.png"), url("../images/prog.png");
+				background-repeat: repeat-x, repeat-y;
+				background-position: left center, left top;
+				&:nth-child(1) { /* Usunięcie pierwszych dwóch progów dla strun basowych */
+					background-image: url("../images/struna-bass.png"), url("../images/rebel.png");
+					background-repeat: repeat-x, repeat;
+					background-position: left center, left 4px; }
+				&:nth-child(2) { /* Ustawienie progu zerowego */
+					background-image: url("../images/struna-bass.png"), url("../images/nut.png");
+					background-repeat: repeat-x, repeat-y;
+					background-position: left center, left top; } }
+			&:nth-child(1) td:nth-child(n+3) { /* Górne koncówki progów */
+				background-image: url("../images/struna-treble.png"), url("../images/prog-gora.png"), url("../images/prog.png");
+				background-repeat: repeat-x, no-repeat, repeat-y;
+				background-position: left center, left top, left top; }
+			&:nth-child(6) td:nth-child(n+3) { /* Dolne koncówki progów */
+				background-image: url("../images/struna-bass.png"), url("../images/prog-dol.png"), url("../images/prog.png");
+				background-repeat: repeat-x, no-repeat, repeat-y;
+				background-position: left center, left bottom, left top; } } }
+
+	#panel-glowny {
+		max-width: 1295px;
+		margin: 0 auto;
+		& > .wrap {
+			float: left;
+			width: 273px;
+			margin: 0 10px 10px 0; }
+		.minimalizuj {
+			position: absolute;
+			overflow: hidden;
+			top: -21px; left: 100%;
+			width: 18px; height: 18px;
+			border: none;
+			border-radius: 9px;
+			text-align: center;
+			text-shadow: none;
+			opacity: 0;
+			z-index: 10;
+			transition: width 0.5s ease, opacity 0.3s ease;
+			.znak {
+				opacity: 1;
+				position: relative;
+				font-size: 24px;
+				line-height: 13px;
+				left: -1px;
+				transition: opacity 0.3s ease; }
+			.tekst {
+				position: absolute;
+				left: 15px;
+				opacity: 0;
+				transition: left 0.5s ease, opacity 0.3s ease; }
+			&:hover {
+				width: 85px;
+				transition: width 0.5s ease 1s;
+				.znak {
+					opacity: 0;
+					transition: opacity 0.3s ease 1s; }
+				.tekst {
+					left: 9px;
+					opacity: 1;
+					transition: left 0.5s ease 1s, opacity 0.3s ease 1s; } } } }
+
+	#glosnosc {
+		position: relative;
+		float: left;
+		width: 40px;
+		margin-right: 5px; }
+
+	#poziom-glosnosci {
+		position: absolute;
+		left: -18px;
+		width: 27px; height: 19px;
+		border-radius: 6px;
+		font-size: 12px;
+		line-height: 19px;
+		text-align: center;
+		opacity: 0;
+		&.active { opacity: 1; } }
+
+	#suwak {
+		width: 8px; height: 196px;
+		margin: 0 auto;
+		background: #000;
+		border: none;
+		a {	display: none; }
+		div {
+			border-radius: 6px;
+			background-color: #32d8ff;
+			background-image: linear-gradient(to bottom, #32d8ff 0%, #006cea 100%);
+			box-shadow: 0 0 30px 1px #006cea; } }
+
+	#wyswietlacz {
+		float: left;
+		width: 252px;
+		padding: 10px;
+		margin-bottom: 10px;
+		border-radius: 10px;
+		font: 16px "digital_dreamregular", Arial, sans-serif;
+		text-align: center;
+		text-shadow: 2px 2px 1px #000;
+		.akord-info {
+			font-size: 50px;
+			line-height: 50px;
+			margin: 5px 0 12px 0; }
+		.glowne-info {
+			height: 25px;
+			font-size: 10px;
+			text-shadow: 1px 1px 5px #000; } }
+
+	.title {
+		font-size: 14px;
+		position: absolute;
+		padding: 2px 7px;
+		border-radius: 5px;
+		color: #fff;
+		text-shadow: 1px 1px 0 #000;
+		white-space: nowrap;
+		z-index: 10;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.5s ease, top 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275); }
+
+	#panel-nagrywania {
+		float: left;
+		.nagrywanie.active div {
+			color: red;
+			text-shadow: 0 0 5px red; }
+		.play {
+			div { padding-top: 0;
+				&:before { font-size: 30px; } }
+			.fa-play { margin-left: 4px; }
+			&.stop div {
+				color: orange;
+				text-shadow: 0 0 5px orange;
+			&:before {
+				content: "#" } } }
+		.usunOstatnie div, .usunPamiec div {
+			padding-top: 6px;
+			&:before {
+				font-size: 21px; } } }
+
+	#akordy {
+		position: relative;
+		float: left;
+		margin: 0 10px 10px 0;
+		.wrap {
+			max-width: 310px; max-height: 168px;
+			&.mCS_destroyed { max-width: 280px; } }
+		.akord {
+			float: left;
+			width: 50px; height: 40px;
+			margin: 3px 6px 3px 0;
+			padding-top: 10px;
+			line-height: 16px;
+			text-align: center;
+			background-image: url("../images/akordy.png");
+			background-repeat: no-repeat;
+			border-radius: 5px;
+			cursor: pointer;
+			&:nth-child(5n+1) {	clear: left; }
+			&.klawiatura {
+				background-color: yellow;
+				box-shadow: 3px 5px 5px -2px darken(yellow, 20); }
+			&.power-chord {
+				background-color: orange;
+				box-shadow: 3px 5px 5px -2px darken(orange, 20); }
+			&.ui-draggable-dragging { z-index: 9999; }
+			&.migotanie { animation: migotanie-2 0.4s linear 4 alternate; } }
+		&.bin .akord { cursor: url("../images/kosz-kursor.png"), auto; }
+		.dodajAkord {
+			width: 50px; height: 50px;
+			color: silver;
+			font-size: 45px;
+			line-height: 50px;
+			text-align: center;
+			text-shadow: 2px 2px 3px #000;
+			float: left;
+			margin: 3px 0;
+			cursor: pointer;
+			opacity: 0.3;
+			&:hover { opacity: 1; } } }
+
+	.ui-draggable-helper-akordy {
+		width: 50px; height: 40px;
+		padding-top: 10px;
+		line-height: 16px;
+		text-align: center;
+		list-style: none;
+		background-image: url("../images/akordy.png");
+		background-repeat: no-repeat;
+		border-radius: 5px;
+		cursor: pointer; }
+
+	#nagrania {
+		max-width: 230px;
+		margin: 0 10px 10px 0;
+		padding-right: 80px;
+		float: left;
+		position: relative;
+		&.overflow {
+			max-width: 217px;
+			padding-right: 35px;
+			.nagranie {
+				top: -20px;
+				left: -30px;
+				margin: 0 -95px -38px 0;
+				transform: scale(0.5); } }
+		.nagranie {
+			float: left;
+			position: relative;
+			margin: 0 -80px 5px 0;
+			&:not([disabled="disabled"]):hover .kaseta {
+				top: -35px; left: -35px;
+				transform: rotate(10deg); }
+			&.active, &.active:hover {
+				z-index: 9;
+				.kaseta {
+					top: -10px; left: 0;
+					transform: scale(1.2); } }
+			&.ui-draggable-dragging { z-index: 9999; }
+			.kaseta {
+				position: relative;
+				top: 0; left: 0;
+				width: 126px; height: 80px;
+				border-radius: 4px;
+				box-shadow: 2px 5px 15px #000;
+				cursor: pointer;
+				.kolor {
+					position: relative;
+					top: 6px; left: 7px;
+					width: 111px; height: 52px;
+					border-radius: 4px;
+					&:after {
+						content: url("../images/kaseta.png");
+						position: absolute;
+						top: -6px; left: -7px; } }
+				.tytul {
+					position: absolute;
+					top: 12px; left: 13px;
+					width: 100px;
+					font: 10px "Shadows Into Light Two", cursive; color: #000;
+					font-weight: bold;
+					white-space: nowrap;
+					text-shadow: none;
+					overflow: hidden;
+					transform: translate3d(0, 0, 0);
+					&:before {
+						content: "";
+						position: absolute;
+						top: 0; right: 0;
+						width: 10%; height: 100%;
+						background-image: linear-gradient(to right, transparent, #fff); } } }
+			&[disabled="disabled"] {
+				opacity: 1;
+				.kaseta:after {
+					content: "";
+					position: absolute;
+					background: rgba(0, 0, 0, 0.8);
+					top: 0; right: 0; bottom: 0; left: 0; } } }
+		&.bin .kaseta { cursor: url("../images/kosz-kursor.png"), auto; } }
+
+	#tabulatura {
+		position: relative;
+		float: left;
+		margin: 0 10px 10px 0;
+		padding: 5px 5px 0;
+		.aktualna-pozycja.znak {
+			background-color: rgba(0, 0, 0, 0.1);
+			border-radius: 5px; }
+		.wskazniki {
+			position: relative;
+			margin-bottom: 7px;
+			padding: 5px;
+			background: #eee;
+			font-size: 10px;
+			font-family: monospace;
+			color: #000;
+			text-shadow: none;
+			box-shadow: 2px 5px 15px #000;
+			background-image: linear-gradient(to bottom, hsla(0,0%,0%,.025) 0%, hsla(0,0%,100%,.05) 33%, hsla(0,0%,0%,.05) 33%, hsla(0,0%,100%,.05) 67%, hsla(0,0%,0%,.05) 67%, hsla(0,0%,100%,.025) 100%);
+			transition: transform 0.3s ease;
+			&.obrot {
+				font-size: 13px;
+				transform: rotate(-2deg); }
+			li { transform: translate3d(0, 0, 0); }
+			&:before {
+				content: "";
+				background: url("../images/pin.png") no-repeat top left;
+				background-size: contain;
+				width: 40px; height: 40px;
+				position: absolute;
+				top: -13px;
+				left: 35%;
+				left: calc(50% - 20px); } } }
+
+	#panel-dolny {
+		position: absolute;
+		bottom: 15px;
+		height: 50px; width: 99%;
+		.wrapper {
+			position: relative;
+			margin-right: 10px;
+			&.lewy {
+				float: left;
+				.title { left: 0; } }
+			&.prawy {
+				float: right; 
+				.title { right: 0; } }
+			&:hover .title {
+				top: -30px; opacity: 1;
+				transition: opacity 0.5s ease 1.5s, top 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 1.5s; } }
+		button {
+			position: relative;
+			bottom: 0;
+			width: 50px; height: 50px;
+			background-color: transparent;
+			background-image: url("../images/panel-dolny-sprite.png");
+			background-repeat: no-repeat;
+			border: none;
+			opacity: 0.15;
+			&:hover {
+				bottom: 4px;
+				opacity: 1; }
+			&.active { opacity: 1; }
+			&.min {
+				display: none;
+				margin: 0 auto;
+				background-image: url("../images/sprite.png");
+				background-repeat: no-repeat;
+				opacity: 1;
+				transition: bottom 0.3s ease; 
+				&.akordy {
+					width: 93px;
+					height: 57px; }
+				&.nagrania {
+					background-position: 0 -174px;
+					width: 99px;
+					height: 58px; }
+				&.tabulatura {
+					background-position: 0 -233px;
+					width: 77px;
+					height: 57px; } } }
+		.title { top: -50px; }
+		.pomoc {
+			width: 50px; height: 50px;
+			border-radius: 50%;
+			background: #bcbcbc;
+			span {
+				font-size: 40px;
+				line-height: 45px;
+				text-shadow: 2px 2px 3px #000; }
+			&.migotanie { animation: migotanie-pomoc 1s ease 2s 7; } }
+		.powrot {
+			width: 57px;
+			background-position: 0 0; }
+		.wyczysc { background-position: -68px 0; }
+		.oznaczenia { background-position: -128px 0; }
+		.wyciszGryf { background-position: -188px 0; }
+		.usunLocal { background-position: -247px 0; }
+		.kosz {
+			background: url("../images/kosz.png") no-repeat;
+			background-size: contain;
+			&.active { bottom: 4px; }
+			&.usuwanie { animation: bujanie 0.7s; }
+			&.dragged {
+				width: 100px; height: 100px;
+				top: -50px;
+				opacity: 1; } }
+		.swiatelko {
+			position: absolute;
+			top: 41px; bottom: 0;
+			width: 78px; height: 24px;
+			background: url("../images/swiatelko.png") no-repeat center bottom;
+			opacity: 0;
+			&.active { opacity: 1; } } }
+
+	/* KOMPATYBILNOŚĆ */
+
+		.firefox {
+			#panel-nagrywania button { margin-right: 1px; padding: 5px; }
+			#tabulatura .panel button { padding: 5px; }
+			#panel-glowny .minimalizuj .znak { left: 0px; } }
+
+		.opera {
+			#panel-glowny .minimalizuj .znak { left: -3px; } }
+
+		.pointerevents {
+			#ciemne-tlo .gitara:hover .lupa { display: block; } }
+
+		.no-pointerevents {
+			#ciemne-tlo .ekran {
+				position: absolute;
+				top: 0; right: 0; bottom: 0; left: 0;
+				cursor: none;
+				z-index: 2000;
+				&:hover ~ .lupa { display: block; }	} }
+
+		.no-borderimage {
+				.galeria, #panel-nagrywania, #akordy, #nagrania, #ciemne-tlo .pomoc, #tabulatura, .artysta dl {
+					border: none;
+					padding: 14px;
+					background: url("../images/border/lewy-gora.png") top left no-repeat,
+								url("../images/border/prawy-gora.png") top right no-repeat,
+								url("../images/border/lewy-dol.png") bottom left no-repeat,
+								url("../images/border/prawy-dol.png") bottom right no-repeat,
+								url("../images/border/pionowy.png") left repeat-y,
+								url("../images/border/pionowy.png") right repeat-y,
+								url("../images/border/poziomy.png") top repeat-x,
+								url("../images/border/poziomy.png") bottom repeat-x,
+								url("../images/leather.jpg"); }
+				#gryf-wrap .border-image {
+					display: table;
+					margin: 10px auto;
+					padding: 31px 32px 35px;
+					background: url("../images/amp/lewy-gora.png") top left no-repeat,
+								url("../images/amp/prawy-gora.png") top right no-repeat,
+								url("../images/amp/lewy-dol.png") bottom left no-repeat,
+								url("../images/amp/prawy-dol.png") bottom right no-repeat,
+								url("../images/amp/lewy.png") left repeat-y,
+								url("../images/amp/prawy.png") right repeat-y,
+								url("../images/amp/gora.png") top repeat-x,
+								url("../images/amp/dol.png") bottom repeat-x,
+								url("../images/rebel.png"); }
+				#ciemne-tlo	{
+					.artysta {
+						border: none;
+						padding: 14px;
+						.gitara, .info-gitarowe {
+							border: none;
+							padding: 14px;
+							background: url("../images/border2/lewy-gora.png") top left no-repeat,
+										url("../images/border2/prawy-gora.png") top right no-repeat,
+										url("../images/border2/lewy-dol.png") bottom left no-repeat,
+										url("../images/border2/prawy-dol.png") bottom right no-repeat,
+										url("../images/border2/pionowy.png") left repeat-y,
+										url("../images/border2/pionowy.png") right repeat-y,
+										url("../images/border2/poziomy.png") top repeat-x,
+										url("../images/border2/poziomy.png") bottom repeat-x,
+										url("../images/rebel.png"); }
+						.gitara:before { transform: translate(14px, -14px) scale(0.75); } }
+					.galeria {
+						.loading { top: 37px; }
+						&:before {
+							top: 40px; left: 14px; bottom: 14px; right: 14px;
+							height: auto; width: auto; } } }
+				#gryf {
+					border: none;
+					margin: 0; }
+				#nagrania {
+					padding-right: 96px;
+					&.overflow { padding-right: 50px; } }
+				#panel-nagrywania { 
+					.play div { padding-top: 3px }
+					.nagrywanie div { padding-top: 5px } }
+				#panel-glowny .minimalizuj {
+					top: -10px; left: 100%;
+					margin-left: -9px;
+					.znak {	left: -3px; } }
+				#ciemne-tlo {
+					.zamkniecie { top: -11px; right: -11px;	}
+					.pomoc .zamkniecie { top: -10px; right: -7px; } } }
+
+/* MEDIA QUERIES */
+
+	@media only screen and (max-height: 800px) {
+		#gitary { transform: scale(0.9); } }
+	@media only screen and (max-width: 1280px) {
+		body {
+			&.acoustic #gryf { background-position: 7% center, 26% center, 43% center, 58.5% center, 73% center, 91.5% center, left top; }
+			&.les-paul #gryf { background-position: 27% center, 44% center, 59% center, 73% center, 91.5% center, left top; }
+			&.strat #gryf    { background-position: 27% center, 43.7% center, 58.7% center, 72.6% center, 91.2% 32px, 91.2% 192px, left top; }	} }
+	@media only screen and (max-width: 1024px) {
+		body {
+			&.acoustic #gryf { background-position: 7% center, 25.7% center, 42.6% center, 58% center, 72.2% center, 91% center, left top; }
+			&.les-paul #gryf { background-position: 26% center, 42.5% center, 58% center, 72% center, 91% center, left top; }
+			&.strat #gryf    { background-position: 27% center, 43% center, 58% center, 72% center, 91% 32px, 91% 192px, left top; } } }
+	@media only screen and (max-width: 950px) {
+		#gryf td {
+			&:nth-child(13), &:nth-child(12), &:nth-child(11) { display: none; } }
+		body {
+			&.acoustic #gryf { background-position: 9% center, 32% center, 53% center, 71.5% center, 89% center, 200% center, left top; }
+			&.les-paul #gryf { background-position: 32% center, 53% center, 71.5% center, 89% center, 200% center, left top; }
+			&.strat #gryf    { background-position: 33% center, 53% center, 71% center, 88% center, 200% center, 200% center, left top; } } }
+	@media only screen and (max-width: 600px) {
+		#gryf td {
+			&:nth-child(10), &:nth-child(9), &:nth-child(8) { display: none; } }
+		body {
+			&.acoustic #gryf { background-position: 13% center, 43% center, 71% center, 200% center, 200% center, 200% center, left top; }
+			&.les-paul #gryf { background-position: 43% center, 71% center, 200% center, 200% center, 200% center, left top; }
+			&.strat #gryf    { background-position: 44% center, 70% center, 200% center, 200% center, 200% center, 200% center, left top; } } }

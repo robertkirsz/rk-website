@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+section { padding: 35px 0 25px; }
+.content { max-width: 1000px; }
+.stripes { margin-bottom: 40px; }
+#top {
+	background-position: top left, center -200px;
+	h2 {
+		margin-top: 45px;
+		font-size: 3em; } }
+	nav {
+		ul { padding: 0 60px; }
+		a {
+			font-size: 1.1em;
+			padding: 0.5em 0; } }
+#timer { display: block; }
+#obstacles {
+	.obstacle-list {
+		float: left;
+		width: 45%;
+		padding: 0;
+		figure {
+			width: calc(50% - 10px);
+			cursor: pointer;
+			img {
+				margin-bottom: 15px; }
+			figcaption {
+				margin: 0;
+				font-family: KomikaTitle-PaintRegular, sans-serif;
+				font-size: 1em;
+				text-align: center;	}
+			&.active, &:hover {
+				background: #eef13f url(../images/yellow_texture.png) repeat;
+				figcaption { color: #f46034; } } } }
+		.obstacle-viewer { display: block; } }
+#prizes {
+	img { width: initial; }
+	.wrap { column-count: 2; } }
+#contestant {
+	form {
+		float: left;
+		margin-bottom: 100px;
+		li:nth-child(5) { overflow: auto; }
+			input { width: 380px; }
+			select {
+				float: left;
+				&[name="team-color"] {
+					width: 225px;
+					margin-right: 15px;
+					+ span { width: 210px; } }
+				&[name="gender"] {
+					width: 155px;
+					+ span { width: 140px; } } } } }
+footer {
+	div {
+		width: 650px;
+		&:nth-of-type(2) { width: 340px; } }
+	p {
+		float: left;
+		font-size: 14px;
+		margin: 15px 10px 35px;
+		line-height: 18px;
+		&:nth-of-type(odd) { text-align: right; }
+		&:nth-of-type(even) { text-align: left; } }
+	+ p {
+		margin: 25px 0;
+		font-size: 14px;
+		text-align: center; } }

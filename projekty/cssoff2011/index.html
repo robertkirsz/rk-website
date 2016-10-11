@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Triple Dare">
+	<meta name="keywords" content="triple dare, contest">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Triple Dare</title>
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+<nav>
+	<div class="content">
+		<ul>
+			<li><a href="#obstacles">Obstacles</a></li>
+			<li><a href="#prizes">Prizes</a></li>
+			<li><a href="#contestant">Be a contestant</a></li>
+			<li><a href="#top">Back to top</a></li>
+		</ul>
+	</div>
+</nav>
+
+<section id="top">
+	<div class="content">
+		<h1><img src="images/logo.png" alt="Triple Dare Logo"></h1>
+		<h2>The Web's messiest challenge!</h2>
+		<p>Airing Thursdays on the Knucklelodeon Network&trade;</p>
+	</div>
+</section>
+
+<section id="obstacles">
+	<div class="content">
+		<h2 class="stripes">Obstacles</h2>
+		<div class="obstacle-list">
+			<figure class="active">
+				<img src="images/the-tank.png" alt="The Tank" title="Obstacle description">
+				<figcaption>The Tank</figcaption>
+			</figure>
+			<figure>
+				<img src="images/human-hamster-wheel.png" alt="Human Hamster Wheel" title="Obstacle description">
+				<figcaption>Human Hamster Wheel</figcaption>
+			</figure>
+			<figure>
+				<img src="images/pick-it.png" alt="Pick It!" title="Obstacle description">
+				<figcaption>Pick It!</figcaption>
+			</figure>
+			<figure>
+				<img src="images/sundae-slide.png" alt="Sundae Slide" title="Obstacle description">
+				<figcaption>Sundae Slide</figcaption>
+			</figure>
+			<figure>
+				<img src="images/down-the-hatch.png" alt="Down The Hatch" title="6ft slide covered in gunk!">
+				<figcaption>Down The Hatch</figcaption>
+			</figure>
+			<figure>
+				<img src="images/the-wringer.png" alt="The Wringer" title="Obstacle description">
+				<figcaption>The Wringer</figcaption>
+			</figure>
+		</div>
+		<div class="obstacle-viewer">
+			<p>The Tank<br><span>Obstacle description</span></p>
+			<img src="images/the-tank.png" alt="The Tank">
+		</div>
+	</div>
+</section>
+
+<section id="prizes">
+	<div class="content">
+		<h2 class="stripes">Prizes</h2>
+		<div class="wrap">
+			<figure class="prize">
+				<img src="images/space-camp.png" alt="Space Camp">
+				<figcaption>A Trip to Space Camp!</figcaption>
+			</figure>
+			<figure class="prize">
+				<img src="images/keyboard.png" alt="Keyboard">
+				<figcaption>A Casio Rapman keyboard!</figcaption>
+			</figure>
+			<figure class="prize">
+				<img src="images/skateboard.png" alt="Skateboard">
+				<figcaption>A Nash Skateboard!</figcaption>
+			</figure>
+			<figure class="prize">
+				<img src="images/tv-vcr.png" alt="TV-VCR">
+				<figcaption>A 13 inch TV/VCR combo!</figcaption>
+			</figure>
+		</div>
+	</div>
+</section>
+
+<section id="contestant">
+	<div class="content">
+		<h2 class="stripes">Be a contestant</h2>
+		<form action="#" method="POST">
+			<ul>
+				<li>
+					<input type="text" id="name" name="name" placeholder="Your name" required>
+				</li>
+				<li>
+					<input type="email" id="email" name="email" placeholder="Email address" required>
+				</li>
+				<li>
+					<input type="text" id="team-name" name="team-name" placeholder="Team name" required>
+				</li>
+				<li>
+					<select id="team-color" name="team-color" title="Team color">
+						<option value="red">Red</option>
+						<option value="green">Green</option>
+						<option value="blue">Blue</option>
+						<option value="yellow">Yellow</option>
+					</select>
+				</li>
+				<li>
+					<select id="gender" name="gender" title="Gender">
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+					</select>
+				</li>
+				<li>
+					<input type="url" id="url" name="url" placeholder="Profile photo URL" required>
+				</li>
+				<li>
+					<input type="image" name="submit" src="images/submit.png" class="submit-button" alt="Submit button graphic">
+				</li>
+			</ul>
+		</form>
+		<div id="timer">
+			<div id="counter"><p>60</p></div>
+			<p>The clock<br> is ticking!</p>
+		</div>
+		<footer class="cf">
+			<img src="images/kn_logo.png" alt="The Knucklelodeon Logo">
+			<h3>The Knucklelodeon Network</h3>
+			<div>
+				<p>The Knucklelodeon Network is not affiliated<br> with Nickelodeon, nor is it an actual<br> television network</p>
+				<p>Triple Dare contestents consent to potential<br> physical bodily harm, like being burried<br> alive by a giant waffle.</p>
+			</div>
+			<h3>Visit Our Studios</h3>
+			<div>
+				<p>11 Slime Time Way<br> Sacrameno, CA 94203</p>
+				<p>329 Gunk Road<br> Jacksonville, FL 32099</p>
+			</div>
+		</footer>
+		<p>This design is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs 3.0 License</p>
+		<img src="images/cc-image.png" alt="CC Image">
+	</div>
+</section>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/libs/jquery.smooth-scroll.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='https://www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-24232014-4','auto');ga('send','pageview');
+</script>
+</body>
+</html>

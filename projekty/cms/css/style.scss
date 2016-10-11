@@ -1,0 +1,401 @@
+//STYLE OGÓLNE
+
+	$header: #006666;
+	$main: #9DBCBC;
+	$wpisy: #FFCC66;
+	$wpis: #FFEEBB;
+	$aside: #6B6B6B;
+	$footer: #B7B7B7;
+	$przycisk: #F39C12;
+
+	html {
+		overflow-y: scroll;
+		overflow-x: hidden; 
+	}
+
+	[disabled=disabled] { opacity: 0.5; }
+
+	noscript {
+		display: block;
+		font-size: 4em;
+		text-align: center;
+	}
+
+	.cf {
+		&:before, &:after {	content: ""; display: table; }
+		&:after { clear: both; }
+	}
+
+	.btn1 {
+		vertical-align: top;
+		padding: 5px 15px;
+		font-size: 1em;
+		color: white;
+		text-align: center;
+		text-shadow: 0 1px 2px rgba(black, 0.25);
+		text-decoration: none;
+		border: none;
+		border-radius: 3px;
+		outline: none;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		&.active {
+			pointer-events: none; }
+		&:hover, &.active {
+			transform: translateY(2px); }
+		&:active {
+			transform: translateY(4px);
+			box-shadow: none; }
+	}
+
+	@mixin przycisk($kolor) {
+		background: $kolor;
+		box-shadow: 0px 4px 0px darken($kolor, 10%);
+		&.active { background: lighten($kolor, 3%); }
+		&:hover, &.active {
+			box-shadow: 0px 2px 0px darken($kolor, 10%); }
+	}
+	
+	.btn1 { @include przycisk(green); }
+
+	.loading {
+		display: inline-block;
+		position: relative;
+		pointer-events: none;
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%; left: 50%;
+			width: 20px; height: 20px;
+			margin: -14px 0 0 -14px;
+			border-left:   4px solid rgba(0, 174, 239, .15);
+			border-right:  4px solid rgba(0, 174, 239, .15);
+			border-bottom: 4px solid rgba(0, 174, 239, .15);
+			border-top:    4px solid rgba(0, 174, 239, .8);
+			border-radius: 100%;
+			animation: rotation .6s infinite linear; }
+	}
+
+	.error_form {
+		display: none;
+	}
+
+//ANIMACJE
+
+	@keyframes rotation {
+		from { transform: rotate(0deg); }
+		to   { transform: rotate(359deg); }
+	}
+
+//STRONA GŁÓWNA
+
+	main {
+		display: flex;
+		flex-flow: column nowrap;
+		max-width: 1200px; min-height: 100vh;
+		margin: 0 auto;
+		> header {
+			position: relative;
+			flex: 0;
+			min-height: 80px;
+			padding: 10px 10px 0;
+			background: $header;
+			border-bottom: 10px solid darken($header, 10%);
+			.panel {
+				position: absolute;
+				top: 10px; right: 10px; }
+			> nav {
+				ul {
+					padding: 0;
+					margin: 0;
+					display: flex;
+					flex-flow: row wrap;
+					justify-content: flex-start;
+					li {
+						display: flex;
+						list-style: none;
+						margin: 0 10px 10px 0; } } } }
+		> section {
+			flex: 1;
+			display: flex;
+			flex-flow: row nowrap;
+			background: $main;
+			.wpisy {
+				flex: 3;
+				display: flex;
+				flex-flow: column nowrap;
+				background: $wpisy;
+				.wpis {
+					flex: 1;
+					margin-bottom: 10px;
+					padding: 10px;
+					background: $wpis;
+					border: 10px solid darken($wpis, 10%);
+					&:last-of-type { margin-bottom: 0; } }
+				.strona {
+					padding: 10px;
+					border: 10px solid darken($wpis, 10%); } }
+			aside {	
+				flex: 1;
+				padding: 10px;
+				background: $aside;
+				border-top: 10px solid darken($aside, 10%);
+				border-bottom: 10px solid darken($aside, 10%);
+				ul {
+					padding: 0;
+					margin: 0;
+					list-style: none;
+						li {
+							margin: 0 0 20px 0;
+						} } } }
+		> footer {
+			flex: 0;
+			min-height: 80px;
+			padding: 15px;
+			background: $footer;
+			border-top: 10px solid darken($footer, 10%); }
+	}
+
+//PANEL LOGOWANIA
+
+	.panel_logowania {
+		display: none;
+		margin: 50px 10px 10px;
+		text-align: center;
+		img {
+			max-width: 100%;
+			height: auto; }
+		ul {
+			display: inline-block;
+			padding: 15px 15px 5px;
+			background-color: rgba(250,250,250,0.5);
+			border: 1px solid rgba(0, 0, 0, 0.3);
+			list-style-type: none;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2), 
+						inset 0px 1px 0px 0px rgba(250, 250, 250, 0.5); }
+		li {
+			float: left;
+			margin: 0 10px 10px 0;
+			&:last-of-type { margin-right: 0; }	}
+		input:not([type=submit]) {
+			padding: 5px;
+			border: 1px solid rgba(0, 0, 0, 0.3);
+			border-radius: 3px;
+			box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 
+						0px 1px 0px 0px rgba(250, 250, 250, 0.5); }
+		+ .powrot {
+			display: none;
+			position: absolute;
+			left: 50%; bottom: 10px;
+			margin-left: -15px;
+			img {
+				width: 30px; height: 30px; } }
+	}
+
+//PANEL ADMINISTRACYJNY
+
+	#panel_administracyjny {
+		.lista_plikow {
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				li {
+					float: left;
+					position: relative;
+					margin: 0 3px 3px 0;
+					&:nth-child(4n+1) {	clear: left; }
+					button {
+						position: absolute;
+						top: 3px; right: 3px; }
+					} }
+			form {
+				clear: left;
+				margin-top: 5px;
+				padding: 5px; }
+		}
+	}
+
+	.panel_edycja_wpisu, .panel_edycja_strony {
+		display: none;
+	}
+
+	#strona_z_bledami {
+		h1 {
+			text-align: center;
+		}
+	}
+
+//TUNING BOOTSTRAP
+	
+	#panel_administracyjny {
+		.help-block {
+			margin-bottom: -10px;
+			font-size: 0.75em; }
+		.nav-tabs {	margin-bottom: 15px; }
+	}
+
+	body.modal-open { padding-right: 0px !important; }
+
+	.btn-file {
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 15px; 
+		input[type=file] {
+			position: absolute;
+			top: 0;	right: 0;
+			min-width: 100%;
+			min-height: 100%;
+			font-size: 100px;
+			text-align: right;
+			filter: alpha(opacity=0);
+			opacity: 0;
+			outline: none;
+			background: white;
+			cursor: inherit;
+			display: block; }
+	}
+
+//MEDIA QUERIES
+
+	@media only screen and (max-width: 530px) {
+		main > section {
+			flex-flow: column nowrap; }
+		main > header nav ul {
+			justify-content: center; }
+		.panel_logowania {
+			margin: 0 auto;
+			ul {
+				margin: 0;
+				li {
+					float: none;
+					margin-right: 0; } } }
+	}
+
+	@media only screen and (max-width: 640px) and (orientation:landscape) {
+		.panel_logowania {
+			margin: 0 auto;
+		}
+	}
+
+//TESTY FLEX
+
+	#flex {
+		.wrapper {
+			display: flex;  
+			flex-flow: row wrap;
+			font-weight: bold;
+			text-align: center;
+				> * {
+				padding: 10px;
+				flex: 1 100%; } 
+			.header { background: $footer; }
+			.footer { background: $header; }
+			.main {
+				text-align: left;
+				background: $main; }
+			.aside-1 { background: $aside; }
+			.aside-2 { background: $wpisy; }
+		}
+
+		@media all and (min-width: 600px) {
+		  .aside { flex: 1 auto; }
+		}
+
+		@media all and (min-width: 800px) {
+		  .main    { flex: 2 0px; }
+		  .aside-1 { order: 1; } 
+		  .main    { order: 2; }
+		  .aside-2 { order: 3; }
+		  .footer  { order: 4; }
+		}
+	}
+
+	$kolor: #2EFF5C;
+	.karton {
+		background-color: lighten($kolor, 10%);
+		margin-top: 20px;
+		padding: 10px;
+		display: flex;
+		//flex-direction: row;
+		//flex-wrap: wrap;
+		flex-flow: row wrap;
+		//justify-content: flex-start;
+		.pudelko {
+			padding: 10px;
+			font-weight: bold;
+			text-align: center;
+			&.n1 { 
+				background-color: darken($kolor,  5%);
+				order: 1;
+				// flex-grow: 1;
+				// flex-shrink: 1;
+				// flex-basis: auto;
+				flex: 0 1 auto;
+			}
+			&.n2 { 
+				background-color: darken($kolor, 10%);
+				order: 2;
+				// flex-grow: 1;
+				// flex-shrink: 1;
+				// flex-basis: auto;
+				flex: 0 1 auto;
+			}
+			&.n3 { 
+				background-color: darken($kolor, 15%);
+				order: 3;
+				// flex-grow: 1;
+				// flex-shrink: 1;
+				// flex-basis: auto;
+				flex: 0 1 auto;
+			}
+			&.n4 { 
+				background-color: darken($kolor, 20%);
+				order: 4;
+				// flex-grow: 1;
+				// flex-shrink: 1;
+				// flex-basis: auto;
+				flex: 0 1 auto;
+			}
+			&.n5 { 
+				background-color: darken($kolor, 25%);
+				order: 5;
+				// flex-grow: 1;
+				// flex-shrink: 1;
+				// flex-basis: auto;
+				flex: 0 1 auto;
+			}
+			&.n6 { 
+				background-color: darken($kolor, 30%);
+				order: 6;
+				// flex-grow: 1;
+				// flex-shrink: 1;
+				// flex-basis: auto;
+				flex: 0 1 auto;
+			}
+			&.n7 { 
+				background-color: darken($kolor, 35%);
+				order: 7;
+				// flex-grow: 1;
+				// flex-shrink: 1;
+				// flex-basis: auto;
+				flex: 0 1 auto;
+			}
+		}
+	}
+
+	.parent {
+		margin-top: 20px;
+		height: 300px;
+		background-color: $footer;
+
+		display: flex;
+		flex-flow: row wrap;
+		.child {
+			height: 100px; width: 100px;
+			background: $aside url(../Philips_PM5544.svg) 0 0 no-repeat;
+			background-size: 100px 100px;
+			margin: auto;
+		}
+	}

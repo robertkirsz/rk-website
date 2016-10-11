@@ -1,0 +1,495 @@
+@charset "utf-8";
+
+body {
+	background: url(../images/pattern.png) repeat, url(../images/tlo.jpg) no-repeat top center;
+	background-color: #ebe8e1;
+	font: 14px Tahoma, Geneva, sans-serif;
+}
+
+#page-wrap {
+	position: relative;
+	width: 900px;
+	margin: 0 auto;
+	padding: 0 30px;
+	background: rgba(255,255,255,.8) url(../images/plama-logo.png) no-repeat;
+}
+
+strong {
+	font-weight: bold;
+}
+
+/*------------------LINKI------------------------*/
+
+#kontakt a, #footer a, .info a {
+	color: #75c043;
+	text-decoration: none;
+	text-shadow: 2px 1px 3px #75c043;
+	-webkit-transition: all .5s ease;
+	   -moz-transition: all .5s ease;
+		-ms-transition: all .5s ease;
+		 -o-transition: all .5s ease;
+			transition: all .5s ease;
+}
+
+#kontakt a:hover, #footer a:hover, .info a:hover,
+#kontakt a:focus, #footer a:focus, .info a:focus {
+	color: #ea9226;
+	text-shadow: 2px 1px 3px #ea9226;
+}
+
+/*------------------NAWIGACJA--------------------*/
+
+#nav {
+	position: relative;
+}
+
+#nav h1 {
+	width: 413px;
+}
+
+#nav h1 a {
+	position: relative;
+	display: block;
+	width: 413px;
+	height: 142px;
+	padding: 5px;
+	background: url(../images/logo.png) no-repeat;
+	text-indent: -9999px;
+	z-index: 10;
+}
+
+#nav h1 span {
+	position: absolute;
+	width: 80px;
+	height: 90px;
+	top: 0; left: 0;
+	margin: 32px 0 0 27px;
+	background: url(../images/gradient2.png) no-repeat;
+	-webkit-transition: all 1.5s ease;
+	   -moz-transition: all 1.5s ease;
+		-ms-transition: all 1.5s ease;
+		 -o-transition: all 1.5s ease;
+			transition: all 1.5s ease;
+}
+
+#nav h1:hover span {
+	background-position: -187px 0;
+}
+
+#nav ul {
+	margin-top: 5px;
+	padding-left: 10px;
+	text-indent: -9999px;
+}
+
+#nav ul li {
+	float: left;
+	margin-right: 25px;
+}
+
+#nav ul li a {
+	display: block;
+	height: 53px;
+	background-image: url(../images/nav-sprite.png);
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+#nav ul li:nth-of-type(1) a {
+	background-position: 0 -3px;
+	width: 114px;
+}
+
+#nav ul li:nth-of-type(2) a {
+	background-position: -128px -3px;
+	width: 115px;
+}
+
+#nav ul li:nth-of-type(3) a {
+	background-position: -283px -3px;
+	width: 152px;
+}
+
+#nav ul li:nth-of-type(4) a {
+	background-position: -473px -3px;
+	width: 199px;
+}
+
+#nav ul li:nth-of-type(5) a {
+	background-position: -692px -3px;
+	width: 144px;
+}
+
+#nav ul li:nth-of-type(1) span {
+	background-position: 0 -58px;
+}
+
+#nav ul li:nth-of-type(2) span {
+	background-position: -128px -58px;
+}
+
+#nav ul li:nth-of-type(3) span {
+	background-position: -283px -58px;
+}
+
+#nav ul li:nth-of-type(4) span {
+	background-position: -473px -58px;
+}
+
+#nav ul li:nth-of-type(5) span {
+	background-position: -692px -58px;
+}
+
+#nav ul li:nth-of-type(1) a.active {
+	background-position: 0 -113px;
+}
+
+#nav ul li:nth-of-type(2) a.active {
+	background-position: -128px -113px;
+}
+
+#nav ul li:nth-of-type(3) a.active {
+	background-position: -283px -113px;
+}
+
+#nav ul li:nth-of-type(4) a.active {
+	background-position: -473px -113px;
+}
+
+#nav ul li:nth-of-type(5) a.active {
+	background-position: -692px -113px;
+}
+
+#nav ul li a.active span {
+	display: none;
+}
+
+#nav ul span {
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	opacity: 0;
+	background: url(../images/nav-sprite.png) no-repeat;
+	-webkit-transition: opacity 0.5s;
+	   -moz-transition: opacity 0.5s;
+	    -ms-transition: opacity 0.5s;
+	   	 -o-transition: opacity 0.5s;
+			transition: opacity 0.5s;
+}
+
+#nav ul a:hover span, #nav ul a:focus span  {
+	opacity: 1;
+}
+
+/*------------------TREŚĆ---------------------*/
+
+/*---ANIMACJA---*/
+
+/*---O NAS---*/
+
+#o-nas p {
+	margin: 70px 0 0 30px;
+	font-size: 14px;
+	line-height: 28px;
+	padding-right: 20px;
+}
+
+#o-nas img {
+	margin: 50px 0 0 50px;
+}
+
+#o-nas strong {
+	color: #ea9226;
+}
+
+/*---OFERTA---*/
+
+#oferta h2 {
+	margin: 10px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#oferta h3 {
+	margin: 10px 10px 5px;
+	font-size: 16px;
+}
+
+#oferta ul {
+	margin-left: 15px;
+	font-size: 12px;
+	list-style: disc inside;
+}
+
+#oferta li {
+	margin: 5px;
+}
+
+#oferta p {
+	margin: 15px 10px 0;
+}
+
+#oferta .ziel {
+	font-weight: bold;
+	color: #75c043;
+}
+
+#oferta .pom {
+	font-weight: bold;
+	color: #ea9226;
+}
+
+#oferta .pakiety {
+	float: left;
+	width: 400px;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+#oferta .akcje-promocyjne {
+	float: right;
+	width: 400px;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+/*---PORTFOLIO---*/
+
+#portfolio img {
+	position: relative;
+	left: 70px;
+}
+
+/*---SOCIAL MEDIA---*/
+
+#social-media h2 {
+	font-size: 20px;
+	font-weight: bold;
+	border-bottom: 2px solid #000;
+	height: 40px;
+	line-height: 40px;
+	position: relative;
+}
+
+#social-media h2 img {
+	position: absolute;
+	left: 110px;
+}
+
+#social-media ul {
+	margin-top: 20px;
+}
+
+#social-media ul li {
+	float: left;
+	margin-right: 10px;
+}
+
+#social-media .facebook {
+	float: left;
+	width: 350px;
+	position: relative;
+	top: 50px;
+	left: 35px;
+}
+
+#social-media .facebook iframe {
+	margin-top: 15px;
+}
+
+#social-media .blog {
+	float: right;
+	width: 340px;
+	position: relative;
+	top: 50px;
+	right: 50px;
+}
+
+#social-media .blog .data {
+	padding: 5px;
+	background: #ea9226;
+	border-radius: 2px;
+	-webkit-box-shadow: 2px 2px 10px #000;
+	   -moz-box-shadow: 2px 2px 10px #000;
+	   		box-shadow: 2px 2px 10px #000;
+}
+
+#social-media .blog .tresc {
+	line-height: 28px;
+}
+
+/*---KONTAKT---*/
+
+#kontakt {
+	position: relative;
+	height: 620px;
+}
+
+#kontakt ul {
+	margin: 30px;
+	font-size: 16px;
+	float: left;
+}
+
+#formularz {
+	float: left;
+}
+
+#formularz ul {
+	margin: 0 30px;
+}
+
+#formularz label {
+	float: left;
+	text-align: right;
+	margin-right: 10px;
+	width: 100px;
+	padding-top: 5px;
+}
+
+#formularz input, #formularz textarea {
+	font: 12px Tahoma, Geneva, sans-serif;
+	padding: 5px;
+	width: 170px;
+	margin: 0px 0px 10px 0px;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+}
+
+#formularz textarea {
+	width: 300px;
+	height: 200px;
+}
+
+#formularz input.submit-button {
+	width: 100px;
+	float: right;
+	cursor: pointer;
+}
+
+#formularz ul li:first-child {
+	margin-bottom: 15px;
+}
+
+#formularz input:valid {
+	background: #fff url(../images/form-ikony.png) no-repeat 159px 3px;
+}
+
+#formularz input:focus:invalid {
+	background: #fff url(../images/form-ikony.png) no-repeat 159px -22px;
+}
+
+#mapa {
+	float: right;
+	width: 350px;
+	height: 350px;
+	margin-right: 10px;
+	border: 5px solid #fff;
+	-webkit-box-shadow: 1px 1px 10px #000;
+	   -moz-box-shadow: 1px 1px 10px #000;
+		    box-shadow: 1px 1px 10px #000;
+}
+
+#mapa a {
+	margin-top: 5px;
+	font-size: 12px;
+	float: right;
+}
+
+/*------------------SLIDER--------------------*/
+
+.slider {
+	clear: both;
+	margin: 0 auto;
+	position: relative;
+	width: 900px;
+	height: 630px;
+	overflow: hidden;
+}
+
+.reel {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.reel div {
+	float: left;
+	width: 900px;
+}
+
+/*-----------------STOPKA---------------------*/
+
+#footer {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	background: #353535 url(../images/footer-pattern.png) repeat;
+	color: #fff;
+	text-shadow: 2px 1px 1px #000;
+}
+
+#footer .content {
+	width: 900px;
+	margin: 0 auto;
+	padding: 10px 30px;
+}
+
+#links ul {
+	float: left;
+	margin-top: 15px;
+	padding: 5px 20px 10px;
+	border-right: 1px solid #272727;
+	border-left: 1px solid #828282;
+	font-size: 12px;
+}
+
+#links ul:first-child {
+	border-left: none;
+}
+
+#links ul:last-child {
+	border-right: none;
+}
+
+#links ul li:first-child {
+	margin-bottom: 15px;
+	font-size: 14px;
+}
+
+#links ul li:nth-child(3) {
+	margin-bottom: 10px;
+}
+
+#dane {
+	float: right;
+}
+
+#footer p {
+	clear: both;
+	color: #adadad;
+	font-size: 12px;
+	text-shadow: none;
+}
+
+/*-----------PODSTRONA INFO------------*/
+
+#info .info {
+	margin: 20px;
+	text-align: center;
+}
+
+#info .info h1 {
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+#info .info p {
+	margin: 5px;
+}
+
+#info #page-wrap {
+	padding-bottom: 20px;
+	-webkit-border-radius: 0 0 20px 20px;
+	   -moz-border-radius: 0 0 20px 20px;
+			border-radius: 0 0 20px 20px;
+}

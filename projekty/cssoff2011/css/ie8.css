@@ -1,0 +1,88 @@
+section {
+  padding: 35px 0 25px; }
+
+.content {
+  max-width: 1000px; }
+
+.stripes {
+  margin-bottom: 40px; }
+
+#top {
+  background-position: top left, center -200px; }
+  #top h2 {
+    margin-top: 45px;
+    font-size: 3em; }
+
+nav ul {
+  padding: 0 60px; }
+nav a {
+  font-size: 1.1em;
+  padding: 0.5em 0; }
+
+#timer {
+  display: block; }
+
+#obstacles .obstacle-list {
+  float: left;
+  width: 45%;
+  padding: 0; }
+  #obstacles .obstacle-list figure {
+    width: calc(50% - 10px);
+    cursor: pointer; }
+    #obstacles .obstacle-list figure img {
+      margin-bottom: 15px; }
+    #obstacles .obstacle-list figure figcaption {
+      margin: 0;
+      font-family: KomikaTitle-PaintRegular, sans-serif;
+      font-size: 1em;
+      text-align: center; }
+    #obstacles .obstacle-list figure.active, #obstacles .obstacle-list figure:hover {
+      background: #eef13f url(../images/yellow_texture.png) repeat; }
+      #obstacles .obstacle-list figure.active figcaption, #obstacles .obstacle-list figure:hover figcaption {
+        color: #f46034; }
+#obstacles .obstacle-viewer {
+  display: block; }
+
+#prizes img {
+  width: initial; }
+#prizes .wrap {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2; }
+
+#contestant form {
+  float: left;
+  margin-bottom: 100px; }
+  #contestant form li:nth-child(5) {
+    overflow: auto; }
+  #contestant form input {
+    width: 380px; }
+  #contestant form select {
+    float: left; }
+    #contestant form select[name="team-color"] {
+      width: 225px;
+      margin-right: 15px; }
+      #contestant form select[name="team-color"] + span {
+        width: 210px; }
+    #contestant form select[name="gender"] {
+      width: 155px; }
+      #contestant form select[name="gender"] + span {
+        width: 140px; }
+
+footer div {
+  width: 650px; }
+  footer div:nth-of-type(2) {
+    width: 340px; }
+footer p {
+  float: left;
+  font-size: 14px;
+  margin: 15px 10px 35px;
+  line-height: 18px; }
+  footer p:nth-of-type(odd) {
+    text-align: right; }
+  footer p:nth-of-type(even) {
+    text-align: left; }
+footer + p {
+  margin: 25px 0;
+  font-size: 14px;
+  text-align: center; }
