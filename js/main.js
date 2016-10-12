@@ -11,19 +11,39 @@ var IkonyResponsywnosci = function IkonyResponsywnosci(_ref) {
 	$this.append($('<span />', { class: 'fa fa-desktop ' + desktop })).append($('<span />', { class: 'fa fa-tablet ' + tablet })).append($('<span />', { class: 'fa fa-mobile ' + telefon }));
 	return $this;
 };
-
-// Zdjęcie projektu w wersji mobilnej
+// Telefon ze zdjęciem projektu w wersji mobilnej
 var Telefon = function Telefon(nazwa, screenshot) {
 	var $this = $('<div />', { class: 'phone' });
-	var $top = $('<div class="top"></div>');
-	var $screen = $('<div class="screen"><img src="img/portfolio/' + screenshot + '" alt="' + nazwa + ' Mobile Version"></div>');
-	var $bottom = $('<div class="bottom"></div>');
+	var $góra = $('<div />', { class: 'top' });
+	var $ekran = $('<div />', { class: 'screen' });
+	var $dół = $('<div />', { class: 'bottom' });
+	var $screenshot = $('<img />', {
+		src: 'img/portfolio/' + screenshot,
+		alt: nazwa + ' - Wersja Mobilna'
+	});
 
-	$this.append($top).append($screen).append($bottom);
+	$this.append($góra).append($ekran.append($screenshot)).append($dół);
 
 	return $this;
 };
+// Okno przegladarki ze zdjęciem projektu w wersji webowej/desktopowej
+var Desktop = function Desktop(nazwa, screenshot, adres) {
+	var $this = $('<div />', { class: 'desktop' });
+	var $góra = $('<div />', { class: 'top' });
+	var $ekran = $('<div />', { class: 'screen' });
+	var $screenshot = $('<img />', {
+		src: 'img/portfolio/' + screenshot,
+		alt: nazwa + ' - Wersja Webowa'
+	});
+	var $ikony = $('<i class="fa fa-arrow-left"></i><i class="fa fa-arrow-right"></i><i class="fa fa-refresh"></i><i class="fa fa-home"></i>');
+	var $pasekAdresowy = $('<div />', { class: 'address' });
+	var $link = $('<a />', { href: 'http://' + adres, text: adres });
 
+	$this.append($góra.append($ikony).append($pasekAdresowy.append($link))).append($ekran.append($screenshot));
+
+	return $this;
+};
+// Pojedyńcza pozycja na liście portfolio
 var ElementPortfolio = function ElementPortfolio(key, value) {
 	var nazwa = value.nazwa;
 	var adres = value.adres;
@@ -46,16 +66,13 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 	var $description = $('<div />', { class: 'description col-md-4 ' + bootstrap1 });
 	var $browsers = $('<div />', { class: 'browsers col-md-8 ' + bootstrap2 });
 
-	$description.append($('<h1 />', { text: nazwa })).append(new IkonyResponsywnosci(responsywnosc)).append($('<p />', { text: opis })).append($('<a />', {
+	$description.append($('<h1 />', { text: nazwa })).append(new IkonyResponsywnosci(responsywnosc)).append($('<p />', { html: opis })).append($('<a />', {
 		href: 'http://' + adres,
-		type: 'button',
 		class: 'btn btn-info',
 		text: 'Zobacz projekt na żywo'
 	}));
 
-	var $desktop = $('<div class="desktop"><div class="top"><i class="fa fa-arrow-left"></i><i class="fa fa-arrow-right"></i><i class="fa fa-refresh"></i><i class="fa fa-home"></i><div class="address"><a href="http://' + adres + '">' + adres + '</a></div></div><div class="screen"><img src="img/portfolio/' + screenshot.desktop + '" alt="' + nazwa + ' Desktop Version"></div></div>');
-
-	if (screenshot.desktop !== '') $browsers.append($desktop);
+	if (screenshot.desktop !== '') $browsers.append(new Desktop(nazwa, screenshot.desktop, adres));
 	if (screenshot.telefon !== '') $browsers.append(new Telefon(nazwa, screenshot.telefon));
 
 	$portfolioItem.append($description).append($browsers);
@@ -246,8 +263,9 @@ var initApp = function initApp() {
 	pobierszPortfolio();
 };
 
+// Zainicjuj aplikację gdy dokument będzie gotowy
 $(document).ready(initApp());
-
+// Po załadowaniu się okna usuń klasę .rk, co uruchomi animację wejścia
 $(window).load(function () {
 	$('.rk').removeClass('rk');
 });

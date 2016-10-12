@@ -9,22 +9,52 @@ const IkonyResponsywnosci = ({ desktop, tablet, telefon }) => {
 		.append($('<span />', { class: 'fa fa-mobile ' + telefon }))
 	return $this
 }
-
-// Zdjęcie projektu w wersji mobilnej
+// Telefon ze zdjęciem projektu w wersji mobilnej
 const Telefon = (nazwa, screenshot) => {
-	const $this = $('<div />', { class: 'phone' })
-	const $top = $('<div class="top"></div>')
-	const $screen = $('<div class="screen"><img src="img/portfolio/' + screenshot + '" alt="' + nazwa + ' Mobile Version"></div>')
-	const $bottom = $('<div class="bottom"></div>')
+	const $this  = $('<div />', { class: 'phone' })
+	const $góra  = $('<div />', { class: 'top' })
+	const $ekran = $('<div />', { class: 'screen' })
+	const $dół   = $('<div />', { class: 'bottom' })
+	const $screenshot = $('<img />', {
+		src: 'img/portfolio/' + screenshot,
+		alt: nazwa + ' - Wersja Mobilna'
+	})
 
 	$this
-		.append($top)
-		.append($screen)
-		.append($bottom)
+		.append($góra)
+		.append($ekran.append($screenshot))
+		.append($dół)
 
 	return $this
 }
+// Okno przegladarki ze zdjęciem projektu w wersji webowej/desktopowej
+const Desktop = (nazwa, screenshot, adres) => {
+	const $this = $('<div />', { class: 'desktop' })
+	const $góra = $('<div />', { class: 'top' })
+	const $ekran = $('<div />', { class: 'screen' })
+	const $screenshot = $('<img />', {
+		src: 'img/portfolio/' + screenshot,
+		alt: nazwa + ' - Wersja Webowa'
+	})
+	const $ikony = $('<i class="fa fa-arrow-left"></i><i class="fa fa-arrow-right"></i><i class="fa fa-refresh"></i><i class="fa fa-home"></i>')
+	const $pasekAdresowy = $('<div />', { class: 'address' })
+	const $link = $('<a />', { href: 'http://' + adres, text: adres })
 
+	$this
+		.append(
+			$góra
+				.append($ikony)
+				.append(
+					$pasekAdresowy.append($link)
+				)
+			)
+		.append(
+			$ekran.append($screenshot)
+		)
+
+	return $this
+}
+// Pojedyńcza pozycja na liście portfolio
 const ElementPortfolio = (key, value) => {
 	const {	nazwa, adres, opis, responsywnosc, screenshot } = value
 
@@ -45,19 +75,16 @@ const ElementPortfolio = (key, value) => {
 	$description
 		.append($('<h1 />', { text: nazwa }))
 		.append(new IkonyResponsywnosci(responsywnosc))
-		.append($('<p />', { text: opis }))
+		.append($('<p />', { html: opis }))
 		.append(
 			$('<a />', {
 				href: 'http://' + adres,
-				type: 'button',
 				class: 'btn btn-info',
 				text: 'Zobacz projekt na żywo'
 			})
 		)
 
-	var $desktop = $('<div class="desktop"><div class="top"><i class="fa fa-arrow-left"></i><i class="fa fa-arrow-right"></i><i class="fa fa-refresh"></i><i class="fa fa-home"></i><div class="address"><a href="http://' + adres + '">' + adres + '</a></div></div><div class="screen"><img src="img/portfolio/' + screenshot.desktop + '" alt="' + nazwa + ' Desktop Version"></div></div>')
-
-	if (screenshot.desktop !== '') $browsers.append($desktop)
+	if (screenshot.desktop !== '') $browsers.append(new Desktop(nazwa, screenshot.desktop, adres))
 	if (screenshot.telefon !== '') $browsers.append(new Telefon(nazwa, screenshot.telefon))
 
 	$portfolioItem
@@ -249,6 +276,7 @@ const initApp = () => {
 	pobierszPortfolio()
 }
 
+// Zainicjuj aplikację gdy dokument będzie gotowy
 $(document).ready(initApp())
-
+// Po załadowaniu się okna usuń klasę .rk, co uruchomi animację wejścia
 $(window).load(() => { $('.rk').removeClass('rk') })
