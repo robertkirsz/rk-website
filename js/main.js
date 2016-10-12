@@ -1,6 +1,69 @@
 'use strict';
 
-function initApp() {
+// Ikony responsywności (desktop, tablet, telefon)
+
+var IkonyResponsywnosci = function IkonyResponsywnosci(_ref) {
+	var desktop = _ref.desktop;
+	var tablet = _ref.tablet;
+	var telefon = _ref.telefon;
+
+	var $this = $('<h3 />', { class: 'responsive-icons' });
+	$this.append($('<span />', { class: 'fa fa-desktop ' + desktop })).append($('<span />', { class: 'fa fa-tablet ' + tablet })).append($('<span />', { class: 'fa fa-mobile ' + telefon }));
+	return $this;
+};
+
+// Zdjęcie projektu w wersji mobilnej
+var Telefon = function Telefon(nazwa, screenshot) {
+	var $this = $('<div />', { class: 'phone' });
+	var $top = $('<div class="top"></div>');
+	var $screen = $('<div class="screen"><img src="img/portfolio/' + screenshot + '" alt="' + nazwa + ' Mobile Version"></div>');
+	var $bottom = $('<div class="bottom"></div>');
+
+	$this.append($top).append($screen).append($bottom);
+
+	return $this;
+};
+
+var ElementPortfolio = function ElementPortfolio(key, value) {
+	var nazwa = value.nazwa;
+	var adres = value.adres;
+	var opis = value.opis;
+	var responsywnosc = value.responsywnosc;
+	var screenshot = value.screenshot;
+
+	// Elementy nieparzyste (po prawej - domyślne)
+
+	var bootstrap1 = '';
+	var bootstrap2 = '';
+
+	// Elementy parzyste (po lewej)
+	if (key % 2 === 0) {
+		bootstrap1 = 'col-md-push-8';
+		bootstrap2 = 'col-md-pull-4';
+	}
+
+	var $portfolioItem = $('<div />', { class: 'row portfolio-item' });
+	var $description = $('<div />', { class: 'description col-md-4 ' + bootstrap1 });
+	var $browsers = $('<div />', { class: 'browsers col-md-8 ' + bootstrap2 });
+
+	$description.append($('<h1 />', { text: nazwa })).append(new IkonyResponsywnosci(responsywnosc)).append($('<p />', { text: opis })).append($('<a />', {
+		href: 'http://' + adres,
+		type: 'button',
+		class: 'btn btn-info',
+		text: 'Zobacz projekt na żywo'
+	}));
+
+	var $desktop = $('<div class="desktop"><div class="top"><i class="fa fa-arrow-left"></i><i class="fa fa-arrow-right"></i><i class="fa fa-refresh"></i><i class="fa fa-home"></i><div class="address"><a href="http://' + adres + '">' + adres + '</a></div></div><div class="screen"><img src="img/portfolio/' + screenshot.desktop + '" alt="' + nazwa + ' Desktop Version"></div></div>');
+
+	if (screenshot.desktop !== '') $browsers.append($desktop);
+	if (screenshot.telefon !== '') $browsers.append(new Telefon(nazwa, screenshot.telefon));
+
+	$portfolioItem.append($description).append($browsers);
+
+	return $portfolioItem;
+};
+
+var initApp = function initApp() {
 	var $window = $(window);
 	var $body = $('body');
 
@@ -166,71 +229,6 @@ function initApp() {
 		}
 	});
 
-	var ElementPortfolio = function ElementPortfolio(key, value) {
-		var nazwa = value.nazwa;
-		var adres = value.adres;
-		var opis = value.opis;
-		var responsywnosc = value.responsywnosc;
-		var screenshot = value.screenshot;
-
-
-		var uklad = null;
-		var bootstrap1 = null;
-		var bootstrap2 = null;
-
-		// Elementy parzyste (po lewej)
-		if (key % 2 === 0) {
-			uklad = screenshot.desktop === '' ? 'telefon_only left' : 'responsive left';
-			bootstrap1 = 'col-md-push-8';
-			bootstrap2 = 'col-md-pull-4';
-			// Elementy nieparzyste (po prawej)
-		} else {
-			uklad = screenshot.desktop === '' ? 'telefon_only right' : 'responsive right';
-			bootstrap1 = '';
-			bootstrap2 = '';
-		}
-
-		function generateResponsivenessIcons(desktop, tablet, telefon) {
-			var $responsiveIcons = $('<h3 />', { class: 'responsive-icons' });
-			$responsiveIcons.append($('<i />', { class: 'fa fa-desktop ' + responsywnosc.desktop }));
-			$responsiveIcons.append($('<i />', { class: 'fa fa-tablet ' + responsywnosc.tablet }));
-			$responsiveIcons.append($('<i />', { class: 'fa fa-mobile ' + responsywnosc.telefon }));
-			return $responsiveIcons;
-		}
-
-		var $portfolioItem = $('<div />', { class: 'row portfolio-item ' + uklad });
-		var $description = $('<div />', { class: 'description col-md-4 ' + bootstrap1 });
-		var $browsers = $('<div />', { class: 'browsers col-md-8 ' + bootstrap2 });
-
-		$description.append($('<h1 />', { text: nazwa }));
-		$description.append(generateResponsivenessIcons(responsywnosc.desktop, responsywnosc.tablet, responsywnosc.telefon));
-		$description.append($('<p />', { text: opis }));
-		$description.append($('<a />', {
-			href: 'http://' + adres,
-			type: 'button',
-			class: 'btn btn-info',
-			text: 'Zobacz projekt na żywo'
-		}));
-
-		var $phone = $('<div />', { class: 'phone' });
-		var $top = $('<div class="top"></div>');
-		var $screen = $('<div class="screen"><img src="img/portfolio/' + screenshot.telefon + '" alt="' + nazwa + ' Mobile Version"></div>');
-		var $bottom = $('<div class="bottom"></div>');
-
-		$phone.append($top);
-		$phone.append($screen);
-		$phone.append($bottom);
-
-		var $desktop = $('<div class="desktop"><div class="top"><i class="fa fa-arrow-left"></i><i class="fa fa-arrow-right"></i><i class="fa fa-refresh"></i><i class="fa fa-home"></i><div class="address"><a href="http://' + adres + '">' + adres + '</a></div></div><div class="screen"><img src="img/portfolio/' + screenshot.desktop + '" alt="' + nazwa + ' Desktop Version"></div></div>');
-
-		if (screenshot.desktop !== '') $browsers.append($desktop);
-		if (screenshot.telefon !== '') $browsers.append($phone);
-
-		$portfolioItem.append($description).append($browsers);
-
-		return $portfolioItem;
-	};
-
 	var wygenerujListePortfolio = function wygenerujListePortfolio(tablicaPortfolio) {
 		var $listaPortfolio = $();
 		$.each(tablicaPortfolio, function (key, value) {
@@ -246,7 +244,7 @@ function initApp() {
 	};
 
 	pobierszPortfolio();
-}
+};
 
 $(document).ready(initApp());
 

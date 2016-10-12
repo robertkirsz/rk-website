@@ -86,13 +86,13 @@ body { font: 15px 'Open Sans', sans-serif; background: #EDEDED; }
 
 #main_skills .beginner p { font-size: 0.9em; }
 
-#main_portfolio .portfolio-item { margin-bottom: 40px; }
-
-#main_portfolio .portfolio-item:last-of-type { margin-bottom: 0; }
+#main_portfolio .portfolio-item:not(:first-of-type) { margin-top: 40px; }
 
 #main_portfolio .portfolio-item .description { position: relative; background: #fafafa; box-shadow: 0 3px #D9D9D9; padding: 15px 35px 15px; }
 
 #main_portfolio .portfolio-item .description:before { content: ''; box-shadow: 0 3px #D9D9D9; position: absolute; background: #fafafa; display: block; width: 20px; height: 20px; top: 50%; margin-top: -10px; z-index: -1; }
+
+#main_portfolio .portfolio-item .description .fa:not(:first-of-type) { margin-left: 5px; }
 
 #main_portfolio .portfolio-item .description .fa.false { opacity: 0.2; }
 
@@ -130,13 +130,13 @@ body { font: 15px 'Open Sans', sans-serif; background: #EDEDED; }
 
 #main_portfolio .portfolio-item .browsers .phone .bottom:before { content: ""; position: absolute; left: 50%; bottom: 10px; width: 66px; height: 18px; margin-left: -33px; border-radius: 5px 5px 10px 10px; border: 1px solid #BBB; border-bottom-width: 3px; }
 
-#main_portfolio .portfolio-item.left .phone { left: -40px; }
+#main_portfolio .portfolio-item:nth-of-type(odd) .phone { left: -40px; }
 
-#main_portfolio .portfolio-item.left .description:before { left: -5px; transform: rotate(45deg); }
+#main_portfolio .portfolio-item:nth-of-type(odd) .description:before { left: -5px; transform: rotate(45deg); }
 
-#main_portfolio .portfolio-item.right .phone { right: -40px; }
+#main_portfolio .portfolio-item:nth-of-type(even) .phone { right: -40px; }
 
-#main_portfolio .portfolio-item.right .description:before { right: -5px; transform: rotate(-45deg); }
+#main_portfolio .portfolio-item:nth-of-type(even) .description:before { right: -5px; transform: rotate(-45deg); }
 
 #main_contact .container { padding-bottom: 15px; }
 
