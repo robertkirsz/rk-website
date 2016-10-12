@@ -54,7 +54,7 @@ body  {
 
 	#main_nav {
 			transition: background-color $time $ease1 $time2, box-shadow $time $ease1 $time2;
-		&.rk { 
+		&.rk {
 			background-color: #ededed;
 			box-shadow: 0 3px #ededed;
 		}
@@ -552,7 +552,7 @@ body  {
 					}
 				}
 			}
-			&.mobile_only {
+			&.telefon_only {
 				.phone {
 					display: block;
 					position: relative;
