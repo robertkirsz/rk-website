@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
 
-	require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
+	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
 		sass: {
@@ -26,25 +26,36 @@ module.exports = function (grunt) {
 				src: 'css/main.css'
 			}
 		},
+		babel: {
+      options: {
+        sourceMap: true,
+        presets: ['latest']
+      },
+      dist: {
+        files: {
+          'js/main.js': 'js/main.es6.js'
+        }
+      }
+    },
 		//<script src="http://localhost:35729/livereload.js"></script>
 		watch: {
-		    all: {
-		      files: ['css/*.scss'],
-		      tasks: ['sass', 'postcss'],
-		      options: { livereload: true }
-		    },
-		    html: {
-                files: ['*.html', '*.php'],
-                options: { livereload: true }
-            },
-            js: {
-                files: ['js/*.js'],
-                options: { livereload: true }
-            }
+	    all: {
+	      files: ['css/*.scss'],
+	      tasks: ['sass', 'postcss'],
+	      options: { livereload: true }
+	    },
+	    html: {
+        files: ['*.html'],
+        options: { livereload: true }
+      },
+      js: {
+        files: ['js/*.es6.js'],
+				tasks: ['babel'],
+        options: { livereload: true }
+      }
 		},
 		jshint: {
 			all: ['js/*.js']
 		}
 	});
-
 };
