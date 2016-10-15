@@ -54,7 +54,7 @@ body  {
 
 	#main_nav {
 			transition: background-color $time $ease1 $time2, box-shadow $time $ease1 $time2;
-		&.rk { 
+		&.rk {
 			background-color: #ededed;
 			box-shadow: 0 3px #ededed;
 		}
@@ -249,10 +249,7 @@ body  {
 
 #main_portfolio {
 	.portfolio-item {
-		margin-bottom: 40px;
-		&:last-of-type {
-			margin-bottom: 0;
-		}
+		&:not(:first-of-type) { margin-top: 40px;	}
 		.description {
 			position: relative;
 			background: #fafafa;
@@ -269,12 +266,11 @@ body  {
 				margin-top: -10px;
 				z-index: -1;
 			}
-			.fa.false {
-				opacity: 0.2;
+			.fa {
+				&:not(:first-of-type) { margin-left: 5px; }
+				&.false {	opacity: 0.2;	}
 			}
-			a.btn {
-				margin-top: 10px;
-			}
+			a.btn {	margin-top: 10px; }
 		}
 		.browsers {
 			padding-top: 0;
@@ -378,7 +374,8 @@ body  {
 				}
 			}
 		}
-		&.left {
+		// Style dla parzystych i nieparzystych elementów
+		&:nth-of-type(odd) {
 			.phone {
 				left: -40px;
 			}
@@ -387,7 +384,7 @@ body  {
 				transform: rotate(45deg);
 			}
 		}
-		&.right {
+		&:nth-of-type(even) {
 			.phone {
 				right: -40px;
 			}
@@ -552,7 +549,7 @@ body  {
 					}
 				}
 			}
-			&.mobile_only {
+			&.telefon_only {
 				.phone {
 					display: block;
 					position: relative;
