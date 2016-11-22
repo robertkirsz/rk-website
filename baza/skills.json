@@ -1,132 +1,31 @@
 [
-	{
-		"nazwa": "HTML5",
-		"ikona": "html5.png",
-		"poziom": "advanced"
-	},
-	{
-		"nazwa": "CSS3",
-		"ikona": "css3.png",
-		"poziom": "advanced"
-	},
-	{
-		"nazwa": "jQuery",
-		"ikona": "jquery.png",
-		"poziom": "advanced"
-	},
-	{
-		"nazwa": "React",
-		"ikona": "react.png",
-		"poziom": "advanced"
-	},
-	{
-		"nazwa": "Redux",
-		"ikona": "redux.png",
-		"poziom": "advanced"
-	},
-	{
-		"nazwa": "React Router",
-		"ikona": "react-router.png",
-		"poziom": "advanced"
-	},
-	{
-		"nazwa": "React Native",
-		"ikona": "react-native.png",
-		"poziom": "intermediate"
-	},
-	{
-		"nazwa": "SASS",
-		"ikona": "sass.png",
-		"poziom": "intermediate"
-	},
-	{
-		"nazwa": "Git",
-		"ikona": "git.png",
-		"poziom": "intermediate"
-	},
-	{
-		"nazwa": "Bootstrap",
-		"ikona": "bootstrap.png",
-		"poziom": "intermediate"
-	},
-	{
-		"nazwa": "Gulp",
-		"ikona": "gulp.png",
-		"poziom": "intermediate"
-	},
-	{
-		"nazwa": "Grunt",
-		"ikona": "grunt.png",
-		"poziom": "intermediate"
-	},
-	{
-		"nazwa": "Karma",
-		"ikona": "karma.png",
-		"poziom": "intermediate"
-	},
-	{
-		"nazwa": "Mocha",
-		"ikona": "mocha.png",
-		"poziom": "intermediate"
-	},
-	{
-		"nazwa": "Chai",
-		"ikona": "chai.png",
-		"poziom": "intermediate"
-	},
-	{
-		"nazwa": "ESLint",
-		"ikona": "eslint.png",
-		"poziom": "intermediate"
-	},
-	{
-		"nazwa": "Vue.js",
-		"ikona": "vue.png",
-		"poziom": "beginner"
-	},
-	{
-		"nazwa": "Webpack.js",
-		"ikona": "webpack.png",
-		"poziom": "beginner"
-	},
-	{
-		"nazwa": "PHP",
-		"ikona": "php.png",
-		"poziom": "beginner"
-	},
-	{
-		"nazwa": "MySQL",
-		"ikona": "mysql.png",
-		"poziom": "beginner"
-	},
-	{
-		"nazwa": "GitHub",
-		"ikona": "github.png",
-		"poziom": "other"
-	},
-	{
-		"nazwa": "Bitbucket",
-		"ikona": "bitbucket.png",
-		"poziom": "other"
-	},
-	{
-		"nazwa": "Trello",
-		"ikona": "trello.png",
-		"poziom": "other"
-	},
-	{
-		"nazwa": "ScrumDo",
-		"ikona": "scrumdo.png",
-		"poziom": "other"
-	},
-	{
-		"nazwa": "Slack",
-		"ikona": "slack.png",
-		"poziom": "other"
-	},
-	{
-		"nazwa": "Photoshop",
-		"ikona": "photoshop.png",
-		"poziom": "other"
-	}
+	{ "nazwa": "HTML5", "ikona": "html5.png", "poziom": "advanced" },
+	{ "nazwa": "CSS3", "ikona": "css3.png", "poziom": "advanced" },
+	{ "nazwa": "JavaScript", "ikona": "javascript.png", "poziom": "advanced" },
+	{ "nazwa": "jQuery", "ikona": "jquery.png", "poziom": "advanced" },
+	{ "nazwa": "React", "ikona": "react.png", "poziom": "advanced" },
+	{ "nazwa": "Redux", "ikona": "redux.png", "poziom": "advanced" },
+	{ "nazwa": "React Router", "ikona": "react-router.png", "poziom": "advanced" },
+	{ "nazwa": "React Native", "ikona": "react-native.png", "poziom": "intermediate" },
+	{ "nazwa": "SASS", "ikona": "sass.png", "poziom": "intermediate" },
+	{ "nazwa": "Git", "ikona": "git.png", "poziom": "intermediate" },
+	{ "nazwa": "Bootstrap", "ikona": "bootstrap.png", "poziom": "intermediate" },
+	{ "nazwa": "Gulp", "ikona": "gulp.png", "poziom": "intermediate" },
+	{ "nazwa": "Grunt", "ikona": "grunt.png", "poziom": "intermediate" },
+	{ "nazwa": "Karma", "ikona": "karma.png", "poziom": "intermediate" },
+	{ "nazwa": "Mocha", "ikona": "mocha.png", "poziom": "intermediate" },
+	{ "nazwa": "Chai", "ikona": "chai.png", "poziom": "intermediate" },
+	{ "nazwa": "ESLint", "ikona": "eslint.png", "poziom": "intermediate" },
+	{ "nazwa": "Vue.js", "ikona": "vue.png", "poziom": "beginner" },
+	{ "nazwa": "Webpack.js", "ikona": "webpack.png", "poziom": "beginner" },
+	{ "nazwa": "PHP", "ikona": "php.png", "poziom": "beginner" },
+	{ "nazwa": "MySQL", "ikona": "mysql.png", "poziom": "beginner" },
+	{ "nazwa": "GitHub", "ikona": "github.png", "poziom": "other" },
+	{ "nazwa": "Bitbucket", "ikona": "bitbucket.png", "poziom": "other" },
+	{ "nazwa": "Trello", "ikona": "trello.png", "poziom": "other" },
+	{ "nazwa": "ScrumDo", "ikona": "scrumdo.png", "poziom": "other" },
+	{ "nazwa": "Slack", "ikona": "slack.png", "poziom": "other" },
+	{ "nazwa": "Babel", "ikona": "babel.png", "poziom": "other" },
+	{ "nazwa": "Photoshop", "ikona": "photoshop.png", "poziom": "other" },
+	{ "nazwa": "Atom", "ikona": "atom.png", "poziom": "other" }
 ]
