@@ -90,7 +90,7 @@ body { font: 15px 'Open Sans', sans-serif; background: #EDEDED; }
 
 #main_skills .other p { font-size: 1em; }
 
-#main_portfolio .portfolio-item:not(:first-of-type) { margin-top: 40px; }
+#main_portfolio .portfolio-item:not(:first-of-type) { margin-top: 50px; }
 
 #main_portfolio .portfolio-item .description { position: relative; background: #fafafa; box-shadow: 0 3px #D9D9D9; padding: 15px 35px 15px; }
 
@@ -112,7 +112,7 @@ body { font: 15px 'Open Sans', sans-serif; background: #EDEDED; }
 
 #main_portfolio .portfolio-item .browsers .desktop .top .address { -ms-flex: 0 1 100%; flex: 0 1 100%; margin-left: 5px; padding: 2px 10px; border: 1px solid #BBB; border-radius: 3px; overflow: hidden; }
 
-#main_portfolio .portfolio-item .browsers .desktop .screen { position: relative; height: 100%; max-width: 750px; max-height: 460px; overflow: hidden; }
+#main_portfolio .portfolio-item .browsers .desktop .screen { position: relative; height: 100%; max-width: 750px; max-height: 530px; overflow: hidden; }
 
 #main_portfolio .portfolio-item .browsers .desktop .screen img { width: 100%; transition: opacity 1s ease; }
 

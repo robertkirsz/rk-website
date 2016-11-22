@@ -240,7 +240,7 @@ body  {
 
 #main_portfolio {
 	.portfolio-item {
-		&:not(:first-of-type) { margin-top: 40px;	}
+		&:not(:first-of-type) { margin-top: 50px;	}
 		.description {
 			position: relative;
 			background: #fafafa;
@@ -297,7 +297,7 @@ body  {
 				.screen {
 					position: relative;
 					height: 100%;
-					max-width: 750px; max-height: 460px;
+					max-width: 750px; max-height: 530px;
 					overflow: hidden;
 					img {
 						width: 100%;
