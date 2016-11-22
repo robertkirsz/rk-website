@@ -3,8 +3,8 @@
 		"nazwa": "CSSOff 2011",
 			"adres": "robertkirsz.pl/projekty/cssoff2011",
 			"screenshot": {
-				"desktop": "TripleDare.jpg",
-				"telefon": "TripleDareMobile.jpg" },
+				"desktop": "TripleDare.png",
+				"telefon": "TripleDareMobile.png" },
 			"responsywnosc": {
 				"desktop": "true",
 				"tablet": "true",
@@ -15,8 +15,8 @@
 		"nazwa": "CSSOff 2013",
 			"adres": "robertkirsz.pl/projekty/cssoff2013",
 			"screenshot": {
-				"desktop": "CSSOffVolume3.jpg",
-				"telefon": "CSSOffVolume3Mobile.jpg" },
+				"desktop": "CSSOffVolume3.png",
+				"telefon": "CSSOffVolume3Mobile.png" },
 			"responsywnosc": {
 				"desktop": "true",
 				"tablet": "false",
@@ -27,8 +27,8 @@
 		"nazwa": "Projektowanie wnętrz",
 			"adres": "robertkirsz.pl/projekty/interiordesign",
 			"screenshot": {
-				"desktop": "InteriorDesign.jpg",
-				"telefon": "InteriorDesignMobile.jpg" },
+				"desktop": "InteriorDesign.png",
+				"telefon": "InteriorDesignMobile.png" },
 			"responsywnosc": {
 				"desktop": "true",
 				"tablet": "false",
@@ -39,8 +39,8 @@
 		"nazwa": "vikaplant",
 			"adres": "vikaplant.pl",
 			"screenshot": {
-				"desktop": "Vikaplant.jpg",
-				"telefon": "VikaplantMobile.jpg" },
+				"desktop": "Vikaplant.png",
+				"telefon": "VikaplantMobile.png" },
 			"responsywnosc": {
 				"desktop": "true",
 				"tablet": "true",
@@ -51,7 +51,7 @@
 		"nazwa": "Symulator Gitary",
 			"adres": "robertkirsz.pl/gitary",
 			"screenshot": {
-				"desktop": "Gitary.jpg",
+				"desktop": "Gitary.png",
 				"telefon": "" },
 			"responsywnosc": {
 				"desktop": "true",
@@ -64,7 +64,7 @@
 			"adres": "robertkirsz.pl/mtg",
 			"screenshot": {
 				"desktop": "",
-				"telefon": "lifecounter.jpg" },
+				"telefon": "lifecounter.png" },
 			"responsywnosc": {
 				"desktop": "false",
 				"tablet": "true",
@@ -75,24 +75,12 @@
 		"nazwa": "Saper",
 			"adres": "robertkirsz.pl/saper",
 			"screenshot": {
-				"desktop": "Saper.jpg",
+				"desktop": "Saper.png",
 				"telefon": "" },
 			"responsywnosc": {
 				"desktop": "true",
 				"tablet": "true",
 				"telefon": "true" },
 			"opis": "Klon kultowego Sapera znanego z Windowsów, moje pierwsze podejście do stworzenia czegoś w rodzaju gry. Stworzony głównie z myślą o desktopach i obsłudze myszką, jest jednak maksymalnie responsywny i powinien wyświetlać się poprawnie na ekranach o wszystkich rozmiarach."
-	},
-	{
-		"nazwa": "Black Tangerine",
-			"adres": "robertkirsz.pl/projekty/blacktangerine",
-			"screenshot": {
-				"desktop": "BlackTangerine.jpg",
-				"telefon": "" },
-			"responsywnosc": {
-				"desktop": "true",
-				"tablet": "false",
-				"telefon": "false" },
-			"opis": "Bonusowo strona, którą zrobiłem dla agencji reklamowej, w której pracowałem przez chwilę po studiach. Był to mój pierwszy projekt nie \"do szuflady\". O designie responsywnym jeszcze się wtedy nie mówiło. Śladowe ilości JavaScript, dzięki którym udało mi się zrobić super nowoczesną nawigację, to było wszystko na co było mnie wtedy stać. Sporo się zmieniło od tamtego czasu."
 	}
 ]
