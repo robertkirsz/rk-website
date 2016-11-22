@@ -25,6 +25,11 @@
 		"poziom": "advanced"
 	},
 	{
+		"nazwa": "React Router",
+		"ikona": "react-router.png",
+		"poziom": "advanced"
+	},
+	{
 		"nazwa": "React Native",
 		"ikona": "react-native.png",
 		"poziom": "intermediate"
@@ -52,6 +57,26 @@
 	{
 		"nazwa": "Grunt",
 		"ikona": "grunt.png",
+		"poziom": "intermediate"
+	},
+	{
+		"nazwa": "Karma",
+		"ikona": "karma.png",
+		"poziom": "intermediate"
+	},
+	{
+		"nazwa": "Mocha",
+		"ikona": "mocha.png",
+		"poziom": "intermediate"
+	},
+	{
+		"nazwa": "Chai",
+		"ikona": "chai.png",
+		"poziom": "intermediate"
+	},
+	{
+		"nazwa": "ESLint",
+		"ikona": "eslint.png",
 		"poziom": "intermediate"
 	},
 	{

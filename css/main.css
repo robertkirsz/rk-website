@@ -70,7 +70,7 @@ body { font: 15px 'Open Sans', sans-serif; background: #EDEDED; }
 
 #main_skills .skill img:hover + p { opacity: 1; transform: translate3d(-50%, 0, 0) rotate3d(0, 0, 0, 0); }
 
-#main_skills .skill p { position: absolute; top: 100%; left: 50%; margin-top: 5px; padding: 0.9em 1.5em; background: #FAFAFA; box-shadow: 0 3px #D9D9D9; opacity: 0; transition: opacity 0.2s, transform 0.2s; pointer-events: none; z-index: 999; transform: translate3d(-50%, 10px, 0) rotate3d(1, 1, 0, 25deg); }
+#main_skills .skill p { position: absolute; top: 100%; left: 50%; margin-top: 5px; padding: 0.9em 1.5em; background: #FAFAFA; box-shadow: 0 3px #D9D9D9; opacity: 0; transition: opacity 0.2s, transform 0.2s; pointer-events: none; z-index: 999; white-space: nowrap; transform: translate3d(-50%, 10px, 0) rotate3d(1, 1, 0, 25deg); }
 
 #main_skills .skill p:before { content: ''; position: absolute; background: #fafafa; display: block; width: 20px; height: 20px; top: -5px; left: 50%; margin-left: -10px; transform: rotate(45deg); }
 

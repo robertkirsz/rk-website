@@ -205,6 +205,7 @@ body  {
 			transition: opacity 0.2s, transform 0.2s;
 			pointer-events: none;
 			z-index: 999;
+			white-space: nowrap;
 			transform: translate3d(-50%,10px,0) rotate3d(1,1,0,25deg);
 			&:before {
 				content: '';
