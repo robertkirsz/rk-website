@@ -8,9 +8,12 @@ var IkonyResponsywnosci = function IkonyResponsywnosci(_ref) {
 	var telefon = _ref.telefon;
 
 	var $this = $('<h3 />', { class: 'responsive-icons' });
+
 	$this.append($('<span />', { class: 'fa fa-desktop ' + desktop })).append($('<span />', { class: 'fa fa-tablet ' + tablet })).append($('<span />', { class: 'fa fa-mobile ' + telefon }));
+
 	return $this;
 };
+
 // Telefon ze zdjęciem projektu w wersji mobilnej
 var Telefon = function Telefon(nazwa, screenshot) {
 	var $this = $('<div />', { class: 'phone' });
@@ -26,6 +29,7 @@ var Telefon = function Telefon(nazwa, screenshot) {
 
 	return $this;
 };
+
 // Okno przegladarki ze zdjęciem projektu w wersji webowej/desktopowej
 var Desktop = function Desktop(nazwa, screenshot, adres) {
 	var $this = $('<div />', { class: 'desktop' });
@@ -43,6 +47,7 @@ var Desktop = function Desktop(nazwa, screenshot, adres) {
 
 	return $this;
 };
+
 // Pojedyńcza pozycja na liście portfolio
 var ElementPortfolio = function ElementPortfolio(key, value) {
 	var nazwa = value.nazwa;
@@ -80,64 +85,30 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 	return $portfolioItem;
 };
 
+// Pojedyńcza pozycja na liście skills
+var ElementSkills = function ElementSkills(key, value) {
+	var nazwa = value.nazwa;
+	var ikona = value.ikona;
+	var opis = value.opis;
+
+	var $element = $('<div />', { class: 'skill col-sm-6 col-md-4' });
+	var $ikona = $('<img />', { src: 'img/skills/' + ikona, alt: 'Logo ' + nazwa });
+	var $opis = $('<p />', { text: opis });
+
+	$element.append($ikona).append($opis);
+
+	return $element;
+};
+
 var initApp = function initApp() {
 	var $window = $(window);
 	var $body = $('body');
 
-	var sectionFade = {
-		$mainNav: $('#main_nav'),
-		$links: $('#main_nav a'),
-		$navbarCollapse: $('.navbar-collapse'),
-		start: function start() {
-			$body.addClass('sectionFade');
-			$('#main_portfolio, #main_skills, #main_contact').hide();
-			sectionFade.$mainNav.on('click', 'a', sectionFade.click);
-			clearTimeout(sectionScroll.timeout);
-			sectionFade.$mainNav.removeClass('white');
-			$('.navbar-brand').addClass('active');
-		},
-		click: function click() {
-			event.preventDefault();
-			var $clickedLink = $(event.target);
-			//Uruchom tylko jeśli link nie był już aktywowany ani nie trwa animacja przełączania okien
-			if (!$clickedLink.hasClass('active') && !$clickedLink.hasClass('disabled')) {
-				//Jeśli strona jest w wersji mobilnej, zamknij pasek z linkami po kliknięciu na któryś z nich
-				if (sectionFade.$navbarCollapse.hasClass('in')) {
-					$('.navbar-toggle').click();
-				}
-				//Pobierz odnośnik linku
-				var $content = $($clickedLink.attr('href'));
-				//Deaktywuj inne linki, aktywuj link kliknięty
-				sectionFade.$links.removeClass('active').addClass('disabled');
-				$clickedLink.addClass('active');
-				window.scrollTo(0, 0);
-				//Okno z wierzchu przesuń na spód
-				$('.front').addClass('oldfront').removeClass('front');
-				//Pokaż nowe okno, przesuń je na wierzch i animuj wejście
-				$content.addClass('front').show().addClass('animated fadeInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-					$content.removeClass('animated fadeInRight');
-					//Usuń klasę z poprzedniego okna
-					$('.oldfront').removeClass('oldfront').hide();
-					//Aktywuj linku
-					sectionFade.$links.removeClass('disabled');
-				});
-			}
-		},
-		stop: function stop() {
-			$body.removeClass('sectionFade');
-			$('#main_portfolio, #main_skills, #main_contact').show();
-			$('.front').removeClass('front');
-			$('.oldfront').removeClass('oldfront');
-			sectionFade.$links.removeClass('active disabled');
-			sectionFade.$mainNav.off('click', 'a', sectionFade.click);
-		}
-	};
-
 	var sectionScroll = {
 		$links: $('#main_nav .navbar-nav a'),
 		$navbarCollapse: $('.navbar-collapse'),
-		$main_cover: $('#main_cover'),
-		$navbar_toggle: $('.navbar-toggle'),
+		$mainCover: $('#main_cover'),
+		$navbarToggle: $('.navbar-toggle'),
 		mainNavHeight: $('#main_nav').height(),
 		mainCoverHeight: $('#main_cover').height(),
 		$mainNav: $('#main_nav'),
@@ -154,16 +125,17 @@ var initApp = function initApp() {
 		},
 		click: function click() {
 			event.preventDefault();
-			var $clickedLink = $(event.target),
-			    $targetLink = $($clickedLink.attr('href'));
+			var $clickedLink = $(event.target);
+			var $targetLink = $($clickedLink.attr('href'));
+
 			$body.animate({
 				scrollTop: $targetLink.offset().top - 50
 			}, 500);
 			sectionScroll.$links.removeClass('active');
 			$clickedLink.addClass('active');
-			//Jeśli strona jest w wersji mobilnej, zamknij pasek z linkami po kliknięciu na któryś z nich
+			// Jeśli strona jest w wersji mobilnej, zamknij pasek z linkami po kliknięciu na któryś z nich
 			if (sectionScroll.$navbarCollapse.hasClass('in')) {
-				sectionScroll.$navbar_toggle.click();
+				sectionScroll.$navbarToggle.click();
 			}
 		},
 		stop: function stop() {
@@ -172,10 +144,10 @@ var initApp = function initApp() {
 			sectionScroll.$mainNav.off('click', 'a', sectionScroll.click);
 			$window.off('scroll', sectionScroll.parallax);
 			$window.off('scroll', sectionScroll.navChange);
-			sectionScroll.$main_cover.css('background-position', '0 0, 50% 0');
+			sectionScroll.$mainCover.css('background-position', '0 0, 50% 0');
 		},
 		parallax: function parallax() {
-			sectionScroll.$main_cover.css('background-position', '0 0, 50% ' + $(event.target).scrollTop() / 1.3 + 'px');
+			sectionScroll.$mainCover.css('background-position', '0 0, 50% ' + $(event.target).scrollTop() / 1.3 + 'px');
 		},
 		navChange: function navChange() {
 			if (sectionScroll.mainCoverHeight - window.pageYOffset - sectionScroll.mainNavHeight < 0) {
@@ -186,8 +158,10 @@ var initApp = function initApp() {
 		},
 		perfectScrollbar: function perfectScrollbar() {
 			var $screen = $('.screen');
+
 			$screen.perfectScrollbar();
-			var scrollTimeout;
+			var scrollTimeout = void 0;
+
 			$screen.on({
 				mouseenter: function mouseenter() {
 					clearTimeout(scrollTimeout);
@@ -201,12 +175,62 @@ var initApp = function initApp() {
 		}
 	};
 
-	/* Small devices (tablets, less than 992px) */
-	if ($window.width() < 768) {
-		sectionFade.start();
-	} else {
-		sectionScroll.start();
-	}
+	var sectionFade = {
+		$mainNav: $('#main_nav'),
+		$links: $('#main_nav a'),
+		$navbarCollapse: $('.navbar-collapse'),
+		start: function start() {
+			$body.addClass('sectionFade');
+			$('#main_portfolio, #main_skills, #main_contact').hide();
+			sectionFade.$mainNav.on('click', 'a', sectionFade.click);
+			clearTimeout(sectionScroll.timeout);
+			sectionFade.$mainNav.removeClass('white');
+			$('.navbar-brand').addClass('active');
+		},
+		click: function click() {
+			event.preventDefault();
+
+			var $clickedLink = $(event.target);
+
+			// Uruchom tylko jeśli link nie był już aktywowany ani nie trwa animacja przełączania okien
+			if (!$clickedLink.hasClass('active') && !$clickedLink.hasClass('disabled')) {
+				(function () {
+					// Jeśli strona jest w wersji mobilnej, zamknij pasek z linkami po kliknięciu na któryś z nich
+					if (sectionFade.$navbarCollapse.hasClass('in')) {
+						$('.navbar-toggle').click();
+					}
+					// Pobierz odnośnik linku
+					var $content = $($clickedLink.attr('href'));
+
+					// Deaktywuj inne linki, aktywuj link kliknięty
+					sectionFade.$links.removeClass('active').addClass('disabled');
+					$clickedLink.addClass('active');
+					window.scrollTo(0, 0);
+					// Okno z wierzchu przesuń na spód
+					$('.front').addClass('oldfront').removeClass('front');
+					// Pokaż nowe okno, przesuń je na wierzch i animuj wejście
+					$content.addClass('front').show().addClass('animated fadeInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+						$content.removeClass('animated fadeInRight');
+						// Usuń klasę z poprzedniego okna
+						$('.oldfront').removeClass('oldfront').hide();
+						// Aktywuj linku
+						sectionFade.$links.removeClass('disabled');
+					});
+				})();
+			}
+		},
+		stop: function stop() {
+			$body.removeClass('sectionFade');
+			$('#main_portfolio, #main_skills, #main_contact').show();
+			$('.front').removeClass('front');
+			$('.oldfront').removeClass('oldfront');
+			sectionFade.$links.removeClass('active disabled');
+			sectionFade.$mainNav.off('click', 'a', sectionFade.click);
+		}
+	};
+
+	// Small devices (tablets, less than 992px)
+	if ($window.width() < 768) sectionFade.start();else sectionScroll.start();
 
 	$window.on('resize', function () {
 		if ($window.width() < 768 && $body.hasClass('sectionScroll')) {
@@ -218,26 +242,28 @@ var initApp = function initApp() {
 		}
 	});
 
-	//Wysyłanie wiadomości
+	// Wysyłanie wiadomości
 	$('form[name=wiadomosc]').on('submit', function (e) {
 		e.preventDefault();
-		var $this = $(this),
-		    $submit = $(this).find('button[type=submit]');
+		var $this = $(this);
+		var $submit = $(this).find('button[type=submit]');
+
 		if (!$submit.hasClass('nonactive')) {
 			$.ajax({
 				type: 'POST',
 				url: 'skrypty/wiadomosc.php',
 				data: $this.serialize(),
-				success: function success(daneZwrotne) {
+				'success': function success(daneZwrotne) {
 					var json = $.parseJSON(daneZwrotne);
-					//Wyczyść formularz
-					if (json.stan == 'ok') {
+
+					// Wyczyść formularz
+					if (json.stan === 'ok') {
 						$this.find('textarea').val('');
 						$submit.removeClass('btn-primary').addClass('btn-success nonactive').html(json.ikona);
 					} else {
 						$submit.removeClass('btn-primary').addClass('btn-danger nonactive').html(json.ikona);
 					}
-					//Zmień tekst przycisku
+					// Zmień tekst przycisku
 					setTimeout(function () {
 						$submit.removeClass('btn-success btn-danger nonactive').addClass('btn-primary').html('Wyślij');
 					}, 8000);
@@ -247,20 +273,47 @@ var initApp = function initApp() {
 	});
 
 	var wygenerujListePortfolio = function wygenerujListePortfolio(tablicaPortfolio) {
-		var $listaPortfolio = $();
+		var listaPortfolio = [];
+
 		$.each(tablicaPortfolio, function (key, value) {
-			var $elementPortfolio = new ElementPortfolio(key, value);
-			$('#main_portfolio .container').append($elementPortfolio);
+			listaPortfolio.push(new ElementPortfolio(key, value));
 		});
+
+		$('#main_portfolio .container').append(listaPortfolio);
 	};
 
-	var pobierszPortfolio = function pobierszPortfolio() {
+	var wygenerujSkills = function wygenerujSkills(tablicaSkills) {
+		var advancedSkills = [];
+		var intermediateSkills = [];
+		var beginnerSkills = [];
+
+		$.each(tablicaSkills, function (key, value) {
+			var element = new ElementSkills(key, value);
+
+			if (value.poziom === 'advanced') advancedSkills.push(element);
+			if (value.poziom === 'intermediate') intermediateSkills.push(element);
+			if (value.poziom === 'beginner') beginnerSkills.push(element);
+		});
+
+		$('.advanced .container').append(advancedSkills);
+		$('.intermediate .container').append(intermediateSkills);
+		$('.beginner .container').append(beginnerSkills);
+	};
+
+	var pobierzPortfolio = function pobierzPortfolio() {
 		$.getJSON('../baza/portfolio.json').done(function (tablicaPortfolio) {
 			return wygenerujListePortfolio(tablicaPortfolio);
 		});
 	};
 
-	pobierszPortfolio();
+	var pobierzSkills = function pobierzSkills() {
+		$.getJSON('../baza/skills.json').done(function (tablicaSkills) {
+			return wygenerujSkills(tablicaSkills);
+		});
+	};
+
+	pobierzPortfolio();
+	pobierzSkills();
 };
 
 // Zainicjuj aplikację gdy dokument będzie gotowy

@@ -1,0 +1,86 @@
+[
+	{
+		"nazwa": "HTML5",
+		"ikona": "html5.png",
+		"poziom": "advanced",
+		"opis": "Wstyd by było nie znać HTMLa kiedy chce się zostać frontendowcem, wymieniam go więc jedynie dla porządku."
+	},
+	{
+		"nazwa": "CSS3",
+		"ikona": "css3.png",
+		"poziom": "advanced",
+		"opis": "CSS mam w małym palcu, dam radę przenieść dowolny layout z projektu graficznego do kodu - pixel-perfect."
+	},
+	{
+		"nazwa": "jQuery",
+		"ikona": "jquery.png",
+		"poziom": "advanced",
+		"opis": "Gdy ktoś mówi JavaScript, ja myślę jQuery. Umiem sam stworzyć co nieco, nie tylko korzystać z pluginów. Obecnie jestem w trakcie przechodzenia na obiektową stronę mocy."
+	},
+	{
+		"nazwa": "React",
+		"ikona": "react.svg",
+		"poziom": "advanced",
+		"opis": "Lorem ipsum"
+	},
+	{
+		"nazwa": "Redux",
+		"ikona": "redux.svg",
+		"poziom": "advanced",
+		"opis": "Lorem ipsum"
+	},
+	{
+		"nazwa": "Bootstrap",
+		"ikona": "bootstrap.png",
+		"poziom": "intermediate",
+		"opis": "Bootstrap coraz bardziej mi się podoba, czy to do szybkiego postawienia projektu na nogi, czy też do bezbolesnego rozprawienia się z responsywnością."
+	},
+	{
+		"nazwa": "Wordpress",
+		"ikona": "wordpress.png",
+		"poziom": "intermediate",
+		"opis": "Miałem kiedyś romans z Wordpressem, ale oferował więcej, niż było mi potrzebne. Gdyby jednak była potrzeba, jestem w stanie szybko nadrobić stracony czas."
+	},
+	{
+		"nazwa": "SASS",
+		"ikona": "sass.png",
+		"poziom": "intermediate",
+		"opis": "Nie mógłbym już wrócić do pisania w samym CSSie, preprocesory to błogosławieństwo, chociażby przez samą obsługę zmiennych i zagnieżdżanie selektorów."
+	},
+	{
+		"nazwa": "Grunt",
+		"ikona": "grunt.png",
+		"poziom": "intermediate",
+		"opis": "Zaczynam poznawać jak wygodne jest wyręczanie się nim przy co bardziej żmudnych czynnościach towarzyszących kodowaniu."
+	},
+	{
+		"nazwa": "Photoshop",
+		"ikona": "photoshop.png",
+		"poziom": "intermediate",
+		"opis": "Nie jestem designerem i szczerze mówiąc nie przepadam za grzebaniem przy grafice bo nigdy nie jestem w 100% zadowolony z efektu, ale Photoshopa znam na tyle dobrze, żeby wprowadzać poprawki do gotowych projektów czy samemu pociąć layout. Grafik nie będzie miał ze mną ciężko ;)"
+	},
+	{
+		"nazwa": "React Native",
+		"ikona": "react.svg",
+		"poziom": "intermediate",
+		"opis": "Lorem ipsum"
+	},
+	{
+		"nazwa": "PHP",
+		"ikona": "php.png",
+		"poziom": "beginner",
+		"opis": "Backend nie jest moją mocną stroną, w tej chwili PHP używam głównie do łączenia plików za pomocą require_once(), generowania elementów strony na podstawie plików XML i JSON, oraz do komunikacji z bazą danych."
+	},
+	{
+		"nazwa": "MySQL",
+		"ikona": "mysql.png",
+		"poziom": "beginner",
+		"opis": "Podobnie jak przy PHP, znam ścisłe podstawy - zapisywanie, odczytywanie, wyszukiwanie danych. Jestem w stanie zbudować dla strony prosty system CMS, ale do większych projektów wolę sięgnąć po coś stworzonego przez specjalistów."
+	},
+	{
+		"nazwa": "AngularJS",
+		"ikona": "angularjs.png",
+		"poziom": "beginner",
+		"opis": "Wiem co to i do czego służy ;) Nie miałem jeszcze potrzeby korzystać z architektury MVC, ale AngularJS jest u mnie na pierwszym miejscu wśród frameworków, które chcę dokładnie poznać."
+	}
+]
