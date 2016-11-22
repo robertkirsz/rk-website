@@ -103,10 +103,10 @@ const ElementPortfolio = (key, value) => {
 
 // Pojedyńcza pozycja na liście skills
 const ElementSkills = (key, value) => {
-	const {	nazwa, ikona, opis } = value
+	const {	nazwa, ikona } = value
 	const $element = $('<div />', { class: 'skill col-sm-6 col-md-4' })
 	const $ikona = $('<img />', { src: `img/skills/${ikona}`, alt: `Logo ${nazwa}` })
-	const $opis = $('<p />', { text: opis })
+	const $opis = $('<p />', { text: nazwa })
 
 	$element
 		.append($ikona)
@@ -300,6 +300,7 @@ const initApp = () => {
 		const advancedSkills = []
 		const intermediateSkills = []
 		const beginnerSkills = []
+		const otherStuff = []
 
 		$.each(tablicaSkills, (key, value) => {
 			const element = new ElementSkills(key, value)
@@ -307,11 +308,13 @@ const initApp = () => {
 			if (value.poziom === 'advanced') advancedSkills.push(element)
 			if (value.poziom === 'intermediate') intermediateSkills.push(element)
 			if (value.poziom === 'beginner') beginnerSkills.push(element)
+			if (value.poziom === 'other') otherStuff.push(element)
 		})
 
 		$('.advanced .container').append(advancedSkills)
 		$('.intermediate .container').append(intermediateSkills)
 		$('.beginner .container').append(beginnerSkills)
+		$('.other .container').append(otherStuff)
 	}
 
 	const pobierzPortfolio = () => {

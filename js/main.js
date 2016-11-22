@@ -89,11 +89,10 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 var ElementSkills = function ElementSkills(key, value) {
 	var nazwa = value.nazwa;
 	var ikona = value.ikona;
-	var opis = value.opis;
 
 	var $element = $('<div />', { class: 'skill col-sm-6 col-md-4' });
 	var $ikona = $('<img />', { src: 'img/skills/' + ikona, alt: 'Logo ' + nazwa });
-	var $opis = $('<p />', { text: opis });
+	var $opis = $('<p />', { text: nazwa });
 
 	$element.append($ikona).append($opis);
 
@@ -286,6 +285,7 @@ var initApp = function initApp() {
 		var advancedSkills = [];
 		var intermediateSkills = [];
 		var beginnerSkills = [];
+		var otherStuff = [];
 
 		$.each(tablicaSkills, function (key, value) {
 			var element = new ElementSkills(key, value);
@@ -293,11 +293,13 @@ var initApp = function initApp() {
 			if (value.poziom === 'advanced') advancedSkills.push(element);
 			if (value.poziom === 'intermediate') intermediateSkills.push(element);
 			if (value.poziom === 'beginner') beginnerSkills.push(element);
+			if (value.poziom === 'other') otherStuff.push(element);
 		});
 
 		$('.advanced .container').append(advancedSkills);
 		$('.intermediate .container').append(intermediateSkills);
 		$('.beginner .container').append(beginnerSkills);
+		$('.other .container').append(otherStuff);
 	};
 
 	var pobierzPortfolio = function pobierzPortfolio() {

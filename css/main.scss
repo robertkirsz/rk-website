@@ -197,7 +197,6 @@ body  {
 		p {
 	    position: absolute;
 	    top: 100%; left: 50%;
-	    width: 100%;
 			margin-top: 5px;
 			padding: 0.9em 1.5em;
 			background: #FAFAFA;
@@ -225,12 +224,16 @@ body  {
 		p { font-size: 1.2em;	}
 	}
 	.intermediate {
-		img { height: 90px; }
+		img { height: 120px; }
 		p { font-size: 1em;	}
 	}
 	.beginner {
-		img { height: 60px; }
+		img { height: 100px; }
 		p { font-size: 0.9em;	}
+	}
+	.other {
+		img { height: 120px; }
+		p { font-size: 1em;	}
 	}
 }
 
