@@ -28,33 +28,18 @@ button:focus { outline: none !important; }
 .artysta:after { clear: both; }
 
 /* ANIMACJE */
-@-webkit-keyframes bujanie { 0%, 100% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-  33% { -webkit-transform: rotate(-15deg); transform: rotate(-15deg); }
-  66% { -webkit-transform: rotate(15deg); transform: rotate(15deg); } }
-@keyframes bujanie { 0%, 100% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-  33% { -webkit-transform: rotate(-15deg); transform: rotate(-15deg); }
-  66% { -webkit-transform: rotate(15deg); transform: rotate(15deg); } }
-
-@-webkit-keyframes migotanie-pomoc { 0%, 100% { opacity: 0.15; }
-  50% { opacity: 1; } }
+@keyframes bujanie { 0%, 100% { transform: rotate(0deg); }
+  33% { transform: rotate(-15deg); }
+  66% { transform: rotate(15deg); } }
 
 @keyframes migotanie-pomoc { 0%, 100% { opacity: 0.15; }
-  50% { opacity: 1; } }
-
-@-webkit-keyframes migotanie { 0%, 100% { opacity: 0; }
   50% { opacity: 1; } }
 
 @keyframes migotanie { 0%, 100% { opacity: 0; }
   50% { opacity: 1; } }
 
-@-webkit-keyframes migotanie-2 { 0% { opacity: 1; }
-  100% { opacity: 0; } }
-
 @keyframes migotanie-2 { 0% { opacity: 1; }
   100% { opacity: 0; } }
-
-@-webkit-keyframes strzalka { 0% { top: 30px; }
-  100% { top: 40px; } }
 
 @keyframes strzalka { 0% { top: 30px; }
   100% { top: 40px; } }
@@ -80,7 +65,7 @@ button:focus { outline: none !important; }
 .swiatelko { transition: opacity 0.7s ease, left 0.3s ease; }
 
 /* STYLE ZBIORCZE */
-dl, .info-gitarowe, .artysta, .artysta .gitara, #panel-nagrywania, #akordy, #nagrania, #ciemne-tlo .pomoc, #tabulatura, .galeria { background-image: url("../images/leather.jpg"); border-image-source: url("../images/stitch-border.png"); border-image-slice: 14; border-image-width: 14px; border-image-repeat: round; border-width: 14px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); }
+dl, .info-gitarowe, .artysta, .artysta .gitara, #panel-nagrywania, #akordy, #nagrania, #ciemne-tlo .pomoc, #tabulatura, .galeria { background-image: url("../images/leather.jpg"); border-style: solid; border-width: 14px; border-image: url("../images/stitch-border.png") 14 round; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); }
 
 dt, dd, .title, .minimalizuj, #poziom-glosnosci, .info { background-color: #4a5257; background-image: linear-gradient(to bottom, #4a5257 0%, #2e363b 100%); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), 2px 5px 15px #000; }
 
@@ -193,7 +178,7 @@ noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460p
 
 #ciemne-tlo .artysta .gitara .lupa:after { content: url("../images/lupa-blysk.png"); }
 
-#ciemne-tlo .artysta .gitara:before { content: ""; position: absolute; background-image: url("../images/podpisy.png"); background-size: 419px 484px; background-repeat: no-repeat; -webkit-transform: scale(0.75); transform: scale(0.75); }
+#ciemne-tlo .artysta .gitara:before { content: ""; position: absolute; background-image: url("../images/podpisy.png"); background-size: 419px 484px; background-repeat: no-repeat; transform: scale(0.75); }
 
 #ciemne-tlo .artysta.lennon .lupa { background-image: url("../images/acoustic-big.png"); }
 
@@ -309,7 +294,7 @@ noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460p
 
 .obrazek .wskaznik { position: absolute; width: 50px; height: 50px; background: rgba(255, 0, 0, 0.5); border: 2px solid red; border-radius: 15px; opacity: 0; }
 
-.obrazek .wskaznik.active { opacity: 1; -webkit-animation: migotanie 0.8s infinite; animation: migotanie 0.8s infinite; }
+.obrazek .wskaznik.active { opacity: 1; animation: migotanie 0.8s infinite; }
 
 .obrazek .screenshot { background-repeat: no-repeat; max-width: 1488px; height: 613px; }
 
@@ -341,11 +326,11 @@ noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460p
 
 .slajd_3 .wskaznik.wsk_2 { top: 404px; left: 562px; width: 34px; height: 34px; }
 
-.slajd_3 .wskaznik.wsk_3 { top: 100px; left: 50%; width: 468px; height: 151px; background-image: url("../images/klawiatura.png"); background-repeat: no-repeat; background-color: rgba(0, 0, 0, 0.8); border: none; border-radius: 0; box-shadow: 0 0 0 600px rgba(0, 0, 0, 0.8); -webkit-animation: none; animation: none; }
+.slajd_3 .wskaznik.wsk_3 { top: 100px; left: 50%; width: 468px; height: 151px; background-image: url("../images/klawiatura.png"); background-repeat: no-repeat; background-color: rgba(0, 0, 0, 0.8); border: none; border-radius: 0; box-shadow: 0 0 0 600px rgba(0, 0, 0, 0.8); animation: none; }
 
 .slajd_3 .wskaznik.wsk_3.active { opacity: 1; }
 
-.slajd_3 .wskaznik.wsk_3.active .klawisz { -webkit-animation: migotanie 0.8s infinite; animation: migotanie 0.8s infinite; }
+.slajd_3 .wskaznik.wsk_3.active .klawisz { animation: migotanie 0.8s infinite; }
 
 .slajd_3 .wskaznik.wsk_3 .klawisz { position: absolute; width: 17px; height: 17px; background: rgba(255, 0, 0, 0.6); border-radius: 2px; }
 
@@ -387,7 +372,7 @@ noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460p
 
 .slajd_5 .wskaznik.wsk_5 { top: 542px; left: 1418px; width: 58px; height: 58px; }
 
-#strzalka { width: 30px; height: 50px; position: relative; margin: 0 auto; top: 40px; background-color: #666; -webkit-animation: strzalka 0.5s alternate infinite; animation: strzalka 0.5s alternate infinite; }
+#strzalka { width: 30px; height: 50px; position: relative; margin: 0 auto; top: 40px; background-color: #666; animation: strzalka 0.5s alternate infinite; }
 
 #strzalka:after { content: ""; width: 0; height: 0; left: -15px; bottom: 100%; position: absolute; border: 30px solid transparent; border-bottom-color: #666; }
 
@@ -455,7 +440,7 @@ noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460p
 
 #gryf-wrap { display: none; overflow: hidden; height: 100%; }
 
-#gryf { margin: 10px auto; border-image-source: url("../images/amp-border.png"); border-image-slice: 31 30 33 30; border-image-width: 31px 30px 33px 30px; border-image-repeat: repeat; border-width: 31px 30px 33px 30px; }
+#gryf { margin: 10px auto; border-style: solid; border-width: 31px 30px 33px; border-image: url("../images/amp-border.png") 31 30 33 repeat; }
 
 #gryf.ukryte td p { opacity: 0; }
 
@@ -555,7 +540,7 @@ noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460p
 
 #panel-nagrywania { float: left; }
 
-#panel-nagrywania .nagrywanie.active div { color: red; text-shadow: 0 0 5px red; }
+#panel-nagrywania .nagrywanie.active .fa { color: red; text-shadow: 0 0 5px red; }
 
 #panel-nagrywania .play div { padding-top: 0; }
 
@@ -563,9 +548,7 @@ noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460p
 
 #panel-nagrywania .play .fa-play { margin-left: 4px; }
 
-#panel-nagrywania .play.stop div { color: orange; text-shadow: 0 0 5px orange; }
-
-#panel-nagrywania .play.stop div:before { content: "#"; }
+#panel-nagrywania .play.stop .fa { color: orange; text-shadow: 0 0 5px orange; }
 
 #panel-nagrywania .usunOstatnie div, #panel-nagrywania .usunPamiec div { padding-top: 6px; }
 
@@ -587,7 +570,7 @@ noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460p
 
 #akordy .akord.ui-draggable-dragging { z-index: 9999; }
 
-#akordy .akord.migotanie { -webkit-animation: migotanie-2 0.4s linear 4 alternate; animation: migotanie-2 0.4s linear 4 alternate; }
+#akordy .akord.migotanie { animation: migotanie-2 0.4s linear 4 alternate; }
 
 #akordy.bin .akord { cursor: url("../images/kosz-kursor.png"), auto; }
 
@@ -601,15 +584,15 @@ noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460p
 
 #nagrania.overflow { max-width: 217px; padding-right: 35px; }
 
-#nagrania.overflow .nagranie { top: -20px; left: -30px; margin: 0 -95px -38px 0; -webkit-transform: scale(0.5); transform: scale(0.5); }
+#nagrania.overflow .nagranie { top: -20px; left: -30px; margin: 0 -95px -38px 0; transform: scale(0.5); }
 
 #nagrania .nagranie { float: left; position: relative; margin: 0 -80px 5px 0; }
 
-#nagrania .nagranie:not([disabled="disabled"]):hover .kaseta { top: -35px; left: -35px; -webkit-transform: rotate(10deg); transform: rotate(10deg); }
+#nagrania .nagranie:not([disabled="disabled"]):hover .kaseta { top: -35px; left: -35px; transform: rotate(10deg); }
 
 #nagrania .nagranie.active, #nagrania .nagranie.active:hover { z-index: 9; }
 
-#nagrania .nagranie.active .kaseta, #nagrania .nagranie.active:hover .kaseta { top: -10px; left: 0; -webkit-transform: scale(1.2); transform: scale(1.2); }
+#nagrania .nagranie.active .kaseta, #nagrania .nagranie.active:hover .kaseta { top: -10px; left: 0; transform: scale(1.2); }
 
 #nagrania .nagranie.ui-draggable-dragging { z-index: 9999; }
 
@@ -619,7 +602,7 @@ noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460p
 
 #nagrania .nagranie .kaseta .kolor:after { content: url("../images/kaseta.png"); position: absolute; top: -6px; left: -7px; }
 
-#nagrania .nagranie .kaseta .tytul { position: absolute; top: 12px; left: 13px; width: 100px; font: 10px "Shadows Into Light Two", cursive; color: #000; font-weight: bold; white-space: nowrap; text-shadow: none; overflow: hidden; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+#nagrania .nagranie .kaseta .tytul { position: absolute; top: 12px; left: 13px; width: 100px; font: 10px "Shadows Into Light Two", cursive; color: #000; font-weight: bold; white-space: nowrap; text-shadow: none; overflow: hidden; transform: translate3d(0, 0, 0); }
 
 #nagrania .nagranie .kaseta .tytul:before { content: ""; position: absolute; top: 0; right: 0; width: 10%; height: 100%; background-image: linear-gradient(to right, transparent, #fff); }
 
@@ -633,11 +616,11 @@ noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460p
 
 #tabulatura .aktualna-pozycja.znak { background-color: rgba(0, 0, 0, 0.1); border-radius: 5px; }
 
-#tabulatura .wskazniki { position: relative; margin-bottom: 7px; padding: 5px; background: #eee; font-size: 10px; font-family: monospace; color: #000; text-shadow: none; box-shadow: 2px 5px 15px #000; background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 0%, rgba(255, 255, 255, 0.05) 33%, rgba(0, 0, 0, 0.05) 33%, rgba(255, 255, 255, 0.05) 67%, rgba(0, 0, 0, 0.05) 67%, rgba(255, 255, 255, 0.025) 100%); transition: -webkit-transform 0.3s ease; transition: transform 0.3s ease; }
+#tabulatura .wskazniki { position: relative; margin-bottom: 7px; padding: 5px; background: #eee; font-size: 10px; font-family: monospace; color: #000; text-shadow: none; box-shadow: 2px 5px 15px #000; background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 0%, rgba(255, 255, 255, 0.05) 33%, rgba(0, 0, 0, 0.05) 33%, rgba(255, 255, 255, 0.05) 67%, rgba(0, 0, 0, 0.05) 67%, rgba(255, 255, 255, 0.025) 100%); transition: transform 0.3s ease; }
 
-#tabulatura .wskazniki.obrot { font-size: 13px; -webkit-transform: rotate(-2deg); transform: rotate(-2deg); }
+#tabulatura .wskazniki.obrot { font-size: 13px; transform: rotate(-2deg); }
 
-#tabulatura .wskazniki li { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+#tabulatura .wskazniki li { transform: translate3d(0, 0, 0); }
 
 #tabulatura .wskazniki:before { content: ""; background: url("../images/pin.png") no-repeat top left; background-size: contain; width: 40px; height: 40px; position: absolute; top: -13px; left: 35%; left: calc(50% - 20px); }
 
@@ -675,7 +658,7 @@ noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460p
 
 #panel-dolny .pomoc span { font-size: 40px; line-height: 45px; text-shadow: 2px 2px 3px #000; }
 
-#panel-dolny .pomoc.migotanie { -webkit-animation: migotanie-pomoc 1s ease 2s 7; animation: migotanie-pomoc 1s ease 2s 7; }
+#panel-dolny .pomoc.migotanie { animation: migotanie-pomoc 1s ease 2s 7; }
 
 #panel-dolny .powrot { width: 57px; background-position: 0 0; }
 
@@ -691,7 +674,7 @@ noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460p
 
 #panel-dolny .kosz.active { bottom: 4px; }
 
-#panel-dolny .kosz.usuwanie { -webkit-animation: bujanie 0.7s; animation: bujanie 0.7s; }
+#panel-dolny .kosz.usuwanie { animation: bujanie 0.7s; }
 
 #panel-dolny .kosz.dragged { width: 100px; height: 100px; top: -50px; opacity: 1; }
 
@@ -722,7 +705,7 @@ noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460p
 
 .no-borderimage #ciemne-tlo .artysta .gitara, .no-borderimage #ciemne-tlo .artysta .info-gitarowe { border: none; padding: 14px; background: url("../images/border2/lewy-gora.png") top left no-repeat, url("../images/border2/prawy-gora.png") top right no-repeat, url("../images/border2/lewy-dol.png") bottom left no-repeat, url("../images/border2/prawy-dol.png") bottom right no-repeat, url("../images/border2/pionowy.png") left repeat-y, url("../images/border2/pionowy.png") right repeat-y, url("../images/border2/poziomy.png") top repeat-x, url("../images/border2/poziomy.png") bottom repeat-x, url("../images/rebel.png"); }
 
-.no-borderimage #ciemne-tlo .artysta .gitara:before { -webkit-transform: translate(14px, -14px) scale(0.75); transform: translate(14px, -14px) scale(0.75); }
+.no-borderimage #ciemne-tlo .artysta .gitara:before { transform: translate(14px, -14px) scale(0.75); }
 
 .no-borderimage #ciemne-tlo .galeria .loading { top: 37px; }
 
@@ -747,7 +730,7 @@ noscript { display: block; position: absolute; top: 30px; left: 50%; width: 460p
 .no-borderimage #ciemne-tlo .pomoc .zamkniecie { top: -10px; right: -7px; }
 
 /* MEDIA QUERIES */
-@media only screen and (max-height: 800px) { #gitary { -webkit-transform: scale(0.9); transform: scale(0.9); } }
+@media only screen and (max-height: 800px) { #gitary { transform: scale(0.9); } }
 
 @media only screen and (max-width: 1280px) { body.acoustic #gryf { background-position: 7% center, 26% center, 43% center, 58.5% center, 73% center, 91.5% center, left top; }
   body.les-paul #gryf { background-position: 27% center, 44% center, 59% center, 73% center, 91.5% center, left top; }

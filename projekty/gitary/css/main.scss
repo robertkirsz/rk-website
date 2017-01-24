@@ -132,12 +132,9 @@ $gitara-pomniejszenie: 0.9;
 	dl, .info-gitarowe, .artysta, .artysta .gitara, #panel-nagrywania, #akordy, #nagrania, #ciemne-tlo .pomoc, #tabulatura, .galeria {
 		background-image: url("../images/leather.jpg");
 
-		border-image-source: url("../images/stitch-border.png");
-		border-image-slice: 14;
-		border-image-width: 14px;
-		border-image-repeat: round;
-
+		border-style: solid;
 		border-width: 14px;
+		border-image: url("../images/stitch-border.png") 14 round;
 
 		border-radius: 5px;
 		box-shadow: 0 1px 3px rgba(0,0,0,.75); }
@@ -194,7 +191,7 @@ $gitara-pomniejszenie: 0.9;
 					top: 50px;
 					transition: opacity 0.5s ease 1.5s, top 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 1.5s; } } }
 	}
-			
+
 	#akordy:hover, #nagrania:hover, #tabulatura:hover {
 		.minimalizuj { opacity: 1 } }
 
@@ -381,10 +378,10 @@ $gitara-pomniejszenie: 0.9;
 					float: left;
 					margin: 0 10px 10px 0;
 					dt {
-						float: left; 
+						float: left;
 						width: 100px;
-						margin-right: 10px; 
-						padding: 5px;  
+						margin-right: 10px;
+						padding: 5px;
 						font-weight: bold; }
 					dd {
 						padding: 5px 0;
@@ -635,7 +632,7 @@ $gitara-pomniejszenie: 0.9;
 				opacity: 0.5;
 				span { opacity: 0; } }
 			+ .info {
-				width: 322px; height: 50px; 
+				width: 322px; height: 50px;
 				p:last-child { opacity: 1; } } }
 		.gitara {
 			position: relative;
@@ -696,7 +693,7 @@ $gitara-pomniejszenie: 0.9;
 				overflow: hidden;
 				transition: width 0.5s ease, height 0.5s ease;
 				p:first-child { margin-bottom: 10px; }
-				p:last-child { 
+				p:last-child {
 					width: 322px;
 					opacity: 0;
 					transition: opacity 0.5s ease; } } }
@@ -707,7 +704,7 @@ $gitara-pomniejszenie: 0.9;
 		&:hover { width: 306px; }
 		span { background-image: url("../images/acoustic.png"); } }
 	#les-paul {
-		width: 273px * $gitara-pomniejszenie; 
+		width: 273px * $gitara-pomniejszenie;
 		background-image: url("../images/les-paul-blur.png");
 		&:hover { width: 273px; }
 		span { background-image: url("../images/les-paul.png"); } }
@@ -724,14 +721,9 @@ $gitara-pomniejszenie: 0.9;
 
 	#gryf {
 		margin: 10px auto;
-
-		border-image-source: url("../images/amp-border.png");
-		border-image-slice: 31 30 33 30;
-		border-image-width: 31px 30px 33px 30px;
-		border-image-repeat: repeat;
-		
-		border-width: 31px 30px 33px 30px;
-
+		border-style: solid;
+		border-width: 31px 30px 33px;
+		border-image: url("../images/amp-border.png") 31 30 33 repeat;
 		&.ukryte td p { opacity: 0; }
 		td {
 			position: relative;
@@ -1094,7 +1086,7 @@ $gitara-pomniejszenie: 0.9;
 				float: left;
 				.title { left: 0; } }
 			&.prawy {
-				float: right; 
+				float: right;
 				.title { right: 0; } }
 			&:hover .title {
 				top: -30px; opacity: 1;
@@ -1118,7 +1110,7 @@ $gitara-pomniejszenie: 0.9;
 				background-image: url("../images/sprite.png");
 				background-repeat: no-repeat;
 				opacity: 1;
-				transition: bottom 0.3s ease; 
+				transition: bottom 0.3s ease;
 				&.akordy {
 					width: 93px;
 					height: 57px; }
@@ -1239,7 +1231,7 @@ $gitara-pomniejszenie: 0.9;
 				#nagrania {
 					padding-right: 96px;
 					&.overflow { padding-right: 50px; } }
-				#panel-nagrywania { 
+				#panel-nagrywania {
 					.play div { padding-top: 3px }
 					.nagrywanie div { padding-top: 5px } }
 				#panel-glowny .minimalizuj {
