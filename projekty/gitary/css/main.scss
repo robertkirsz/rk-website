@@ -904,18 +904,16 @@ $gitara-pomniejszenie: 0.9;
 
 	#panel-nagrywania {
 		float: left;
-		.nagrywanie.active div {
+		.nagrywanie.active .fa {
 			color: red;
 			text-shadow: 0 0 5px red; }
 		.play {
 			div { padding-top: 0;
 				&:before { font-size: 30px; } }
 			.fa-play { margin-left: 4px; }
-			&.stop div {
+			&.stop .fa {
 				color: orange;
-				text-shadow: 0 0 5px orange;
-			&:before {
-				content: "#" } } }
+				text-shadow: 0 0 5px orange; } }
 		.usunOstatnie div, .usunPamiec div {
 			padding-top: 6px;
 			&:before {

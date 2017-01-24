@@ -33,9 +33,9 @@
 		dlugoscDzwieku = 1000; //Czas odgrywania pojedynczego dźwięku
 
 // ---------- INICJALIZACJA -----------
-	
+
 	//Wykrycie przeglądarki
-	if (/firefox/i.test(przegladarka)) { 
+	if (/firefox/i.test(przegladarka)) {
 		$('html').addClass('firefox');
 	} else if (/opera/i.test(przegladarka)) {
 		$('html').addClass('opera');
@@ -71,7 +71,7 @@
 		$('body').addClass(aktywnaGitara);
 		//Pokaż gryf
 		$('#gryf-wrap').fadeIn(1000);
-		
+
 		//Dostosuj rozmiar gryfu do wymiarów okna przeglądarki
 		if (aktywnaGitara == 'strat') {
 			gryf.css('background-size', '21px 21px, 21px 21px, 21px 21px, 21px 21px, 21px 21px, 21px 21px, 1309px 240px');
@@ -554,6 +554,7 @@
 		var numerDzwieku = 0;
 		odgrywanie = true;
 		przycisk.addClass('stop');
+		$('.fa-play').toggleClass('fa-play fa-stop');
 		//Dezaktywuj przyciski
 		if (deaktywacja) { $('.usunOstatnie, .usunPamiec').attr('disabled', 'disabled'); }
 		//Wewnętrzna funkcja rekurencyjna
@@ -587,6 +588,7 @@
 						gryf.find('td').removeClass('active');
 						aktualizujWskazniki();
 						przycisk.removeClass('stop');
+						$('.fa-stop').toggleClass('fa-play fa-stop');
 						//Aktywuj przyciski
 						if (deaktywacja) { $('.usunOstatnie, .usunPamiec').removeAttr('disabled'); }
 						//Jeżeli jako callback podano jakąś funkcję
@@ -596,6 +598,7 @@
 			//Jeśli zakończono odgrywanie...
 			} else {
 				przycisk.removeClass('stop');
+				$('.fa-stop').toggleClass('fa-play fa-stop');
 				if (deaktywacja) { $('.usunOstatnie, .usunPamiec').removeAttr('disabled'); }
 			}
 		};
@@ -681,7 +684,7 @@
 			'D Dur' : $('#struna1 td:eq(2), #struna2 td:eq(3), #struna3 td:eq(2), #struna4 td:eq(0)'),
 			'E Dur' : $('#struna1 td:eq(0), #struna2 td:eq(0), #struna3 td:eq(1), #struna4 td:eq(2), #struna5 td:eq(2), #struna6 td:eq(0)'),
 			'F Dur' : $('#struna1 td:eq(1), #struna2 td:eq(1), #struna3 td:eq(2), #struna4 td:eq(3), #struna5 td:eq(3), #struna6 td:eq(1)'),
-			'G Dur' : $('#struna1 td:eq(3), #struna2 td:eq(0), #struna3 td:eq(0), #struna4 td:eq(0), #struna5 td:eq(2), #struna6 td:eq(3)') 
+			'G Dur' : $('#struna1 td:eq(3), #struna2 td:eq(0), #struna3 td:eq(0), #struna4 td:eq(0), #struna5 td:eq(2), #struna6 td:eq(3)')
 		};
 
 	//Po naciśnięciu klawisza
@@ -731,7 +734,7 @@
 			break;
 		}
 	 });
-		
+
 	//Funkcja uruchamiana po naciśnięciu odpowiedniego klawisza na klawiaturze
 	var klawiatura = function(baza, akord, klasa) {
 		//Odegraj dżwięki danego akordu
@@ -1023,13 +1026,13 @@
 			//Zapisywanie stanu aplikacji dla Opery
 			if (opera) { localStorage.setItem('indeksNagrania', indeksNagrania); }
 			//Wyświetl informację
-			informacja('Nagranie zostalo zapisane');	
+			informacja('Nagranie zostalo zapisane');
 		//Jeśli nie ma dźwięków w pamięci, wyświetl informację
 		} else {
-			informacja('Nie ma czego zapisac');	
+			informacja('Nie ma czego zapisac');
 		}
 	});
-	
+
 	//Przyciski z nagraniami
 	$('#nagrania').on('click', 'li:not([disabled="disabled"])', function() {
 		var $this = $(this)
@@ -1093,7 +1096,7 @@
 			'D Dur' : [2, 3, 2, 0, -1, -1],
 			'E Dur' : [0, 0, 1, 2, 2, 0],
 			'F Dur' : [1, 1, 2, 3, 3, 1],
-			'G Dur' : [3, 0, 0, 0, 2, 3] 
+			'G Dur' : [3, 0, 0, 0, 2, 3]
 		};
 	}
 
@@ -1180,7 +1183,7 @@
 				//Przywróć zapisane cześniej aktywne progi tylko jeśli przycisk akordu nie zostanie wciśnięty
 				if (aktywneProgi != null) {
 					aktywneProgi.addClass('active');
-				}		
+				}
 			}
 		},
 		click: function() {
@@ -1194,7 +1197,7 @@
 				//Jeśli ten akord jest aktywny..
 				if ($(this).hasClass('active')) {
 					//Dezaktywuj jego progi
-					aktywnyAkord.removeClass('active'); 
+					aktywnyAkord.removeClass('active');
 				} else {
 					//Jeśli nie jest, aktywuj je
 					aktywnyAkord.addClass('active');
@@ -1420,7 +1423,7 @@
 	});
 
 // ---------- KOSZ I INNE -------------
-	
+
 	//Przeciąganie elementow do kosza
 	kosz.droppable({
 		//Akceptuj akordy i nagrania
@@ -1508,7 +1511,7 @@
 	});
 
 // ---------- PANEL DOLNY -------------
-	
+
 	//Po klinięciu w przycisk powrotu...
 	$('.powrot').on('click', function() {
 		//Ukryj gryf
