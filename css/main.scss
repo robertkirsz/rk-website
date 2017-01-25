@@ -217,6 +217,7 @@ body  {
 				left: 50%;
 				margin-left: -10px;
 				transform: rotate(45deg);
+				z-index: -1;
 			}
 		}
 	}
@@ -368,7 +369,7 @@ body  {
 		// Style dla parzystych i nieparzystych elementów
 		&:nth-of-type(odd) {
 			.phone {
-				left: -40px;
+				left: -30px;
 			}
 			.description:before {
 				left: -5px;
@@ -377,7 +378,7 @@ body  {
 		}
 		&:nth-of-type(even) {
 			.phone {
-				right: -40px;
+				right: -30px;
 			}
 			.description:before {
 				right: -5px;
@@ -541,7 +542,7 @@ body  {
 					}
 				}
 			}
-			&.telefon_only {
+			&.mobile_only {
 				.phone {
 					display: block;
 					position: relative;
@@ -552,16 +553,16 @@ body  {
 			&.responsive {
 				.phone {
 					position: absolute;
-				    bottom: -13px;
-				    margin: 0;
-				    transform: scale(0.5);
+			    bottom: -13px;
+			    margin: 0;
+			    transform: scale(0.5);
+					transform-origin: bottom;
 				}
 			}
 			&.left {
 				.phone {
 					left: 1px;
-			    	transform-origin: bottom left;
-
+			    transform-origin: bottom left;
 				}
 			}
 			&.right {

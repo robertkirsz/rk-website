@@ -5,9 +5,9 @@ const IkonyResponsywnosci = ({ desktop, tablet, telefon }) => {
 	const $this = $('<h3 />', { class: 'responsive-icons' })
 
 	$this
-		.append($('<span />', { class: 'fa fa-desktop ' + desktop }))
-		.append($('<span />', { class: 'fa fa-tablet ' + tablet }))
-		.append($('<span />', { class: 'fa fa-mobile ' + telefon }))
+		.append($('<span />', { class: 'fa fa-desktop ' + `${desktop}` }))
+		.append($('<span />', { class: 'fa fa-tablet ' + `${tablet}` }))
+		.append($('<span />', { class: 'fa fa-mobile ' + `${telefon}` }))
 
 	return $this
 }
@@ -64,7 +64,6 @@ const Desktop = (nazwa, screenshot, adres) => {
 // Pojedyńcza pozycja na liście portfolio
 const ElementPortfolio = (key, value) => {
 	const {	nazwa, adres, opis, responsywnosc, screenshot } = value
-
 	// Elementy nieparzyste (po prawej - domyślne)
 	let bootstrap1 = ''
 	let bootstrap2 = ''
@@ -75,7 +74,9 @@ const ElementPortfolio = (key, value) => {
 		bootstrap2 = 'col-md-pull-4'
 	}
 
-	const $portfolioItem = $('<div />', { class: 'row portfolio-item' })
+	const foo = !responsywnosc.desktop ? 'mobile_only' : 'responsive'
+
+	const $portfolioItem = $('<div />', { class: 'row portfolio-item ' + foo })
 	const $description = $('<div />', { class: 'description col-md-4 ' + bootstrap1 })
 	const $browsers = $('<div />', { class: 'browsers col-md-8 ' + bootstrap2 })
 
@@ -104,7 +105,7 @@ const ElementPortfolio = (key, value) => {
 // Pojedyńcza pozycja na liście skills
 const ElementSkills = (key, value) => {
 	const {	nazwa, ikona } = value
-	const $element = $('<div />', { class: 'skill col-sm-6 col-md-4' })
+	const $element = $('<div />', { class: 'skill col-xs-6 col-md-4' })
 	const $ikona = $('<img />', { src: `img/skills/${ikona}`, alt: `Logo ${nazwa}` })
 	const $opis = $('<p />', { text: nazwa })
 

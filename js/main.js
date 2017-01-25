@@ -9,7 +9,7 @@ var IkonyResponsywnosci = function IkonyResponsywnosci(_ref) {
 
 	var $this = $('<h3 />', { class: 'responsive-icons' });
 
-	$this.append($('<span />', { class: 'fa fa-desktop ' + desktop })).append($('<span />', { class: 'fa fa-tablet ' + tablet })).append($('<span />', { class: 'fa fa-mobile ' + telefon }));
+	$this.append($('<span />', { class: 'fa fa-desktop ' + ('' + desktop) })).append($('<span />', { class: 'fa fa-tablet ' + ('' + tablet) })).append($('<span />', { class: 'fa fa-mobile ' + ('' + telefon) }));
 
 	return $this;
 };
@@ -55,7 +55,6 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 	var opis = value.opis;
 	var responsywnosc = value.responsywnosc;
 	var screenshot = value.screenshot;
-
 	// Elementy nieparzyste (po prawej - domyślne)
 
 	var bootstrap1 = '';
@@ -67,7 +66,9 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 		bootstrap2 = 'col-md-pull-4';
 	}
 
-	var $portfolioItem = $('<div />', { class: 'row portfolio-item' });
+	var foo = !responsywnosc.desktop ? 'mobile_only' : 'responsive';
+
+	var $portfolioItem = $('<div />', { class: 'row portfolio-item ' + foo });
 	var $description = $('<div />', { class: 'description col-md-4 ' + bootstrap1 });
 	var $browsers = $('<div />', { class: 'browsers col-md-8 ' + bootstrap2 });
 
@@ -90,7 +91,7 @@ var ElementSkills = function ElementSkills(key, value) {
 	var nazwa = value.nazwa;
 	var ikona = value.ikona;
 
-	var $element = $('<div />', { class: 'skill col-sm-6 col-md-4' });
+	var $element = $('<div />', { class: 'skill col-xs-6 col-md-4' });
 	var $ikona = $('<img />', { src: 'img/skills/' + ikona, alt: 'Logo ' + nazwa });
 	var $opis = $('<p />', { text: nazwa });
 
