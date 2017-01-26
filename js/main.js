@@ -66,9 +66,9 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 		bootstrap2 = 'col-md-pull-4';
 	}
 
-	var foo = !responsywnosc.desktop ? 'mobile_only' : 'responsive';
+	var displayType = !responsywnosc.desktop ? 'mobile_only' : 'responsive';
 
-	var $portfolioItem = $('<div />', { class: 'row portfolio-item ' + foo });
+	var $portfolioItem = $('<div />', { class: 'row portfolio-item ' + displayType });
 	var $description = $('<div />', { class: 'description col-md-4 ' + bootstrap1 });
 	var $browsers = $('<div />', { class: 'browsers col-md-8 ' + bootstrap2 });
 
@@ -116,12 +116,39 @@ var initApp = function initApp() {
 		start: function start() {
 			$body.addClass('sectionScroll');
 			sectionScroll.$mainNav.on('click', 'a', sectionScroll.click);
-			$window.on('scroll', sectionScroll.parallax);
-			$window.on('scroll', sectionScroll.navChange);
+			$window.on('scroll', function () {
+				sectionScroll.parallax();
+				sectionScroll.navChange();
+			});
 			sectionScroll.timeout = setTimeout(function () {
 				sectionScroll.$mainNav.css('transition-delay', '0s');
 				sectionScroll.navChange();
 			}, 2000);
+		},
+		stop: function stop() {
+			$body.removeClass('sectionScroll');
+			sectionScroll.$links.removeClass('active');
+			sectionScroll.$mainNav.off('click', 'a', sectionScroll.click);
+			$window.off('scroll');
+			sectionScroll.$mainCover.css('background-position', '0 0, 50% 0');
+		},
+		parallax: function parallax() {
+			var topDistance = window.scrollY;
+			var $layers = $('[data-type=\'parallax\']');
+
+			$layers.each(function () {
+				var depth = $(this).attr('data-depth');
+				var movement = -topDistance * depth;
+				var translate3d = 'translate3d(0, ' + movement + 'px, 0)';
+
+				$(this).css({
+					'-webkit-transform': translate3d,
+					'-moz-transform': translate3d,
+					'-ms-transform': translate3d,
+					'-o-transform': translate3d,
+					transform: translate3d
+				});
+			});
 		},
 		click: function click() {
 			event.preventDefault();
@@ -137,17 +164,6 @@ var initApp = function initApp() {
 			if (sectionScroll.$navbarCollapse.hasClass('in')) {
 				sectionScroll.$navbarToggle.click();
 			}
-		},
-		stop: function stop() {
-			$body.removeClass('sectionScroll');
-			sectionScroll.$links.removeClass('active');
-			sectionScroll.$mainNav.off('click', 'a', sectionScroll.click);
-			$window.off('scroll', sectionScroll.parallax);
-			$window.off('scroll', sectionScroll.navChange);
-			sectionScroll.$mainCover.css('background-position', '0 0, 50% 0');
-		},
-		parallax: function parallax() {
-			sectionScroll.$mainCover.css('background-position', '0 0, 50% ' + $(event.target).scrollTop() / 1.3 + 'px');
 		},
 		navChange: function navChange() {
 			if (sectionScroll.mainCoverHeight - window.pageYOffset - sectionScroll.mainNavHeight < 0) {

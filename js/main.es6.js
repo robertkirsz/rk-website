@@ -74,9 +74,9 @@ const ElementPortfolio = (key, value) => {
 		bootstrap2 = 'col-md-pull-4'
 	}
 
-	const foo = !responsywnosc.desktop ? 'mobile_only' : 'responsive'
+	const displayType = !responsywnosc.desktop ? 'mobile_only' : 'responsive'
 
-	const $portfolioItem = $('<div />', { class: 'row portfolio-item ' + foo })
+	const $portfolioItem = $('<div />', { class: 'row portfolio-item ' + displayType })
 	const $description = $('<div />', { class: 'description col-md-4 ' + bootstrap1 })
 	const $browsers = $('<div />', { class: 'browsers col-md-8 ' + bootstrap2 })
 
@@ -132,12 +132,39 @@ const initApp = () => {
 		start () {
 			$body.addClass('sectionScroll')
 			sectionScroll.$mainNav.on('click', 'a', sectionScroll.click)
-			$window.on('scroll', sectionScroll.parallax)
-			$window.on('scroll', sectionScroll.navChange)
-			sectionScroll.timeout = setTimeout(function () {
+			$window.on('scroll', () => {
+				sectionScroll.parallax()
+				sectionScroll.navChange()
+			})
+			sectionScroll.timeout = setTimeout(() => {
 				sectionScroll.$mainNav.css('transition-delay', '0s')
 				sectionScroll.navChange()
 			}, 2000)
+		},
+		stop () {
+			$body.removeClass('sectionScroll')
+			sectionScroll.$links.removeClass('active')
+			sectionScroll.$mainNav.off('click', 'a', sectionScroll.click)
+			$window.off('scroll')
+			sectionScroll.$mainCover.css('background-position', '0 0, 50% 0')
+		},
+		parallax () {
+			const topDistance = window.scrollY
+			const $layers = $('[data-type=\'parallax\']')
+
+			$layers.each(function () {
+				const depth = $(this).attr('data-depth')
+				const movement = -topDistance * depth
+				const translate3d = 'translate3d(0, ' + movement + 'px, 0)'
+
+				$(this).css({
+					'-webkit-transform': translate3d,
+					'-moz-transform'   : translate3d,
+					'-ms-transform'    : translate3d,
+					'-o-transform'     : translate3d,
+					transform          : translate3d,
+				})
+			})
 		},
 		click () {
 			event.preventDefault()
@@ -153,17 +180,6 @@ const initApp = () => {
 			if (sectionScroll.$navbarCollapse.hasClass('in')) {
 				sectionScroll.$navbarToggle.click()
 			}
-		},
-		stop () {
-			$body.removeClass('sectionScroll')
-			sectionScroll.$links.removeClass('active')
-			sectionScroll.$mainNav.off('click', 'a', sectionScroll.click)
-			$window.off('scroll', sectionScroll.parallax)
-			$window.off('scroll', sectionScroll.navChange)
-			sectionScroll.$mainCover.css('background-position', '0 0, 50% 0')
-		},
-		parallax () {
-			sectionScroll.$mainCover.css('background-position', '0 0, 50% ' + $(event.target).scrollTop() / 1.3 + 'px')
 		},
 		navChange () {
 			if (sectionScroll.mainCoverHeight - window.pageYOffset - sectionScroll.mainNavHeight < 0) {
