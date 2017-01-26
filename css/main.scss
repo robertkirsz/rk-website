@@ -1,6 +1,11 @@
 /* -------------------  /
 /  Autor: Robert Kirsz  /
 / -------------------- */
+
+@import "entry-animations";
+// @import "scanlines";
+@import "tv";
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 $zielony: #83B5B2;
@@ -25,6 +30,7 @@ html {
 body  {
 	font: 15px 'Open Sans', sans-serif;
 	background: #EDEDED;
+	background: black;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -43,60 +49,6 @@ body  {
     font-family: monospace;
     // background: rgba(red, 0.1);
 }
-
-/* ENTRY ANIMATIONS */
-
-	$time: 0.75s;
-	$time2: 1s;
-	$time3: 1.25s;
-	$time4: 1.5s;
-	$ease1: cubic-bezier(0.435, 0.015, 0.165, 0.970);
-
-	#main_nav {
-		transition: background-color $time $ease1 $time2, box-shadow $time $ease1 $time2;
-		&.rk {
-			background-color: #ededed;
-			box-shadow: 0 3px #ededed;
-		}
-		.container {
-			transition: opacity $time $ease1, transform $time $ease1;
-			&.rk {
-				opacity: 0;
-				transform: translateY(50px);
-			}
-		}
-	}
-
-	#main_cover {
-	    transition: background-position 0s linear, opacity $time $ease1 $time3;
-	    &.rk {
-			opacity: 0;
-			}
-		.info {
-			h1:first-child {
-				transition: opacity $time $ease1 $time4, transform $time $ease1 $time4;
-				&.rk {
-					opacity: 0;
-					transform: translateY(-100px);
-				}
-			}
-			h1:nth-child(2) {
-				transition: opacity $time $ease1 $time4, transform $time $ease1 $time4;
-				&.rk {
-					opacity: 0;
-					transform: translateY(100px);
-				}
-			}
-		}
-	}
-
-	#main_skills, #main_portfolio, #main_contact, .tag {
-		opacity: 1;
-		transition: opacity $time $ease1 $time4;
-		&.rk { opacity: 0; }
-	}
-
-/* ---------------- */
 
 #main_nav.white {
 	background: rgba(0, 0, 0, 0.25);

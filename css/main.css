@@ -1,20 +1,8 @@
 /* -------------------  /
 /  Autor: Robert Kirsz  /
 / -------------------- */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-html, body { padding: 0; margin: 0; }
-
-html { overflow-x: hidden; overflow-y: scroll; }
-
-body { font: 15px 'Open Sans', sans-serif; background: #EDEDED; }
-
-.navbar-default .navbar-nav > li > a:focus { color: #777; }
-
-.navbar-default .navbar-nav > li > a:hover { color: #333; }
-
-.tag { color: #777; margin: 10px 0; padding: 10px 10px 10px 50px; font-size: 2em; font-family: monospace; }
-
 /* ENTRY ANIMATIONS */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 #main_nav { transition: background-color 0.75s cubic-bezier(0.435, 0.015, 0.165, 0.97) 1s, box-shadow 0.75s cubic-bezier(0.435, 0.015, 0.165, 0.97) 1s; }
 
 #main_nav.rk { background-color: #ededed; box-shadow: 0 3px #ededed; }
@@ -39,7 +27,77 @@ body { font: 15px 'Open Sans', sans-serif; background: #EDEDED; }
 
 #main_skills.rk, #main_portfolio.rk, #main_contact.rk, .tag.rk { opacity: 0; }
 
-/* ---------------- */
+#switch { display: none; }
+
+.switch-label { position: fixed; z-index: 10000; display: inline-block; cursor: pointer; background: #fff; color: #111; padding: 10px; padding-left: 15px; padding-right: 15px; border-radius: 5px; margin-top: 10px; box-shadow: 0 2px #666; }
+
+.switch-label::after { content: "on"; }
+
+.switch-label::before { content: " "; display: inline-block; border-radius: 100%; width: 10px; height: 10px; background: #003321; margin-right: 10px; border: 1px solid #111; }
+
+.switch-label:active { box-shadow: none; transform: translate3d(0, 2px, 0); }
+
+#switch:checked + .switch-label::before { background: #22ff55; }
+
+#switch:checked + .switch-label::after { content: "off"; }
+
+@keyframes turn-on { 0% { transform: scale(1, 0.8) translate3d(0, 0, 0);
+    -webkit-filter: brightness(30);
+    filter: brightness(30);
+    opacity: 1; }
+  3.5% { transform: scale(1, 0.8) translate3d(0, 100%, 0); }
+  3.6% { transform: scale(1, 0.8) translate3d(0, -100%, 0);
+    opacity: 1; }
+  9% { transform: scale(1.3, 0.6) translate3d(0, 100%, 0);
+    -webkit-filter: brightness(30);
+    filter: brightness(30);
+    opacity: 0; }
+  11% { transform: scale(1, 1) translate3d(0, 0, 0);
+    -webkit-filter: contrast(0) brightness(0);
+    filter: contrast(0) brightness(0);
+    opacity: 0; }
+  100% { transform: scale(1, 1) translate3d(0, 0, 0);
+    -webkit-filter: contrast(1) brightness(1.2) saturate(1.3);
+    filter: contrast(1) brightness(1.2) saturate(1.3);
+    opacity: 1; } }
+
+@keyframes turn-off { 0% { transform: scale(1, 1.3) translate3d(0, 0, 0);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+    opacity: 1; }
+  60% { transform: scale(1.3, 0.001) translate3d(0, 0, 0);
+    -webkit-filter: brightness(10);
+    filter: brightness(10); }
+  100% { animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: scale(0, 0.0001) translate3d(0, 0, 0);
+    -webkit-filter: brightness(50);
+    filter: brightness(50); } }
+
+#switch ~ .screen { animation: turn-off 0.55s cubic-bezier(0.23, 1, 0.32, 1); animation-fill-mode: forwards; }
+
+#switch:checked ~ .screen { animation: turn-on 4s linear; animation-fill-mode: forwards; }
+
+@keyframes overlay-anim { 0% { visibility: hidden; }
+  20% { visibility: hidden; }
+  21% { visibility: visible; }
+  100% { visibility: hidden; } }
+
+.overlay { color: #00FF00; position: absolute; top: 20px; left: 20px; font-size: 60px; text-shadow: 2px 2px black,-2px -2px black, -2px 2px black, 2px -2px black; visibility: hidden; pointer-events: none; }
+
+#switch:checked ~ .screen .overlay { animation: overlay-anim 5s linear; animation-fill-mode: forwards; }
+
+html, body { padding: 0; margin: 0; }
+
+html { overflow-x: hidden; overflow-y: scroll; }
+
+body { font: 15px 'Open Sans', sans-serif; background: #EDEDED; background: black; }
+
+.navbar-default .navbar-nav > li > a:focus { color: #777; }
+
+.navbar-default .navbar-nav > li > a:hover { color: #333; }
+
+.tag { color: #777; margin: 10px 0; padding: 10px 10px 10px 50px; font-size: 2em; font-family: monospace; }
+
 #main_nav.white { background: rgba(0, 0, 0, 0.25); box-shadow: none; }
 
 #main_nav.white .navbar-brand, #main_nav.white .navbar-nav a { color: #fafafa; }
