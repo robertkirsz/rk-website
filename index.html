@@ -80,7 +80,7 @@
       <h2 class="tag rk">&lt;kontakt&gt;</h2>
       <div class="container">
         <div class="row">
-          <div class="about col-md-12">
+          <div class="about col-md-7">
             <img src="img/photo.jpg" alt="Zdjęcie">
             <h2>Robert Kirsz</h2>
             <p>
@@ -92,49 +92,39 @@
                 CV w PDFie: <a href="pliki/Robert_Kirsz_CV.pdf" class="fa fa-file-pdf-o"></a>
             </p>
           </div>
-        </div>
-        <div class="row">
-            <div class="form col-md-12">
-              <form name="wiadomosc" action="skrypty/wiadomosc.php" method="POST" accept-charset="utf-8">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                        <input type="text" class="form-control" name="imie" placeholder="Imię" required="required">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                        <input type="email" class="form-control" name="email" placeholder="Adres email" required="required">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
-                        <input type="text" class="form-control" name="telefon" placeholder="Numer telefonu">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-question-sign"></span></span>
-                        <input type="text" class="form-control" name="temat" placeholder="Temat">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <textarea name="wiadomosc" name="wiadomosc" class="form-control" rows="8" cols="25" required="required" placeholder="Wiadomość"></textarea>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary pull-right">Wyślij</button>
-                  </div>
+          <div class="form col-md-5">
+            <form name="wiadomosc" action="skrypty/wiadomosc.php" method="POST" accept-charset="utf-8">
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                  <input type="text" class="form-control" name="imie" placeholder="Imię" required="required">
                 </div>
-              </form>
-            </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                  <input type="email" class="form-control" name="email" placeholder="Adres email" required="required">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
+                  <input type="text" class="form-control" name="telefon" placeholder="Numer telefonu">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-question-sign"></span></span>
+                  <input type="text" class="form-control" name="temat" placeholder="Temat">
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea name="wiadomosc" name="wiadomosc" class="form-control" rows="8" cols="25" required="required" placeholder="Wiadomość"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary pull-right">Wyślij</button>
+            </form>
           </div>
+        </div>
       </div>
     </div>
 
