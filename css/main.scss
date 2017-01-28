@@ -3,8 +3,7 @@
 / -------------------- */
 
 @import "entry-animations";
-// @import "scanlines";
-@import "tv";
+@import "scanlines";
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
@@ -30,7 +29,6 @@ html {
 body  {
 	font: 15px 'Open Sans', sans-serif;
 	background: #EDEDED;
-	background: black;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -91,39 +89,29 @@ body  {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-	background: url(../img/intro/background.png) no-repeat center center;
+	background: url(../img/intro2/bg-min.jpg) no-repeat center center;
 	background-size: cover;
-	position: relative;
-	> div {
-		position: absolute;
-	}
-	.noise {
-		top: 0; right: 0; bottom: 0; left: 0;
-		background: url(../img/intro/noise.png) no-repeat center center;
-		mix-blend-mode: overlay;
-		opacity: 0.7;
-		z-index: 4;
-	}
-	.distress {
-		top: 0; right: 0; bottom: 0; left: 0;
-		background: url(../img/intro/distress.png) no-repeat center center;
-		mix-blend-mode: color-dodge;
-    opacity: 0.7;
-		z-index: 3;
-	}
 	.title {
-		width: 96vw; height: 16vw;
-		background: url(../img/intro/title.png) no-repeat center center;
+		position: relative;
+		width: 90vw; height: 16vw;
+		background: url(../img/intro2/title-min.png) no-repeat center center;
 		background-size: contain;
 		z-index: 1;
+	}
+	.mask {
+		position: absolute;
+    top: 6px; right: 0; bottom: 0; left: 0;
+    mask-image: url(../img/intro2/mask.png);
+    background: #292259 url(../img/intro2/gradient.png) 0 -14px no-repeat;
+    background-size: cover;
+    mask-size: contain;
 	}
 	.name {
 		position: relative;
 		top: 9vw; left: 22vw;
-    width: 73vw; height: 21vw;
-		background: url(../img/intro/name.png) no-repeat center center;
+    width: 70vw; height: 21vw;
+		background: url(../img/intro2/name.png) no-repeat center center;
 		background-size: contain;
-		z-index: 2;
 	}
 }
 
@@ -197,154 +185,7 @@ body  {
 	}
 }
 
-#main_portfolio {
-	.portfolio-item {
-		&:not(:first-of-type) { margin-top: 50px;	}
-		.description {
-			position: relative;
-			background: #fafafa;
-			box-shadow: 0 3px #D9D9D9;
-			padding: 15px 35px 15px;
-			&:before {
-				content: '';
-				box-shadow: 0 3px #D9D9D9;
-				position: absolute;
-				background: #fafafa;
-				display: block;
-				width: 20px; height: 20px;
-				top: 50%;
-				margin-top: -10px;
-				z-index: -1;
-			}
-			.fa {
-				&:not(:first-of-type) { margin-left: 5px; }
-				&.false {	opacity: 0.2;	}
-			}
-			a.btn {	margin-top: 10px; }
-		}
-		.browsers {
-			padding-top: 0;
-			padding-bottom: 0;
-			.desktop {
-				background-color: #fff;
-				width: 100%;
-				border-top-left-radius: 5px;
-				border-top-right-radius: 5px;
-				box-shadow: 0 3px #D9D9D9;
-				.top {
-					display: flex;
-					flex-flow: row nowrap;
-					justify-content: space-between;
-					align-items: center;
-					padding: 5px;
-					border-bottom: 1px solid #BBB;
-					.fa {
-						flex: 0 1 auto;
-						font-size: 1.2em;
-						color: #999;
-						margin: 0 5px;
-					}
-					.address {
-						flex: 0 1 100%;
-						margin-left: 5px;
-						padding: 2px 10px;
-						border: 1px solid #BBB;
-						border-radius: 3px;
-						overflow: hidden;
-					}
-				}
-				.screen {
-					position: relative;
-					height: 100%;
-					max-width: 750px; max-height: 530px;
-					overflow: hidden;
-					img {
-						width: 100%;
-						transition: opacity 1s ease;
-					}
-				}
-				.bottom {
-					height: 10px;
-				}
-			}
-			.phone {
-				max-width: 262px;
-				display: inline-block;
-				position: absolute;
-				bottom: -30px;
-				border-radius: 45px 45px 45px 45px/50px 50px 50px 50px;
-				background-color: #fff;
-				border: 2px solid #BBB;
-				border-bottom-width: 6px;
-				border-top-width: 4px;
-				margin: 0 20px;
-				//Kiedy dostępna jest tylko wersja mobilna
-				&:first-child {
-					display: block;
-					position: relative;
-					top: 0; left: 0; bottom: 0;
-					margin: 0 auto;
-				}
-				.top {
-					height: 40px;
-					position: relative;
-					&:before {
-						content: "";
-						position: absolute;
-						top: 20px; left: 50%;
-						width: 70px; height: 5px;
-						margin-left: -35px;
-						border-radius: 5px;
-						background-color: #DDD;
-						box-shadow: 0px 2px 0 #BBB;
-					}
-				}
-				.screen {
-					position: relative;
-					width: 240px; height: 360px;
-					margin: 0 10px;
-					overflow: hidden;
-					img {
-						width: 100%;
-						transition: opacity 1s ease;
-					}
-				}
-				.bottom {
-					height: 50px;
-					&:before {
-						content: "";
-						position: absolute;
-						left: 50%; bottom: 10px;
-						width: 66px; height: 18px;
-						margin-left: -33px;
-						border-radius: 5px 5px 10px 10px;
-						border: 1px solid #BBB;
-						border-bottom-width: 3px;
-					}
-				}
-			}
-		}
-		// Style dla parzystych i nieparzystych elementów
-		&:nth-of-type(odd) {
-			.phone {
-				left: -30px;
-			}
-			.description:before {
-				left: -5px;
-				transform: rotate(45deg);
-			}
-		}
-		&:nth-of-type(even) {
-			.phone {
-				right: -30px;
-			}
-			.description:before {
-				right: -5px;
-				transform: rotate(-45deg);
-			}
-		}
-	}
-}
+@import "layout/portfolio";
 
 #main_contact {
 	.container {

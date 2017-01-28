@@ -7,7 +7,7 @@ $scan-width: 2px;
 $scan-crt: true;
 
 // frames-per-second (should be > 1), only applies if $scan-crt: true;
-$scan-fps: 30;
+$scan-fps: 60;
 
 // scanline-color (rgba)
 $scan-color: rgba(#000, .3);
@@ -55,16 +55,17 @@ $scan-opacity: .75;
         pointer-events: none;
         content: '';
         position: absolute;
+        // mix-blend-mode: overlay;
     }
 
     // unique scanline travelling on the screen
     &:before {
-        // position: absolute;
-        // bottom: 100%;
+        position: absolute;
+        bottom: 100%;
         width: 100%;
         height: $scan-width * 1;
         z-index: $scan-z-index + 1;
-        background: $scan-color;
+        background: rgba(#000, .1);
         opacity: $scan-opacity;
         // animation: scanline 6s linear infinite;
         @include scan-moving($scan-moving-line);
@@ -90,8 +91,8 @@ $scan-opacity: .75;
 /* ANIMATE UNIQUE SCANLINE */
 @keyframes scanline {
     0% {
-        transform: translate3d(0,200000%,0);
-        // bottom: 0%; // to have a continuous scanline move, use this line (here in 0% step) instead of transform and write, in &:before, { position: absolute; bottom: 100%; }
+        // transform: translate3d(0,200000%,0);
+        bottom: 0%; // to have a continuous scanline move, use this line (here in 0% step) instead of transform and write, in &:before, { position: absolute; bottom: 100%; }
     }
 }
 

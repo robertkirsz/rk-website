@@ -1,0 +1,152 @@
+#main_portfolio {
+	.portfolio-item {
+		&:not(:first-of-type) { margin-top: 50px;	}
+		.description {
+			position: relative;
+			background: #fafafa;
+			box-shadow: 0 3px #D9D9D9;
+			padding: 15px 35px 15px;
+			&:before {
+				content: '';
+				box-shadow: 0 3px #D9D9D9;
+				position: absolute;
+				background: #fafafa;
+				display: block;
+				width: 20px; height: 20px;
+				top: 50%;
+				margin-top: -10px;
+				z-index: -1;
+			}
+			.fa {
+				&:not(:first-of-type) { margin-left: 5px; }
+				&.false {	opacity: 0.2;	}
+			}
+			a.btn {	margin-top: 10px; }
+		}
+		.tech-icons {
+			img {
+        width: 25px;
+        &:not(:first-child) { margin-left: 5px; }
+      }
+		.browsers {
+			padding-top: 0;
+			padding-bottom: 0;
+			.desktop {
+				background-color: #fff;
+				width: 100%;
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+				box-shadow: 0 3px #D9D9D9;
+				.top {
+					display: flex;
+					flex-flow: row nowrap;
+					justify-content: space-between;
+					align-items: center;
+					padding: 5px;
+					border-bottom: 1px solid #BBB;
+					.fa {
+						flex: 0 1 auto;
+						font-size: 1.2em;
+						color: #999;
+						margin: 0 5px;
+					}
+					.address {
+						flex: 0 1 100%;
+						margin-left: 5px;
+						padding: 2px 10px;
+						border: 1px solid #BBB;
+						border-radius: 3px;
+						overflow: hidden;
+					}
+				}
+				.screen {
+					position: relative;
+					height: 100%;
+					max-width: 750px; max-height: 530px;
+					overflow: hidden;
+					img {
+						width: 100%;
+						transition: opacity 1s ease;
+					}
+				}
+				.bottom {
+					height: 10px;
+				}
+			}
+			.phone {
+				max-width: 262px;
+				display: inline-block;
+				position: absolute;
+				bottom: -30px;
+				border-radius: 45px 45px 45px 45px/50px 50px 50px 50px;
+				background-color: #fff;
+				border: 2px solid #BBB;
+				border-bottom-width: 6px;
+				border-top-width: 4px;
+				margin: 0 20px;
+				//Kiedy dostępna jest tylko wersja mobilna
+				&:first-child {
+					display: block;
+					position: relative;
+					top: 0; left: 0; bottom: 0;
+					margin: 0 auto;
+				}
+				.top {
+					height: 40px;
+					position: relative;
+					&:before {
+						content: "";
+						position: absolute;
+						top: 20px; left: 50%;
+						width: 70px; height: 5px;
+						margin-left: -35px;
+						border-radius: 5px;
+						background-color: #DDD;
+						box-shadow: 0px 2px 0 #BBB;
+					}
+				}
+				.screen {
+					position: relative;
+					width: 240px; height: 360px;
+					margin: 0 10px;
+					overflow: hidden;
+					img {
+						width: 100%;
+						transition: opacity 1s ease;
+					}
+				}
+				.bottom {
+					height: 50px;
+					&:before {
+						content: "";
+						position: absolute;
+						left: 50%; bottom: 10px;
+						width: 66px; height: 18px;
+						margin-left: -33px;
+						border-radius: 5px 5px 10px 10px;
+						border: 1px solid #BBB;
+						border-bottom-width: 3px;
+					}
+				}
+			}
+		}
+		&:nth-of-type(odd) {
+			.phone {
+				left: -30px;
+			}
+			.description:before {
+				left: -5px;
+				transform: rotate(45deg);
+			}
+		}
+		&:nth-of-type(even) {
+			.phone {
+				right: -30px;
+			}
+			.description:before {
+				right: -5px;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}
