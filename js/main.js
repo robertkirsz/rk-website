@@ -144,7 +144,7 @@ var initApp = function initApp() {
 			sectionScroll.$links.removeClass('active');
 			sectionScroll.$mainNav.off('click', 'a', sectionScroll.click);
 			$window.off('scroll');
-			sectionScroll.$mainCover.css('background-position', '0 0, 50% 0');
+			$('[data-parallax]').removeAttr('style');
 		},
 		parallax: function parallax() {
 			var topDistance = window.scrollY;
@@ -172,9 +172,7 @@ var initApp = function initApp() {
 			var $clickedLink = $(event.target);
 			var $targetLink = $($clickedLink.attr('href'));
 
-			$body.animate({
-				scrollTop: $targetLink.offset().top - 50
-			}, 500);
+			$body.animate({ scrollTop: $targetLink.offset().top - 50 }, 500);
 			sectionScroll.$links.removeClass('active');
 			$clickedLink.addClass('active');
 			// Jeśli strona jest w wersji mobilnej, zamknij pasek z linkami po kliknięciu na któryś z nich

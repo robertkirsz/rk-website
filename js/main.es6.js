@@ -161,7 +161,7 @@ const initApp = () => {
 			sectionScroll.$links.removeClass('active')
 			sectionScroll.$mainNav.off('click', 'a', sectionScroll.click)
 			$window.off('scroll')
-			sectionScroll.$mainCover.css('background-position', '0 0, 50% 0')
+			$('[data-parallax]').removeAttr('style')
 		},
 		parallax () {
 			const topDistance = window.scrollY
@@ -189,9 +189,7 @@ const initApp = () => {
 			const $clickedLink = $(event.target)
 			const $targetLink = $($clickedLink.attr('href'))
 
-			$body.animate({
-				scrollTop: $targetLink.offset().top - 50,
-			}, 500)
+			$body.animate({ scrollTop: $targetLink.offset().top - 50 }, 500)
 			sectionScroll.$links.removeClass('active')
 			$clickedLink.addClass('active')
 			// Jeśli strona jest w wersji mobilnej, zamknij pasek z linkami po kliknięciu na któryś z nich
