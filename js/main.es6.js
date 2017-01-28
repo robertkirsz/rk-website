@@ -1,13 +1,23 @@
 'use strict'
 
 // Ikony responsywności (desktop, tablet, telefon)
-const IkonyResponsywnosci = ({ desktop, tablet, telefon }) => {
-	const $this = $('<h3 />', { class: 'responsive-icons' })
+const ikonyResponsywnosci = ({ desktop, tablet, telefon }) => {
+	const $this = $('<span />', { class: 'responsive-icons' })
 
 	$this
-		.append($('<span />', { class: 'fa fa-desktop ' + `${desktop}` }))
-		.append($('<span />', { class: 'fa fa-tablet ' + `${tablet}` }))
-		.append($('<span />', { class: 'fa fa-mobile ' + `${telefon}` }))
+		.append($('<span />', { class: `fa fa-desktop ${desktop}` }))
+		.append($('<span />', { class: `fa fa-tablet ${tablet}` }))
+		.append($('<span />', { class: `fa fa-mobile ${telefon}` }))
+
+	return $this
+}
+
+const techIcons = tech => {
+	const $this = $('<span />', { class: 'tech-icons' })
+
+	tech.forEach(icon => {
+		$this.append($('<img />', { src: `img/skills/${icon}.png` }))
+	})
 
 	return $this
 }
@@ -63,7 +73,7 @@ const Desktop = (nazwa, screenshot, adres) => {
 
 // Pojedyńcza pozycja na liście portfolio
 const ElementPortfolio = (key, value) => {
-	const {	nazwa, adres, opis, responsywnosc, screenshot } = value
+	const {	nazwa, adres, opis, responsywnosc, screenshot, tech } = value
 	// Elementy nieparzyste (po prawej - domyślne)
 	let bootstrap1 = ''
 	let bootstrap2 = ''
@@ -82,7 +92,8 @@ const ElementPortfolio = (key, value) => {
 
 	$description
 		.append($('<h1 />', { text: nazwa }))
-		.append(new IkonyResponsywnosci(responsywnosc))
+		.append(ikonyResponsywnosci(responsywnosc))
+		.append(techIcons(tech))
 		.append($('<p />', { html: opis }))
 		.append(
 			$('<a />', {
@@ -150,20 +161,23 @@ const initApp = () => {
 		},
 		parallax () {
 			const topDistance = window.scrollY
-			const $layers = $('[data-type=\'parallax\']')
+			const $layers = $('[data-parallax]')
 
 			$layers.each(function () {
 				const depth = $(this).attr('data-depth')
+				const type = $(this).attr('data-type')
 				const movement = -topDistance * depth
-				const translate3d = 'translate3d(0, ' + movement + 'px, 0)'
+				const styles = {}
 
-				$(this).css({
-					'-webkit-transform': translate3d,
-					'-moz-transform'   : translate3d,
-					'-ms-transform'    : translate3d,
-					'-o-transform'     : translate3d,
-					transform          : translate3d,
-				})
+				if (type === 'position') {
+					styles.transform = 'translate3d(0, ' + movement + 'px, 0)'
+				}
+
+				if (type === 'background') {
+					styles.backgroundPositionY = -14 - movement + 'px'
+				}
+
+				$(this).css(styles)
 			})
 		},
 		click () {
