@@ -89,11 +89,15 @@ const ElementPortfolio = (key, value) => {
 	const $portfolioItem = $('<div />', { class: 'row portfolio-item ' + displayType })
 	const $description = $('<div />', { class: 'description col-md-4 ' + bootstrap1 })
 	const $browsers = $('<div />', { class: 'browsers col-md-8 ' + bootstrap2 })
+	const $icons = $('<div />', { class: 'icons' })
+
+	$icons
+		.append(ikonyResponsywnosci(responsywnosc))
+		.append(techIcons(tech))
 
 	$description
 		.append($('<h1 />', { text: nazwa }))
-		.append(ikonyResponsywnosci(responsywnosc))
-		.append(techIcons(tech))
+		.append($icons)
 		.append($('<p />', { html: opis }))
 		.append(
 			$('<a />', {

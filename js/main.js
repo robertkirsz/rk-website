@@ -3,9 +3,9 @@
 // Ikony responsywności (desktop, tablet, telefon)
 
 var ikonyResponsywnosci = function ikonyResponsywnosci(_ref) {
-	var desktop = _ref.desktop;
-	var tablet = _ref.tablet;
-	var telefon = _ref.telefon;
+	var desktop = _ref.desktop,
+	    tablet = _ref.tablet,
+	    telefon = _ref.telefon;
 
 	var $this = $('<span />', { class: 'responsive-icons' });
 
@@ -60,12 +60,12 @@ var Desktop = function Desktop(nazwa, screenshot, adres) {
 
 // Pojedyńcza pozycja na liście portfolio
 var ElementPortfolio = function ElementPortfolio(key, value) {
-	var nazwa = value.nazwa;
-	var adres = value.adres;
-	var opis = value.opis;
-	var responsywnosc = value.responsywnosc;
-	var screenshot = value.screenshot;
-	var tech = value.tech;
+	var nazwa = value.nazwa,
+	    adres = value.adres,
+	    opis = value.opis,
+	    responsywnosc = value.responsywnosc,
+	    screenshot = value.screenshot,
+	    tech = value.tech;
 	// Elementy nieparzyste (po prawej - domyślne)
 
 	var bootstrap1 = '';
@@ -82,8 +82,11 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 	var $portfolioItem = $('<div />', { class: 'row portfolio-item ' + displayType });
 	var $description = $('<div />', { class: 'description col-md-4 ' + bootstrap1 });
 	var $browsers = $('<div />', { class: 'browsers col-md-8 ' + bootstrap2 });
+	var $icons = $('<div />', { class: 'icons' });
 
-	$description.append($('<h1 />', { text: nazwa })).append(ikonyResponsywnosci(responsywnosc)).append(techIcons(tech)).append($('<p />', { html: opis })).append($('<a />', {
+	$icons.append(ikonyResponsywnosci(responsywnosc)).append(techIcons(tech));
+
+	$description.append($('<h1 />', { text: nazwa })).append($icons).append($('<p />', { html: opis })).append($('<a />', {
 		href: 'http://' + adres,
 		class: 'btn btn-info',
 		text: 'Zobacz projekt na żywo'
@@ -99,8 +102,8 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 
 // Pojedyńcza pozycja na liście skills
 var ElementSkills = function ElementSkills(key, value) {
-	var nazwa = value.nazwa;
-	var ikona = value.ikona;
+	var nazwa = value.nazwa,
+	    ikona = value.ikona;
 
 	var $element = $('<div />', { class: 'skill col-xs-6 col-md-4' });
 	var $ikona = $('<img />', { src: 'img/skills/' + ikona, alt: 'Logo ' + nazwa });

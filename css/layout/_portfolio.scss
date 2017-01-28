@@ -1,6 +1,24 @@
 #main_portfolio {
 	.portfolio-item {
 		&:not(:first-of-type) { margin-top: 50px;	}
+		.icons {
+			display: flex;
+			align-items: baseline;
+			.responsive-icons {
+				flex: none;
+				font-size: 1.5em;
+			}
+			.tech-icons {
+				display: flex;
+				flex-flow: row wrap;
+				align-items: center;
+				margin-left: 10px;
+				img {
+	        width: 20px;
+	        margin: 0 0 5px 5px;
+	      }
+			}
+		}
 		.description {
 			position: relative;
 			background: #fafafa;
@@ -23,12 +41,7 @@
 			}
 			a.btn {	margin-top: 10px; }
 		}
-		.tech-icons {
-			img {
-        width: 25px;
-        &:not(:first-child) { margin-left: 5px; }
-      }
-		}
+
 		.browsers {
 			padding-top: 0;
 			padding-bottom: 0;

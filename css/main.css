@@ -108,6 +108,14 @@ body { font: 15px 'Open Sans', sans-serif; background: #EDEDED; }
 
 #main_portfolio .portfolio-item:not(:first-of-type) { margin-top: 50px; }
 
+#main_portfolio .portfolio-item .icons { display: -ms-flexbox; display: flex; -ms-flex-align: baseline; align-items: baseline; }
+
+#main_portfolio .portfolio-item .icons .responsive-icons { -ms-flex: none; flex: none; font-size: 1.5em; }
+
+#main_portfolio .portfolio-item .icons .tech-icons { display: -ms-flexbox; display: flex; -ms-flex-flow: row wrap; flex-flow: row wrap; -ms-flex-align: center; align-items: center; margin-left: 10px; }
+
+#main_portfolio .portfolio-item .icons .tech-icons img { width: 20px; margin: 0 0 5px 5px; }
+
 #main_portfolio .portfolio-item .description { position: relative; background: #fafafa; box-shadow: 0 3px #D9D9D9; padding: 15px 35px 15px; }
 
 #main_portfolio .portfolio-item .description:before { content: ''; box-shadow: 0 3px #D9D9D9; position: absolute; background: #fafafa; display: block; width: 20px; height: 20px; top: 50%; margin-top: -10px; z-index: -1; }
@@ -117,10 +125,6 @@ body { font: 15px 'Open Sans', sans-serif; background: #EDEDED; }
 #main_portfolio .portfolio-item .description .fa.false { opacity: 0.2; }
 
 #main_portfolio .portfolio-item .description a.btn { margin-top: 10px; }
-
-#main_portfolio .portfolio-item .tech-icons img { width: 25px; }
-
-#main_portfolio .portfolio-item .tech-icons img:not(:first-child) { margin-left: 5px; }
 
 #main_portfolio .portfolio-item .browsers { padding-top: 0; padding-bottom: 0; }
 
