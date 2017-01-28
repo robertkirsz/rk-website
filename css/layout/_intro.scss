@@ -4,28 +4,20 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-	background: url(../img/intro2/bg-min.jpg) no-repeat center center;
+	background: url(../img/intro/background.jpg) no-repeat center center;
 	background-size: cover;
 	.title {
 		position: relative;
 		width: 90vw; height: 16vw;
-		background: url(../img/intro2/title-min.png) no-repeat center center;
+		background: url(../img/intro/title.png) no-repeat center center;
 		background-size: contain;
 		z-index: 1;
-	}
-	.mask {
-		position: absolute;
-    top: 6px; right: 0; bottom: 0; left: 0;
-    mask-image: url(../img/intro2/mask.png);
-    background: #292259 $gradient 0 0 no-repeat;
-    background-size: cover;
-    mask-size: contain;
 	}
 	.name {
 		position: relative;
 		top: 9vw; left: 22vw;
     width: 70vw; height: 21vw;
-		background: url(../img/intro2/name.png) no-repeat center center;
+		background: url(../img/intro/name.png) no-repeat center center;
 		background-size: contain;
 	}
 }
