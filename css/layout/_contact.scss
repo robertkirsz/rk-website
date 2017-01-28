@@ -1,0 +1,48 @@
+#main_contact {
+	.container {
+		padding-bottom: 15px;
+	}
+	.about {
+		display: flex;
+	    flex-flow: column nowrap;
+	    justify-content: center;
+	    align-items: center;
+	    line-height: 25px;
+		img {
+			border-radius: 50%;
+		}
+		p {
+			text-align: center;
+		}
+		.fa-envelope {
+			margin-left: 3px;
+		}
+	}
+	.form {
+		margin-top: 15px;
+		.input-group-addon {
+			background: #E6E6E6;
+			border: none;
+			box-shadow: 0 3px #D9D9D9;
+		}
+		.form-control {
+			background: #fafafa;
+			border: none;
+			box-shadow: 0 3px #D9D9D9;
+		}
+		.form-group {
+			margin-bottom: 12px;
+			&:nth-child(4) {
+				margin-bottom: 0;
+			}
+		}
+		.btn {
+			transition: background 0.3s;
+			outline: none;
+			min-width: 64px;
+			&.nonactive {
+				pointer-events: none;
+			}
+		}
+	}
+}

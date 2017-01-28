@@ -2,14 +2,24 @@
 
 // Ikony responsywności (desktop, tablet, telefon)
 
-var IkonyResponsywnosci = function IkonyResponsywnosci(_ref) {
+var ikonyResponsywnosci = function ikonyResponsywnosci(_ref) {
 	var desktop = _ref.desktop;
 	var tablet = _ref.tablet;
 	var telefon = _ref.telefon;
 
-	var $this = $('<h3 />', { class: 'responsive-icons' });
+	var $this = $('<span />', { class: 'responsive-icons' });
 
-	$this.append($('<span />', { class: 'fa fa-desktop ' + ('' + desktop) })).append($('<span />', { class: 'fa fa-tablet ' + ('' + tablet) })).append($('<span />', { class: 'fa fa-mobile ' + ('' + telefon) }));
+	$this.append($('<span />', { class: 'fa fa-desktop ' + desktop })).append($('<span />', { class: 'fa fa-tablet ' + tablet })).append($('<span />', { class: 'fa fa-mobile ' + telefon }));
+
+	return $this;
+};
+
+var techIcons = function techIcons(tech) {
+	var $this = $('<span />', { class: 'tech-icons' });
+
+	tech.forEach(function (icon) {
+		$this.append($('<img />', { src: 'img/skills/' + icon + '.png' }));
+	});
 
 	return $this;
 };
@@ -55,6 +65,7 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 	var opis = value.opis;
 	var responsywnosc = value.responsywnosc;
 	var screenshot = value.screenshot;
+	var tech = value.tech;
 	// Elementy nieparzyste (po prawej - domyślne)
 
 	var bootstrap1 = '';
@@ -71,8 +82,11 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 	var $portfolioItem = $('<div />', { class: 'row portfolio-item ' + displayType });
 	var $description = $('<div />', { class: 'description col-md-4 ' + bootstrap1 });
 	var $browsers = $('<div />', { class: 'browsers col-md-8 ' + bootstrap2 });
+	var $icons = $('<div />', { class: 'icons' });
 
-	$description.append($('<h1 />', { text: nazwa })).append(new IkonyResponsywnosci(responsywnosc)).append($('<p />', { html: opis })).append($('<a />', {
+	$icons.append(ikonyResponsywnosci(responsywnosc)).append(techIcons(tech));
+
+	$description.append($('<h1 />', { text: nazwa })).append($icons).append($('<p />', { html: opis })).append($('<a />', {
 		href: 'http://' + adres,
 		class: 'btn btn-info',
 		text: 'Zobacz projekt na żywo'
@@ -134,20 +148,23 @@ var initApp = function initApp() {
 		},
 		parallax: function parallax() {
 			var topDistance = window.scrollY;
-			var $layers = $('[data-type=\'parallax\']');
+			var $layers = $('[data-parallax]');
 
 			$layers.each(function () {
 				var depth = $(this).attr('data-depth');
+				var type = $(this).attr('data-type');
 				var movement = -topDistance * depth;
-				var translate3d = 'translate3d(0, ' + movement + 'px, 0)';
+				var styles = {};
 
-				$(this).css({
-					'-webkit-transform': translate3d,
-					'-moz-transform': translate3d,
-					'-ms-transform': translate3d,
-					'-o-transform': translate3d,
-					transform: translate3d
-				});
+				if (type === 'position') {
+					styles.transform = 'translate3d(0, ' + movement + 'px, 0)';
+				}
+
+				if (type === 'background') {
+					styles.backgroundPositionY = -14 - movement + 'px';
+				}
+
+				$(this).css(styles);
 			});
 		},
 		click: function click() {

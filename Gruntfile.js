@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 module.exports = function (grunt) {
 
 	require('load-grunt-tasks')(grunt);
@@ -40,7 +42,7 @@ module.exports = function (grunt) {
 		//<script src="http://localhost:35729/livereload.js"></script>
 		watch: {
 	    all: {
-	      files: ['css/*.scss'],
+	      files: ['css/**/*.scss'],
 	      tasks: ['sass', 'postcss'],
 	      options: { livereload: true }
 	    },
