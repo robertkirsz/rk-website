@@ -1,157 +1,156 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="pl">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Robert Kirsz</title>
-        <meta name="description" content="Robert Kirsz Front End Developer Portfolio">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <!-- TEMPORARY -->
-        <script src="http://localhost:35729/livereload.js"></script>
-    </head>
-    <body class="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Robert Kirsz</title>
+    <meta name="description" content="Robert Kirsz Front End Developer Portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- TEMPORARY -->
+    <script src="http://localhost:35729/livereload.js"></script>
+  </head>
+  <body>
 
-        <!-- NAVBAR -->
-        <nav id="main_nav" class="navbar navbar-default navbar-static-top rk">
-          <div class="container rk">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-1">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#main_cover">&lt;robertkirsz&frasl;&gt;</a>
-            </div>
-            <div class="collapse navbar-collapse" id="collapse-1">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="#main_portfolio">&lt;portfolio&gt;</a></li>
-                <li><a href="#main_skills">&lt;skills&gt;</a></li>
-                <li><a href="#main_contact">&lt;kontakt&gt;</a></li>
-              </ul>
+    <!-- NAVBAR -->
+    <nav id="main_nav" class="navbar navbar-default navbar-static-top rk">
+      <div class="container rk">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-1">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#main_cover">&lt;robertkirsz&frasl;&gt;</a>
+        </div>
+        <div class="collapse navbar-collapse" id="collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#main_portfolio">&lt;portfolio&gt;</a></li>
+            <li><a href="#main_skills">&lt;skills&gt;</a></li>
+            <li><a href="#main_contact">&lt;kontakt&gt;</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- COVER -->
+    <div id="main_cover" class="rk scanlines">
+      <div class="title" data-parallax data-type="position" data-depth='0.5'>
+        <div class="name" data-parallax data-type="position" data-depth='0.4'></div>
+      </div>
+    </div>
+
+    <!-- PORTFOLIO -->
+    <div id="main_portfolio" class="rk">
+      <h2 class="tag rk">&lt;portfolio&gt;</h2>
+      <div class="container"></div>
+    </div>
+
+    <!-- SKILLS -->
+    <div id="main_skills" class="rk">
+      <h2 class="tag rk">&lt;skills&gt;</h2>
+      <div class="advanced row">
+        <div class="container">
+          <h2>&lt;advanced&gt;</h2>
+        </div>
+      </div>
+      <div class="intermediate row">
+        <div class="container">
+          <h2>&lt;intermediate&gt;</h2>
+        </div>
+      </div>
+      <div class="beginner row">
+        <div class="container">
+          <h2>&lt;beginner&gt;</h2>
+        </div>
+      </div>
+      <div class="other row">
+        <div class="container">
+          <h2>&lt;other&gt;</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="main_contact" class="rk">
+      <h2 class="tag rk">&lt;kontakt&gt;</h2>
+      <div class="container">
+        <div class="row">
+          <div class="about col-md-12">
+            <img src="img/photo.jpg" alt="Zdjęcie">
+            <h2>Robert Kirsz</h2>
+            <p>
+                Informatyk z wykształcenia<br>
+                Front end developer z zamiłowania<br>
+                Niestety nie z zawodu...<br><br>
+                Chciałbym zamiłowanie przemienić w zawód. Jeśli chcesz mi w tym pomóc, skontaktuj się ze mną.<br>
+                Kontakt mailowy: <a href="mailto:robert.kirsz@gmail.com"><i class="fa fa-lg fa-envelope"></i></a><br>
+                CV w PDFie: <a href="pliki/Robert_Kirsz_CV.pdf" class="fa fa-file-pdf-o"></a>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+            <div class="form col-md-12">
+              <form name="wiadomosc" action="skrypty/wiadomosc.php" method="POST" accept-charset="utf-8">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                        <input type="text" class="form-control" name="imie" placeholder="Imię" required="required">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                        <input type="email" class="form-control" name="email" placeholder="Adres email" required="required">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
+                        <input type="text" class="form-control" name="telefon" placeholder="Numer telefonu">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-question-sign"></span></span>
+                        <input type="text" class="form-control" name="temat" placeholder="Temat">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <textarea name="wiadomosc" name="wiadomosc" class="form-control" rows="8" cols="25" required="required" placeholder="Wiadomość"></textarea>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary pull-right">Wyślij</button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
-        </nav>
+      </div>
+    </div>
 
-        <!-- COVER -->
-        <div id="main_cover" class="rk scanlines">
-          <div class="title" data-parallax data-type="position" data-depth='0.5'>
-            <!-- <div class="mask" data-parallax data-type="background" data-depth='0.1'></div> -->
-            <div class="name" data-parallax data-type="position" data-depth='0.4'></div>
-          </div>
-        </div>
-
-        <!-- PORTFOLIO -->
-        <div id="main_portfolio" class="rk">
-            <h2 class="tag rk">&lt;portfolio&gt;</h2>
-            <div class="container"></div>
-        </div>
-
-        <!-- SKILLS -->
-        <div id="main_skills" class="rk">
-            <h2 class="tag rk">&lt;skills&gt;</h2>
-            <div class="advanced row">
-                <div class="container">
-                    <h2>&lt;advanced&gt;</h2>
-                </div>
-            </div>
-            <div class="intermediate row">
-                <div class="container">
-                    <h2>&lt;intermediate&gt;</h2>
-                </div>
-            </div>
-            <div class="beginner row">
-                <div class="container">
-                    <h2>&lt;beginner&gt;</h2>
-                </div>
-            </div>
-            <div class="other row">
-                <div class="container">
-                    <h2>&lt;other&gt;</h2>
-                </div>
-            </div>
-        </div>
-
-        <!-- CONTACT -->
-        <div id="main_contact" class="rk">
-            <h2 class="tag rk">&lt;kontakt&gt;</h2>
-            <div class="container">
-                <div class="row">
-                    <div class="about col-md-12">
-                        <img src="img/photo.jpg" alt="Zdjęcie">
-                        <h2>Robert Kirsz</h2>
-                        <p>
-                            Informatyk z wykształcenia<br>
-                            Front end developer z zamiłowania<br>
-                            Niestety nie z zawodu...<br><br>
-                            Chciałbym zamiłowanie przemienić w zawód. Jeśli chcesz mi w tym pomóc, skontaktuj się ze mną.<br>
-                            Kontakt mailowy: <a href="mailto:robert.kirsz@gmail.com"><i class="fa fa-lg fa-envelope"></i></a><br>
-                            CV w PDFie: <a href="pliki/Robert_Kirsz_CV.pdf" class="fa fa-file-pdf-o"></a>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form col-md-12">
-                        <form name="wiadomosc" action="skrypty/wiadomosc.php" method="POST" accept-charset="utf-8">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                            <input type="text" class="form-control" name="imie" placeholder="Imię" required="required">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                                            <input type="email" class="form-control" name="email" placeholder="Adres email" required="required">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
-                                            <input type="text" class="form-control" name="telefon" placeholder="Numer telefonu">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><span class="glyphicon glyphicon-question-sign"></span></span>
-                                            <input type="text" class="form-control" name="temat" placeholder="Temat">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <textarea name="wiadomosc" name="wiadomosc" class="form-control" rows="8" cols="25" required="required" placeholder="Wiadomość"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary pull-right">Wyślij</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="js/vendor/perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-24232014-4','auto');ga('send','pageview');
-        </script>
-    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/vendor/perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-24232014-4','auto');ga('send','pageview');
+    </script>
+</body>
 </html>
