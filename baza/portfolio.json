@@ -10,7 +10,7 @@
 				"tablet": true,
 				"telefon": true },
 			"opis": "Strona przygotowana na konkurs CSSOff, organizowany przez <a href=\"http://unmatchedstyle.com/news/cssoff-winners-2012.php\">unmatchedstyle.com</a>. Zadaniem było zakodowanie strony na podstawie otrzymanego projektu graficznego. Nadesłano ponad 400 zgłoszeń, zająłem wtedy miejsce w połowie stawki. Było to moje pierwsze podejście do kodowania w sposób responsywny i pokochałem to od pierwszego wejrzenia.",
-			"tech": ["html5", "css3", "jquery", "html5", "css3", "jquery", "html5", "css3", "jquery", "html5", "css3", "jquery"]
+			"tech": ["html5", "css3", "jquery"]
 	},
 	{
 		"nazwa": "CSSOff 2013",

@@ -3,9 +3,9 @@
 // Ikony responsywności (desktop, tablet, telefon)
 
 var ikonyResponsywnosci = function ikonyResponsywnosci(_ref) {
-	var desktop = _ref.desktop,
-	    tablet = _ref.tablet,
-	    telefon = _ref.telefon;
+	var desktop = _ref.desktop;
+	var tablet = _ref.tablet;
+	var telefon = _ref.telefon;
 
 	var $this = $('<span />', { class: 'responsive-icons' });
 
@@ -60,12 +60,12 @@ var Desktop = function Desktop(nazwa, screenshot, adres) {
 
 // Pojedyńcza pozycja na liście portfolio
 var ElementPortfolio = function ElementPortfolio(key, value) {
-	var nazwa = value.nazwa,
-	    adres = value.adres,
-	    opis = value.opis,
-	    responsywnosc = value.responsywnosc,
-	    screenshot = value.screenshot,
-	    tech = value.tech;
+	var nazwa = value.nazwa;
+	var adres = value.adres;
+	var opis = value.opis;
+	var responsywnosc = value.responsywnosc;
+	var screenshot = value.screenshot;
+	var tech = value.tech;
 	// Elementy nieparzyste (po prawej - domyślne)
 
 	var bootstrap1 = '';
@@ -102,8 +102,8 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 
 // Pojedyńcza pozycja na liście skills
 var ElementSkills = function ElementSkills(key, value) {
-	var nazwa = value.nazwa,
-	    ikona = value.ikona;
+	var nazwa = value.nazwa;
+	var ikona = value.ikona;
 
 	var $element = $('<div />', { class: 'skill col-xs-6 col-md-4' });
 	var $ikona = $('<img />', { src: 'img/skills/' + ikona, alt: 'Logo ' + nazwa });
