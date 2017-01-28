@@ -74,7 +74,7 @@ body { font: 15px 'Open Sans', sans-serif; background: #EDEDED; }
 
 #main_cover .title { position: relative; width: 90vw; height: 16vw; background: url(../img/intro2/title-min.png) no-repeat center center; background-size: contain; z-index: 1; }
 
-#main_cover .mask { position: absolute; top: 6px; right: 0; bottom: 0; left: 0; -webkit-mask-image: url(../img/intro2/mask.png); mask-image: url(../img/intro2/mask.png); background: #292259 url(../img/intro2/gradient.png) 0 -14px no-repeat; background-size: cover; -webkit-mask-size: contain; mask-size: contain; }
+#main_cover .mask { position: absolute; top: 6px; right: 0; bottom: 0; left: 0; -webkit-mask-image: url(../img/intro2/mask.png); mask-image: url(../img/intro2/mask.png); background: #292259 linear-gradient(to bottom, #322954 0%, #2136a3 8%, #2ea7ec 27%, #89e7ff 37%, #ffffff 47%, #ffffff 52%, #2d2557 58%, #4737a6 79%, #8acdfc 100%) 0 0 no-repeat; background-size: cover; -webkit-mask-size: contain; mask-size: contain; }
 
 #main_cover .name { position: relative; top: 9vw; left: 22vw; width: 70vw; height: 21vw; background: url(../img/intro2/name.png) no-repeat center center; background-size: contain; }
 
@@ -118,7 +118,9 @@ body { font: 15px 'Open Sans', sans-serif; background: #EDEDED; }
 
 #main_portfolio .portfolio-item .description a.btn { margin-top: 10px; }
 
-#main_portfolio .portfolio-item .tech-icons img { width: 50px; }
+#main_portfolio .portfolio-item .tech-icons img { width: 25px; }
+
+#main_portfolio .portfolio-item .tech-icons img:not(:first-child) { margin-left: 5px; }
 
 #main_portfolio .portfolio-item .browsers { padding-top: 0; padding-bottom: 0; }
 

@@ -7,6 +7,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+$gradient: linear-gradient(to bottom, #322954 0%, #2136a3 8%, #2ea7ec 27%, #89e7ff 37%, #ffffff 47%, #ffffff 52%, #2d2557 58%, #4737a6 79%, #8acdfc 100%);
 $zielony: #83B5B2;
 $cien: 0px 3px 10px -3px rgba(black, 0.5);
 $paski: url(../img/pasek.png) repeat-x left 0 top 10px, url(../img/pasek.png) repeat-x bottom 10px left 0px;
@@ -102,7 +103,7 @@ body  {
 		position: absolute;
     top: 6px; right: 0; bottom: 0; left: 0;
     mask-image: url(../img/intro2/mask.png);
-    background: #292259 url(../img/intro2/gradient.png) 0 -14px no-repeat;
+    background: #292259 $gradient 0 0 no-repeat;
     background-size: cover;
     mask-size: contain;
 	}
