@@ -1,10 +1,10 @@
 [
 	{
 		"nazwa": "Weekly WebDev Challenge 28",
-			"adres": "robertkirsz.github.io/wwc28/",
+			"adres": "https://robertkirsz.github.io/wwc28",
 			"screenshot": {
-				"desktop": "WWC28.png",
-				"telefon": "WWC28Mobile.png" },
+				"desktop": "wwc28_1440.jpg",
+				"telefon": "wwc28_320.jpg" },
 			"responsywnosc": {
 				"desktop": true,
 				"tablet": true,
@@ -13,11 +13,25 @@
 			"tech": ["html5", "css3", "sass", "vue", "gulp"]
 	},
 	{
+		"nazwa": "Magic Cards Manager",
+			"adres": "https://magic-cards-manager.herokuapp.com/all-cards",
+			"screenshot": {
+				"desktop": "mcm_1440.jpg",
+				"telefon": "" },
+			"responsywnosc": {
+				"desktop": true,
+				"tablet": true,
+				"telefon": false },
+			"opis": "Wyszukiwarka kart Magic: the Gathering z opcją dodawania ich do kolekcji, która przechowywana jest w Firebase. Aplikacja jest w fazie beta. W planach mam dodanie pełnej responsywności i możliwości podzielenia kolekcji na talie.",
+			"tech": ["html5", "css3", "sass", "bootstrap", "react", "redux", "react-router", "webpack", "firebase"],
+			"workInProgress": true
+	},
+	{
 		"nazwa": "CSSOff 2011",
 			"adres": "robertkirsz.pl/projekty/cssoff2011",
 			"screenshot": {
-				"desktop": "TripleDare.png",
-				"telefon": "TripleDareMobile.png" },
+				"desktop": "cssoff2011_1440.jpg",
+				"telefon": "cssoff2011_320.jpg" },
 			"responsywnosc": {
 				"desktop": true,
 				"tablet": true,
@@ -29,8 +43,8 @@
 		"nazwa": "CSSOff 2013",
 			"adres": "robertkirsz.pl/projekty/cssoff2013",
 			"screenshot": {
-				"desktop": "CSSOffVolume3.png",
-				"telefon": "CSSOffVolume3Mobile.png" },
+				"desktop": "cssoff2013_1440.jpg",
+				"telefon": "cssoff2013_320.jpg" },
 			"responsywnosc": {
 				"desktop": true,
 				"tablet": false,
@@ -42,21 +56,21 @@
 		"nazwa": "Projektowanie wnętrz",
 			"adres": "robertkirsz.pl/projekty/interiordesign",
 			"screenshot": {
-				"desktop": "InteriorDesign.png",
-				"telefon": "InteriorDesignMobile.png" },
+				"desktop": "interiordesign_1440.jpg",
+				"telefon": "interiordesign_320.jpg" },
 			"responsywnosc": {
 				"desktop": true,
 				"tablet": false,
 				"telefon": true },
 			"opis": "Strona internetowa dla firmy zajmującej się projektowaniem wnętrz. Stworzona w oparciu o dostarczony projekt graficzny, niepodparta żadnym frameworkiem, z własnymi rozwiązaniami odnośnie RWD. Strona nie została ukończona ponieważ firma ostatecznie nie ruszyła.",
-			"tech": ["html5", "css3", "sass", "jquery", "php", "grunt"]
+			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
 	},
 	{
 		"nazwa": "vikaplant",
 			"adres": "vikaplant.pl",
 			"screenshot": {
-				"desktop": "Vikaplant.png",
-				"telefon": "VikaplantMobile.png" },
+				"desktop": "vikaplant_1440.jpg",
+				"telefon": "vikaplant_320.jpg" },
 			"responsywnosc": {
 				"desktop": true,
 				"tablet": true,
@@ -68,7 +82,7 @@
 		"nazwa": "Symulator Gitary",
 			"adres": "robertkirsz.pl/projekty/gitary",
 			"screenshot": {
-				"desktop": "Gitary.png",
+				"desktop": "gitary.jpg",
 				"telefon": "" },
 			"responsywnosc": {
 				"desktop": true,
@@ -83,7 +97,7 @@
 			"github": "https://github.com/robertkirsz/mtg-counter",
 			"screenshot": {
 				"desktop": "",
-				"telefon": "Lifecounter.png" },
+				"telefon": "mtg_320.jpg" },
 			"responsywnosc": {
 				"desktop": false,
 				"tablet": true,
@@ -95,7 +109,7 @@
 		"nazwa": "Saper",
 			"adres": "robertkirsz.pl/saper",
 			"screenshot": {
-				"desktop": "Saper.png",
+				"desktop": "saper.jpg",
 				"telefon": "" },
 			"responsywnosc": {
 				"desktop": true,
