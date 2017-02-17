@@ -1,5 +1,18 @@
 [
 	{
+		"nazwa": "Weekly WebDev Challenge 28",
+			"adres": "robertkirsz.github.io/wwc28/",
+			"screenshot": {
+				"desktop": "WWC28.png",
+				"telefon": "WWC28Mobile.png" },
+			"responsywnosc": {
+				"desktop": true,
+				"tablet": true,
+				"telefon": true },
+			"opis": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			"tech": ["html5", "css3", "sass", "vue", "gulp"]
+	},
+	{
 		"nazwa": "CSSOff 2011",
 			"adres": "robertkirsz.pl/projekty/cssoff2011",
 			"screenshot": {
@@ -9,7 +22,7 @@
 				"desktop": true,
 				"tablet": true,
 				"telefon": true },
-			"opis": "Strona przygotowana na konkurs CSSOff, organizowany przez <a href=\"http://unmatchedstyle.com/news/cssoff-winners-2012.php\">unmatchedstyle.com</a>. Zadaniem było zakodowanie strony na podstawie otrzymanego projektu graficznego. Nadesłano ponad 400 zgłoszeń, zająłem wtedy miejsce w połowie stawki. Było to moje pierwsze podejście do kodowania w sposób responsywny i pokochałem to od pierwszego wejrzenia.",
+			"opis": "Strona przygotowana na konkurs CSSOff, organizowany przez <a href=\"http://unmatchedstyle.com/news/cssoff-winners-2012.php\">unmatchedstyle.com</a>. Zadaniem było zakodowanie strony na podstawie otrzymanego projektu graficznego. Nadesłano ponad 400 zgłoszeń, zająłem wtedy miejsce w połowie stawki. Było to moje pierwsze podejście do kodowania w sposób responsywny.",
 			"tech": ["html5", "css3", "jquery"]
 	},
 	{
@@ -22,7 +35,7 @@
 				"desktop": true,
 				"tablet": false,
 				"telefon": true },
-			"opis": "Kolejna edycja konkursu CSSOff, z dużo bardziej złożonym layoutem. Nie miałem jednak wtedy wystarczająco dużo wolnego czasu aby stronę skończyć i zgłosić do oceny, ale z tego co widzę na <a href=\"http://www.unmatchedstyle.com/cssoff\">stronie</a>, konkurs chyba nie został rozstrzygnięty. Obecnie ukończona jest w jakichś 90%.",
+			"opis": "Kolejna edycja konkursu CSSOff, z bardziej złożonym layoutem. Ta edycja ostatecznie nie została rozstrzygnięta.",
 			"tech": ["html5", "css3", "sass", "jquery"]
 	},
 	{
@@ -53,7 +66,7 @@
 	},
 	{
 		"nazwa": "Symulator Gitary",
-			"adres": "robertkirsz.pl/gitary",
+			"adres": "robertkirsz.pl/projekty/gitary",
 			"screenshot": {
 				"desktop": "Gitary.png",
 				"telefon": "" },
@@ -61,12 +74,13 @@
 				"desktop": true,
 				"tablet": false,
 				"telefon": false },
-			"opis": "Aplikacja multimedialna stworzona na potrzeby mojej pracy inżynierskiej i jednocześnie pierwsze poważniejsze podejście do programowania w JavaScripcie. Jest to symulator gitary wykorzystujący standard HTML5 Audio. Pozwala na zapisywanie akordów, nagrywanie sekwencji dźwięków, tworzeniu na ich podstawie zapisu w formie tabulatury i inne. Wszystkie jej funkcje są opisane w okienku pomocy, do którego można się dostać poprzez ikonę w prawym dolnym rogu ekranu głównego. Pełnię funkcjonalności i wydajności osiąga w najnowszym, desktopowym Chromie i Firefoxie (nie była tworzona z myślą o innych przeglądarkach czy urządzeniach mobilnych).",
+			"opis": "Aplikacja multimedialna stworzona na potrzeby mojej pracy inżynierskiej i jednocześnie pierwsze podejście do programowania w JavaScript. Jest to symulator gitary wykorzystujący HTML5 Audio. Pozwala na zapisywanie akordów, nagrywanie sekwencji dźwięków, tworzeniu na ich podstawie zapisu w formie tabulatury i inne.",
 			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
 	},
 	{
 		"nazwa": "MtG Life Counter",
 			"adres": "robertkirsz.pl/mtg",
+			"github": "https://github.com/robertkirsz/mtg-counter",
 			"screenshot": {
 				"desktop": "",
 				"telefon": "Lifecounter.png" },
@@ -74,7 +88,7 @@
 				"desktop": false,
 				"tablet": true,
 				"telefon": true },
-			"opis": "Aplikacja stworzona z myślą o fanach gry karcianej Magic: The Gathering. Jej funkcjonalność może być czarną magią dla zwykłych śmiertelników. Pozwala śledzić aktualną ilość życia, liczbę poison counterów, obrażenia zadane przez Commandera oraz umożliwia zagrywanie tokenów. W fazie testowej jest także opcja zapisywania statystyk z poszczególnych rozgrywek. Stworzona z myślą o urządzeniach mobilnych, testowana na Androidzie 4.3 z najnowszym Chromem. W wersji desktopowej symulowany jest wygląd aplikacji na smartfonie.",
+			"opis": "Aplikacja stworzona z myślą o graczach Magic: The Gathering. Pozwala śledzić aktualną ilość życia, liczbę poison counterów, obrażenia zadane przez Commandera. Stworzona z myślą o urządzeniach mobilnych.",
 			"tech": ["html5", "css3", "react", "redux", "webpack"]
 	},
 	{
@@ -87,7 +101,7 @@
 				"desktop": true,
 				"tablet": true,
 				"telefon": true },
-			"opis": "Klon kultowego Sapera znanego z Windowsów, moje pierwsze podejście do stworzenia czegoś w rodzaju gry. Stworzony głównie z myślą o desktopach i obsłudze myszką, jest jednak maksymalnie responsywny i powinien wyświetlać się poprawnie na ekranach o wszystkich rozmiarach.",
+			"opis": "Klon kultowego Sapera znanego z Windowsów, moje pierwsze podejście do stworzenia czegoś w rodzaju gry.",
 			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
 	}
 ]

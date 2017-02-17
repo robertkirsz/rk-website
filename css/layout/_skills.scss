@@ -50,20 +50,16 @@
 			}
 		}
 	}
-	.advanced {
+	.primary {
 		img { height: 140px; }
 		p { font-size: 1.2em;	}
 	}
-	.intermediate {
+	.secondary {
 		img { height: 120px; }
 		p { font-size: 1em;	}
-	}
-	.beginner {
-		img { height: 100px; }
-		p { font-size: 0.9em;	}
 	}
 	.other {
-		img { height: 120px; }
-		p { font-size: 1em;	}
+		img { height: 100px; }
+		p { font-size: 0.9em;	}
 	}
 }

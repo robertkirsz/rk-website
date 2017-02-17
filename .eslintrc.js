@@ -50,7 +50,6 @@ module.exports = {
     "object-shorthand": [2, "always"],
     "prefer-const": 2,
     "prefer-spread": 1,
-    "array-bracket-spacing": [2, "never"],
-    "key-spacing": [2, { "align": "colon", "afterColon": true }]
+    "array-bracket-spacing": [2, "never"]
   }
 };

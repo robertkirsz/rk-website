@@ -2,3 +2,44 @@ $gradient: linear-gradient(to bottom, #322954 0%, #2136a3 8%, #2ea7ec 27%, #89e7
 $zielony: #83B5B2;
 $cien: 0px 3px 10px -3px rgba(black, 0.5);
 $paski: url(../img/pasek.png) repeat-x left 0 top 10px, url(../img/pasek.png) repeat-x bottom 10px left 0px;
+
+@mixin flex($flex-direction: row, $flex-wrap: nowrap, $justify-content: flex-start, $align-items: stretch, $align-content: stretch) {
+  display: flex;
+  flex-direction: $flex-direction;
+  flex-wrap: $flex-wrap;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  align-content: $align-content;
+}
+@mixin inline-flex($flex-direction: row, $flex-wrap: nowrap, $justify-content: flex-start, $align-items: stretch, $align-content: stretch) {
+  display: inline-flex;
+  flex-direction: $flex-direction;
+  flex-wrap: $flex-wrap;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  align-content: $align-content;
+}
+
+@mixin phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
+%flex-center {
+  @include flex(column, nowrap, center, center);
+}
+
+%inline-flex-center {
+  @include inline-flex(column, nowrap, center, center);
+}

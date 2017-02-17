@@ -1,25 +1,24 @@
 #main_contact {
-	.container {
-		padding-bottom: 15px;
+	.container { padding-bottom: 15px; }
+	.profile {
+		@extend %flex-center;
+		margin-bottom: 15px;
+		&__photo { border-radius: 50%; }
+		&__name {}
+		&__links {
+			@include flex(row, nowrap, space-between);
+			a {
+				font-size: 2.5em;
+				text-decoration: none;
+				&:not(:first-child) {
+					margin-left: 0.5em;
+					@media screen and (max-width: 991px) { margin-left: 1.5em }
+				}
+			}
+		}
 	}
-	.about {
-		display: flex;
-	    flex-flow: column nowrap;
-	    justify-content: center;
-	    align-items: center;
-	    line-height: 25px;
-		img {
-			border-radius: 50%;
-		}
-		p {
-			text-align: center;
-		}
-		.fa-envelope {
-			margin-left: 3px;
-		}
-	}
+	.bio { margin-bottom: 15px; }
 	.form {
-		margin-top: 15px;
 		.input-group-addon {
 			background: #E6E6E6;
 			border: none;
