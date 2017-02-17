@@ -74,7 +74,7 @@ const Desktop = (nazwa, screenshot, adres) => {
 
 // PORTFOLIO: Pojedyńcza pozycja na liście portfolio
 const ElementPortfolio = (key, value) => {
-	const {	nazwa, adres, github, opis, responsywnosc, screenshot, tech } = value
+	const {	nazwa, adres, github, opis, responsywnosc, screenshot, tech, workInProgress } = value
 
 	// Dodaj style dla elementów parzystych (po lewej stronie ekranu), które zamienią
 	// miejscami opis z elementami przeglądarki/telefonu
@@ -121,6 +121,14 @@ const ElementPortfolio = (key, value) => {
 				title            : 'Zobacz kod na GitHubie',
 			}).tooltip({ delay: { show: 500, hide: 100 } })
 		)
+	}
+
+	// Dodaj oznaczenie "work in progress" jeśli trzeba
+	if (workInProgress) {
+		const $workInProgressBadge = $('<div />', { class: 'work-in-progress-badge' })
+
+		$workInProgressBadge.append($('<span />', { html: 'Work<br>in progress' }))
+		$description.append($workInProgressBadge)
 	}
 
 	// Dodaj elementy przeglądarki i telefonu

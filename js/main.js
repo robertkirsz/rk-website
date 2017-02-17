@@ -3,9 +3,9 @@
 // PORTFOLIO: Ikony responsywności (desktop, tablet, telefon)
 
 var responsivenessIcons = function responsivenessIcons(_ref) {
-	var desktop = _ref.desktop;
-	var tablet = _ref.tablet;
-	var telefon = _ref.telefon;
+	var desktop = _ref.desktop,
+	    tablet = _ref.tablet,
+	    telefon = _ref.telefon;
 
 	var $this = $('<span />', { class: 'responsive-icons' });
 
@@ -61,13 +61,14 @@ var Desktop = function Desktop(nazwa, screenshot, adres) {
 
 // PORTFOLIO: Pojedyńcza pozycja na liście portfolio
 var ElementPortfolio = function ElementPortfolio(key, value) {
-	var nazwa = value.nazwa;
-	var adres = value.adres;
-	var github = value.github;
-	var opis = value.opis;
-	var responsywnosc = value.responsywnosc;
-	var screenshot = value.screenshot;
-	var tech = value.tech;
+	var nazwa = value.nazwa,
+	    adres = value.adres,
+	    github = value.github,
+	    opis = value.opis,
+	    responsywnosc = value.responsywnosc,
+	    screenshot = value.screenshot,
+	    tech = value.tech,
+	    workInProgress = value.workInProgress;
 
 	// Dodaj style dla elementów parzystych (po lewej stronie ekranu), które zamienią
 	// miejscami opis z elementami przeglądarki/telefonu
@@ -107,6 +108,14 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 		}).tooltip({ delay: { show: 500, hide: 100 } }));
 	}
 
+	// Dodaj oznaczenie "work in progress" jeśli trzeba
+	if (workInProgress) {
+		var $workInProgressBadge = $('<div />', { class: 'work-in-progress-badge' });
+
+		$workInProgressBadge.append($('<span />', { html: 'Work<br>in progress' }));
+		$description.append($workInProgressBadge);
+	}
+
 	// Dodaj elementy przeglądarki i telefonu
 	if (screenshot.desktop !== '') $browsers.append(new Desktop(nazwa, screenshot.desktop, adres));
 	if (screenshot.telefon !== '') $browsers.append(new Phone(nazwa, screenshot.telefon));
@@ -119,8 +128,8 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 
 // SKILLS: Pojedyńcza pozycja na liście skills
 var ElementSkills = function ElementSkills(key, value) {
-	var nazwa = value.nazwa;
-	var ikona = value.ikona;
+	var nazwa = value.nazwa,
+	    ikona = value.ikona;
 
 	var $element = $('<div />', { class: 'skill col-xs-6 col-md-4' });
 	var $ikona = $('<img />', { src: 'img/skills/' + ikona, alt: 'Logo ' + nazwa });
@@ -289,29 +298,27 @@ var sectionFade = {
 
 		// Uruchom tylko jeśli link nie był już aktywowany ani nie trwa animacja przełączania okien
 		if (!$clickedLink.hasClass('active') && !$clickedLink.hasClass('disabled')) {
-			(function () {
-				// Jeśli strona jest w wersji mobilnej, zamknij pasek z linkami po kliknięciu na któryś z nich
-				if (sectionFade.$navbarCollapse.hasClass('in')) {
-					$('.navbar-toggle').click();
-				}
-				// Pobierz odnośnik linku
-				var $content = $($clickedLink.attr('href'));
+			// Jeśli strona jest w wersji mobilnej, zamknij pasek z linkami po kliknięciu na któryś z nich
+			if (sectionFade.$navbarCollapse.hasClass('in')) {
+				$('.navbar-toggle').click();
+			}
+			// Pobierz odnośnik linku
+			var $content = $($clickedLink.attr('href'));
 
-				// Deaktywuj inne linki, aktywuj link kliknięty
-				sectionFade.$links.removeClass('active').addClass('disabled');
-				$clickedLink.addClass('active');
-				window.scrollTo(0, 0);
-				// Okno z wierzchu przesuń na spód
-				$('.front').addClass('oldfront').removeClass('front');
-				// Pokaż nowe okno, przesuń je na wierzch i animuj wejście
-				$content.addClass('front').show().addClass('animated fadeInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-					$content.removeClass('animated fadeInRight');
-					// Usuń klasę z poprzedniego okna
-					$('.oldfront').removeClass('oldfront').hide();
-					// Aktywuj linku
-					sectionFade.$links.removeClass('disabled');
-				});
-			})();
+			// Deaktywuj inne linki, aktywuj link kliknięty
+			sectionFade.$links.removeClass('active').addClass('disabled');
+			$clickedLink.addClass('active');
+			window.scrollTo(0, 0);
+			// Okno z wierzchu przesuń na spód
+			$('.front').addClass('oldfront').removeClass('front');
+			// Pokaż nowe okno, przesuń je na wierzch i animuj wejście
+			$content.addClass('front').show().addClass('animated fadeInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+				$content.removeClass('animated fadeInRight');
+				// Usuń klasę z poprzedniego okna
+				$('.oldfront').removeClass('oldfront').hide();
+				// Aktywuj linku
+				sectionFade.$links.removeClass('disabled');
+			});
 		}
 	},
 	stop: function stop() {
