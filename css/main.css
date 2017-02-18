@@ -106,7 +106,7 @@ body { font: 15px 'Nunito', sans-serif; background: #EDEDED; }
 
 #main_portfolio .portfolio-item .browsers .desktop .top .fa { -ms-flex: 0 1 auto; flex: 0 1 auto; font-size: 1.2em; color: #999; margin: 0 5px; }
 
-#main_portfolio .portfolio-item .browsers .desktop .top .address { -ms-flex: 0 1 100%; flex: 0 1 100%; margin-left: 5px; padding: 2px 10px; border: 1px solid #BBB; border-radius: 3px; overflow: hidden; }
+#main_portfolio .portfolio-item .browsers .desktop .top .address { -ms-flex: 0 1 100%; flex: 0 1 100%; margin-left: 5px; padding: 2px 10px; border: 1px solid #BBB; border-radius: 3px; white-space: nowrap; overflow: hidden; }
 
 #main_portfolio .portfolio-item .browsers .desktop .screen { position: relative; height: 100%; max-width: 750px; max-height: 530px; overflow: hidden; }
 
@@ -133,6 +133,12 @@ body { font: 15px 'Nunito', sans-serif; background: #EDEDED; }
 #main_portfolio .portfolio-item .work-in-progress-badge { position: absolute; top: 0; right: 0; height: 105px; overflow: hidden; pointer-events: none; }
 
 #main_portfolio .portfolio-item .work-in-progress-badge span { display: block; position: relative; top: 6px; left: 40px; padding: 10px 35px; background: #fcff6f; font-size: 0.9em; font-weight: bold; text-align: center; transform: rotate(45deg); line-height: 1; }
+
+#main_portfolio .portfolio-item .work-in-progress-badge span:before, #main_portfolio .portfolio-item .work-in-progress-badge span:after { content: ""; display: block; position: absolute; left: 0; right: 0; height: 5px; background-image: repeating-linear-gradient(-45deg, transparent, transparent 6px, black 6px, black 12px); }
+
+#main_portfolio .portfolio-item .work-in-progress-badge span:before { top: 0; }
+
+#main_portfolio .portfolio-item .work-in-progress-badge span:after { bottom: 0; }
 
 #main_portfolio .portfolio-item:nth-of-type(odd) .phone { left: -30px; }
 
