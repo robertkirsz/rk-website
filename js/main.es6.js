@@ -117,6 +117,18 @@ const WorkItem = (key, value) => {
 		)
 	}
 
+	if (base) {
+		$description.append(
+			$('<a />', {
+				href             : 'img/work/' + base,
+				class            : 'link btn btn-default fa fa-file-image-o',
+				'data-toggle'    : 'tooltip',
+				'data-placement' : 'top',
+				title            : 'Design file',
+			}).tooltip({ delay: { show: 500, hide: 100 } })
+		)
+	}
+
 	// Add "work in progress" tag if needed
 	if (workInProgress) {
 		const $workInProgressBadge = $('<div />', { class: 'work-in-progress-badge' })

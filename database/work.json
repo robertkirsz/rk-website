@@ -6,6 +6,7 @@
 			"screenshot": {
 				"desktop": "wwc28_1440.jpg",
 				"phone": "wwc28_320.jpg" },
+			"base": "wwc28_base.jpg",
 			"responsiveness": {
 				"desktop": true,
 				"tablet": true,

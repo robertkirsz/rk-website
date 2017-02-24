@@ -68,6 +68,7 @@ var WorkItem = function WorkItem(key, value) {
 	    responsiveness = value.responsiveness,
 	    screenshot = value.screenshot,
 	    tech = value.tech,
+	    base = value.base,
 	    workInProgress = value.workInProgress;
 
 	// Add different classes for odd and even elements so that they'll alternate
@@ -90,8 +91,8 @@ var WorkItem = function WorkItem(key, value) {
 
 	// Append name, icons, description and a link to project's live version
 	$description.append($('<h1 />', { text: name })).append($icons).append($('<p />', { html: description })).append($('<a />', {
-		href: 'http://' + url,
-		class: 'btn btn-info fa fa-eye fa-2x',
+		href: url,
+		class: 'link btn btn-info fa fa-eye',
 		'data-toggle': 'tooltip',
 		'data-placement': 'top',
 		title: 'Live version'
@@ -101,10 +102,20 @@ var WorkItem = function WorkItem(key, value) {
 	if (github) {
 		$description.append($('<a />', {
 			href: github,
-			class: 'btn btn-default fa fa-github fa-2x',
+			class: 'link btn btn-default fa fa-github',
 			'data-toggle': 'tooltip',
 			'data-placement': 'top',
 			title: 'Source on GitHub'
+		}).tooltip({ delay: { show: 500, hide: 100 } }));
+	}
+
+	if (base) {
+		$description.append($('<a />', {
+			href: 'img/work/' + base,
+			class: 'link btn btn-default fa fa-file-image-o',
+			'data-toggle': 'tooltip',
+			'data-placement': 'top',
+			title: 'Design file'
 		}).tooltip({ delay: { show: 500, hide: 100 } }));
 	}
 
