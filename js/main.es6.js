@@ -68,7 +68,7 @@ const Desktop = (name, screenshot, url) => {
 
 // WORK: A single work item
 const WorkItem = (key, value) => {
-	const {	name, url, github, description, responsiveness, screenshot, tech, workInProgress } = value
+	const {	name, url, github, description, responsiveness, screenshot, tech, base, workInProgress } = value
 
 	// Add different classes for odd and even elements so that they'll alternate
 	// position of their child elements
@@ -96,8 +96,8 @@ const WorkItem = (key, value) => {
 		.append($('<p />', { html: description }))
 		.append(
 			$('<a />', {
-				href             : 'http://' + url,
-				class            : 'btn btn-info fa fa-eye fa-2x',
+				href             : url,
+				class            : 'link btn btn-info fa fa-eye',
 				'data-toggle'    : 'tooltip',
 				'data-placement' : 'top',
 				title            : 'Live version',
@@ -109,7 +109,7 @@ const WorkItem = (key, value) => {
 		$description.append(
 			$('<a />', {
 				href             : github,
-				class            : 'btn btn-default fa fa-github fa-2x',
+				class            : 'link btn btn-default fa fa-github',
 				'data-toggle'    : 'tooltip',
 				'data-placement' : 'top',
 				title            : 'Source on GitHub',

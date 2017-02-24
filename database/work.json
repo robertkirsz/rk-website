@@ -1,7 +1,8 @@
 [
 	{
 		"name": "Weekly WebDev Challenge 28",
-			"url": "robertkirsz.github.io/wwc28",
+			"url": "https://robertkirsz.github.io/wwc28/",
+			"github": "https://github.com/robertkirsz/wwc28",
 			"screenshot": {
 				"desktop": "wwc28_1440.jpg",
 				"phone": "wwc28_320.jpg" },
@@ -14,7 +15,8 @@
 	},
 	{
 		"name": "Magic Cards Manager",
-			"url": "magic-cards-manager.herokuapp.com/all-cards",
+			"url": "https://magic-cards-manager.herokuapp.com/all-cards",
+			"github": "https://github.com/robertkirsz/magic-cards-manager",
 			"screenshot": {
 				"desktop": "mcm_1440.jpg",
 				"phone": "" },
@@ -28,8 +30,8 @@
 	},
 	{
 		"name": "MtG Life Counter",
-			"url": "robertkirsz.pl/mtg",
-			"github": "github.com/robertkirsz/mtg-counter",
+			"url": "http://robertkirsz.pl/mtg",
+			"github": "https://github.com/robertkirsz/mtg-counter",
 			"screenshot": {
 				"desktop": "",
 				"phone": "mtg_320.jpg" },
@@ -42,7 +44,7 @@
 	},
 	{
 		"name": "Saper",
-			"url": "robertkirsz.pl/saper",
+			"url": "http://robertkirsz.pl/saper",
 			"screenshot": {
 				"desktop": "saper.jpg",
 				"phone": "" },
@@ -55,7 +57,7 @@
 	},
 	{
 		"name": "CSSOff 2011",
-			"url": "robertkirsz.pl/projects/cssoff2011",
+			"url": "http://robertkirsz.pl/projects/cssoff2011",
 			"screenshot": {
 				"desktop": "cssoff2011_1440.jpg",
 				"phone": "cssoff2011_320.jpg" },
@@ -68,7 +70,7 @@
 	},
 	{
 		"name": "CSSOff 2013",
-			"url": "robertkirsz.pl/projects/cssoff2013",
+			"url": "http://robertkirsz.pl/projects/cssoff2013",
 			"screenshot": {
 				"desktop": "cssoff2013_1440.jpg",
 				"phone": "cssoff2013_320.jpg" },
@@ -81,7 +83,7 @@
 	},
 	{
 		"name": "Interior Design Site",
-			"url": "robertkirsz.pl/projects/interiordesign",
+			"url": "http://robertkirsz.pl/projects/interiordesign",
 			"screenshot": {
 				"desktop": "interiordesign_1440.jpg",
 				"phone": "interiordesign_320.jpg" },
@@ -94,7 +96,7 @@
 	},
 	{
 		"name": "Symulator Gitary",
-			"url": "robertkirsz.pl/projects/gitary",
+			"url": "http://robertkirsz.pl/projects/gitary",
 			"screenshot": {
 				"desktop": "gitary.jpg",
 				"phone": "" },
@@ -107,7 +109,7 @@
 	},
 	{
 		"name": "vikaplant",
-			"url": "vikaplant.pl",
+			"url": "http://vikaplant.pl",
 			"screenshot": {
 				"desktop": "vikaplant_1440.jpg",
 				"phone": "vikaplant_320.jpg" },
