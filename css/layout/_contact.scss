@@ -1,8 +1,11 @@
 #main_contact {
-	.container { padding-bottom: 15px; }
+	.container {
+		padding-bottom: 15px;
+		margin: 50px auto;
+	}
 	.profile {
 		@extend %flex-center;
-		margin-bottom: 15px;
+		margin-bottom: 30px;
 		&__photo { border-radius: 50%; }
 		&__name {}
 		&__links {
@@ -17,7 +20,7 @@
 			}
 		}
 	}
-	.bio { margin-bottom: 15px; }
+	.bio { margin-bottom: 30px; }
 	.form {
 		.input-group-addon {
 			background: #E6E6E6;

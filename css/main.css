@@ -172,9 +172,9 @@ body { font: 15px 'Nunito', sans-serif; background: #EDEDED; }
 
 #main_skills .other p { font-size: 0.9em; }
 
-#main_contact .container { padding-bottom: 15px; }
+#main_contact .container { padding-bottom: 15px; margin: 50px auto; }
 
-#main_contact .profile { margin-bottom: 15px; }
+#main_contact .profile { margin-bottom: 30px; }
 
 #main_contact .profile__photo { border-radius: 50%; }
 
@@ -186,7 +186,7 @@ body { font: 15px 'Nunito', sans-serif; background: #EDEDED; }
 
 @media screen and (max-width: 991px) { #main_contact .profile__links a:not(:first-child) { margin-left: 1.5em; } }
 
-#main_contact .bio { margin-bottom: 15px; }
+#main_contact .bio { margin-bottom: 30px; }
 
 #main_contact .form .input-group-addon { background: #E6E6E6; border: none; box-shadow: 0 3px #D9D9D9; }
 

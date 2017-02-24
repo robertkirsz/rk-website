@@ -1,3 +1,4 @@
+// TODO: translate everything into English
 'use strict'
 
 // PORTFOLIO: Ikony responsywności (desktop, tablet, telefon)
@@ -31,7 +32,7 @@ const Phone = (nazwa, screenshot) => {
 	const $dół   = $('<div />', { class: 'bottom' })
 	const $screenshot = $('<img />', {
 		src: 'img/portfolio/' + screenshot,
-		alt: nazwa + ' - Wersja Mobilna',
+		alt: nazwa + ' - Mobile Version',
 	})
 
 	$this
@@ -49,7 +50,7 @@ const Desktop = (nazwa, screenshot, adres) => {
 	const $ekran = $('<div />', { class: 'screen' })
 	const $screenshot = $('<img />', {
 		src: 'img/portfolio/' + screenshot,
-		alt: nazwa + ' - Wersja Webowa',
+		alt: nazwa + ' - Desktop Version',
 	})
 	const $ikony = $('<i class="fa fa-arrow-left"></i><i class="fa fa-arrow-right"></i><i class="fa fa-refresh"></i><i class="fa fa-home"></i>')
 	const $pasekAdresowy = $('<div />', { class: 'address' })
@@ -74,7 +75,7 @@ const Desktop = (nazwa, screenshot, adres) => {
 
 // PORTFOLIO: Pojedyńcza pozycja na liście portfolio
 const ElementPortfolio = (key, value) => {
-	const {	nazwa, adres, github, opis, responsywnosc, screenshot, tech, workInProgress } = value
+	const {	nazwa, adres, github, opis, responsiveness, screenshot, tech, workInProgress } = value
 
 	// Dodaj style dla elementów parzystych (po lewej stronie ekranu), które zamienią
 	// miejscami opis z elementami przeglądarki/telefonu
@@ -82,7 +83,7 @@ const ElementPortfolio = (key, value) => {
 	const	bootstrap2 = key % 2 === 0 ? 'col-md-pull-4' : ''
 
 	// Dodaj unikatową klasę dla pozycji, które są stworzone tylko w wersji mobilnej
-	const displayType = !responsywnosc.desktop ? 'mobile_only' : 'responsive'
+	const displayType = !responsiveness.desktop ? 'mobile_only' : 'responsive'
 
 	// Przygotuj poszczególne elementy całości
 	const $portfolioItem = $('<div />', { class: 'row portfolio-item ' + displayType })
@@ -92,7 +93,7 @@ const ElementPortfolio = (key, value) => {
 
 	// Dodaj ikony responsywności i użytych technologii
 	$icons
-		.append(responsivenessIcons(responsywnosc))
+		.append(responsivenessIcons(responsiveness))
 		.append(techIcons(tech))
 
 	// Dodaj nazwę, utworzone wcześniej ikony, opis i link do wersji live
@@ -106,7 +107,7 @@ const ElementPortfolio = (key, value) => {
 				class            : 'btn btn-info fa fa-eye fa-2x',
 				'data-toggle'    : 'tooltip',
 				'data-placement' : 'top',
-				title            : 'Wersja live',
+				title            : 'Live version',
 			}).tooltip({ delay: { show: 500, hide: 100 } })
 		)
 
@@ -118,7 +119,7 @@ const ElementPortfolio = (key, value) => {
 				class            : 'btn btn-default fa fa-github fa-2x',
 				'data-toggle'    : 'tooltip',
 				'data-placement' : 'top',
-				title            : 'Zobacz kod na GitHubie',
+				title            : 'Source on GitHubie',
 			}).tooltip({ delay: { show: 500, hide: 100 } })
 		)
 	}

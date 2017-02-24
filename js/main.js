@@ -1,11 +1,12 @@
+// TODO: translate everything into English
 'use strict';
 
 // PORTFOLIO: Ikony responsywności (desktop, tablet, telefon)
 
 var responsivenessIcons = function responsivenessIcons(_ref) {
-	var desktop = _ref.desktop,
-	    tablet = _ref.tablet,
-	    telefon = _ref.telefon;
+	var desktop = _ref.desktop;
+	var tablet = _ref.tablet;
+	var telefon = _ref.telefon;
 
 	var $this = $('<span />', { class: 'responsive-icons' });
 
@@ -33,7 +34,7 @@ var Phone = function Phone(nazwa, screenshot) {
 	var $dół = $('<div />', { class: 'bottom' });
 	var $screenshot = $('<img />', {
 		src: 'img/portfolio/' + screenshot,
-		alt: nazwa + ' - Wersja Mobilna'
+		alt: nazwa + ' - Mobile Version'
 	});
 
 	$this.append($góra).append($ekran.append($screenshot)).append($dół);
@@ -48,7 +49,7 @@ var Desktop = function Desktop(nazwa, screenshot, adres) {
 	var $ekran = $('<div />', { class: 'screen' });
 	var $screenshot = $('<img />', {
 		src: 'img/portfolio/' + screenshot,
-		alt: nazwa + ' - Wersja Webowa'
+		alt: nazwa + ' - Desktop Version'
 	});
 	var $ikony = $('<i class="fa fa-arrow-left"></i><i class="fa fa-arrow-right"></i><i class="fa fa-refresh"></i><i class="fa fa-home"></i>');
 	var $pasekAdresowy = $('<div />', { class: 'address' });
@@ -61,14 +62,14 @@ var Desktop = function Desktop(nazwa, screenshot, adres) {
 
 // PORTFOLIO: Pojedyńcza pozycja na liście portfolio
 var ElementPortfolio = function ElementPortfolio(key, value) {
-	var nazwa = value.nazwa,
-	    adres = value.adres,
-	    github = value.github,
-	    opis = value.opis,
-	    responsywnosc = value.responsywnosc,
-	    screenshot = value.screenshot,
-	    tech = value.tech,
-	    workInProgress = value.workInProgress;
+	var nazwa = value.nazwa;
+	var adres = value.adres;
+	var github = value.github;
+	var opis = value.opis;
+	var responsiveness = value.responsiveness;
+	var screenshot = value.screenshot;
+	var tech = value.tech;
+	var workInProgress = value.workInProgress;
 
 	// Dodaj style dla elementów parzystych (po lewej stronie ekranu), które zamienią
 	// miejscami opis z elementami przeglądarki/telefonu
@@ -77,7 +78,7 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 	var bootstrap2 = key % 2 === 0 ? 'col-md-pull-4' : '';
 
 	// Dodaj unikatową klasę dla pozycji, które są stworzone tylko w wersji mobilnej
-	var displayType = !responsywnosc.desktop ? 'mobile_only' : 'responsive';
+	var displayType = !responsiveness.desktop ? 'mobile_only' : 'responsive';
 
 	// Przygotuj poszczególne elementy całości
 	var $portfolioItem = $('<div />', { class: 'row portfolio-item ' + displayType });
@@ -86,7 +87,7 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 	var $icons = $('<div />', { class: 'icons' });
 
 	// Dodaj ikony responsywności i użytych technologii
-	$icons.append(responsivenessIcons(responsywnosc)).append(techIcons(tech));
+	$icons.append(responsivenessIcons(responsiveness)).append(techIcons(tech));
 
 	// Dodaj nazwę, utworzone wcześniej ikony, opis i link do wersji live
 	$description.append($('<h1 />', { text: nazwa })).append($icons).append($('<p />', { html: opis })).append($('<a />', {
@@ -94,7 +95,7 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 		class: 'btn btn-info fa fa-eye fa-2x',
 		'data-toggle': 'tooltip',
 		'data-placement': 'top',
-		title: 'Wersja live'
+		title: 'Live version'
 	}).tooltip({ delay: { show: 500, hide: 100 } }));
 
 	// Dodaj link do GitHuba, jeśli projekt ma swoje repozytorium
@@ -104,7 +105,7 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 			class: 'btn btn-default fa fa-github fa-2x',
 			'data-toggle': 'tooltip',
 			'data-placement': 'top',
-			title: 'Zobacz kod na GitHubie'
+			title: 'Source on GitHubie'
 		}).tooltip({ delay: { show: 500, hide: 100 } }));
 	}
 
@@ -128,8 +129,8 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 
 // SKILLS: Pojedyńcza pozycja na liście skills
 var ElementSkills = function ElementSkills(key, value) {
-	var nazwa = value.nazwa,
-	    ikona = value.ikona;
+	var nazwa = value.nazwa;
+	var ikona = value.ikona;
 
 	var $element = $('<div />', { class: 'skill col-xs-6 col-md-4' });
 	var $ikona = $('<img />', { src: 'img/skills/' + ikona, alt: 'Logo ' + nazwa });
@@ -298,27 +299,29 @@ var sectionFade = {
 
 		// Uruchom tylko jeśli link nie był już aktywowany ani nie trwa animacja przełączania okien
 		if (!$clickedLink.hasClass('active') && !$clickedLink.hasClass('disabled')) {
-			// Jeśli strona jest w wersji mobilnej, zamknij pasek z linkami po kliknięciu na któryś z nich
-			if (sectionFade.$navbarCollapse.hasClass('in')) {
-				$('.navbar-toggle').click();
-			}
-			// Pobierz odnośnik linku
-			var $content = $($clickedLink.attr('href'));
+			(function () {
+				// Jeśli strona jest w wersji mobilnej, zamknij pasek z linkami po kliknięciu na któryś z nich
+				if (sectionFade.$navbarCollapse.hasClass('in')) {
+					$('.navbar-toggle').click();
+				}
+				// Pobierz odnośnik linku
+				var $content = $($clickedLink.attr('href'));
 
-			// Deaktywuj inne linki, aktywuj link kliknięty
-			sectionFade.$links.removeClass('active').addClass('disabled');
-			$clickedLink.addClass('active');
-			window.scrollTo(0, 0);
-			// Okno z wierzchu przesuń na spód
-			$('.front').addClass('oldfront').removeClass('front');
-			// Pokaż nowe okno, przesuń je na wierzch i animuj wejście
-			$content.addClass('front').show().addClass('animated fadeInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-				$content.removeClass('animated fadeInRight');
-				// Usuń klasę z poprzedniego okna
-				$('.oldfront').removeClass('oldfront').hide();
-				// Aktywuj linku
-				sectionFade.$links.removeClass('disabled');
-			});
+				// Deaktywuj inne linki, aktywuj link kliknięty
+				sectionFade.$links.removeClass('active').addClass('disabled');
+				$clickedLink.addClass('active');
+				window.scrollTo(0, 0);
+				// Okno z wierzchu przesuń na spód
+				$('.front').addClass('oldfront').removeClass('front');
+				// Pokaż nowe okno, przesuń je na wierzch i animuj wejście
+				$content.addClass('front').show().addClass('animated fadeInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+					$content.removeClass('animated fadeInRight');
+					// Usuń klasę z poprzedniego okna
+					$('.oldfront').removeClass('oldfront').hide();
+					// Aktywuj linku
+					sectionFade.$links.removeClass('disabled');
+				});
+			})();
 		}
 	},
 	stop: function stop() {

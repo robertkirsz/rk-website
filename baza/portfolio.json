@@ -5,11 +5,11 @@
 			"screenshot": {
 				"desktop": "wwc28_1440.jpg",
 				"telefon": "wwc28_320.jpg" },
-			"responsywnosc": {
+			"responsiveness": {
 				"desktop": true,
 				"tablet": true,
 				"telefon": true },
-			"opis": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			"opis": "Fully responsive web page I've coded as an exercise. The PSD file was provided by Weekly WebDev Challenge group on Facebook. Supported by all modern browsers, with interactive elements created in Vue.",
 			"tech": ["html5", "css3", "sass", "vue", "gulp"]
 	},
 	{
@@ -18,78 +18,13 @@
 			"screenshot": {
 				"desktop": "mcm_1440.jpg",
 				"telefon": "" },
-			"responsywnosc": {
+			"responsiveness": {
 				"desktop": true,
 				"tablet": true,
 				"telefon": false },
-			"opis": "Wyszukiwarka kart Magic: the Gathering z opcją dodawania ich do kolekcji, która przechowywana jest w Firebase. Aplikacja jest w fazie beta. W planach mam dodanie pełnej responsywności i możliwości podzielenia kolekcji na talie.",
+			"opis": "Magic: the Gathering card browser and collection manager, that's stored on the Firebase. The app is currently in beta phase. I plan on making it fully responsive and add an ability to gather cards into decks",
 			"tech": ["html5", "css3", "sass", "bootstrap", "react", "redux", "react-router", "webpack", "firebase"],
 			"workInProgress": true
-	},
-	{
-		"nazwa": "CSSOff 2011",
-			"adres": "robertkirsz.pl/projekty/cssoff2011",
-			"screenshot": {
-				"desktop": "cssoff2011_1440.jpg",
-				"telefon": "cssoff2011_320.jpg" },
-			"responsywnosc": {
-				"desktop": true,
-				"tablet": true,
-				"telefon": true },
-			"opis": "Strona przygotowana na konkurs CSSOff, organizowany przez <a href=\"http://unmatchedstyle.com/news/cssoff-winners-2012.php\">unmatchedstyle.com</a>. Zadaniem było zakodowanie strony na podstawie otrzymanego projektu graficznego. Nadesłano ponad 400 zgłoszeń, zająłem wtedy miejsce w połowie stawki. Było to moje pierwsze podejście do kodowania w sposób responsywny.",
-			"tech": ["html5", "css3", "jquery"]
-	},
-	{
-		"nazwa": "CSSOff 2013",
-			"adres": "robertkirsz.pl/projekty/cssoff2013",
-			"screenshot": {
-				"desktop": "cssoff2013_1440.jpg",
-				"telefon": "cssoff2013_320.jpg" },
-			"responsywnosc": {
-				"desktop": true,
-				"tablet": false,
-				"telefon": true },
-			"opis": "Kolejna edycja konkursu CSSOff, z bardziej złożonym layoutem. Ta edycja ostatecznie nie została rozstrzygnięta.",
-			"tech": ["html5", "css3", "sass", "jquery"]
-	},
-	{
-		"nazwa": "Projektowanie wnętrz",
-			"adres": "robertkirsz.pl/projekty/interiordesign",
-			"screenshot": {
-				"desktop": "interiordesign_1440.jpg",
-				"telefon": "interiordesign_320.jpg" },
-			"responsywnosc": {
-				"desktop": true,
-				"tablet": false,
-				"telefon": true },
-			"opis": "Strona internetowa dla firmy zajmującej się projektowaniem wnętrz. Stworzona w oparciu o dostarczony projekt graficzny, niepodparta żadnym frameworkiem, z własnymi rozwiązaniami odnośnie RWD. Strona nie została ukończona ponieważ firma ostatecznie nie ruszyła.",
-			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
-	},
-	{
-		"nazwa": "vikaplant",
-			"adres": "vikaplant.pl",
-			"screenshot": {
-				"desktop": "vikaplant_1440.jpg",
-				"telefon": "vikaplant_320.jpg" },
-			"responsywnosc": {
-				"desktop": true,
-				"tablet": true,
-				"telefon": true },
-			"opis": "Prosta strona zbudowana na Bootstrapie, pierwszy projekt na tym frameworku. Uwielbiam kodować, ale design to zdecydowanie nie moja specjalność.",
-			"tech": ["html5", "css3", "sass", "jquery", "bootstrap", "grunt"]
-	},
-	{
-		"nazwa": "Symulator Gitary",
-			"adres": "robertkirsz.pl/projekty/gitary",
-			"screenshot": {
-				"desktop": "gitary.jpg",
-				"telefon": "" },
-			"responsywnosc": {
-				"desktop": true,
-				"tablet": false,
-				"telefon": false },
-			"opis": "Aplikacja multimedialna stworzona na potrzeby mojej pracy inżynierskiej i jednocześnie pierwsze podejście do programowania w JavaScript. Jest to symulator gitary wykorzystujący HTML5 Audio. Pozwala na zapisywanie akordów, nagrywanie sekwencji dźwięków, tworzeniu na ich podstawie zapisu w formie tabulatury i inne.",
-			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
 	},
 	{
 		"nazwa": "MtG Life Counter",
@@ -98,11 +33,11 @@
 			"screenshot": {
 				"desktop": "",
 				"telefon": "mtg_320.jpg" },
-			"responsywnosc": {
+			"responsiveness": {
 				"desktop": false,
 				"tablet": true,
 				"telefon": true },
-			"opis": "Aplikacja stworzona z myślą o graczach Magic: The Gathering. Pozwala śledzić aktualną ilość życia, liczbę poison counterów, obrażenia zadane przez Commandera. Stworzona z myślą o urządzeniach mobilnych.",
+			"opis": "Another Magic: The Gathering app (yes, I play this game). It lets you track yours and your opponent's life totals, any poison counters, and separate damage dealt by Commander. Made with mobile devices in mind.",
 			"tech": ["html5", "css3", "react", "redux", "webpack"]
 	},
 	{
@@ -111,11 +46,76 @@
 			"screenshot": {
 				"desktop": "saper.jpg",
 				"telefon": "" },
-			"responsywnosc": {
+			"responsiveness": {
 				"desktop": true,
 				"tablet": true,
 				"telefon": true },
-			"opis": "Klon kultowego Sapera znanego z Windowsów, moje pierwsze podejście do stworzenia czegoś w rodzaju gry.",
+			"opis": "Minesweeper clone, my first approach to code something game-like.",
 			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
+	},
+	{
+		"nazwa": "CSSOff 2011",
+			"adres": "robertkirsz.pl/projekty/cssoff2011",
+			"screenshot": {
+				"desktop": "cssoff2011_1440.jpg",
+				"telefon": "cssoff2011_320.jpg" },
+			"responsiveness": {
+				"desktop": true,
+				"tablet": true,
+				"telefon": true },
+			"opis": "Website made for CSSOff contest, organized by <a href=\"http://unmatchedstyle.com/news/cssoff-winners-2012.php\">unmatchedstyle.com</a>. The tsk was to code a page based on provided PSD file. Some 400 contestants took part, with finishing up somewhere in the middle. This was my first time creating a responsive website.",
+			"tech": ["html5", "css3", "jquery"]
+	},
+	{
+		"nazwa": "CSSOff 2013",
+			"adres": "robertkirsz.pl/projekty/cssoff2013",
+			"screenshot": {
+				"desktop": "cssoff2013_1440.jpg",
+				"telefon": "cssoff2013_320.jpg" },
+			"responsiveness": {
+				"desktop": true,
+				"tablet": false,
+				"telefon": true },
+			"opis": "Another CSSOff contest, this time with more complex design. This edition didn't end and results vere never published.",
+			"tech": ["html5", "css3", "sass", "jquery"]
+	},
+	{
+		"nazwa": "Projektowanie wnętrz",
+			"adres": "robertkirsz.pl/projekty/interiordesign",
+			"screenshot": {
+				"desktop": "interiordesign_1440.jpg",
+				"telefon": "interiordesign_320.jpg" },
+			"responsiveness": {
+				"desktop": true,
+				"tablet": false,
+				"telefon": true },
+			"opis": "The website made for an interior design studio. Based on provided designs, made without the help of any styling frameworks, with custom RWD solutions. All in all the website didn't go live.",
+			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
+	},
+	{
+		"nazwa": "Symulator Gitary",
+			"adres": "robertkirsz.pl/projekty/gitary",
+			"screenshot": {
+				"desktop": "gitary.jpg",
+				"telefon": "" },
+			"responsiveness": {
+				"desktop": true,
+				"tablet": false,
+				"telefon": false },
+			"opis": "This is an app made for the practical part of my engineering thesis and at the same time my first contact with JavaScript. It's a guitar simulator based on HTML5 Audio. It lets you create and save chords, record sound sequences, converting them to a TAB notation and more.",
+			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
+	},
+	{
+		"nazwa": "vikaplant",
+			"adres": "vikaplant.pl",
+			"screenshot": {
+				"desktop": "vikaplant_1440.jpg",
+				"telefon": "vikaplant_320.jpg" },
+			"responsiveness": {
+				"desktop": true,
+				"tablet": true,
+				"telefon": true },
+			"opis": "First time making a website based on Bootstrap. I love coding, but design is not my strongest skill.",
+			"tech": ["html5", "css3", "sass", "jquery", "bootstrap", "grunt"]
 	}
 ]
