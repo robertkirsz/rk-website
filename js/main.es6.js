@@ -374,7 +374,7 @@ const initApp = () => {
 					const json = $.parseJSON(daneZwrotne)
 
 					// Clear the form
-					if (json.state === 'ok') {
+					if (json.status === 'ok') {
 						$this.find('textarea').val('')
 						$submit
 							.removeClass('btn-primary')

@@ -364,7 +364,7 @@ var initApp = function initApp() {
 					var json = $.parseJSON(daneZwrotne);
 
 					// Clear the form
-					if (json.state === 'ok') {
+					if (json.status === 'ok') {
 						$this.find('textarea').val('');
 						$submit.removeClass('btn-primary').addClass('btn-success nonactive').html(json.icon);
 					} else {
