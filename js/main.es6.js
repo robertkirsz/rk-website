@@ -1,19 +1,18 @@
-// TODO: translate everything into English
 'use strict'
 
-// PORTFOLIO: Ikony responsywności (desktop, tablet, telefon)
-const responsivenessIcons = ({ desktop, tablet, telefon }) => {
+// WORK: Responsiveness icons (desktop, tablet, phone)
+const responsivenessIcons = ({ desktop, tablet, phone }) => {
 	const $this = $('<span />', { class: 'responsive-icons' })
 
 	$this
 		.append($('<span />', { class: `fa fa-desktop ${desktop}` }))
 		.append($('<span />', { class: `fa fa-tablet ${tablet}` }))
-		.append($('<span />', { class: `fa fa-mobile ${telefon}` }))
+		.append($('<span />', { class: `fa fa-mobile ${phone}` }))
 
 	return $this
 }
 
-// PORTFOLIO: Ikony responsywności (desktop, tablet, telefon)
+// WORK: Tech icons (desktop, tablet, phone)
 const techIcons = tech => {
 	const $this = $('<span />', { class: 'tech-icons' })
 
@@ -24,86 +23,80 @@ const techIcons = tech => {
 	return $this
 }
 
-// PORTFOLIO: Telefon ze zdjęciem projektu w wersji mobilnej
-const Phone = (nazwa, screenshot) => {
+// WORK: Mobile browser
+const Phone = (name, screenshot) => {
 	const $this  = $('<div />', { class: 'phone' })
-	const $góra  = $('<div />', { class: 'top' })
-	const $ekran = $('<div />', { class: 'screen' })
-	const $dół   = $('<div />', { class: 'bottom' })
+	const $top  = $('<div />', { class: 'top' })
+	const $screen = $('<div />', { class: 'screen' })
+	const $bottom   = $('<div />', { class: 'bottom' })
 	const $screenshot = $('<img />', {
-		src: 'img/portfolio/' + screenshot,
-		alt: nazwa + ' - Mobile Version',
+		src: 'img/work/' + screenshot,
+		alt: name + ' - Mobile Version',
 	})
 
 	$this
-		.append($góra)
-		.append($ekran.append($screenshot))
-		.append($dół)
+		.append($top)
+		.append($screen.append($screenshot))
+		.append($bottom)
 
 	return $this
 }
 
-// PORTFOLIO: Okno przegladarki ze zdjęciem projektu w wersji webowej/desktopowej
-const Desktop = (nazwa, screenshot, adres) => {
+// WORK: Desktop browser
+const Desktop = (name, screenshot, url) => {
 	const $this = $('<div />', { class: 'desktop' })
-	const $góra = $('<div />', { class: 'top' })
-	const $ekran = $('<div />', { class: 'screen' })
+	const $top = $('<div />', { class: 'top' })
+	const $screen = $('<div />', { class: 'screen' })
 	const $screenshot = $('<img />', {
-		src: 'img/portfolio/' + screenshot,
-		alt: nazwa + ' - Desktop Version',
+		src: 'img/work/' + screenshot,
+		alt: name + ' - Desktop Version',
 	})
 	const $ikony = $('<i class="fa fa-arrow-left"></i><i class="fa fa-arrow-right"></i><i class="fa fa-refresh"></i><i class="fa fa-home"></i>')
-	const $pasekAdresowy = $('<div />', { class: 'address' })
-	const $link = $('<a />', { href: 'http://' + adres, text: adres })
+	const $addressBar = $('<div />', { class: 'address' })
+	const $link = $('<a />', { href: 'http://' + url, text: url })
 
 	$this
 		.append(
-			$góra
+			$top
 				.append($ikony)
-				.append(
-					$pasekAdresowy
-						.append($link)
-				)
+				.append($addressBar.append($link))
 			)
-		.append(
-			$ekran
-				.append($screenshot)
-		)
+		.append($screen.append($screenshot))
 
 	return $this
 }
 
-// PORTFOLIO: Pojedyńcza pozycja na liście portfolio
-const ElementPortfolio = (key, value) => {
-	const {	nazwa, adres, github, opis, responsiveness, screenshot, tech, workInProgress } = value
+// WORK: A single work item
+const WorkItem = (key, value) => {
+	const {	name, url, github, description, responsiveness, screenshot, tech, workInProgress } = value
 
-	// Dodaj style dla elementów parzystych (po lewej stronie ekranu), które zamienią
-	// miejscami opis z elementami przeglądarki/telefonu
+	// Add different classes for odd and even elements so that they'll alternate
+	// position of their child elements
 	const	bootstrap1 = key % 2 === 0 ? 'col-md-push-8' : ''
 	const	bootstrap2 = key % 2 === 0 ? 'col-md-pull-4' : ''
 
-	// Dodaj unikatową klasę dla pozycji, które są stworzone tylko w wersji mobilnej
+	// Add unique class for projects that are mobile-only
 	const displayType = !responsiveness.desktop ? 'mobile_only' : 'responsive'
 
-	// Przygotuj poszczególne elementy całości
-	const $portfolioItem = $('<div />', { class: 'row portfolio-item ' + displayType })
+	// Create containers
+	const $workItem = $('<div />', { class: 'row work-item ' + displayType })
 	const $description = $('<div />', { class: 'description col-md-4 ' + bootstrap1 })
 	const $browsers = $('<div />', { class: 'browsers col-md-8 ' + bootstrap2 })
 	const $icons = $('<div />', { class: 'icons' })
 
-	// Dodaj ikony responsywności i użytych technologii
+	// Add responsiveness and tech icons
 	$icons
 		.append(responsivenessIcons(responsiveness))
 		.append(techIcons(tech))
 
-	// Dodaj nazwę, utworzone wcześniej ikony, opis i link do wersji live
+	// Append name, icons, description and a link to project's live version
 	$description
-		.append($('<h1 />', { text: nazwa }))
+		.append($('<h1 />', { text: name }))
 		.append($icons)
-		.append($('<p />', { html: opis }))
+		.append($('<p />', { html: description }))
 		.append(
 			$('<a />', {
-				href             : 'http://' + adres,
+				href             : 'http://' + url,
 				class            : 'btn btn-info fa fa-eye fa-2x',
 				'data-toggle'    : 'tooltip',
 				'data-placement' : 'top',
@@ -111,7 +104,7 @@ const ElementPortfolio = (key, value) => {
 			}).tooltip({ delay: { show: 500, hide: 100 } })
 		)
 
-	// Dodaj link do GitHuba, jeśli projekt ma swoje repozytorium
+	// Add GitHub link, if project has its repo
 	if (github) {
 		$description.append(
 			$('<a />', {
@@ -119,12 +112,12 @@ const ElementPortfolio = (key, value) => {
 				class            : 'btn btn-default fa fa-github fa-2x',
 				'data-toggle'    : 'tooltip',
 				'data-placement' : 'top',
-				title            : 'Source on GitHubie',
+				title            : 'Source on GitHub',
 			}).tooltip({ delay: { show: 500, hide: 100 } })
 		)
 	}
 
-	// Dodaj oznaczenie "work in progress" jeśli trzeba
+	// Add "work in progress" tag if needed
 	if (workInProgress) {
 		const $workInProgressBadge = $('<div />', { class: 'work-in-progress-badge' })
 
@@ -132,55 +125,55 @@ const ElementPortfolio = (key, value) => {
 		$description.append($workInProgressBadge)
 	}
 
-	// Dodaj elementy przeglądarki i telefonu
-	if (screenshot.desktop !== '') $browsers.append(new Desktop(nazwa, screenshot.desktop, adres))
-	if (screenshot.telefon !== '') $browsers.append(new Phone(nazwa, screenshot.telefon))
+	// Add desktop and mobile prowser elements
+	if (screenshot.desktop !== '') $browsers.append(new Desktop(name, screenshot.desktop, url))
+	if (screenshot.phone !== '') $browsers.append(new Phone(name, screenshot.phone))
 
-	// Złóż wszystko razem
-	$portfolioItem
+	// Put everything together
+	$workItem
 		.append($description)
 		.append($browsers)
 
-	return $portfolioItem
+	return $workItem
 }
 
 // SKILLS: Pojedyńcza pozycja na liście skills
-const ElementSkills = (key, value) => {
-	const {	nazwa, ikona } = value
+const SkillItem = (key, value) => {
+	const {	name, icon } = value
 	const $element = $('<div />', { class: 'skill col-xs-6 col-md-4' })
-	const $ikona = $('<img />', { src: `img/skills/${ikona}`, alt: `Logo ${nazwa}` })
-	const $opis = $('<p />', { text: nazwa })
+	const $icon = $('<img />', { src: `img/skills/${icon}`, alt: `Logo ${name}` })
+	const $description = $('<p />', { text: name })
 
 	$element
-		.append($ikona)
-		.append($opis)
+		.append($icon)
+		.append($description)
 
 	return $element
 }
 
-// PORTFOLIO:
-const wygenerujListePortfolio = (tablicaPortfolio) => {
-	const listaPortfolio = []
+// WORK:
+const generateWorksList = (worksArray) => {
+	const worksList = []
 
-	$.each(tablicaPortfolio, (key, value) => {
-		listaPortfolio.push(new ElementPortfolio(key, value))
+	$.each(worksArray, (key, value) => {
+		worksList.push(new WorkItem(key, value))
 	})
 
-	$('#main_portfolio .container').append(listaPortfolio)
+	$('#main_work .container').append(worksList)
 }
 
 // SKILLS:
-const wygenerujSkills = (tablicaSkills) => {
+const generateSkills = (skillsArray) => {
 	const primarySkills = []
 	const secondarySkills = []
 	const otherStuff = []
 
-	$.each(tablicaSkills, (key, value) => {
-		const element = new ElementSkills(key, value)
+	$.each(skillsArray, (key, value) => {
+		const element = new SkillItem(key, value)
 
-		if (value.poziom === 'primary') primarySkills.push(element)
-		if (value.poziom === 'secondary') secondarySkills.push(element)
-		if (value.poziom === 'other') otherStuff.push(element)
+		if (value.level === 'primary') primarySkills.push(element)
+		if (value.level === 'secondary') secondarySkills.push(element)
+		if (value.level === 'other') otherStuff.push(element)
 	})
 
 	$('.primary .container').append(primarySkills)
@@ -188,22 +181,22 @@ const wygenerujSkills = (tablicaSkills) => {
 	$('.other .container').append(otherStuff)
 }
 
-// PORTFOLIO:
-const pobierzPortfolio = () => {
-	$.getJSON('../baza/portfolio.json')
-		.done(tablicaPortfolio => wygenerujListePortfolio(tablicaPortfolio))
+// WORK:
+const getWorks = () => {
+	$.getJSON('../database/work.json')
+		.done(worksArray => generateWorksList(worksArray))
 }
 
 // SKILLS:
-const pobierzSkills = () => {
-	$.getJSON('../baza/skills.json')
-		.done(tablicaSkills => wygenerujSkills(tablicaSkills))
+const getSkills = () => {
+	$.getJSON('../database/skills.json')
+		.done(skillsArray => generateSkills(skillsArray))
 }
 
 const $window = $(window)
 const $body = $('body')
 
-// Interakcje dla wersji desktopowej
+// Interactions for desktop version of the website
 const sectionScroll = {
 	$links          : $('#main_nav .navbar-nav a'),
 	$navbarCollapse : $('.navbar-collapse'),
@@ -214,7 +207,7 @@ const sectionScroll = {
 	$mainNav        : $('#main_nav'),
 	timeout         : {},
 	start () {
-		// Uruchom tooltipy
+		// Initialize tooltips
 		$('[data-toggle="tooltip"]').tooltip({ delay: { show: 500, hide: 100 } })
 		$body.addClass('sectionScroll')
 		sectionScroll.$mainNav.on('click', 'a', sectionScroll.click)
@@ -263,7 +256,7 @@ const sectionScroll = {
 		$body.animate({ scrollTop: $targetLink.offset().top - 50 }, 500)
 		sectionScroll.$links.removeClass('active')
 		$clickedLink.addClass('active')
-		// Jeśli strona jest w wersji mobilnej, zamknij pasek z linkami po kliknięciu na któryś z nich
+		// Close mobile navbar on clicking on any links
 		if (sectionScroll.$navbarCollapse.hasClass('in')) {
 			sectionScroll.$navbarToggle.click()
 		}
@@ -294,14 +287,14 @@ const sectionScroll = {
 	},
 }
 
-// Interakcje dla wersji mobilnej
+// Interactions for mobile version of the website
 const sectionFade = {
 	$mainNav       : $('#main_nav'),
 	$links         : $('#main_nav a'),
 	$navbarCollapse: $('.navbar-collapse'),
 	start () {
 		$body.addClass('sectionFade')
-		$('#main_portfolio, #main_skills, #main_contact').hide()
+		$('#main_work, #main_skills, #main_contact').hide()
 		sectionFade.$mainNav.on('click', 'a', sectionFade.click)
 		clearTimeout(sectionScroll.timeout)
 		sectionFade.$mainNav.removeClass('white')
@@ -312,34 +305,34 @@ const sectionFade = {
 
 		const $clickedLink = $(event.target)
 
-		// Uruchom tylko jeśli link nie był już aktywowany ani nie trwa animacja przełączania okien
+		// ACtive only if link isn't active yet and there is not animation being played
 		if (!$clickedLink.hasClass('active') && !$clickedLink.hasClass('disabled')) {
-			// Jeśli strona jest w wersji mobilnej, zamknij pasek z linkami po kliknięciu na któryś z nich
+			// Close mobile navbar on clicking on any links
 			if (sectionFade.$navbarCollapse.hasClass('in')) {
 				$('.navbar-toggle').click()
 			}
-			// Pobierz odnośnik linku
+			// Get link's target
 			const $content = $($clickedLink.attr('href'))
 
-			// Deaktywuj inne linki, aktywuj link kliknięty
+			// Deactivate other link and activate clicked one
 			sectionFade.$links.removeClass('active').addClass('disabled')
 			$clickedLink.addClass('active')
 			window.scrollTo(0, 0)
-			// Okno z wierzchu przesuń na spód
+			// Move top layer to the bottom
 			$('.front').addClass('oldfront').removeClass('front')
-			// Pokaż nowe okno, przesuń je na wierzch i animuj wejście
+			// Show new layer, move to the front and play its enter animation
 			$content.addClass('front').show().addClass('animated fadeInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
 				$content.removeClass('animated fadeInRight')
-				// Usuń klasę z poprzedniego okna
+				// Remove class from the previous layer
 				$('.oldfront').removeClass('oldfront').hide()
-				// Aktywuj linku
+				// Activate the link
 				sectionFade.$links.removeClass('disabled')
 			})
 		}
 	},
 	stop () {
 		$body.removeClass('sectionFade')
-		$('#main_portfolio, #main_skills, #main_contact').show()
+		$('#main_work, #main_skills, #main_contact').show()
 		$('.front').removeClass('front')
 		$('.oldfront').removeClass('oldfront')
 		sectionFade.$links.removeClass('active disabled')
@@ -348,11 +341,11 @@ const sectionFade = {
 }
 
 const initApp = () => {
-	// Pobierz i wygeneruj elementy sekcji portfolio i skills
-	pobierzPortfolio()
-	pobierzSkills()
+	// Fetch and generate work and skills lists
+	getWorks()
+	getSkills()
 
-	// Small devices (tablets, less than 992px)
+	// Initialize interactions based on screen size
 	if ($window.width() < 768) sectionFade.start()
 	else sectionScroll.start()
 
@@ -366,8 +359,8 @@ const initApp = () => {
 		}
 	})
 
-	// Wysyłanie wiadomości
-	$('form[name=wiadomosc]').on('submit', function (e) {
+	// Form handling
+	$('form[name=message]').on('submit', function (e) {
 		e.preventDefault()
 		const $this = $(this)
 		const $submit = $(this).find('button[type=submit]')
@@ -375,21 +368,30 @@ const initApp = () => {
 		if (!$submit.hasClass('nonactive')) {
 			$.ajax({
 				type: 'POST',
-				url : 'skrypty/wiadomosc.php',
+				url : 'scripts/message.php',
 				data: $this.serialize(),
 				'success' (daneZwrotne) {
 					const json = $.parseJSON(daneZwrotne)
 
-					// Wyczyść formularz
-					if (json.stan === 'ok') {
+					// Clear the form
+					if (json.state === 'ok') {
 						$this.find('textarea').val('')
-						$submit.removeClass('btn-primary').addClass('btn-success nonactive').html(json.ikona)
+						$submit
+							.removeClass('btn-primary')
+							.addClass('btn-success nonactive')
+							.html(json.icon)
 					} else {
-						$submit.removeClass('btn-primary').addClass('btn-danger nonactive').html(json.ikona)
+						$submit
+							.removeClass('btn-primary')
+							.addClass('btn-danger nonactive')
+							.html(json.icon)
 					}
-					// Zmień tekst przycisku
+					// Udpate button's text
 					setTimeout(function () {
-						$submit.removeClass('btn-success btn-danger nonactive').addClass('btn-primary').html('Wyślij')
+						$submit
+							.removeClass('btn-success btn-danger nonactive')
+							.addClass('btn-primary')
+							.html('Send')
 					}, 8000)
 				},
 			})
@@ -397,8 +399,8 @@ const initApp = () => {
 	})
 }
 
-// Zainicjuj aplikację gdy dokument będzie gotowy
+// Initialize the website when document gets ready
 $(document).ready(initApp())
 
-// Po załadowaniu się okna usuń klasę ".rk", co uruchomi animację wejścia
+// Remove '.rk' classes, which will trigger entry animations
 $(window).load(() => { $('.rk').removeClass('rk') })

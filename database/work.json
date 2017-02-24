@@ -1,0 +1,121 @@
+[
+	{
+		"name": "Weekly WebDev Challenge 28",
+			"url": "robertkirsz.github.io/wwc28",
+			"screenshot": {
+				"desktop": "wwc28_1440.jpg",
+				"phone": "wwc28_320.jpg" },
+			"responsiveness": {
+				"desktop": true,
+				"tablet": true,
+				"phone": true },
+			"description": "Fully responsive web page I've coded as an exercise. The PSD file was provided by Weekly WebDev Challenge group on Facebook. Supported by all modern browsers, with interactive elements created in Vue.",
+			"tech": ["html5", "css3", "sass", "vue", "gulp"]
+	},
+	{
+		"name": "Magic Cards Manager",
+			"url": "magic-cards-manager.herokuapp.com/all-cards",
+			"screenshot": {
+				"desktop": "mcm_1440.jpg",
+				"phone": "" },
+			"responsiveness": {
+				"desktop": true,
+				"tablet": true,
+				"phone": false },
+			"description": "Magic: the Gathering card browser and collection manager, that's stored on the Firebase. The app is currently in beta phase. I plan on making it fully responsive and add an ability to gather cards into decks",
+			"tech": ["html5", "css3", "sass", "bootstrap", "react", "redux", "react-router", "webpack", "firebase"],
+			"workInProgress": true
+	},
+	{
+		"name": "MtG Life Counter",
+			"url": "robertkirsz.pl/mtg",
+			"github": "github.com/robertkirsz/mtg-counter",
+			"screenshot": {
+				"desktop": "",
+				"phone": "mtg_320.jpg" },
+			"responsiveness": {
+				"desktop": false,
+				"tablet": true,
+				"phone": true },
+			"description": "Another Magic: The Gathering app (yes, I play this game). It lets you track yours and your opponent's life totals, any poison counters, and separate damage dealt by Commander. Made with phone devices in mind.",
+			"tech": ["html5", "css3", "react", "redux", "webpack"]
+	},
+	{
+		"name": "Saper",
+			"url": "robertkirsz.pl/saper",
+			"screenshot": {
+				"desktop": "saper.jpg",
+				"phone": "" },
+			"responsiveness": {
+				"desktop": true,
+				"tablet": true,
+				"phone": true },
+			"description": "Minesweeper clone, my first approach to code something game-like.",
+			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
+	},
+	{
+		"name": "CSSOff 2011",
+			"url": "robertkirsz.pl/projects/cssoff2011",
+			"screenshot": {
+				"desktop": "cssoff2011_1440.jpg",
+				"phone": "cssoff2011_320.jpg" },
+			"responsiveness": {
+				"desktop": true,
+				"tablet": true,
+				"phone": true },
+			"description": "Website made for CSSOff contest, organized by <a href=\"http://unmatchedstyle.com/news/cssoff-winners-2012.php\">unmatchedstyle.com</a>. The tsk was to code a page based on provided PSD file. Some 400 contestants took part, with finishing up somewhere in the middle. This was my first time creating a responsive website.",
+			"tech": ["html5", "css3", "jquery"]
+	},
+	{
+		"name": "CSSOff 2013",
+			"url": "robertkirsz.pl/projects/cssoff2013",
+			"screenshot": {
+				"desktop": "cssoff2013_1440.jpg",
+				"phone": "cssoff2013_320.jpg" },
+			"responsiveness": {
+				"desktop": true,
+				"tablet": false,
+				"phone": true },
+			"description": "Another CSSOff contest, this time with more complex design. This edition didn't end and results vere never published.",
+			"tech": ["html5", "css3", "sass", "jquery"]
+	},
+	{
+		"name": "Interior Design Site",
+			"url": "robertkirsz.pl/projects/interiordesign",
+			"screenshot": {
+				"desktop": "interiordesign_1440.jpg",
+				"phone": "interiordesign_320.jpg" },
+			"responsiveness": {
+				"desktop": true,
+				"tablet": false,
+				"phone": true },
+			"description": "The website made for an interior design studio. Based on provided designs, made without the help of any styling frameworks, with custom RWD solutions. All in all the website didn't go live.",
+			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
+	},
+	{
+		"name": "Symulator Gitary",
+			"url": "robertkirsz.pl/projects/gitary",
+			"screenshot": {
+				"desktop": "gitary.jpg",
+				"phone": "" },
+			"responsiveness": {
+				"desktop": true,
+				"tablet": false,
+				"phone": false },
+			"description": "This is an app made for the practical part of my engineering thesis and at the same time my first contact with JavaScript. It's a guitar simulator based on HTML5 Audio. It lets you create and save chords, record sound sequences, converting them to a TAB notation and more.",
+			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
+	},
+	{
+		"name": "vikaplant",
+			"url": "vikaplant.pl",
+			"screenshot": {
+				"desktop": "vikaplant_1440.jpg",
+				"phone": "vikaplant_320.jpg" },
+			"responsiveness": {
+				"desktop": true,
+				"tablet": true,
+				"phone": true },
+			"description": "First time making a website based on Bootstrap. I love coding, but design is not my strongest skill.",
+			"tech": ["html5", "css3", "sass", "jquery", "bootstrap", "grunt"]
+	}
+]

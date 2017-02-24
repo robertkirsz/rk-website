@@ -1,21 +1,20 @@
-// TODO: translate everything into English
 'use strict';
 
-// PORTFOLIO: Ikony responsywności (desktop, tablet, telefon)
+// WORK: Responsiveness icons (desktop, tablet, phone)
 
 var responsivenessIcons = function responsivenessIcons(_ref) {
-	var desktop = _ref.desktop;
-	var tablet = _ref.tablet;
-	var telefon = _ref.telefon;
+	var desktop = _ref.desktop,
+	    tablet = _ref.tablet,
+	    phone = _ref.phone;
 
 	var $this = $('<span />', { class: 'responsive-icons' });
 
-	$this.append($('<span />', { class: 'fa fa-desktop ' + desktop })).append($('<span />', { class: 'fa fa-tablet ' + tablet })).append($('<span />', { class: 'fa fa-mobile ' + telefon }));
+	$this.append($('<span />', { class: 'fa fa-desktop ' + desktop })).append($('<span />', { class: 'fa fa-tablet ' + tablet })).append($('<span />', { class: 'fa fa-mobile ' + phone }));
 
 	return $this;
 };
 
-// PORTFOLIO: Ikony responsywności (desktop, tablet, telefon)
+// WORK: Tech icons (desktop, tablet, phone)
 var techIcons = function techIcons(tech) {
 	var $this = $('<span />', { class: 'tech-icons' });
 
@@ -26,90 +25,90 @@ var techIcons = function techIcons(tech) {
 	return $this;
 };
 
-// PORTFOLIO: Telefon ze zdjęciem projektu w wersji mobilnej
-var Phone = function Phone(nazwa, screenshot) {
+// WORK: Mobile browser
+var Phone = function Phone(name, screenshot) {
 	var $this = $('<div />', { class: 'phone' });
-	var $góra = $('<div />', { class: 'top' });
-	var $ekran = $('<div />', { class: 'screen' });
-	var $dół = $('<div />', { class: 'bottom' });
+	var $top = $('<div />', { class: 'top' });
+	var $screen = $('<div />', { class: 'screen' });
+	var $bottom = $('<div />', { class: 'bottom' });
 	var $screenshot = $('<img />', {
-		src: 'img/portfolio/' + screenshot,
-		alt: nazwa + ' - Mobile Version'
+		src: 'img/work/' + screenshot,
+		alt: name + ' - Mobile Version'
 	});
 
-	$this.append($góra).append($ekran.append($screenshot)).append($dół);
+	$this.append($top).append($screen.append($screenshot)).append($bottom);
 
 	return $this;
 };
 
-// PORTFOLIO: Okno przegladarki ze zdjęciem projektu w wersji webowej/desktopowej
-var Desktop = function Desktop(nazwa, screenshot, adres) {
+// WORK: Desktop browser
+var Desktop = function Desktop(name, screenshot, url) {
 	var $this = $('<div />', { class: 'desktop' });
-	var $góra = $('<div />', { class: 'top' });
-	var $ekran = $('<div />', { class: 'screen' });
+	var $top = $('<div />', { class: 'top' });
+	var $screen = $('<div />', { class: 'screen' });
 	var $screenshot = $('<img />', {
-		src: 'img/portfolio/' + screenshot,
-		alt: nazwa + ' - Desktop Version'
+		src: 'img/work/' + screenshot,
+		alt: name + ' - Desktop Version'
 	});
 	var $ikony = $('<i class="fa fa-arrow-left"></i><i class="fa fa-arrow-right"></i><i class="fa fa-refresh"></i><i class="fa fa-home"></i>');
-	var $pasekAdresowy = $('<div />', { class: 'address' });
-	var $link = $('<a />', { href: 'http://' + adres, text: adres });
+	var $addressBar = $('<div />', { class: 'address' });
+	var $link = $('<a />', { href: 'http://' + url, text: url });
 
-	$this.append($góra.append($ikony).append($pasekAdresowy.append($link))).append($ekran.append($screenshot));
+	$this.append($top.append($ikony).append($addressBar.append($link))).append($screen.append($screenshot));
 
 	return $this;
 };
 
-// PORTFOLIO: Pojedyńcza pozycja na liście portfolio
-var ElementPortfolio = function ElementPortfolio(key, value) {
-	var nazwa = value.nazwa;
-	var adres = value.adres;
-	var github = value.github;
-	var opis = value.opis;
-	var responsiveness = value.responsiveness;
-	var screenshot = value.screenshot;
-	var tech = value.tech;
-	var workInProgress = value.workInProgress;
+// WORK: A single work item
+var WorkItem = function WorkItem(key, value) {
+	var name = value.name,
+	    url = value.url,
+	    github = value.github,
+	    description = value.description,
+	    responsiveness = value.responsiveness,
+	    screenshot = value.screenshot,
+	    tech = value.tech,
+	    workInProgress = value.workInProgress;
 
-	// Dodaj style dla elementów parzystych (po lewej stronie ekranu), które zamienią
-	// miejscami opis z elementami przeglądarki/telefonu
+	// Add different classes for odd and even elements so that they'll alternate
+	// position of their child elements
 
 	var bootstrap1 = key % 2 === 0 ? 'col-md-push-8' : '';
 	var bootstrap2 = key % 2 === 0 ? 'col-md-pull-4' : '';
 
-	// Dodaj unikatową klasę dla pozycji, które są stworzone tylko w wersji mobilnej
+	// Add unique class for projects that are mobile-only
 	var displayType = !responsiveness.desktop ? 'mobile_only' : 'responsive';
 
-	// Przygotuj poszczególne elementy całości
-	var $portfolioItem = $('<div />', { class: 'row portfolio-item ' + displayType });
+	// Create containers
+	var $workItem = $('<div />', { class: 'row work-item ' + displayType });
 	var $description = $('<div />', { class: 'description col-md-4 ' + bootstrap1 });
 	var $browsers = $('<div />', { class: 'browsers col-md-8 ' + bootstrap2 });
 	var $icons = $('<div />', { class: 'icons' });
 
-	// Dodaj ikony responsywności i użytych technologii
+	// Add responsiveness and tech icons
 	$icons.append(responsivenessIcons(responsiveness)).append(techIcons(tech));
 
-	// Dodaj nazwę, utworzone wcześniej ikony, opis i link do wersji live
-	$description.append($('<h1 />', { text: nazwa })).append($icons).append($('<p />', { html: opis })).append($('<a />', {
-		href: 'http://' + adres,
+	// Append name, icons, description and a link to project's live version
+	$description.append($('<h1 />', { text: name })).append($icons).append($('<p />', { html: description })).append($('<a />', {
+		href: 'http://' + url,
 		class: 'btn btn-info fa fa-eye fa-2x',
 		'data-toggle': 'tooltip',
 		'data-placement': 'top',
 		title: 'Live version'
 	}).tooltip({ delay: { show: 500, hide: 100 } }));
 
-	// Dodaj link do GitHuba, jeśli projekt ma swoje repozytorium
+	// Add GitHub link, if project has its repo
 	if (github) {
 		$description.append($('<a />', {
 			href: github,
 			class: 'btn btn-default fa fa-github fa-2x',
 			'data-toggle': 'tooltip',
 			'data-placement': 'top',
-			title: 'Source on GitHubie'
+			title: 'Source on GitHub'
 		}).tooltip({ delay: { show: 500, hide: 100 } }));
 	}
 
-	// Dodaj oznaczenie "work in progress" jeśli trzeba
+	// Add "work in progress" tag if needed
 	if (workInProgress) {
 		var $workInProgressBadge = $('<div />', { class: 'work-in-progress-badge' });
 
@@ -117,53 +116,53 @@ var ElementPortfolio = function ElementPortfolio(key, value) {
 		$description.append($workInProgressBadge);
 	}
 
-	// Dodaj elementy przeglądarki i telefonu
-	if (screenshot.desktop !== '') $browsers.append(new Desktop(nazwa, screenshot.desktop, adres));
-	if (screenshot.telefon !== '') $browsers.append(new Phone(nazwa, screenshot.telefon));
+	// Add desktop and mobile prowser elements
+	if (screenshot.desktop !== '') $browsers.append(new Desktop(name, screenshot.desktop, url));
+	if (screenshot.phone !== '') $browsers.append(new Phone(name, screenshot.phone));
 
-	// Złóż wszystko razem
-	$portfolioItem.append($description).append($browsers);
+	// Put everything together
+	$workItem.append($description).append($browsers);
 
-	return $portfolioItem;
+	return $workItem;
 };
 
 // SKILLS: Pojedyńcza pozycja na liście skills
-var ElementSkills = function ElementSkills(key, value) {
-	var nazwa = value.nazwa;
-	var ikona = value.ikona;
+var SkillItem = function SkillItem(key, value) {
+	var name = value.name,
+	    icon = value.icon;
 
 	var $element = $('<div />', { class: 'skill col-xs-6 col-md-4' });
-	var $ikona = $('<img />', { src: 'img/skills/' + ikona, alt: 'Logo ' + nazwa });
-	var $opis = $('<p />', { text: nazwa });
+	var $icon = $('<img />', { src: 'img/skills/' + icon, alt: 'Logo ' + name });
+	var $description = $('<p />', { text: name });
 
-	$element.append($ikona).append($opis);
+	$element.append($icon).append($description);
 
 	return $element;
 };
 
-// PORTFOLIO:
-var wygenerujListePortfolio = function wygenerujListePortfolio(tablicaPortfolio) {
-	var listaPortfolio = [];
+// WORK:
+var generateWorksList = function generateWorksList(worksArray) {
+	var worksList = [];
 
-	$.each(tablicaPortfolio, function (key, value) {
-		listaPortfolio.push(new ElementPortfolio(key, value));
+	$.each(worksArray, function (key, value) {
+		worksList.push(new WorkItem(key, value));
 	});
 
-	$('#main_portfolio .container').append(listaPortfolio);
+	$('#main_work .container').append(worksList);
 };
 
 // SKILLS:
-var wygenerujSkills = function wygenerujSkills(tablicaSkills) {
+var generateSkills = function generateSkills(skillsArray) {
 	var primarySkills = [];
 	var secondarySkills = [];
 	var otherStuff = [];
 
-	$.each(tablicaSkills, function (key, value) {
-		var element = new ElementSkills(key, value);
+	$.each(skillsArray, function (key, value) {
+		var element = new SkillItem(key, value);
 
-		if (value.poziom === 'primary') primarySkills.push(element);
-		if (value.poziom === 'secondary') secondarySkills.push(element);
-		if (value.poziom === 'other') otherStuff.push(element);
+		if (value.level === 'primary') primarySkills.push(element);
+		if (value.level === 'secondary') secondarySkills.push(element);
+		if (value.level === 'other') otherStuff.push(element);
 	});
 
 	$('.primary .container').append(primarySkills);
@@ -171,24 +170,24 @@ var wygenerujSkills = function wygenerujSkills(tablicaSkills) {
 	$('.other .container').append(otherStuff);
 };
 
-// PORTFOLIO:
-var pobierzPortfolio = function pobierzPortfolio() {
-	$.getJSON('../baza/portfolio.json').done(function (tablicaPortfolio) {
-		return wygenerujListePortfolio(tablicaPortfolio);
+// WORK:
+var getWorks = function getWorks() {
+	$.getJSON('../database/work.json').done(function (worksArray) {
+		return generateWorksList(worksArray);
 	});
 };
 
 // SKILLS:
-var pobierzSkills = function pobierzSkills() {
-	$.getJSON('../baza/skills.json').done(function (tablicaSkills) {
-		return wygenerujSkills(tablicaSkills);
+var getSkills = function getSkills() {
+	$.getJSON('../database/skills.json').done(function (skillsArray) {
+		return generateSkills(skillsArray);
 	});
 };
 
 var $window = $(window);
 var $body = $('body');
 
-// Interakcje dla wersji desktopowej
+// Interactions for desktop version of the website
 var sectionScroll = {
 	$links: $('#main_nav .navbar-nav a'),
 	$navbarCollapse: $('.navbar-collapse'),
@@ -199,7 +198,7 @@ var sectionScroll = {
 	$mainNav: $('#main_nav'),
 	timeout: {},
 	start: function start() {
-		// Uruchom tooltipy
+		// Initialize tooltips
 		$('[data-toggle="tooltip"]').tooltip({ delay: { show: 500, hide: 100 } });
 		$body.addClass('sectionScroll');
 		sectionScroll.$mainNav.on('click', 'a', sectionScroll.click);
@@ -248,7 +247,7 @@ var sectionScroll = {
 		$body.animate({ scrollTop: $targetLink.offset().top - 50 }, 500);
 		sectionScroll.$links.removeClass('active');
 		$clickedLink.addClass('active');
-		// Jeśli strona jest w wersji mobilnej, zamknij pasek z linkami po kliknięciu na któryś z nich
+		// Close mobile navbar on clicking on any links
 		if (sectionScroll.$navbarCollapse.hasClass('in')) {
 			sectionScroll.$navbarToggle.click();
 		}
@@ -279,14 +278,14 @@ var sectionScroll = {
 	}
 };
 
-// Interakcje dla wersji mobilnej
+// Interactions for mobile version of the website
 var sectionFade = {
 	$mainNav: $('#main_nav'),
 	$links: $('#main_nav a'),
 	$navbarCollapse: $('.navbar-collapse'),
 	start: function start() {
 		$body.addClass('sectionFade');
-		$('#main_portfolio, #main_skills, #main_contact').hide();
+		$('#main_work, #main_skills, #main_contact').hide();
 		sectionFade.$mainNav.on('click', 'a', sectionFade.click);
 		clearTimeout(sectionScroll.timeout);
 		sectionFade.$mainNav.removeClass('white');
@@ -297,36 +296,34 @@ var sectionFade = {
 
 		var $clickedLink = $(event.target);
 
-		// Uruchom tylko jeśli link nie był już aktywowany ani nie trwa animacja przełączania okien
+		// ACtive only if link isn't active yet and there is not animation being played
 		if (!$clickedLink.hasClass('active') && !$clickedLink.hasClass('disabled')) {
-			(function () {
-				// Jeśli strona jest w wersji mobilnej, zamknij pasek z linkami po kliknięciu na któryś z nich
-				if (sectionFade.$navbarCollapse.hasClass('in')) {
-					$('.navbar-toggle').click();
-				}
-				// Pobierz odnośnik linku
-				var $content = $($clickedLink.attr('href'));
+			// Close mobile navbar on clicking on any links
+			if (sectionFade.$navbarCollapse.hasClass('in')) {
+				$('.navbar-toggle').click();
+			}
+			// Get link's target
+			var $content = $($clickedLink.attr('href'));
 
-				// Deaktywuj inne linki, aktywuj link kliknięty
-				sectionFade.$links.removeClass('active').addClass('disabled');
-				$clickedLink.addClass('active');
-				window.scrollTo(0, 0);
-				// Okno z wierzchu przesuń na spód
-				$('.front').addClass('oldfront').removeClass('front');
-				// Pokaż nowe okno, przesuń je na wierzch i animuj wejście
-				$content.addClass('front').show().addClass('animated fadeInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-					$content.removeClass('animated fadeInRight');
-					// Usuń klasę z poprzedniego okna
-					$('.oldfront').removeClass('oldfront').hide();
-					// Aktywuj linku
-					sectionFade.$links.removeClass('disabled');
-				});
-			})();
+			// Deactivate other link and activate clicked one
+			sectionFade.$links.removeClass('active').addClass('disabled');
+			$clickedLink.addClass('active');
+			window.scrollTo(0, 0);
+			// Move top layer to the bottom
+			$('.front').addClass('oldfront').removeClass('front');
+			// Show new layer, move to the front and play its enter animation
+			$content.addClass('front').show().addClass('animated fadeInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+				$content.removeClass('animated fadeInRight');
+				// Remove class from the previous layer
+				$('.oldfront').removeClass('oldfront').hide();
+				// Activate the link
+				sectionFade.$links.removeClass('disabled');
+			});
 		}
 	},
 	stop: function stop() {
 		$body.removeClass('sectionFade');
-		$('#main_portfolio, #main_skills, #main_contact').show();
+		$('#main_work, #main_skills, #main_contact').show();
 		$('.front').removeClass('front');
 		$('.oldfront').removeClass('oldfront');
 		sectionFade.$links.removeClass('active disabled');
@@ -335,11 +332,11 @@ var sectionFade = {
 };
 
 var initApp = function initApp() {
-	// Pobierz i wygeneruj elementy sekcji portfolio i skills
-	pobierzPortfolio();
-	pobierzSkills();
+	// Fetch and generate work and skills lists
+	getWorks();
+	getSkills();
 
-	// Small devices (tablets, less than 992px)
+	// Initialize interactions based on screen size
 	if ($window.width() < 768) sectionFade.start();else sectionScroll.start();
 
 	$window.on('resize', function () {
@@ -352,8 +349,8 @@ var initApp = function initApp() {
 		}
 	});
 
-	// Wysyłanie wiadomości
-	$('form[name=wiadomosc]').on('submit', function (e) {
+	// Form handling
+	$('form[name=message]').on('submit', function (e) {
 		e.preventDefault();
 		var $this = $(this);
 		var $submit = $(this).find('button[type=submit]');
@@ -361,21 +358,21 @@ var initApp = function initApp() {
 		if (!$submit.hasClass('nonactive')) {
 			$.ajax({
 				type: 'POST',
-				url: 'skrypty/wiadomosc.php',
+				url: 'scripts/message.php',
 				data: $this.serialize(),
 				'success': function success(daneZwrotne) {
 					var json = $.parseJSON(daneZwrotne);
 
-					// Wyczyść formularz
-					if (json.stan === 'ok') {
+					// Clear the form
+					if (json.state === 'ok') {
 						$this.find('textarea').val('');
-						$submit.removeClass('btn-primary').addClass('btn-success nonactive').html(json.ikona);
+						$submit.removeClass('btn-primary').addClass('btn-success nonactive').html(json.icon);
 					} else {
-						$submit.removeClass('btn-primary').addClass('btn-danger nonactive').html(json.ikona);
+						$submit.removeClass('btn-primary').addClass('btn-danger nonactive').html(json.icon);
 					}
-					// Zmień tekst przycisku
+					// Udpate button's text
 					setTimeout(function () {
-						$submit.removeClass('btn-success btn-danger nonactive').addClass('btn-primary').html('Wyślij');
+						$submit.removeClass('btn-success btn-danger nonactive').addClass('btn-primary').html('Send');
 					}, 8000);
 				}
 			});
@@ -383,10 +380,10 @@ var initApp = function initApp() {
 	});
 };
 
-// Zainicjuj aplikację gdy dokument będzie gotowy
+// Initialize the website when document gets ready
 $(document).ready(initApp());
 
-// Po załadowaniu się okna usuń klasę ".rk", co uruchomi animację wejścia
+// Remove '.rk' classes, which will trigger entry animations
 $(window).load(function () {
 	$('.rk').removeClass('rk');
 });

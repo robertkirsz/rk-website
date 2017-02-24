@@ -44,7 +44,7 @@ $ease1: cubic-bezier(0.435, 0.015, 0.165, 0.970);
 	}
 }
 
-#main_skills, #main_portfolio, #main_contact, .tag {
+#main_skills, #main_work, #main_contact, .tag {
 	opacity: 1;
 	transition: opacity $time $ease1 $time4;
 	&.rk { opacity: 0; }

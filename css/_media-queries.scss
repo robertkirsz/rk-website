@@ -13,7 +13,7 @@
 			z-index: auto;
 		}
 	}
-	#main_portfolio .portfolio-item {
+	#main_work .work-item {
 		&:first-child {
 			.description {
 				margin-top: 0;
@@ -45,7 +45,7 @@
 
 /* Extra small devices (phones, less than 768px) */
 @media screen and (max-width: 767px) {
-	#main_cover, #main_portfolio, #main_skills, #main_contact {
+	#main_cover, #main_work, #main_skills, #main_contact {
 		position: absolute;
 		background-color: #EDEDED;
 		width: 100%;
@@ -54,9 +54,9 @@
 		&.oldfront { z-index: 9; }
 	}
 	#main_cover {	height: calc(100vh - 50px); }
-	#main_portfolio {
+	#main_work {
 		padding-bottom: 15px;
-		.portfolio-item {
+		.work-item {
 			margin-bottom: 0;
 			.description {
 				padding: 5px 25px 20px;
