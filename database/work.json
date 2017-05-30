@@ -44,7 +44,7 @@
 			"tech": ["html5", "css3", "react", "redux", "webpack"]
 	},
 	{
-		"name": "Saper",
+		"name": "Minesweeper",
 			"url": "http://robertkirsz.pl/saper",
 			"screenshot": {
 				"desktop": "saper.jpg",
@@ -96,7 +96,7 @@
 			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
 	},
 	{
-		"name": "Symulator Gitary",
+		"name": "Guitar Simulator",
 			"url": "http://robertkirsz.pl/projects/gitary",
 			"screenshot": {
 				"desktop": "gitary.jpg",
