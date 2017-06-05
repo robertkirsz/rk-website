@@ -73,19 +73,17 @@ var WorkItem = function WorkItem(key, value) {
 
   // Add different classes for odd and even elements so that they'll alternate
   // position of their child elements
-
-  var bootstrap1 = key % 2 === 0 ? 'col-md-push-8' : '';
-  var bootstrap2 = key % 2 === 0 ? 'col-md-pull-4' : '';
+  // const bootstrap1 = key % 2 === 0 ? ' col-md-push-8' : ''
+  // const bootstrap2 = key % 2 === 0 ? ' col-md-pull-4' : ''
 
   // Add unique class for projects that are mobile-only
-  var displayType = !responsiveness.desktop ? 'mobile_only' : 'responsive';
+  // const displayType = !responsiveness.desktop ? 'mobile_only' : 'responsive'
 
   // Create containers
-  var $workItem = $('<div />', { class: 'row work-item ' + displayType });
-  var $description = $('<div />', {
-    class: 'description col-md-4 ' + bootstrap1
-  });
-  var $browsers = $('<div />', { class: 'browsers col-md-8 ' + bootstrap2 });
+
+  var $workItem = $('<div />', { class: 'work-item' });
+  var $description = $('<div />', { class: 'description' });
+  var $browsers = $('<div />', { class: 'browsers' });
   var $icons = $('<div />', { class: 'icons' });
 
   // Add responsiveness and tech icons

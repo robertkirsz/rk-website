@@ -19,7 +19,20 @@
 			"url": "https://www.mysocialbook.com/",
 			"screenshot": {
 				"desktop": "",
-				"phone": "msb.png" },
+				"phone": "msb.jpg" },
+			"responsiveness": {
+				"desktop": false,
+				"tablet": false,
+				"phone": true },
+			"description": "Another Magic: The Gathering app (yes, I play this game). It lets you track yours and your opponent's life totals, any poison counters, and separate damage dealt by Commander. Made with phone devices in mind.",
+			"tech": ["react-native", "redux", "webpack"]
+	},
+	{
+		"name": "My Social Book",
+			"url": "https://www.mysocialbook.com/",
+			"screenshot": {
+				"desktop": "",
+				"phone": "msb.jpg" },
 			"responsiveness": {
 				"desktop": false,
 				"tablet": false,
@@ -30,19 +43,21 @@
 	{
 		"name": "IRON",
 			"screenshot": {
-				"desktop": "iron_1440.png",
-				"phone": "iron_320.png" },
+				"desktop": "iron_1440.jpg",
+				"phone": "iron_320.jpg" },
 			"responsiveness": {
-				"desktop": true },
+				"desktop": true,
+				"tablet": true,
+				"phone": true },
 			"description": "Fully responsive web page I've coded as an exercise. The PSD file was provided by Weekly WebDev Challenge group on Facebook. Supported by all modern browsers, with interactive elements created in Vue.",
-			"tech": ["html5", "css3", "sass", "vue", "gulp"]
+			"tech": ["html5", "css3", "sass", "react", "redux", "firebase", "webpack"]
 	},
 	{
 		"name": "Outseeker",
 			"url": "http://app.outseeker.com",
 			"screenshot": {
-				"desktop": "outseeker_1440.png",
-				"phone": "outseeker_320.png" },
+				"desktop": "outseeker_1440.jpg",
+				"phone": "outseeker_320.jpg" },
 			"responsiveness": {
 				"desktop": true,
 				"tablet": true,
