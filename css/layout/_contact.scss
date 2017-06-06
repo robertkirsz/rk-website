@@ -15,7 +15,6 @@
 				text-decoration: none;
 				&:not(:first-child) {
 					margin-left: 0.5em;
-					@media screen and (max-width: 991px) { margin-left: 1.5em }
 				}
 			}
 		}
