@@ -51,11 +51,18 @@ const Desktop = (name, screenshot, url) => {
   const $ikony = $(
     '<i class="fa fa-arrow-left"></i><i class="fa fa-arrow-right"></i><i class="fa fa-refresh"></i><i class="fa fa-home"></i>'
   )
-  const $addressBar = $('<div />', { class: 'address' })
-  const $link = $('<a />', { href: 'http://' + url, text: url })
+
+  $top.append($ikony)
+
+  if (url) {
+    const $addressBar = $('<div />', { class: 'address' })
+    const $link = $('<a />', { href: 'http://' + url, text: url })
+
+    $top.append($addressBar.append($link))
+  }
 
   $this
-    .append($top.append($ikony).append($addressBar.append($link)))
+    .append($top)
     .append($screen.append($screenshot))
 
   return $this
@@ -97,7 +104,9 @@ const WorkItem = (key, value) => {
     .append($('<h1 />', { text: name }))
     .append($icons)
     .append($('<p />', { html: description }))
-    .append(
+
+  if (url) {
+    $description.append(
       $('<a />', {
         href: url,
         class: 'link btn btn-info fa fa-eye',
@@ -106,6 +115,7 @@ const WorkItem = (key, value) => {
         title: 'Live version',
       }).tooltip({ delay: { show: 500, hide: 100 } })
     )
+  }
 
   // Add GitHub link, if project has its repo
   if (github) {

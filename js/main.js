@@ -51,10 +51,17 @@ var Desktop = function Desktop(name, screenshot, url) {
     alt: name + ' - Desktop Version'
   });
   var $ikony = $('<i class="fa fa-arrow-left"></i><i class="fa fa-arrow-right"></i><i class="fa fa-refresh"></i><i class="fa fa-home"></i>');
-  var $addressBar = $('<div />', { class: 'address' });
-  var $link = $('<a />', { href: 'http://' + url, text: url });
 
-  $this.append($top.append($ikony).append($addressBar.append($link))).append($screen.append($screenshot));
+  $top.append($ikony);
+
+  if (url) {
+    var $addressBar = $('<div />', { class: 'address' });
+    var $link = $('<a />', { href: 'http://' + url, text: url });
+
+    $top.append($addressBar.append($link));
+  }
+
+  $this.append($top).append($screen.append($screenshot));
 
   return $this;
 };
@@ -90,13 +97,17 @@ var WorkItem = function WorkItem(key, value) {
   $icons.append(responsivenessIcons(responsiveness)).append(techIcons(tech));
 
   // Append name, icons, description and a link to project's live version
-  $description.append($('<h1 />', { text: name })).append($icons).append($('<p />', { html: description })).append($('<a />', {
-    href: url,
-    class: 'link btn btn-info fa fa-eye',
-    'data-toggle': 'tooltip',
-    'data-placement': 'top',
-    title: 'Live version'
-  }).tooltip({ delay: { show: 500, hide: 100 } }));
+  $description.append($('<h1 />', { text: name })).append($icons).append($('<p />', { html: description }));
+
+  if (url) {
+    $description.append($('<a />', {
+      href: url,
+      class: 'link btn btn-info fa fa-eye',
+      'data-toggle': 'tooltip',
+      'data-placement': 'top',
+      title: 'Live version'
+    }).tooltip({ delay: { show: 500, hide: 100 } }));
+  }
 
   // Add GitHub link, if project has its repo
   if (github) {
