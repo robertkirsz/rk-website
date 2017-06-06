@@ -21,49 +21,10 @@
 				"desktop": "",
 				"phone": "msb.jpg" },
 			"responsiveness": {
-				"desktop": false,
-				"tablet": false,
-				"phone": true },
-			"description": "Another Magic: The Gathering app (yes, I play this game). It lets you track yours and your opponent's life totals, any poison counters, and separate damage dealt by Commander. Made with phone devices in mind.",
-			"tech": ["react-native", "redux", "webpack"]
-	},
-	{
-		"name": "My Social Book",
-			"url": "https://www.mysocialbook.com/",
-			"screenshot": {
-				"desktop": "",
-				"phone": "msb.jpg" },
-			"responsiveness": {
-				"desktop": false,
-				"tablet": false,
-				"phone": true },
-			"description": "Another Magic: The Gathering app (yes, I play this game). It lets you track yours and your opponent's life totals, any poison counters, and separate damage dealt by Commander. Made with phone devices in mind.",
-			"tech": ["react-native", "redux", "webpack"]
-	},
-	{
-		"name": "IRON",
-			"screenshot": {
-				"desktop": "iron_1440.jpg",
-				"phone": "iron_320.jpg" },
-			"responsiveness": {
-				"desktop": true,
 				"tablet": true,
 				"phone": true },
-			"description": "Fully responsive web page I've coded as an exercise. The PSD file was provided by Weekly WebDev Challenge group on Facebook. Supported by all modern browsers, with interactive elements created in Vue.",
-			"tech": ["html5", "css3", "sass", "react", "redux", "firebase", "webpack"]
-	},
-	{
-		"name": "Outseeker",
-			"url": "http://app.outseeker.com",
-			"screenshot": {
-				"desktop": "outseeker_1440.jpg",
-				"phone": "outseeker_320.jpg" },
-			"responsiveness": {
-				"desktop": true,
-				"tablet": true,
-				"phone": true },
-			"description": "Fully responsive web page I've coded as an exercise. The PSD file was provided by Weekly WebDev Challenge group on Facebook. Supported by all modern browsers, with interactive elements created in Vue.",
-			"tech": ["html5", "css3", "sass", "vue", "gulp"]
+			"description": "A native mobile app written using React Native. It lets users create physical books out of user's Facebook account.",
+			"tech": ["react-native", "redux", "webpack"]
 	},
 	{
 		"name": "Magic Cards Manager",
@@ -74,21 +35,19 @@
 				"phone": "" },
 			"responsiveness": {
 				"desktop": true,
-				"tablet": true,
-				"phone": false },
+				"tablet": true },
 			"description": "Magic: the Gathering card browser and collection manager, that's stored on the Firebase. The app is currently in beta phase. I plan on making it fully responsive and add an ability to gather cards into decks",
 			"tech": ["html5", "css3", "sass", "bootstrap", "react", "redux", "react-router", "webpack", "firebase"],
 			"workInProgress": true
 	},
 	{
-		"name": "MtG Life Counter",
+		"name": "Magic Life Counter",
 			"url": "http://robertkirsz.pl/mtg",
 			"github": "https://github.com/robertkirsz/mtg-counter",
 			"screenshot": {
 				"desktop": "",
 				"phone": "mtg_320.jpg" },
 			"responsiveness": {
-				"desktop": false,
 				"tablet": true,
 				"phone": true },
 			"description": "Another Magic: The Gathering app (yes, I play this game). It lets you track yours and your opponent's life totals, any poison counters, and separate damage dealt by Commander. Made with phone devices in mind.",
@@ -106,6 +65,39 @@
 				"phone": true },
 			"description": "Minesweeper clone, my first approach to code something game-like.",
 			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
+	},
+	{
+		"name": "IRON",
+			"screenshot": {
+				"desktop": "iron_1440.jpg",
+				"phone": "iron_320.jpg" },
+			"responsiveness": {
+				"desktop": true,
+				"tablet": true,
+				"phone": true },
+			"description": "An app for personal trainers that helps them create workouts and track the progress of their trainees.",
+			"tech": ["html5", "css3", "sass", "react", "redux", "firebase", "webpack"],
+			"workInProgress": true
+	},
+	{
+		"name": "Survey Bot",
+			"url": "https://survey-bot.herokuapp.com/debug",
+			"screenshot": {
+				"desktop": "",
+				"phone": "survey-bot_320.png" },
+			"responsiveness": { "phone": true },
+			"description": "A chatbot application that lets it's owner provide a questionnaire template and gather users' answers. You've probably seen similar bots appear in the lower-right corner of some websites.",
+			"tech": ["html5", "css3", "sass", "react", "webpack"]
+	},
+	{
+		"name": "Ducati #NiceTo",
+			"url": "https://survey-bot.herokuapp.com/debug",
+			"screenshot": {
+				"desktop": "",
+				"phone": "ducati_320.jpg" },
+			"responsiveness": { "phone": true },
+			"description": "Photo editing app, where user can upload a picture, add some text and share it to social networks.",
+			"tech": ["html5", "css3", "sass", "react", "webpack"]
 	},
 	{
 		"name": "CSSOff 2011",
@@ -141,7 +133,6 @@
 				"phone": "interiordesign_320.jpg" },
 			"responsiveness": {
 				"desktop": true,
-				"tablet": false,
 				"phone": true },
 			"description": "The website made for an interior design studio. Based on provided designs, made without the help of any styling frameworks, with custom RWD solutions. All in all the website didn't go live.",
 			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
@@ -152,10 +143,7 @@
 			"screenshot": {
 				"desktop": "gitary.jpg",
 				"phone": "" },
-			"responsiveness": {
-				"desktop": true,
-				"tablet": false,
-				"phone": false },
+			"responsiveness": { "desktop": true },
 			"description": "This is an app made for the practical part of my engineering thesis and at the same time my first contact with JavaScript. It's a guitar simulator based on HTML5 Audio. It lets you create and save chords, record sound sequences, converting them to a TAB notation and more.",
 			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
 	},
@@ -171,5 +159,18 @@
 				"phone": true },
 			"description": "First time making a website based on Bootstrap. I love coding, but design is not my strongest skill.",
 			"tech": ["html5", "css3", "sass", "jquery", "bootstrap", "grunt"]
+	},
+	{
+		"name": "Outseeker",
+			"url": "http://app.outseeker.com",
+			"screenshot": {
+				"desktop": "outseeker_1440.jpg",
+				"phone": "outseeker_320.jpg" },
+			"responsiveness": {
+				"desktop": true,
+				"tablet": true,
+				"phone": true },
+			"description": "An app that finds restaurants in New York City based on user's mood and search criteria. This was my first contact with React framework.",
+			"tech": ["html5", "css3", "sass", "react", "webpack"]
 	}
 ]

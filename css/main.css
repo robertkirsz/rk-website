@@ -84,6 +84,8 @@ body { font: 15px 'Nunito', sans-serif; background: #EDEDED; }
 
 .work-item:not(:first-of-type) { margin-top: 50px; }
 
+.work-item:last-child { margin-bottom: 50px; }
+
 .work-item .icons { display: -ms-flexbox; display: flex; -ms-flex-align: baseline; align-items: baseline; }
 
 .work-item .icons .responsive-icons { -ms-flex: none; flex: none; font-size: 1.5em; }
@@ -136,8 +138,6 @@ body { font: 15px 'Nunito', sans-serif; background: #EDEDED; }
 
 @media (max-width: 991px) { .work-item .phone { max-width: 200px; } }
 
-.work-item .phone:first-child { position: relative; top: 0; left: 0; bottom: 0; }
-
 .work-item .phone .top { height: 40px; position: relative; }
 
 .work-item .phone .top:before { content: ""; position: absolute; top: 20px; left: 50%; width: 70px; height: 5px; margin-left: -35px; border-radius: 5px; background-color: #DDD; box-shadow: 0px 2px 0 #BBB; }
@@ -187,7 +187,9 @@ body { font: 15px 'Nunito', sans-serif; background: #EDEDED; }
 
 .work-item.mobile-only .browsers { -ms-flex: none; flex: none; }
 
-@media (max-width: 767px) { .work-item.mobile-only .phone { display: block; position: relative; top: 0; left: 0; bottom: 0; margin: 10px auto 0; } }
+.work-item.mobile-only .phone { position: relative; top: 0; left: 0; bottom: 0; }
+
+@media (max-width: 767px) { .work-item.mobile-only .phone { display: block; margin: 10px auto 0; } }
 
 .work-item.responsive:nth-of-type(odd) .phone { right: -30px; }
 
