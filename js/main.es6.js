@@ -81,10 +81,10 @@ const WorkItem = (key, value) => {
   // const bootstrap2 = key % 2 === 0 ? ' col-md-pull-4' : ''
 
   // Add unique class for projects that are mobile-only
-  // const displayType = !responsiveness.desktop ? 'mobile_only' : 'responsive'
+  const displayType = !responsiveness.desktop ? 'mobile-only' : 'responsive'
 
   // Create containers
-  const $workItem = $('<div />', { class: 'work-item' })
+  const $workItem = $('<div />', { class: 'work-item ' + displayType })
   const $description = $('<div />', { class: 'description' })
   const $browsers = $('<div />', { class: 'browsers' })
   const $icons = $('<div />', { class: 'icons' })

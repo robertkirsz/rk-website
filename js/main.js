@@ -77,11 +77,11 @@ var WorkItem = function WorkItem(key, value) {
   // const bootstrap2 = key % 2 === 0 ? ' col-md-pull-4' : ''
 
   // Add unique class for projects that are mobile-only
-  // const displayType = !responsiveness.desktop ? 'mobile_only' : 'responsive'
+
+  var displayType = !responsiveness.desktop ? 'mobile-only' : 'responsive';
 
   // Create containers
-
-  var $workItem = $('<div />', { class: 'work-item' });
+  var $workItem = $('<div />', { class: 'work-item ' + displayType });
   var $description = $('<div />', { class: 'description' });
   var $browsers = $('<div />', { class: 'browsers' });
   var $icons = $('<div />', { class: 'icons' });
