@@ -56,7 +56,7 @@ var Desktop = function Desktop(name, screenshot, url) {
 
   if (url) {
     var $addressBar = $('<div />', { class: 'address' });
-    var $link = $('<a />', { href: 'http://' + url, text: url });
+    var $link = $('<a />', { href: url, text: url });
 
     $top.append($addressBar.append($link));
   }

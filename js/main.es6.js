@@ -56,7 +56,7 @@ const Desktop = (name, screenshot, url) => {
 
   if (url) {
     const $addressBar = $('<div />', { class: 'address' })
-    const $link = $('<a />', { href: 'http://' + url, text: url })
+    const $link = $('<a />', { href: url, text: url })
 
     $top.append($addressBar.append($link))
   }
