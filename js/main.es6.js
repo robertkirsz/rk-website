@@ -61,9 +61,7 @@ const Desktop = (name, screenshot, url) => {
     $top.append($addressBar.append($link))
   }
 
-  $this
-    .append($top)
-    .append($screen.append($screenshot))
+  $this.append($top).append($screen.append($screenshot))
 
   return $this
 }
@@ -81,11 +79,6 @@ const WorkItem = (key, value) => {
     base,
     workInProgress,
   } = value
-
-  // Add different classes for odd and even elements so that they'll alternate
-  // position of their child elements
-  // const bootstrap1 = key % 2 === 0 ? ' col-md-push-8' : ''
-  // const bootstrap2 = key % 2 === 0 ? ' col-md-pull-4' : ''
 
   // Add unique class for projects that are mobile-only
   const displayType = !responsiveness.desktop ? 'mobile-only' : 'responsive'
@@ -164,7 +157,7 @@ const WorkItem = (key, value) => {
   return $workItem
 }
 
-// SKILLS: Pojedyńcza pozycja na liście skills
+// SKILLS: A single skills item
 const SkillItem = (key, value) => {
   const { name, icon } = value
   const $element = $('<div />', { class: 'skill col-xs-6 col-md-4' })
@@ -176,7 +169,7 @@ const SkillItem = (key, value) => {
   return $element
 }
 
-// WORK:
+// WORK: A list of works items
 const generateWorksList = worksArray => {
   const worksList = []
 
@@ -187,7 +180,7 @@ const generateWorksList = worksArray => {
   $('#main_work .container').append(worksList)
 }
 
-// SKILLS:
+// SKILLS: A list of skills items
 const generateSkills = skillsArray => {
   const primarySkills = []
   const secondarySkills = []
@@ -206,14 +199,14 @@ const generateSkills = skillsArray => {
   $('.other .container').append(otherStuff)
 }
 
-// WORK:
+// WORK: Fetches works items
 const getWorks = () => {
   $.getJSON('../database/work.json').done(worksArray =>
     generateWorksList(worksArray)
   )
 }
 
-// SKILLS:
+// SKILLS: Fetches skills items
 const getSkills = () => {
   $.getJSON('../database/skills.json').done(skillsArray =>
     generateSkills(skillsArray)
@@ -289,12 +282,7 @@ const sectionScroll = {
     }
   },
   navChange () {
-    if (
-      sectionScroll.mainCoverHeight -
-        window.pageYOffset -
-        sectionScroll.mainNavHeight <
-      0
-    ) {
+    if (sectionScroll.mainCoverHeight - window.pageYOffset - sectionScroll.mainNavHeight < 0) {
       sectionScroll.$mainNav.removeClass('white')
     } else {
       sectionScroll.$mainNav.addClass('white')
@@ -338,10 +326,7 @@ const sectionFade = {
     const $clickedLink = $(event.target)
 
     // Active only if link isn't active yet and there is not animation being played
-    if (
-      !$clickedLink.hasClass('active') &&
-      !$clickedLink.hasClass('disabled')
-    ) {
+    if (!$clickedLink.hasClass('active') && !$clickedLink.hasClass('disabled')) {
       // Close mobile navbar on clicking on any links
       if (sectionFade.$navbarCollapse.hasClass('in')) {
         $('.navbar-toggle').click()
@@ -445,6 +430,4 @@ const initApp = () => {
 $(document).ready(initApp())
 
 // Remove '.rk' classes, which will trigger entry animations
-$(window).load(() => {
-  $('.rk').removeClass('rk')
-})
+$(window).load(() => { $('.rk').removeClass('rk') })

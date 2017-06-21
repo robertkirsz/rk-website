@@ -78,11 +78,6 @@ var WorkItem = function WorkItem(key, value) {
       base = value.base,
       workInProgress = value.workInProgress;
 
-  // Add different classes for odd and even elements so that they'll alternate
-  // position of their child elements
-  // const bootstrap1 = key % 2 === 0 ? ' col-md-push-8' : ''
-  // const bootstrap2 = key % 2 === 0 ? ' col-md-pull-4' : ''
-
   // Add unique class for projects that are mobile-only
 
   var displayType = !responsiveness.desktop ? 'mobile-only' : 'responsive';
@@ -150,7 +145,7 @@ var WorkItem = function WorkItem(key, value) {
   return $workItem;
 };
 
-// SKILLS: Pojedyńcza pozycja na liście skills
+// SKILLS: A single skills item
 var SkillItem = function SkillItem(key, value) {
   var name = value.name,
       icon = value.icon;
@@ -164,7 +159,7 @@ var SkillItem = function SkillItem(key, value) {
   return $element;
 };
 
-// WORK:
+// WORK: A list of works items
 var generateWorksList = function generateWorksList(worksArray) {
   var worksList = [];
 
@@ -175,7 +170,7 @@ var generateWorksList = function generateWorksList(worksArray) {
   $('#main_work .container').append(worksList);
 };
 
-// SKILLS:
+// SKILLS: A list of skills items
 var generateSkills = function generateSkills(skillsArray) {
   var primarySkills = [];
   var secondarySkills = [];
@@ -194,14 +189,14 @@ var generateSkills = function generateSkills(skillsArray) {
   $('.other .container').append(otherStuff);
 };
 
-// WORK:
+// WORK: Fetches works items
 var getWorks = function getWorks() {
   $.getJSON('../database/work.json').done(function (worksArray) {
     return generateWorksList(worksArray);
   });
 };
 
-// SKILLS:
+// SKILLS: Fetches skills items
 var getSkills = function getSkills() {
   $.getJSON('../database/skills.json').done(function (skillsArray) {
     return generateSkills(skillsArray);
