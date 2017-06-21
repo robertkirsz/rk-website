@@ -22,5 +22,6 @@
 	{ "name": "ScrumDo", "icon": "scrumdo.png", "level": "other" },
 	{ "name": "Slack", "icon": "slack.png", "level": "other" },
 	{ "name": "Atom", "icon": "atom.png", "level": "other" },
-	{ "name": "Photoshop", "icon": "photoshop.png", "level": "other" }
+	{ "name": "Photoshop", "icon": "photoshop.png", "level": "other" },
+	{ "name": "Sketch", "icon": "sketch.png", "level": "other" }
 ]
