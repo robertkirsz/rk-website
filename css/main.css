@@ -56,7 +56,7 @@ body { font: 15px 'Nunito', sans-serif; background: #EDEDED; }
 
 .navbar-default .navbar-nav > li > a:hover { color: #333; }
 
-.tag { color: #777; margin: 10px 0; padding: 10px 10px 10px 50px; font-size: 2em; font-family: monospace; }
+.tag { color: #777; margin: 20px 0; font-size: 2em; font-family: monospace; }
 
 #main_cover { height: 100vh; width: 100vw; display: -ms-flexbox; display: flex; -ms-flex-flow: column nowrap; flex-flow: column nowrap; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; background: url(../img/intro/background.jpg) no-repeat center center; background-size: cover; }
 
@@ -221,7 +221,7 @@ body { font: 15px 'Nunito', sans-serif; background: #EDEDED; }
 
 #main_skills .other p { font-size: 0.9em; }
 
-#main_contact .container { padding-bottom: 15px; margin: 50px auto; }
+#main_contact .container { padding-bottom: 15px; margin: 0 auto 50px; }
 
 #main_contact .profile { margin-bottom: 30px; }
 
