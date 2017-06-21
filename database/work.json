@@ -15,18 +15,6 @@
 			"tech": ["html5", "css3", "sass", "vue", "gulp"]
 	},
 	{
-		"name": "My Social Book",
-			"url": "https://www.mysocialbook.com/",
-			"screenshot": {
-				"desktop": "",
-				"phone": "msb.jpg" },
-			"responsiveness": {
-				"tablet": true,
-				"phone": true },
-			"description": "A native mobile app written using React Native. It lets users create physical books out of user's Facebook account.",
-			"tech": ["react-native", "redux", "webpack"]
-	},
-	{
 		"name": "Magic Cards Manager",
 			"url": "https://magic-cards-manager.herokuapp.com/all-cards",
 			"github": "https://github.com/robertkirsz/magic-cards-manager",
@@ -51,7 +39,7 @@
 				"tablet": true,
 				"phone": true },
 			"description": "Another Magic: The Gathering app (yes, I play this game). It lets you track yours and your opponent's life totals, any poison counters, and separate damage dealt by Commander. Made with phone devices in mind.",
-			"tech": ["html5", "css3", "react", "redux", "webpack"]
+			"tech": ["html5", "css3", "vue", "webpack"]
 	},
 	{
 		"name": "Minesweeper",
@@ -92,13 +80,14 @@
 	},
 	{
 		"name": "Ducati #NiceTo",
-			"url": "https://survey-bot.herokuapp.com/debug",
+			"url": "https://ducati-niceto.herokuapp.com/",
 			"screenshot": {
 				"desktop": "",
 				"phone": "ducati_320.jpg" },
 			"responsiveness": { "phone": true },
 			"description": "Photo editing app, where user can upload a picture, add some text and share it to social networks.",
-			"tech": ["html5", "css3", "sass", "react", "webpack"]
+			"tech": ["html5", "css3", "sass", "react", "webpack"],
+			"workInProgress": true
 	},
 	{
 		"name": "CSSOff 2011",
@@ -137,6 +126,18 @@
 				"phone": true },
 			"description": "The website made for an interior design studio. Based on provided designs, made without the help of any styling frameworks, with custom RWD solutions. All in all the website didn't go live.",
 			"tech": ["html5", "css3", "sass", "jquery", "grunt"]
+	},
+	{
+		"name": "My Social Book",
+			"url": "https://www.mysocialbook.com/",
+			"screenshot": {
+				"desktop": "",
+				"phone": "msb.jpg" },
+			"responsiveness": {
+				"tablet": true,
+				"phone": true },
+			"description": "A native mobile app written using React Native. It lets users create physical books out of user's Facebook account.",
+			"tech": ["react-native", "redux", "webpack"]
 	},
 	{
 		"name": "Guitar Simulator",
